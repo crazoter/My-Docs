@@ -2,8 +2,8 @@ const math = require('remark-math');
 const katex = require('rehype-katex');
 
 module.exports = {
-  title: 'My Docs',
-  tagline: 'My notes for everything',
+  title: 'Matt\'s Docs',
+  tagline: 'My notes for everything related to Computer Science',
   url: 'https://crazoter.github.io',
   baseUrl: '/My-Docs/',
   onBrokenLinks: 'throw',
@@ -11,11 +11,12 @@ module.exports = {
   organizationName: 'crazoter', // Usually your GitHub org/user name.
   projectName: 'My-Docs', // Usually your repo name.
   themeConfig: {
+    hideableSidebar: true,
     navbar: {
-      title: 'My Site',
+      title: 'Matt\'s Docs',
       logo: {
         alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        src: 'img/ibuki.png',
       },
       items: [
         {
@@ -36,50 +37,20 @@ module.exports = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Links',
           items: [
             {
-              label: 'Style Guide',
-              to: 'docs/',
+              label: 'LinkedIn',
+              href: 'https://www.linkedin.com/in/matthew-lee-6a8a8a70/',
             },
             {
-              label: 'Second Doc',
-              to: 'docs/doc2/',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: 'blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/crazoter/My-Docs',
+              label: 'Portfolio',
+              href: 'https://crazoter.github.io',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Matt's Docs, crazoter. Built with Docusaurus.`,
     },
   },
   presets: [

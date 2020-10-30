@@ -2,7 +2,6 @@
 id: doc1
 title: Style Guide
 sidebar_label: Style Guide
-slug: /
 ---
 
 You can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/).
@@ -70,6 +69,8 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 
 Or leave it empty and use the [link text itself].
 
+You can even link to [another document.](mdx.md)
+
 URLs and URLs in angle brackets will automatically get turned into links. http://www.example.com/ or <http://www.example.com/> and sometimes example.com (but not on GitHub, for example).
 
 Some text to show that the reference links can follow later.
@@ -92,7 +93,7 @@ Reference-style: ![alt text][logo]
 
 Images from any folder can be used by providing path to file. Path should be relative to markdown file.
 
-![img](../static/img/logo.svg)
+`![img](../static/img/logo.svg)`
 
 ---
 
