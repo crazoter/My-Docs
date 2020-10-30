@@ -1,0 +1,8 @@
+{
+  "name": "MyDocusaurus",
+  "version": "1.0.0",
+  "description": "My docs with docusaurus",
+  "main": "index.js",
+  "author": "crazoter",
+  "license": "MIT"
+}
