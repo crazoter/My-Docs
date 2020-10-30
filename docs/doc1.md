@@ -15,6 +15,8 @@ To serve as an example page when styling markdown based Docusaurus sites.
 
 # H1 - Create the best documentation
 
+Test Katex $\alpha - \beta$
+
 ## H2 - Create the best documentation
 
 ### H3 - Create the best documentation
