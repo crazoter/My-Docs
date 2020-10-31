@@ -2,7 +2,7 @@
 title: Formal Verification
 ---
 
-# DARWIN approach
+## DARWIN approach
 * For regression testing
   * Given an old test input t that used to succeed but now fails
   1. Set of inputs that once fulfilled the same path condition is now split
@@ -21,17 +21,17 @@ title: Formal Verification
   5. Create a new input that fulfils the path condition for $f \wedge \neg f'$
   6. Compare the path followed at step 5 and the path taken by the buggy program to get diagnostics
 
-# Cause Clue Clauses
+## Cause Clue Clauses
 * Convert entire failing test trace into a SAT problem
   * Since it's failing, it's unsatisfiable
   * Use MAXSAT solver to find the smallest set of constraints that can be removed to make it satisfiable
     * Also specify some hard constraints: constraints that cannot be removed 
     * In doing so, find the error causing the SAT to fail
 
-# Error Invariants
+## Error Invariants
 * What must always be unsatisified (i.e. never clause)
 
-# Programs
+## Programs
 1. I am interested in seeing how formal verification can be applied to practical use. Of course I can write my own model in promela, then specify my rules and then model check based on that. But I am curious: is there a way to automatically generate a model from my code?
   * Are there tools in place that will automatically perform the tasks described in class?
   * What are the tools I can use to formally verify a model?
@@ -79,7 +79,7 @@ Dynamic Slicing JSlice (not used so often anymore)
 NCDC coverage
 Trace comparison & delta debugging
 
-# Test-driven repair
+## Test-driven repair
 * as long as I do my job you don't care
   * Given a test suite T and buggy program P
     * Find P' s.t.

@@ -6,6 +6,6 @@ module.exports = {
     Math: ['markdown/math'],
     Networks: ['markdown/network'],
     "Software Development": ['markdown/formal_verification'],
-    Misc: ["markdown/tech"]
+    Misc: ["markdown/tech","markdown/code_snippets"]
   },
 };
