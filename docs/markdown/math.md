@@ -95,103 +95,18 @@ title: Math
 
 </p></details>
 
-<details><summary>L7,L8,L9 Keypoints notes</summary><p>
-
-* Combining 2 images: 
-  1. Find keypoints / interest points / corners / Harris Corners
-    * Preferably Invariant to transformations (if it is affected = equivariant)
-      * Geometric (warping img transformation): 
-        * Translation & Rotation: KP Location not invariant, Harris Corner resp. invariant
-        * Scale: Corner response not invariant
-          * To counter: slowly scale image from small to big and find scale for which response R is the largest
-            * Instead of continuous scales, we can use the gaussian pyramid method
-            * Instead of using Harris Corner response (expensive to run on all pixels), we can use LoG as a response on the image to find the scale (note: only to find the scale, LoG looks for edges not corners specifically)
-              * https://automaticaddison.com/how-the-laplacian-of-gaussian-filter-works/
-              * Find 1st derivative of image to find gradients 
-                * Sensitive to noise, so instead use 2nd derivative of image (edge at 0)
-                  * Both sensitive to noise, so apply gaussian filter first, then Laplacian (thus LoG)
-                    * Extra: Found in W4 L4 gradients.pdf
-                  * Approximate LoG using Difference of Gaussian (using Gaussian pyramid)
-      * Photometric (filtering img transformation): 
-        * Intensity changes:
-          * Difference is the same: response invariant
-          * Otherwise response not invariant (is heavily dependent on gradient intensity due to thresholding, L7S38)
-    * Distinct from other descriptors (Harris Corners)
-      * Look for corners (significant gradient in all directions)
-        * Find pixel I(x,y) with highest intensity difference w.r.t. all surrounding pixels I(x+u,y+v) based on window [Slide 15]
-          * In practice, weighted by distance from center pixel (L7S31)
-        * Approximate I(x+u,y+v) from I(x,y) using Taylor Series expansion up to 1st order approximation (L7S16)
-        * Thus obtaining the 2nd moment matrix H at S17 and S18
-        * Then, diagonalize the matrix and get its eigenvalues. These eigenvalues represent the horizontal and vertical gradient. We want both to be strong (thus response R = min(lambda1, lambda2))
-          * **Harris Operator:** Since det(H) = lambda1 * lambda2 and trace(H) = lambda1 + lambda2, R is approximated by det(H) - k*trace^2(H), if > 0 we call it a corner
-        * **Non-maximum suppression** Get local maximum (maybe by window S28), then pick the maxima of the local maxima within a radius (S30)
-    * Efficient (Don't want too many)
-    * Small (robust to clutter and occlusion)
-  2. Compute feature descriptors (vectors) to mathematically represent these keypoints and their surrounding region
-    * Vector of pixel intensities: sensitive to any change
-    * Vector of gradients: sensitive to deformations
-    * Color histogram: invariant to scale & rotation, but more false matches
-      * Spatial histograms: compute different histograms on patch split into grid: some invariance to deformations
-        * To make sure rotation invariant, normalize orientation by finding dominant orientation (overall gradient), then rotate patch to that direction
-          * Multi-Scale Oriented Patches (MOPS): To reduce effect of deformations, subsample parts of the patch, normalize then wavelet transform.
-          * GIST: Compute Gabor filter bank histogram from each square in patch split into a grid
-          * SIFT: 4 Steps
-            * Benefits
-              * Invariant to scale and rotation
-            1. Find best scale for keypoints: Multi-Scale Extrema (Blob) Detection
-              * Gaussian Pyramid (each level is an "octave" with scale decreasing by 1/2 per level)
-              * At each level, discretely vary the sigma to calculate the difference of gaussian (to approx. LoG) and find local maxima
-            2. Refine keypoint location to sub-pixel accuracy
-              * Compute Harris Corner response (Hessian) of DoG image and keep maxima if HC response above threshold
-            3. Rotate keypoints based on their dominant orientation
-            4. Create descriptor
-               * Re-weight gradient magnitudes for each pixel based on gaussian centered on keypoint, discard pixels with low magnitude
-               * Split patch into grid, then create gradient orientation histogram (8 bins, 45deg per bin) for each square
-               * Make sure descriptors aligned to dominant orientation, then normalize vector, clamp values, etc
-  3. Perform keypoint / feature matching
-    * Simple: Minimum SSD between the feature vectors
-    * Better: ratio distance 1stDiff:2ndDiff (smaller the better)
-      * dist(kp_in_imgA - bestKp_in_imgB) / dist(kp_in_imgA - 2ndBestKp_in_imgB)
-    * Test this feature in img_A with all other features in img_B using indexing structure
-    * Set a threshold, which affects
-      * Precision: % of matches being true matches [TP / (TP + FP)]
-        * Higher threshold = more lax = lower precision
-      * Recall: % of all true matches found [TP / (TP + FN)]
-        * Higher threshold = more lax = higher recall
-      * Specificity: % of all false matches discarded [TN / (TN + FP)]
-        * Higher threshold = more lax = lower specificity
-  4. Perform a transformation on img_B to merge it with img_A using the keypoint matches {p,p'}
-    * If {p,p'} is a correct match, then p = a * H * p'
-      * p = [x, y, z]^T where z=1, .: [x, y, z]^T
-      * a is an unknown scale factor
-      * H is a 3x3 homography matrix (See L9 S10)
-        * See what is a [homography](https://www.cs.ubc.ca/grads/resources/thesis/May09/Dubrofsky_Elan.pdf)
-          * [Isometric transformations (just skip through)](https://www.youtube.com/watch?v=IDKNuHr6XVM)
-            * [How it is related to the matrix](http://www1.spms.ntu.edu.sg/~frederique/lecture1ws.pdf)
-            * Last row (0,0,1) to preserve z = 1
-          * Similarity: same as isometric but with scale
-          * Affine: skew
-          * Projective / homography: 
-          * Perspective transformation: 1 level above
-      * 4 pairs needed to calculate a concrete H matrix as it has 8 degrees of freedom
-        * Solve using normalized DLT
-      * Outliers (bad matches) will significantly affect the DLT, so do Random Sampling Consensus (RANSAC)
-        * RANSAC: General algorithm to estimate best parameters to fit model to inliners (S20)
-          * Randomly sample minimum points required to fit model
-          * Solve for model parameters using samples
-          * Count number of points (inliers) that are covered by the model (using a threshold) using the params found
-          * Choose the params that cover the most points after iterating N times
-          * Formula for N based on % of inliers and confidence % of iteration without outliers on S24
-
-* Gaussian: Standard distribution but on 3D space (imagine x-axis now on x and y axis)
-* Laplacian of Gaussian = 2nd derivative of gaussian
-  * See https://i.stack.imgur.com/u8I01.png
-  * https://automaticaddison.com/how-the-laplacian-of-gaussian-filter-works/
-* Difference of Gaussian: Difference of image blurred with gaussians of different sigma
-  * Approximation for the LoG
-  * See https://en.wikipedia.org/wiki/Difference_of_Gaussians
-
-</p></details>
+### Differentiate by vector
+* See [video](https://www.youtube.com/watch?v=iWxY7VdcSH8)
+* Example:
+* $\frac{\delta W(x;p)}{\delta p}$ = Jacobian Matrix (Matrix of Partial Derivatives)
+  * $x = \begin{bmatrix}x \\ y\end{bmatrix}$, $p=\{p_1,...,p_N\}$
+    * x is shorthand for the coordinates
+    * p is a vector of parameters
+  * $W(x;p) = \begin{bmatrix}W_x(x,y;p) \\ W_y(x,y;p)\end{bmatrix}$
+    * $W(x;p)\equiv W(x,y;p)$ and it is a linear transformation of the coordinates.
+    * $W_x(x,y;p)$ refers to the transformation to the x-axis position by $W(x,y;p)$.
+  * $\frac{\delta W(x;p)}{\delta p} = \begin{bmatrix}\frac{\delta W_x}{\delta p_1} & \frac{\delta W_x}{\delta p_2} & ... & \frac{\delta W_x}{\delta p_N} \\ \frac{\delta W_y}{\delta p_1} & \frac{\delta W_y}{\delta p_2} & ... & \frac{\delta W_y}{\delta p_N}\end{bmatrix}$
+    * Derivative of this transformation w.r.t. p is equivalent to obtaining a vector of the equations differentiated by each parameter $p_i$
 
 <details><summary>Template</summary><p>
 </p></details>

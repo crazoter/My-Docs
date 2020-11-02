@@ -57,11 +57,11 @@ module.exports = {
     [
       '@docusaurus/preset-classic',
       {
+        hideableSidebar: true,
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/crazoter/My-Docs/edit/master/website/',
+          editUrl: 'https://github.com/crazoter/My-Docs/edit/master/website/',
           remarkPlugins: [math],
           rehypePlugins: [katex],
         },
@@ -73,10 +73,12 @@ module.exports = {
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
+          hideableSidebar: true,
         },
       },
     ],
   ],
+  // themes: ['@docusaurus/theme-classic'],
   stylesheets: [
     {
       href: 'https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css',

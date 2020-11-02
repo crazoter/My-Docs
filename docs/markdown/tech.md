@@ -4,6 +4,8 @@ slug: /
 ---
 
 ## Syntax Cheatsheets
+* [AHK](https://www.autohotkey.com/docs/Hotkeys.htm)
+  * Word of warning: indexes start from 1 in AHK
 * [Bash](https://devhints.io/bash)
   * [chmod](https://gist.github.com/juanarbol/c44e736be70279c1fd5d68aa24f9d8be)
   * [curl](https://devhints.io/curl)
@@ -23,6 +25,9 @@ slug: /
   * [GDB Peda](https://paper.seebug.org/papers/Archive/refs/Linux_Interactive_Exploit_Development_with_GDB_and_PEDA_Slides.pdf)
 * [Git](https://phoenixnap.com/kb/git-commands-cheat-sheet)
 * [LaTeX Math](http://tug.ctan.org/info/undergradmath/undergradmath.pdf)
+  * Image to LaTeX Math
+    * [Mathpix](https://mathpix.com/)
+    * [img2latex-mathpix](https://github.com/blaisewang/img2latex-mathpix)
 * [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 * PlantUML
   * [Examples (Copy-able)](https://real-world-plantuml.com/)

@@ -1,6 +1,8 @@
 ---
-title: AI Planning (Reinforcement Learning)
+title: AI Planning (CS4246, Reinforcement Learning)
 ---
+
+My notes for CS4246
 
 Last Update: 2020
 
@@ -66,7 +68,7 @@ gamma' = gamma^(1/2)
 
 ## Value Iteration Algorithm
 
-* Repeatedly update the Utility function U(s) with bellman update.
+* Repeatedly update the Utility function U(s) with [bellman update].
 
 $U_{t+1}(s) = R(s) + \gamma \max_{a\in A(s)} \sum_{s'} P(s'|s,a)U_t(s')$
 * U is only updated after every single state has been looped through.
@@ -179,12 +181,13 @@ function PASSIVE-ADP-AGENT(percept)
 * Just replace Policy-Evaluation with Policy-Iteration
 * The policy no longer stays fixed but changes as transitions and rewards learnt
 * Note that however the algorithm is greedy and may not return the optimal value
+
+## $\epsilon$-greedy
 * Hence must do e-greedy exploration (choose a greedy action with 1-e probability and random action with e probability)
   * Greedy in the Limit of Infinite Exploration (GLIE), e = 1/t
   * Start with a high epsilon, then slowly reduce the number of random actions you take (by reducing the value of e) with every policy iteration as you become more and more certain you have an optimal algorithm
 
 ## Monte Carlo Learning
-
 
 * Monte Carlo Learning (Direct Utility Estimation)
   * Given a series of states as a "trial" e.g. this is a trial: (1)-.04->(2)-.04->(2)-.04->(3)-.04->(4)-.04...->(5)+1
@@ -241,7 +244,8 @@ Disadvantages
 * Must wait until a full trial is done in order to perform learning
 * High variance (reward is the sum of many rewards along the trial), so need many trials to get it right
 
-## Temporal Difference Learning i.e. TD(0)
+## Temporal Difference Learning
+* i.e. TD(0)
 * Very similar to Monte Carlo Learning
 * Replace the prediction error with the temporal difference error
 
@@ -294,10 +298,14 @@ SARSA uses TD learning w.r.t. a specific policy:
 
 $U^\pi(s,a) = U^\pi(s,a) + \alpha(R(s,a) + \gamma U^\pi(s',\pi((s')) - U\pi(s,a))$
 
+On-policy
+
 ### Q-Learning
 Q-Learning uses TD learning w.r.t. the optimal policy (s' is the next state after (s,a) is taken):
 
 $Q(s,a) = Q(s,a) + \alpha(R(s,a) + \gamma \max_{a\in A(s')} Q(s',a) - Q(s,a))$
+
+Off-policy
 
 ## n-step TD
 Alister Reis has written a very good [blog post](https://amreis.github.io/ml/reinf-learn/2017/11/02/reinforcement-learning-eligibility-traces.html) on this
@@ -342,6 +350,289 @@ Alister Reis has written a very good [blog post](https://amreis.github.io/ml/rei
   * Then finally update U(s) for all states: `state_values = state_values + alpha * td_error * eligibility` 
   * As per Alister
 
-
 See also?
 * https://towardsdatascience.com/reinforcement-learning-td-%CE%BB-introduction-686a5e4f4e60#:~:text=random%20walk%20example-,The%20Idea%20of%20TD(%CE%BB),0.5*Gt%3At%2B4
+
+## On & Off Policy
+* On-policy: 
+  * One policy used for both generating data & training
+  * e.g. SARSA
+    * Converges to optimal policy if:
+      *  [$\epsilon$-greedy](#epsilon-greedy)
+* Off-policy: 
+  * One *behavior* policy for generating training data
+    * generating data: interacting with environment to get info
+  * One *target* policy to be trained
+    * Converges to optimal policy if: 
+      * Decaying $\alpha$ 
+      * Every transition is taken infinitely many times in behavior policy
+
+## Function Approximation
+<a name="vector-of-parameters"></a>
+<a name="theta"></a>
+
+* State space too large -> solve by approximating utility function
+  * Approximate using a linear function of **features**
+  1. Define a linear function to approximate U(s):
+    * $\hat{U}_{\theta}(s)=\theta_{1} f_{1}(s)+\theta_{2} f_{2}(s)+\cdots+\theta_{n} f_{n}(s)$ 
+      * e.g. $\hat{U}_{\theta}(x,y)=\theta_{0} + \theta_{1}x+\theta_{2} y$ 
+      * s in this case is (x,y)
+  2. And in this linear function you have a **vector of parameters** $\theta$ = $\{\theta_0,\theta_1,...\theta_n\}$
+  * Goal is to learn $\theta$ 
+
+### Supervised learning
+* Method 1: learn using set of training samples
+* Given a set of training samples beforehand
+* Do least squares estimation to fit params
+  * e.g. given linear function $\hat{U}_{\theta}(x,y)=\theta_{0} + \theta_{1}x+\theta_{2} y$ 
+  * you have a set of samples $\{((x_1,y_1,u_1),(x_2,y_2,u_2),...,(x_n,y_n,u_n)\}$ where U is value of the linear function and x and y are the function input
+  * you can do linear regression to solve
+
+### Online learning
+* Method 2: learn on the job
+* Gradient descent using every piece of evidence
+* $E_j(s) = (\hat{U}_{\theta}(s) - u_j(s))^2 /2$
+  * Step in the gradient of this magic function with every new sample of $(input, outcome)$ weighted by the learning rate $\alpha$
+* For every parameter $\theta_i$ in $\theta$:
+  * $\theta_{i} \leftarrow \theta_{i}-\alpha \frac{\partial E_{j}(s)}{\partial \theta_{i}}$, which expands to:
+  $$
+  \theta_{i} \leftarrow \theta_{i}+\alpha\left[u_{j}(s)-\hat{U}_{\theta}(s)\right] \frac{\partial \hat{U}_{\theta}(s)}{\partial \theta_{i}}$$
+
+* e.g. given linear function $\hat{U}_{\theta}(x,y)=\theta_{0} + \theta_{1}x+\theta_{2} y$ 
+  * $\theta_{0} \leftarrow \theta_{0}+\alpha\left(u_{j}(s)-\hat{U}_{\theta}(s)\right)$
+  * $\theta_{1} \leftarrow \theta_{1}+\alpha\left(u_{j}(s)-\hat{U}_{\theta}(s)\right) x$
+  * $\theta_{2} \leftarrow \theta_{2}+\alpha\left(u_{j}(s)-\hat{U}_{\theta}(s)\right) y$
+
+<details><summary>We can extend the param formula to temporal difference learning for TD:</summary><p>
+
+  $$
+  \theta_{i} \leftarrow \theta_{i}+\alpha\left[R(s)+\gamma \hat{U}_{\theta}\left(s^{\prime}\right)-\hat{U}_{\theta}(s)\right] \frac{\partial \hat{U}_{\theta}(s)}{\partial \theta_{i}}
+  $$
+
+</p></details>
+
+<details><summary>As well as Q-learning:</summary><p>
+
+  $$
+  \theta_{i} \leftarrow \theta_{i}+\alpha\left[R(s)+\gamma \max _{a^{\prime}} \hat{Q}_{\theta}\left(s^{\prime}, a^{\prime}\right)-\hat{Q}_{\theta}(s, a)\right] \frac{\partial \hat{Q}_{\theta}(s, a)}{\partial \theta_{i}}
+  $$
+
+  These are called semi-gradient methods because target is not true value but also depends on θ.
+
+</p></details>
+
+### Sources of instability
+* Instability and divergence tend to arise when the following three elements are combined:
+  * [Function approximation](#Function-Approximation)
+  * Bootstrapping
+    * Use current estimates as targets, e.g. [TD](#temporal-difference-learning)
+    * Rather than complete returns, e.g. [MC](#monte-carlo-learning)
+  * [Off-policy training](#On-&-Off-Policy)
+    * Training on transitions other than that produced by the target policy.
+
+### Deep Q-learning
+* Online Q-learning with non-linear function approximators is unstable
+* DQN uses experience replay with fixed Q-targets:
+  * Makes input less correlated, reduce instability
+* Procedure:
+1. Take action $a_t$ using [ϵ-greedy](#epsilon-greedy)
+2. Store the observed transition $(s_t,a_t,r_{t+1},s_{t+1})$ in a round-robin buffer
+3. When there are enough transitions:
+  1. Sample random mini-batch of transitions from buffer
+  2. Set targets to $r+\gamma \max_{a'}Q(s'a',\theta^{-})$
+  3. Gradient step on mini-batch squared loss w.r.t. $\theta$
+  4. Set $\theta^{-}$ to $\theta$ every C steps
+  5. Get more transitions & repeat
+  6. Haha if you didn't get that don't worry I don't think I'd get it if I didn't use Google gdi fucking useless slides
+* [Video](https://deepmind.com/research/publications/human-level-control-through-deep-reinforcement-learning)
+
+### Policy Search
+<a name="next-state-softmax"></a>
+<a name="policy-grad-vector"></a>
+
+* Often use the Q-function parameterized by $\theta$ to represent the policy:
+  * $\pi(s)=\arg \max _{a} \hat{Q}_{\theta}(a, s)$
+* Adjust $\theta$ to improve policy
+* However, the max operator makes gradient based search difficult.
+* Thus, represent **the next state as a vector of probabilities at state s, given action a** (i.e. $\pi_{\theta}(s,a)$) using softmax: 
+  * $\pi_{\theta}(s, a)=e^{\hat{Q}_{\theta}(s, a)} / \sum_{a^{\prime}} e^{\hat{Q}_{\theta}\left(s, a^{\prime}\right)}$
+* With this vector of probabilities we want to find the max of $U(\theta)$ w.r.t $\theta$. 
+  * We can do this by differentiating $U(\theta)$ w.r.t. $\theta$, then taking a gradient ascent in that direction.
+  * This "direction" is the **policy gradient vector** represented as $\nabla_{\theta} U(\theta)$
+
+
+#### [TD(0)](#temporal-difference-learning) example where only 1 step is taken:
+  * You're at state $s_0$, $\pi_{\theta}\left(s_{0}, a\right)$ returns vector of action probabilities
+  * Recall $U(s_1)$ = reward of action x action probability
+    * $U(\theta) \equiv U(s;\theta)$
+  * Thus [policy gradient vector](#policy-grad-vector) $\nabla_{\theta} U(\theta)$ =
+  * $\nabla_{\theta} U(\theta)=\nabla_{\theta} \sum_{a} \pi_{\theta}\left(s_{0}, a\right) R(a)$ 
+    * $=\sum_{a}\left(\nabla_{\theta} \pi_{\theta}(s, a)\right) R(a)$
+    * $\begin{aligned} =\sum_{a} \pi_{\theta}\left(s_{0}, a\right) \frac{\left(\nabla_{\theta} \pi_{\theta}(s, a)\right) R(a)}{\pi_{\theta}\left(s_{\theta}, a\right)} \\ \approx \frac{1}{N} \sum_{i=1}^{N} \frac{\left(\nabla_{\theta} \pi_{\theta}\left(s_{0}, a_{i}\right)\right) R\left(a_{i}\right)}{\pi_{\theta}\left(s_{0}, a_{i}\right)} \end{aligned}$
+      * N: # of trials/episodes
+        * Approximation using samples generated from [$\pi_\theta(s_0,a)$](#next-state-softmax)
+
+#### If considering more steps, calculating the policy gradient becomes:
+  * $\nabla_{\theta} U(\theta)=\nabla_{\theta} \sum_{\tau} p_{\theta}(\tau) G(\tau)$
+    * $\tau$: Trajectory generated by policy
+    * $G(\tau)$: sum of rewards from trajectory $\tau$
+  * Using the policy gradient theorem, this can be written as:
+  * $\nabla_{\theta} U(\theta) \propto \sum_{s} p_{\pi_{\theta}}(s) \sum_{a} \nabla_{\theta} \pi_{\theta}(s, a) Q_{\pi_{\theta}}(s, a)$
+    * "$P_{\pi_\theta}(s)$ = $\lim_{t\rightarrow oo} Pr\{S_t = s | s_0,\pi\}$ is the stationary distribution of states under $\pi$" from Sutton paper
+      * In layman terms, $P_{\pi_\theta}(s)$ is probability of being in state s (at any point in time) given initial state and $\pi$
+
+<details><summary> Proof of Policy gradient theorem: </summary><p>
+
+* Computing the gradient of the value of the policy $\pi$ at state s:
+  * We can expand the equation using product rule of calculus
+  * $\begin{aligned} \nabla U_{\pi}(s) &=\nabla\left[\sum_{a} \pi(a \mid s) Q_{\pi}(s, a)\right] \\ &=\sum_{a}\left[\nabla \pi(a \mid s) Q_{\pi}(s, a)+\pi(a \mid s) \nabla Q_{\pi}(s, a)\right] \end{aligned}$
+  * $=\sum_{a}\left[\nabla \pi(a \mid s) Q_{\pi}(s, a)+\pi(a \mid s) \nabla \sum_{s^{\prime}, r} p\left(s^{\prime}, r \mid, a\right)\left(r+U_{\pi}\left(s^{\prime}\right)\right)\right]$
+  * $=\sum_{a}\left[\nabla \pi(a \mid s) Q_{\pi}(s, a)+\pi(a \mid s) \sum_{s^{\prime}} p\left(s^{\prime} \mid s, a\right) \nabla U_{\pi}\left(s^{\prime}\right)\right]$
+  * If we unroll the last term, we get this eqn:
+  * $\nabla U_{\pi}(s)=\sum_{a} \left[\nabla \pi(a \mid s) Q_{\pi}(s, a)+\pi(a \mid s) \sum_{s^{\prime}} p\left(s^{\prime} \mid s, a\right)\right.$
+    * $\left.\sum_{a^{\prime}}\left[\nabla \pi\left(a^{\prime} \mid s^{\prime}\right) Q_{\pi}\left(s^{\prime}, a^{\prime}\right)+\pi(a \mid s) \sum_{s^{\prime \prime}} p\left(s^{\prime \prime} \mid s^{\prime}, a^{\prime}\right) \nabla U_{\pi}\left(s^{\prime \prime}\right)\right]\right]$
+  * After repeated unrolling, where $P(s\rightarrow x,k,\pi)$ is the probability of transitioning from state s to state x in k steps under $\pi$, we get this general eqn:
+  * $= \sum_{x \in S} \sum_{k=0}^{\infty} P(s \rightarrow x, k, \pi) \sum_{a} \nabla \pi(a \mid x) Q_{\pi}(x, a)$
+  * Taking expectation over the initial state distribution (?) we get
+  * $\nabla_{\theta} U(\theta) \propto \sum_{s} p_{\pi_{\theta}}(s) \sum_{a} \nabla_{\theta} \pi_{\theta}(s, a) Q_{\pi_{\theta}}(s, a)$
+
+</p></details>
+
+### REINFORCE algorithm
+  * Monte Carlo approximation of the advantage function (?)
+  * Continuing on, we can approximate the policy gradient using
+  * $\begin{aligned} \nabla_{\theta} U(\theta) & \propto \sum_{s} p_{\pi_{\theta}}(s) \sum_{a} \frac{\pi_{\theta}(s, a) \nabla_{\theta} \pi_{\theta}(s, a) Q_{\pi_{\theta}}(s, a)}{\pi_{\theta}(s, a)} \\ & \approx \frac{1}{N} \sum_{i=1}^{N} \sum_{j=1}^{n_{i}} \frac{\nabla_{\theta} \pi_{\theta}\left(s_{i j}, a_{i j}\right) G_{i}\left(s_{i j}\right)}{\pi_{\theta}\left(s_{i j}, a_{i j}\right)} \end{aligned}$
+    * N: # of all possible actions, producer of i
+    * $n_i$: # of steps for the i-th trial
+    * $a_{ij}$: action executed at state $s_{ij}$ on j-th step of the i-th trial
+    * $G_i(s_{ij})$: Total reward received from the j-th step onward on the i-th trial
+    * [$\pi_\theta(s,a)$](#next-state-softmax): Next state in softmax form
+    * $\nabla_\theta \pi_\theta(s,a)$: Derivative of softmax form w.r.t. theta
+  * Thus at each step j, we can update the params $\theta$ by taking its prev value + (learning rate) x (reward at step) x (rate of change of [$\pi_\theta(s,a)$](#next-state-softmax) w.r.t. $\theta$) / ([$\pi_\theta(s,a)$](#next-state-softmax)))
+  * $\theta_{j+1}=\theta_{j}+\alpha G_{j} \frac{\nabla_{\theta} \pi_{\theta}\left(s, a_{j}\right)}{\pi_{\theta}\left(s, a_{j}\right)}$
+    * $\alpha$: learning rate
+    * $G_j$: reward at step j
+    * [Differentiating](math#differentiate-by-vector) the next state softmax vector [$\pi_\theta(s,a)$](#next-state-softmax) w.r.t. the [parameters](#vector-of-parameters) 
+  * We can use the dy/dx(ln(x)) identity to simplify it, thus obtaining the **REINFORCE algorithm**
+  * $\theta_{j+1}=\theta_{j}+\alpha G_{j} \nabla_{\theta} \ln \pi_{\theta}\left(s, a_{j}\right)$
+
+### Baseline
+* In practice we can reduce the variance using any function $B(s)$.
+* Recall that for the REINFORCE algorithm we are estimating
+$$
+\nabla_{\theta} U(\theta)=\sum_{s} p_{\pi_{\theta}}(s) \sum_{a} \nabla_{\theta} \pi_{\theta}\left(s, a_{j}\right) Q_{\pi_{\theta}}(s, a)
+$$
+- We can replace $Q_{\pi_{\theta}}(s, a)$ with $Q_{\pi_{\theta}}(s, a) - B(s)$, where $B(s)$ is any function and it stays the same. That replaceable portion is called the **Advantage function**.
+$$
+\sum_{s} p_{\pi_{\theta}}(s) \sum_{a} \nabla_{\theta} \pi_{\theta}\left(s, a_{j}\right)\left(Q_{\pi_{\theta}}(s, a)-B(s)\right)
+$$
+  - Monte Carlo estimate: when $B(s) = V_{\pi_\theta}(s)$:
+    - $A_{\pi_\theta}(s,a) = Q_{\pi_\theta}(s,a) - V_{\pi_\theta}(s)$
+- It stays the same because $\pi_{\theta}\left(s, a_{j}\right)$ sums to 1 (since it's a vector of action probabilities). Since the derivative of a constant is 0, $B(s)$ doesn't have any actual effect.
+$$
+\sum_{a} \nabla_{\theta} \pi_{\theta}\left(s, a_{j}\right) B(s)=B(s) \nabla_{\theta} \sum_{a} \pi_{\theta}\left(s, a_{j}\right)=B(s) \nabla_{\theta} 1=0
+$$
+
+### Modifying the Advantage function
+* Advantage function: $A_{\pi_\theta}(s,a) = Q_{\pi_{\theta}}(s, a) - B(s)$
+  * Monte Carlo estimate: $A_{\pi_\theta}(s,a) = Q_{\pi_\theta}(s,a) - V_{\pi_\theta}(s)$
+  * But if we think in terms of TD, we can equate $Q_{\pi_\theta}(s,a) = E[r+\gamma V_{\pi_\theta}(s')]$
+    * Thus giving us a TD(0) variant of the advantage function:
+    * $A_{\pi_\theta}(s,a) = E[r+\gamma V_{\pi_\theta}(s')] - V_{\pi_\theta}(s)$
+    * The parameter update function would then become:
+    * $\theta_{j+1}=\theta_{j}+\alpha \nabla_{\theta} \ln \pi_{\theta}\left(s_{j}, a_{j}\right)\left(r_{j}+\gamma V\left(s_{j+1}, w\right)-V\left(s_{j}, w\right)\right)$
+      * (?) I don't know how to derive this eqn lmao I only assume the advantage function or TD error is multiplicatively applied here
+    * We can extend this to n-step TD or TD($\lambda$).
+    * We can also use a value function estimator $V(s;w)$ with param $w$ to estimate the value. This would be called the actor-critic method, because:
+      * you're learning a policy (actor) managed by the $\theta$ params
+      * you're also learning a value function managed by $w$ params used only for evaluation (critic)
+
+Reference:
+https://papers.nips.cc/paper/1713-policy-gradient-methods-for-reinforcement-learning-with-function-approximation.pdf
+
+## Partially Observable MDP
+<a name="POMDP"></a>
+
+* Are you seeing a trend?
+* Function estimation: action replaced with probability vector [$\pi_\theta(s,a)$](#next-state-softmax)
+* POMDP: So you're uncertain about current state?
+  * No problem, just replace state with probability vector **belief** = $\{P_{s_0},...,P_{s_n}\}$
+    * $b(s) = P(s=s_{current})$ 
+  * **Filtering**: Tracking $b(s)$
+
+### Updating The Belief
+<a name="UTB"></a>
+
+* This is defined as $b' = Forward(b,a,e)$:
+  * b: belief, a: action, e: evidence
+  * Next belief based on evidence observed given (b,a)
+* $b^{\prime}\left(s^{\prime}\right)=C P\left(e \mid s^{\prime}\right) \sum_{s} P\left(s^{\prime} \mid s, a\right) b(s)$
+  * C: normalizing constant to make belief sum to 1
+  * $P(e|s')$: Probability of receiving evidence $e$ upon entering $s'$
+  * Given bae, $b'(s')$ = (Pr. of seeing e at s') x (Pr. of action a bringing you to s' based on your previous states' likelihood)
+* If small state space, just need to use optimal policy to map belief to action.
+
+### Reward Function of Belief
+<a name="RFB"></a>
+
+* Expected reward of a belief: sum of R(s) x every probability
+* $U(B) = \sum_s b(s) R(s)$
+* This is equivalent to a dot product of b(s) and R(s)
+* $U(B) = b(s) \cdot R(s)$
+* Extending this concept to the *utility* of a belief given a fixed *conditional plan* p from *state* s (i.e. $\alpha_p(s)$)
+  * Optimal policy: choose action offering best utility
+  * Conditional plan: Think of it as if/elifs to return an action based on belief probabilities
+  
+* Given an optimal policy, the **Value function of a belief** is the best action given said conditional plan and belief:
+* $V(b) = \max_p b \cdot \alpha_p$
+* With |A| actions and |E| observations, there are $|A|^{O(|E|)^{d-1}}$ distinct depth-d plans
+
+* However if we want to calculate the **value function of a conditional plan**:
+* $\alpha_{p}(s)=R(s)+\gamma\left(\sum_{s^{\prime}} P\left(s^{\prime} \mid s, a\right) \sum_{e} P\left(e \mid s^{\prime}\right) \alpha_{p . e}\left(s^{\prime}\right)\right)$
+* if you don't understand don't worry I don't either so I'll simplify based on other info
+* The value of action, assuming the current state is s, = (reward of the current state) + discount x (expected value of the next state)
+  * Expected value of next state has so many factors now:
+    * Probability of transitioning to that state x 
+    * Actual expected value of that state x
+    * Probability that you are actually at that state given the evidence you receive upon entering said state
+* $\alpha_{action}(s)=R(s)+\gamma\left(\sum_{s^{\prime}} P\left(s^{\prime} \mid s, a\right) \sum_{e} P\left(e \mid s^{\prime}\right) \alpha_{p . e}\left(s^{\prime}\right)\right)$
+* You basically want to choose how far you want to look ahead (your depth / # of steps) 
+* Then, calculate $\alpha_{action}(s)$ for every possible (s, action) pair, looking up to the chosen depth
+* Then, you can plot the hyperplanes (see below) s.t. given the probability of being in a state, when should I do which action s.t. I maximize my overall value
+
+### n step/depth plan
+<a name="nsp"></a>
+
+* Example: Simple boolean state world.
+  * R(0) = 0, R(1) = 1
+  * Actions: Stay Pr(0.9), Go Pr(0.9).
+  * Discount factor γ = 0.9
+  * Sensor reports correct state with prob 0.6.
+  * Agent should prefer state 1
+
+Calculating the value function vectors:
+
+**0 step/depth plan** literally don't do anything because 0 steps lmao got'em
+* $(α_{init}(0), α_{init}(1)) = (R(0), R(1)) = (0, 1)$
+
+**1 step/depth plan:**
+* Value = Current state + next state
+* $\begin{aligned} \alpha_{[\text {Stay}]}(0) &=R(0)+\gamma(0.9 R(0)+0.1 R(1))=0.1 \\ \alpha_{[\text {Stay}]}(1) &=R(1)+\gamma(0.9 R(1)+0.1 R(0))=1.9 \\ \alpha_{[\text {Go}]}(0) &=R(0)+\gamma(0.9 R(1)+0.1 R(0))=0.9 \\ \alpha_{[\text {Go}]}(1) &=R(1)+\gamma(0.9 R(0)+0.1 R(1))=1.1 \end{aligned}$
+* Using this we can plot the hyperplanes (lines for probability)
+* Then we always choose the highest line at any point (thus maximizing utility)
+![](/img/hyperpl.jpg)
+
+**n step/depth plans**
+* The more steps you look ahead, the more refined U(b) becomes
+  * U(b) is convex
+  * Some hyperplanes are dominated (i.e. never max) so can ignore them
+![](/img/hyperpl2.jpg)
+
+### POMDP Value Iteration
+<a name="POMDPVI"></a>
+
+* Just keep calculating plans, removing useless plans
+* If no change after awhile then return U
+* PSPACE-hard problem lmao
+* Variant: [SARSOP](http://bigbird.comp.nus.edu.sg/pmwiki/farm/appl/) 
+![](/img/pomdpvi.jpg)

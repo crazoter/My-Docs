@@ -8,35 +8,7 @@ Date: 2016
 
 Distilled by crazoter
 
-<details><summary>Transcripts retrieved by dumping this code snippet in the console:</summary><p>
-
-```
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-async function getTranscript() {
-  // Target more actions button via youtube info header
-  document.querySelectorAll("#info.style-scope.ytd-video-primary-info-renderer")[0].children[2].children[0].children[0].children[1].click();
-  await sleep(10);
-  // Target the transcripts button
-  document.querySelectorAll('paper-item.style-scope.ytd-menu-service-item-renderer')[1].click();
-  // Wait until transcripts loaded, then scrape
-  while (true) {
-    await sleep(1000);
-    if (document.getElementsByClassName("cue style-scope ytd-transcript-body-renderer").length <= 0)
-      continue;
-
-    j = ""; 
-    Array.from(document.getElementsByClassName("cue style-scope ytd-transcript-body-renderer")).forEach((i) => { j += i.innerText.charAt(0).toUpperCase() + i.innerText.slice(1) + " "; }); 
-    console.log(j);
-    break;
-  }
-}
-getTranscript();
-```
-
-</p></details>
+Transcripts retrieved using this [code snippet](code_snippets#Print-transcripts-to-console) in the console
 
 ## L1.1 (Intro), L1.2 (Supervised Learning) & L1.3 (Unsupervised Learning) Summary
   * New Techniques / Technologies:
