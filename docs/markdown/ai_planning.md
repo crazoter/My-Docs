@@ -456,7 +456,7 @@ See also?
 * However, the max operator makes gradient based search difficult.
 * Thus, represent **the next state as a vector of probabilities at state s, given action a** (i.e. $\pi_{\theta}(s,a)$) using softmax: 
   * $\pi_{\theta}(s, a)=e^{\hat{Q}_{\theta}(s, a)} / \sum_{a^{\prime}} e^{\hat{Q}_{\theta}\left(s, a^{\prime}\right)}$
-* With this vector of probabilities we want to find the max of $U(\theta)$ w.r.t $\theta$. 
+* With this vector of probabilities we want to maximize of $U(\theta)$ w.r.t $\theta$. 
   * We can do this by differentiating $U(\theta)$ w.r.t. $\theta$, then taking a gradient ascent in that direction.
   * This "direction" is the **policy gradient vector** represented as $\nabla_{\theta} U(\theta)$
 
@@ -636,3 +636,73 @@ Calculating the value function vectors:
 * PSPACE-hard problem lmao
 * Variant: [SARSOP](http://bigbird.comp.nus.edu.sg/pmwiki/farm/appl/) 
 ![](/img/pomdpvi.jpg)
+
+## Game Theory / Multi-agent
+
+### Single-move game
+* 2 player games chosen for simplicity
+* **Strategic / Normal form**: Payoff matrix:
+![](https://policonomics.com/wp-content/uploads/2016/02/Prisoners-dilemma-Nash-and-Pareto-equilibria.jpg)
+* 2 players have their own utility based on their actions and the action of the other player
+* **Strategy**: Policy
+  * **Pure** strat: deterministic
+  * **Mixed** strat: stochastic
+  * **Strictly dominated**: strategy s is always better than s' regardless of whatever strategies other players have 
+  * **Weakly dominated**: strategy s is sometimes better than s'
+* **Strategy Profile**: Each player assigned a policy
+  * Can be used to compute game's outcome 
+* A **solution** is a strat profile where all strats are rational (i.e. maximize their E[U])
+  * Iteratively remove dominated strategies (e.g. prisoner's dilemma, will always be better if testifying)
+  * How to evaluate a solution?
+  * out1 **Pareto optimal**: All players prefer outcome out1
+  * out1 **Pareto dominates** out2: All players prefer outcome out1
+
+### Equilibriums
+* **Dominant Strategy Equilibrium**: Each player have their dominant (best) strategy
+   **Nash Equilibrium** (local optimum): all all players can't get better outcomes from changing from their assigned strategies
+    * Test by fixing all policies except the player's policy
+    * Local optimum if a strategy involved is weakly dominated
+
+### Prisoner's dilemma example
+![](https://blog.methodsconsultants.com/posts/images/prisoners-dilemma.jpg)
+  * Rational choice for both: testify
+  * (testify, testify) Pareto dominated by (refuse, refuse)
+  * hence dilemma
+
+### Finding Pure Strategy Nash Equilibrium
+* Find optimal outcome for each action by either player
+  * max(rows) for left player, max(cols) for top player
+* If both players agree on their optimal outcomes, that is a **Pure Strategy Nash Equilibrium**
+
+### Finding Mixed Strategy Nash Equilibrium
+* Doesn't always work
+* Assign probabilities to what *the other player* would do, then calculate expected returns with unknown variable
+* Using the 2 equations, solve variable s.t. you are happy no matter what action you take (**indifferent**)
+* This is the probability this *other player* should adopt as their mixed policy
+* Repeat for the other player to get the mixture
+
+![](../../static/img/msne.jpg)
+* e.g. as player A, assume B continue with Pr. p, swerve with Pr. (1-p)
+
+### Finding 2 player 0-sum game solution
+* Sum of outcome (payoff) is 0
+* One player always positive outcome, the other player always negative outcome
+* Both players want to maximize / minimize
+* **Minimax strategy** gives a Nash Equilibrium
+  * https://staff.ul.ie/burkem/Teaching/gametheory2.pdf
+    * Page 3
+    * Player 1 assumes Player 2 knows their strategy & will minimize their profit
+    * Expected reward of Player 1:
+      * p = probability of player taking left action
+      * q = probability of player taking left action
+      * ![](../../static/img/minimax2.jpg)
+      * R1(p, q) = (p)(5q+2(1−q)) + (1-p)(3q+4(1−q))
+      * Find $\frac{\delta R_1(p,q)}{\delta q}$ i.e. rate of change of reward w.r.t. enemy policy.
+        * We want this to be 0 i.e. Player 1's strategy doesn't depend on Player 2's strategy.
+        * Differentiate eqn. and get player probabilities & expected reward
+        * If it's 0-sum, both players will reach the same probability value
+    * Partial Derivatives:
+      * $\frac{\partial f(x,y)}{\partial r}=\frac{\partial f(x,y)}{\partial x} \cdot \frac{\partial x}{\partial r}+\frac{\partial f(x,y)}{\partial y} \cdot \frac{\partial y}{\partial r}$
+
+![](../../static/img/minimax.jpg)
+* Given these expected outcomes w.r.t. p, choose p s.t. you maximize the minimum 

@@ -93,3 +93,59 @@ Trace comparison & delta debugging
 * Semantic program repair
   * Use synthesizers
   * infer conditions from test suite
+
+## Requirements
+* Don't need to model stuff that is unrelated to the system
+* Convert text into requirements and do basic checking with requirements are not inconsistent with each other
+  * Usually are rules of Precondition and Post-Condition
+    * Convert it into Live Sequence Charts
+      * Extension of UML Sequence diagram
+      1. **Message Sequence Chart** (MSC)
+        * Describes a possible sequence
+        * Arrow: Message
+        * Start and end point of arrow: event
+        * Syntax: event_1 < event_2 means event_1 happened before event_2 
+          * (this is based on their position on the sequence diagram)
+          * so long as it's below, it's after
+        * Default syntax: if arrows are in order, the next thing "may" happen
+          * To say it "must" happen (e.g. after one interaction), then wrap with a dotted dotted hexagon across the diagram between the two lines
+        * Purpose:
+          * Specifying components
+          * Interaction among components
+      2. **Message Sequence Graph**
+         * Hierarchical tree like structure
+         * Each node is a MSC
+         * Combine MSCs to model behavior or concurrent system
+           * e.g. root: send request
+           * e.g. leaves: 
+             * success: handshake
+             * failure: reject
+      3. **Live Sequence Charts** (LSC)
+         * ![](../../static/img/liveseqchart.jpg)
+         * **Existential**: no condition, it may be executed
+         * **Universal**: that thing with the funny dotted hex, that's basically the pre-condition for the chart. If it is completed, then the chart below must be executed in that order
+           * Visual representation of temporal logic
+             * AG(prechart -> AF bodychart)
+           * Precondition not guaranteed to happen
+           * Precondition is constantly monitored; can be triggered by other body charts
+           * Doesn't need to immediately follow
+           * Other messages are not constrained
+         * ![](../../static/img/liveseqchart2.jpg)
+           * in this case the messages "green" and "ok" are constrained
+           * i.e. this is valid, but if sequence "ok" "green" happens then it's invalid
+           * red can even be put in the middle and it'll be valid
+         * All messages assumed to be async
+         * You can also set and assert variables as such
+           * ![](../../static/img/liveseqchart3.jpg)
+         * **Verification**: Use the universal charts to see if they are consistent with each other
+           * See what paths will lead to violations 
+           * Pre-active: The pre-chart is entered
+           * Pre-chart violated: Exit
+           * Active: Pre-chart completed
+           * Exit: Body-chart completed
+           * Abort: Body-chart violated when pre-chart was completed
+           * These charts are rules
+           * If it cannot be completed then there is some inherent inconsistency
+  * Hot and Cold requirements:
+    * Hot: if pre-chart completed, body-chart must hold in all system executions
+    * Cold: existential chart may hold in some system execution

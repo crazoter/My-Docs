@@ -50,7 +50,7 @@ Border Gateway Protocol (BGP)
           * Nontransit AS: Provider never flows traffic through customer
             * May not even need BGP if they don't intend to help route traffic; just need to know provider's static IP
           * Selective Transit: Allows some AS to flow traffic through, others deny
-      * Peer to peer
+      * Peer to peer (P2P)
         * 2 ASes agree to transit between their customers
         * Usually don't pay each other
         * Agreement only between the 2 ASes; relationship is not transitive
@@ -65,6 +65,9 @@ Border Gateway Protocol (BGP)
           * No profit
           * Peers are competition
           * Peering requires periodic renegotiation
+      * Sibling to sibling
+        * ASs belong to same company
+        * Share everything
   * Minimize costs
   * Ensure good performance for customers
 * Tiers:
@@ -113,5 +116,78 @@ Border Gateway Protocol (BGP)
   
 </p></details>
 
+## BGP router / speaker
+* BGP is policy-based
+  * Import policy: Filter unwanted routes from neighbour
+    * Rank customer routes over peer routes
+    * manipulate attributes to influence path selection for neighbors
+  * Export policy: Filter routes you don't want to tell your neighbor
+    * Dual-homed: attached to 2 networks
+    * e.g. don't want your neighbours to know and use the route
+    * e.g. Customer-Provider relationship:
+        * Customer wouldn't want to announce route to its peers (it don't want anything routing traffic through it)
+        * Providers advertises with everyone
+    * e.g. P2P:
+      * Don't want peers to route stuff through them to another peer:
+        * AS exports only customer routes to a peer
+        * AS exports a peer's routes only to its customers
+    
+* A routing entry:
+  * Route = prefix + attr + NLRI + (Path attr)
+* What to do with all the inbound UPDATE messages?
+* Build a db: Routing Information Base (RIBs)
+    * RIBs = Adj-RIBs-In + Loc-RIB + Adj-RIBs-Out
+    * Adj-RIBs-In: incoming routing info (inbound UPDATE)
+    * Loc-RIB: selected local routes by router
+    * Adj-RIBs-Out: selected for advertisement to peers
+1. Apply **Import Policies** on Inbound UPDATE
+2. Select best route from Adj-RIBs-In and pass to Loc-RIB
+   * You can choose any policy but this is the recommended process:
+   2. Highest degree of LOCAL_PREF (or the only route to the destination), then tie break:
+      * LOCAL_PREF: 4-byte unit (default 100) for BGP to indicate route preference. *This is not forwarded.*. Larger better
+      1. Smallest \# of ASs in the AS_PATH
+      2. Lowest origin \# in ORIGIN
+      3. Most preferred MULTI_EXIT_DISC (smaller better)
+      4. Routes from eBGP are preferred over iBGP
+      5. Lower interior cost based on NEXT_HOP
+      6. COMMUNITY: for influencing neighbor's neighbors
+3. Install best route as forwarding entries in IP Forwarding Table
+4. Apply export policies to Adj-RIB-Out
+   1. Propagate Inbound UPDATE as Outbound UPDATE to other BGP routers
+
+### BGP Prefix Hijacking
+* 2 shae the same prefix
+* Blackhole: data traffic discarded
+* Spoofing: Data traffic inspected and redirected
+  * Impersonation
+
+### BGP Subprefix Hijacking
+* 12.3.158.0/24 and 12.34.0.0/16
+  * Longer prefix matching will result in all traffic routed to 12.3.158.0/24
+  * Can visualize with BGPlay
+  * Can prevent with anomaly detection
+
+### BGP in practice
+* Preference (attr)
+* Filtering (inbound/outbound filter)
+* Tagging (COMMUNITY attr)
+* Applications
+  * relations
+    * influence process
+    * control route export
+  * traffic engineering
+    * inbound
+    * outbound
+    * remote control 
+
+### Peer 2 Peer
+* Client/server = assymetric
+  * Extension: iteratively/recursively delegate other servers to do task 
+    * e.g. like DNS, a tree structure
+* Pure P2P
+  * No central entity
+  * All entities directly communicate
+  * No structure; flat architecture
+  * Unreliable; how to stay connected or lookup?
 <details><summary>Template</summary><p>
 </p></details>

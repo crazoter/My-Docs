@@ -152,8 +152,17 @@ Possible Methods:
         * N is dependent on type of transformation (See below for transform x coordinate matrix)
         * Translation: W(x;p) = $\begin{bmatrix}x+p_1 \\ y+p_2\end{bmatrix}$ = $\begin{bmatrix}1 & 0 & p_1 \\ 0 & 1 & p_2\end{bmatrix}\begin{bmatrix}x \\ y \\ 1\end{bmatrix}$ = $\begin{bmatrix}1 & 0 & p_1 \\ 0 & 1 & p_2 \\ 0 & 0 & 1\end{bmatrix}\begin{bmatrix}x \\ y \\ 1\end{bmatrix}$ 
         * Affine: W(x;p) = $\begin{bmatrix}p_1x+p_2y+p_3 \\ p_4x+p_5y+p_6\end{bmatrix}$ = $\begin{bmatrix}p_1 & p_2 & p_3 \\ p_4 & p_5 & p_6 \\ 0 & 0 & 1\end{bmatrix}\begin{bmatrix}x \\ y \\ 1\end{bmatrix}$
-      * Warped Image = $x' = W(x;p)$
-      * Intensity at coordinate x' = $I(x') = I(W(x;p))$
+      * Template Image $T(x)$, x is a pixel coordinate in frame T
+      * Input Image $I(x)$, x is a pixel coordinate in frame I
+      * Warp function W(x;p): Takes pixel x in coordinate frame of T and maps it to sub-pixel location W(x;p) in coordinate frame of I
+        * i.e. Let's say you have a coordinate x w.r.t. coordinate frame T
+        * T(x) gives you the pixel values (intensity) of its original position in the template
+        * I(x) gives you the pixel values (intensity) of some position in the image that is unrelated to its real position in the template
+        * I(W(x;p)) gives you the pixel values (intensity) of some position in the image that is most likely where:
+          * If you were to map the template onto the image, that's where it would be if the template was mapped on the image
+          * The warped coordinates is also referred to as $x' = W(x;p)$
+            * $I(x') = I(W(x;p))$
+          * https://www.ri.cmu.edu/pub_files/pub3/baker_simon_2004_1/baker_simon_2004_1.pdf
   * Then we can represent:
     * Warped Image: $I(W(x;p))$
     * Template Image: $T(x)$
@@ -165,6 +174,8 @@ Possible Methods:
 
 ### LK Alignment
 Lucss-Kanade (Additive) Alignment, which builds on the idea of local refinement; basically Optical Flow but using affine transformations instead of translation
+
+* [Paper](https://www.ri.cmu.edu/pub_files/pub3/baker_simon_2004_1/baker_simon_2004_1.pdf)
 
 <Tabs
   defaultValue="Theory"
@@ -189,10 +200,11 @@ Lucss-Kanade (Additive) Alignment, which builds on the idea of local refinement;
         * $\frac{\delta W(x;p)}{\delta p}$ = Jacobian Matrix (Matrix of Partial Derivatives)
           * [Refresher](math#differentiate-by-vector)
             * Example: Affine: W(x;p) (See main formula above)
-              * $\frac{\delta W(x;p)}{\delta p} = \begin{bmatrix}z & 0 & y & 0 & 1 & 0 \\ 0 & x & 0 & y & 0 & 1\end{bmatrix}$
+              * $\frac{\delta W(x;p)}{\delta p} = \begin{bmatrix}x & y & 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & x & y & 1\end{bmatrix}$
           * Rate of change of the warp w.r.t. each warp param
   * And then we step out and get this:
   * $\approx \min_{\Delta p}\sum_x [I(W(x;p)+\nabla I \frac{\delta W(x;p)}{\delta p}\Delta p)) - T(x)]^2$
+    * $\nabla I\equiv \frac{\delta I(W(x;p))}{\delta W(x;p)}$: Image gradient (1x2 vector); rate of change of pixel intensity at the warped coordinates w.r.t the warp
     * This is parallelizable (each coord. is independent)
   * Reshuffle to group the constants:
   * $\approx \min_{\Delta p}\sum_x [\nabla I \frac{\delta W(x;p)}{\delta p}\Delta p)) - [T(x) - I(W(x;p)]]^2$
@@ -205,7 +217,7 @@ Lucss-Kanade (Additive) Alignment, which builds on the idea of local refinement;
   * Using the simplified terms we introduced (A,x,b)
   * $\Delta p = H^{-1}\sum_x A^T b$
     * H is the Hessian Matrix (matrix of 2nd order derivative)
-      * Harris Corner 
+      * Approximated using [Gauss-Newton](https://en.wikipedia.org/wiki/Gauss%E2%80%93Newton_algorithm)
     * $H = \sum_x A^T A$
 
 
@@ -216,10 +228,10 @@ Lucss-Kanade (Additive) Alignment, which builds on the idea of local refinement;
 |-|-|
 |Warp Image|$I(W(x;p))$|
 |Compute Error Image (b)|$T(x) - I(W(x;p))$|
-|Compute Gradient|$\nabla I(W(x;p)) \equiv \nabla I(x')$|
+|Compute Gradient|$\nabla I(W(x;p)) \equiv \nabla I(x')$ (diff in intensity)|
 |Evaluate Jacobian|$\frac{\delta (W(x;p))}{\delta p}$|
 |Get vector "A"|$\nabla I \frac{\delta W(x;p)}{\delta p}$|
-|Compute Hessian|$H = \sum_x A^T A$|
+|Approximate Hessian|$H = \sum_x A^T A$, x: pixel coord|
 |Compute $\Delta p$|$\Delta p = H^{-1}\sum_x A^T b$|
 |Update params p|$p \rightarrow p + \Delta p$|
 
@@ -334,3 +346,94 @@ This is the same as the Lucas-Kanade optical flow.
 * Robustness
   * \# of times failed (lost target) and had to reset to resume
   * Average over multiple times on a sequence
+
+## Deep learning in Computer Vision
+
+### Data Driven Image Classification
+* All the info is in the data
+  * All questions have already been answered many times, in many ways
+  * The real intelligence is contained in the data
+  * Maybe we don't really need strong computer vision systems, why not we have a lot of data and just brute-force high level reasoning?
+    * The unreasonable effectiveness of data (Alon Halevy et al) for NLB
+  * Collect a *huge* dataset of images with associated info
+    * Input image + dataset
+      * Info from most similar images would map to input image
+      * ImageNet
+  * Usage of Narrow AI
+    * AI targetted at specific tasks
+* Deep learning = big data + known algorithms + computing power (GPU)
+
+### Basic structure of a neural network
+* Original design of the perceptron
+
+![](/img/perceptron.jpg)
+
+* Each input is multiplied by a weight & summed together
+* The perception is the:
+  * Sum (& weights)
+    * \# of Edges
+      * Each layer is fully connected to each other (except for the last layer), so edges between each layer is layer1_size x layer2_size
+  * Activation function (& bias)
+    * \# of Perceptrons
+* This sum is shifted by a bias
+  
+![](/img/nnsimple.jpg)
+
+* Idea 1: pass each pixel of the image as an input
+  * Crazy, too many weights
+* Idea 2: Take the idea that pixels closer to each other are more correlated to each other
+* Thus, pass the pixels in terms of their local neighborhood
+* Multiple neural networks, each dealing with their local neighborhood
+* But hold up a minute
+* Stationarity: Statistics are similar at different locations
+  * e.g. for Harris Corners, the definition of what a corner didn't change by its location
+* Idea 3: Use the same neural network for each local neighborhood
+  * This is exactly like the convolution operation (except the bias)
+
+![](/img/cnn.jpg)
+
+* Basically you're doing convolution but this time with dynamically learnt weights of the kernels / filters s.t. they are effective for the task
+* We can even take multiple NNs, each to learn 1 kernel / filter.
+* Since it samples by neighborhood, the input and output remain as 2D (rather than reshaped to 1D vector)
+  * Output is called *feature map*
+  * If there are multiple filters, we get multiple feature maps;
+    * Each map is thus a *channel* of the output
+
+### Pooling
+* Pooling: CNNs also aggregate response of a neighborhood (e.g. 2x2 patches)
+  * Kind of like "downsampling"
+  * But instead we do like **max pooling**
+  * i.e. take a maximum within a neighborhood 
+
+### Rectified Linear Unit
+* In CNN the activation function, **ReLU** for short, is as follows:
+  * f(x) = max(0, x)
+  * this is a non-linear function
+  * Thus it's called "**non-linearity**"
+
+### Convolutional Neural Network 
+
+* Each system:
+Input -> Convolution -> ReLU -> max pooling -> output
+* Can be a bit flexible e.g. conv -> relu -> conv
+  * You see some visualization on [CS 231n](http://cs231n.stanford.edu/)
+  * LeNet
+
+* These systems are "Stacked" so the input goes through system after system
+* Neural network is really just putting these things in a cascade
+* Interleaving convolutions and pooling cause later convolutions to capture a larger fraction of the resultant image with the same kernel size
+* Set of image pixels that an intermediate output pixel depends on = **receptive field**
+* Local interactions - receptive fields
+  * Assume that in an image, we care about "local neighborhoods" only for a particular neural network layer
+  * Composition of layers will expand local to global
+* Param sharing (which is already being done)
+  * Since same weights applied to each neighborhood; equivariant representation regardless of location
+
+### Applications
+* Image Classification
+* Object Detection 
+  * Classifying objects and localizing them with a bounding box
+* Semantic Segmentation 
+  * Associating each pixel in the image with a class label
+* Instance segmentation
+  * Associating each pixel in the image with the object to which it belongs

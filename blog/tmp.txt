@@ -1,0 +1,196 @@
+// Part 1
+
+/* Problem description
+s string
+map m
+
+replace "<...>" in s with corresponding value in m
+*/
+// lazy method 
+s = "Hello my name is <firstname> <lastname> child of <father>"
+m = {
+  firstname: "Luke",
+  lastname: "Skywalker",
+  father: "Anakin"
+}
+
+// Precondition: Assume "<" and ">" are unique values s.t. <> always come together
+// Postcondition: all replaced by m
+function fillTemplate1(s,m) {
+	// loop until non-existent
+	// O(n) calls to indexOf, which in itself worst case potentially O(n)
+    
+    // Remove call of indexOf: .: start from 0 to end, store in arr locations of '<' and '>'
+    // from there, you can also iteratively obtain keywords from start to end during this iteration
+    // and also during this iteration you can obtain the words that u don't have to replace
+
+	while (s.indexOf('<') >= 0) {
+		start = s.indexOf('<');
+		end = s.indexOf('>');
+
+		str = s.substring(start + 1, end);
+		
+        text_before = s.substring(0, start);
+		text_after = s.substr(end + 1);
+		
+        // Warning: the map should not contain any '<' or '>'
+		s = text_before + m[str] + text_after;
+	}
+	return s;
+}
+
+// O(n)
+// todo refactor params
+s = "Hello my name is <firstname> <lastname> child of <father>"
+m = {
+  firstname: "Luke",
+  lastname: "Skywalker",
+  father: "Anakin"
+}
+
+function fillTemplate2(s, m) {
+    var state = 0; //0: ! reading keyword, 1: reading keyword, to put into enum
+    var result_str = "";
+    var keyword = ""
+
+    for (var i = 0; i < s.length; i++) {
+        // Begin reading keyword
+        if (s[i] == '<') {
+            state = 1;
+            keyword = "";
+        } else if (s[i] == '>') {
+            // keyword ended, should have it in keyword var
+            state = 0;
+            result_str += m[keyword];
+        } else { // Not a special character
+            // If it's not rding keyword
+            if (state == 0) {
+                // Todo: copy by batch would be more performant, but in terms of O complexity should be the same
+                result_str += s[i];
+            } else {
+                keyword += s[i];
+            }
+        }
+    }
+    return result_str;
+}
+
+fillTemplate2(s,m);
+
+// Part 2
+// If not found then don't replace at all, including the < and >
+
+// O(n)
+// todo refactor params
+
+function fillTemplatePart2(s, m) {
+    var state = 0; //0: ! reading keyword, 1: reading keyword, to put into enum
+    var result_str = "";
+    var keyword = ""
+    
+    for (var i = 0; i < s.length; i++) {
+        // Begin reading keyword
+        if (s[i] == '<') {
+            state = 1;
+            keyword = "";
+            console.log("s", state, "R", result_str, "k", keyword);
+        } else if (s[i] == '>') {
+            // keyword ended, should have it in keyword var
+            state = 0;
+            // If it is undefined, leave it as it is
+            console.log("s", state, "r", result_str, "k", keyword, "m", m[keyword]);
+            if (m[keyword] == undefined) {
+                result_str += "<" + keyword + ">";
+            } else { // perform replace
+                result_str += m[keyword];
+            }
+        } else { // Not a special character
+            // If it's not rding keyword
+            if (state == 0) {
+                // Todo: copy by batch would be more performant, but in terms of O complexity should be the same
+                result_str += s[i];
+            } else {
+                keyword += s[i];
+            }
+        }
+    }
+    return result_str;
+}
+
+// Tests
+s1 = "Hello my name is <firstname> <lastname> child of <father>"
+m1 = {
+  firstname: "Luke",
+  lastname: "Skywalker",
+  father: "Anakin"
+}
+fillTemplatePart2(s1,m1) == "Hello my name is Luke Skywalker child of Anakin";
+
+// s2 = "Hello my name is <firstname> <lastname> child of <father>"
+s2 = "Hello my name is < alibama <firstname> idk> Skywalker child of Anakin";
+m2 = {
+    lastname: "Skywalker",
+    father: "Anakin"
+}
+fillTemplatePart2(s2,m2) // "Hello my name is < alibama <firstname> idk> Skywalker child of Anakin";
+
+// Want users to be able to ignore brackets if they are escaped
+s3 = "Hello my name is <firstname> <lastname> child of ;<father;>"
+m3 = {
+  firstname: "Luke",
+  lastname: "Skywalker",
+  father: "Anakin",
+}
+
+// Part 3 :)
+// If not found then don't replace at all, including the < and >
+
+// O(n)
+// todo refactor params
+
+// Assumption: ; is a special keyword; so this is removed 
+function fillTemplatePart3(s, m) {
+    var state = 0; //0: ! reading keyword, 1: reading keyword, to put into enum // todo boolean
+    var escaped = false;
+    var result_str = "";
+    var keyword = ""
+    
+    for (var i = 0; i < s.length; i++) {
+        // Begin reading keyword
+        if (s[i] == ';') {
+            escaped = true;
+            // Because continued here, so it won't be printed. Warning: if ; is not always special key, problematic.
+            continue; // bad practice lol
+        } 
+
+        if (!escaped && s[i] == '<') {
+            state = 1;
+            keyword = "";
+            console.log("s", state, "R", result_str, "k", keyword);
+        } else if (!escaped && s[i] == '>') {
+            // keyword ended, should have it in keyword var
+            state = 0;
+            // If it is undefined, leave it as it is
+            console.log("s", state, "r", result_str, "k", keyword, "m", m[keyword]);
+            if (m[keyword] == undefined) {
+                result_str += "<" + keyword + ">";
+            } else { // perform replace
+                result_str += m[keyword];
+            }
+        } else { // Not a special character, or escaped
+            // If it's not rding keyword
+            if (state == 0) {
+                // Todo: copy by batch would be more performant, but in terms of O complexity should be the same
+                result_str += s[i];
+            } else {
+                keyword += s[i];
+            }
+        }
+        
+        // Reset escaped state
+        escaped = false;
+    }
+    return result_str;
+}
+
+fillTemplatePart3(s3,m3) // "Hello my name is Luke Skywalker child of <father>"

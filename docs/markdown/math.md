@@ -108,5 +108,11 @@ title: Math
   * $\frac{\delta W(x;p)}{\delta p} = \begin{bmatrix}\frac{\delta W_x}{\delta p_1} & \frac{\delta W_x}{\delta p_2} & ... & \frac{\delta W_x}{\delta p_N} \\ \frac{\delta W_y}{\delta p_1} & \frac{\delta W_y}{\delta p_2} & ... & \frac{\delta W_y}{\delta p_N}\end{bmatrix}$
     * Derivative of this transformation w.r.t. p is equivalent to obtaining a vector of the equations differentiated by each parameter $p_i$
 
+### Hessian Matrix
+* See [video](https://www.khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/quadratic-approximations/v/the-hessian-matrix)
+  * Descript 0:37
+  * Full example 4:02
+  * N dimensional 4:30
+
 <details><summary>Template</summary><p>
 </p></details>
