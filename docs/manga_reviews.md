@@ -1,13 +1,6 @@
 ---
-slug: interesting-stuff
-title: Manga Reviews 2020
-author: Matthew Lee
-author_title: Closet Otaku
-author_url: https://github.com/crazoter
-author_image_url: https://avatars1.githubusercontent.com/u/9276766?s=460&u=a827522208afc597e6510afe592ec2674ac11dad&v=4
-tags: [mnga]
+title: Manga Reviews
 ---
-
 Started a page on manga so I can keep track of what I read. Note that this list only contains manga I've read *after* 2020 Oct
 
 ## Manga personal preferences
@@ -135,6 +128,18 @@ Below is the list of manga that are still ongoing.
 * Should you read it: If you like stories that give you diabetes and you enjoy reading about otakus hanging out
 * **Tidbit**: Flat-chested Narumi
 
+### The Undefeatable Swordsman (Quality Score: 9/10, (+?))
+* Synopsis: MC is very badass
+* Genre: manhwa, shounen
+* Setting: Feudal times, Korea, martial arts, Taoism 
+* Release rate: Irregular
+* Read until: Ch38
+* points:
+  * The story still feels kinda young, it's only completed like maybe 1-2 story arcs
+  * SPOILER-ISH: MC becomes pretty damn OP pretty quick, like maybe even abit too quick tbh
+    * SPOILER-ISH: I'm honestly expecting the MC to fall to the dark side somewhere down the road because of how fast he is going
+* Should you read it: It's still too early to draw conclusions on the quality of this manhwa. So far, so good.
+
 ### Oresama Teacher (Quality Score: 10/10 (+2*))
 * Synopsis: Delinquent girl turns a new leaf (?) when she changes school 
 * Genre: shojo, romcom (focus on comedy)
@@ -220,3 +225,9 @@ Below is the list of manga that are still ongoing.
 * Read until: 200+. Re-reading process suspended.
 * Should you read it: This is a masterclass in romcoms. Each character, even the side-characters, are involved in the story, common romcom tropes are toyed with and there is consistent plot progression. 10/10, 5/5.
 * **Tidbit**: o kawaii koto~
+
+## Read but didn't like
+
+### Tonari No Kaibutsu-Kun
+* Read until: 1st 2 chapters
+* Relationship felt a little toxic
