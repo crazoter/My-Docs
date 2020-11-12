@@ -107,14 +107,19 @@ Trace comparison & delta debugging
         * Syntax: event_1 < event_2 means event_1 happened before event_2 
           * (this is based on their position on the sequence diagram)
           * so long as it's below, it's after
+          * That said, receive_event_1 and send_event_2: diagram doesn't say which one comes first
+          * each muessage must be received if it is sent
         * Default syntax: if arrows are in order, the next thing "may" happen
           * To say it "must" happen (e.g. after one interaction), then wrap with a dotted dotted hexagon across the diagram between the two lines
         * Purpose:
           * Specifying components
           * Interaction among components
       2. **Message Sequence Graph**
-         * Hierarchical tree like structure
+         * Hierarchical tree like structure; HMSC
          * Each node is a MSC
+         * Synchronous Concatenation: All messages in one node must be completed before it can transit to the next node
+         * Async concatenation: So long as M2 has been started, M3 can begin (only requirement is M2 will end before M3 ends)
+         * If 1 node can go to multiple other nodes, then all processes (actors in the MSC) can agree to transit to a chosen node (sync/async). However, this decision has to be consistent (the name of the next nodoe can be specified in the MSC itself). Syntax: (Node1 o (Node2 + Node3)) means Node1 can then transit to either Node2 or Node3.
          * Combine MSCs to model behavior or concurrent system
            * e.g. root: send request
            * e.g. leaves: 
@@ -149,3 +154,35 @@ Trace comparison & delta debugging
   * Hot and Cold requirements:
     * Hot: if pre-chart completed, body-chart must hold in all system executions
     * Cold: existential chart may hold in some system execution
+
+### Overview
+
+![](../../static/img/formalmodel.jpg)
+
+
+## Notes for term paper
+* Paper A: Bug Assist / Cause Clue Clauses / MAX-SAT
+  * Use MAX-SAT to find largest set of instructions that will satisfy the failing test cases
+* Paper B: Error Invariants
+  * Goal: 
+      * Automate fault localization
+      * Automatic generation of concise error explanations
+  * Input: 
+    * Error trace of the program (from failing testcases / counterexamples from static analysis tools): 
+        * Sequence of program statements whose execution produced an error
+        * Formulas describing initial states of trace 
+        * Expected output states (i.e., the violated assertion)
+        * 
+  * An error invariant for a position in an error trace is a formula over program variables that over-approximates the reachable states at the given position while only capturing states that will still produce the error, if execution of the trace is continued from that position.
+      * Hence, an error invariant provides an explanation for the failure of the trace at the given position.
+      * Inductive error invariant: "That is, if an error invariant holds for an interval of consecutive positions, no relevant changes have occurred to error relevant variables in that interval"
+      * we build on the idea of extended trace formulas [14] to obtain an unsatisfiable formula from an error trace.
+  * Error invariants can be used for slicing error traces and for obtaining concise error explanations. 
+  * Limitations:
+      *  A common limitation of our approach and Bug-Assist is that control-relevant variables might not be considered relevant. This, however, depends on the way error traces are encoded as formulas.
+      *  Dependent on high quality error traces
+
+      * Diff from DARWIN:
+        * "The major difference of these approaches to ours is that they require passing executions that are similar to the failing execution as an additional input. Hence, these approaches are limited to cases where it is possible to find adequate passing runs that cover large portions of the original error trace."
+* Paper C: Angelic Debugging
+* Paper D: DARWIN

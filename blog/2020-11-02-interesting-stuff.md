@@ -18,6 +18,16 @@ tags: [machine-learning]
   * https://discord.com/channels/765294874832273419/765294874832273422/768102671881863178
   * TSFRC
 
+## Big Data
+* https://www.quora.com/How-do-you-learn-big-data
+
+## NN
+* https://towardsdatascience.com/the-mostly-complete-chart-of-neural-networks-explained-3fb6f2367464
+* https://towardsdatascience.com/a-beginners-guide-to-convolutional-neural-networks-cnns-14649dbddce8
+* https://machinelearningmastery.com/how-to-configure-the-number-of-layers-and-nodes-in-a-neural-network/
+* https://arxiv.org/pdf/1904.07633.pdf
+* http://marekromanowicz.com/files/master_thesis.pdf
+
 ### Fascinating stuff
 * [Meta-RL](https://lilianweng.github.io/lil-log/2019/06/23/meta-reinforcement-learning.html)
   * MAML? RL^2? PEARL?
@@ -37,3 +47,5 @@ Glossary
 * FLOPS
   * Floating point operations per second
 
+## Cute graphs
+* https://timqian.com/chart.xkcd/#introduction

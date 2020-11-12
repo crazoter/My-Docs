@@ -4,9 +4,12 @@ title: Manga Reviews
 Started a page on manga so I can keep track of what I read. Note that this list only contains manga I've read *after* 2020 Oct
 
 ## Manga personal preferences
+* I read manga during my free time to relax, so that kinda affects my manga choices
 * I like reading comedy 
 * I have a tendency to read romcoms
-* I prefer some realism
+* I like believable stories.
+  * I prefer stories that [evoke secondary belief](https://dianetibert.com/2019/10/25/j-r-r-tolkien-evoking-secondary-belief); that is, given the story's fictional (or non-fictional) setting, the story and characters' actions should be reasonably believable
+  * I'm not really a fan of plot armor or improbably idealistic outcomes; If a tragedy is more likely to happen in a story, I'd rather it happened as opposed to a sudden plot twist that made things all good again (although most stories tend to twist it to the latter). That said, I don't mind the happy endings... just make it more believable
 
 ## Quality Scoring System
 
@@ -19,7 +22,7 @@ Manga on this page are scored by a base score plus a bonus score. As such, the t
     * -1 - Umm... The kind of manga where I'm kind of on the fence, which means you can do without reading it
     * 0 - Worth reading, but kind of forgettable... 
     * 1 - Highly worth reading, but some parts are kind of unsatisfactory, or I just don't feel attached to it for some unexplained reason
-    * 2 - Definitely worth reading, I really liked it. Manga with +2 onwards are manga that I believe are worth recommending to others (if they don't mind the negative points brought up)
+    * 2 - Definitely worth reading, I really liked it. Manga with +2 onwards are manga that I believe can be safely recommended to others who like the genre (if they don't mind the negative points brought up)
     * 3 - Read it!!! The kind where you think back about when you read it and it still warms your heart / makes you want to re-read 
     * 4 - Must read, the kind where you draw inspiration from the manga or are reminded of the manga in your life every now and then
     * 5 - Must read, if you're prepared to become addicted to it. The kind where you're so attached to the characters you start producing/consuming fanfic/art/doujinshi, or just are crazy over the manga in general
@@ -34,7 +37,7 @@ Some manga are kinda unforgettable, and then some have this recurring joke or ou
 
 ## Unreviewed Series
 
-Believe is the list of manga that I have finished prior to creating this list, and contain series which I think are worth watching / reading. Additional notes may be attached.
+Below is the list of manga that I have finished prior to creating this list, and contain series which I think are worth watching / reading. Additional notes may be attached.
 
 To be filled when I'm free
 
@@ -42,7 +45,19 @@ To be filled when I'm free
 
 Below is the list of manga that have finished.
 
-### Jitsu Wa Watashi Wa (Quality Score: 9/10 (+1))
+### Tomo-chan wa Onnanoko (Quality Score: 10/10 (+0))
+* Synopsis: A love story between a tomboy and a guy who are both ridiculously athletic
+* Genre: romcom
+* Chapters: 956, but most of them are just 1 page. Effectively ~60-65 chapters
+* +ve points:
+    * There's a lot more "show but don't tell" moments than other manga, partially because of it's structure
+    * There are some really (rare) funny parts 471 472 505 793 801 832 868
+* -ve points:
+    * Clicking through the pages can be a pain
+* Should you read it: Hm. Thinking back to this manga now I don't really have any outstanding memories of it. Don't get me wrong, it's got sweet and funny moments and it was kinda refreshing to read with its 1 page structure, but it's not terribly memorable. 
+* Tidbit: This manga doesn't have a tidbit because I honestly don't remember any outstanding moments (aside from the confessions and the part where someone got angry)
+  
+### Jitsu Wa Watashi Wa (Quality Score: 9/10 (+2))
 * Synopsis: A high-school love story between a human and a vampire; expect lots of other weird entities too.
 * Genre: romcom (funny & touching, focus on friendships, love, discrimination and long-term perserverance)
 * Setting: high school
@@ -62,26 +77,14 @@ Below is the list of manga that have finished.
     * May have to trudge through the first few chapters
     * Some parts can be a bit too idealistic
     * There's quite a lot of filler
-    * [SPOILER] MC gets a harem forced on him (arbitrary reasons as to why so many like him)
+    * [SPOILER] MC gets a harem forced on him (arbitrary reasons as to why so many like him... seriously, *why*?)
     * The way tension is defused in the manga can get abit repetitive over time
     * Some side characters don't really get fleshed out, can feel a little shallow at times
-    * [SPOILER] Shirou literally gets zero character development
+    * [SPOILER] Shirou literally gets zero character development which is honestly such a waste of potential
     * Has a tendency to flesh out a character in 1 arc, then just toss them aside for the rest of the story
-* Should you read it: Some parts feel a little draggy, but in general very worth reading; truly a rollercoaster of emotions.
+* Should you read it: Some parts feel a little draggy, but in general worth reading; truly a rollercoaster of emotions.
 * Will I re-read it: Probably not, there's too many fillers, but some parts are legit hilarous
 * **Tidbit**: ( ⚆ _ ⚆ ) ( ⚆ _ ⚆ ) when they find out what sucking blood really means to vampires
-
-### Tomo-chan wa Onnanoko (Quality Score: 10/10 (+0))
-* Synopsis: A love story between a tomboy and a guy who are both ridiculously athletic
-* Genre: romcom
-* Chapters: 956, but most of them are just 1 page. Effectively ~60-65 chapters
-* +ve points:
-    * There's a lot more "show but don't tell" moments than other manga, partially because of it's structure
-    * There are some really (rare) funny parts 471 472 505 793 801 832 868
-* -ve points:
-    * Clicking through the pages can be a pain
-* Should you read it: Hm. Thinking back to this manga now I don't really have any outstanding memories of it. Don't get me wrong, it's got sweet and funny moments and it was kinda refreshing to read with its 1 page structure, but it's not terribly memorable. 
-* Tidbit: This manga doesn't have a tidbit because I honestly don't remember any outstanding moments (aside from the confessions and the part where someone got angry)
 
 ### Kishuku Gakkou no Juliet (Quality Score: 10/10 (+4))
 * Synopsis: A love story between two people from opposing countries in the same school.
@@ -115,7 +118,7 @@ Below is the list of manga that are still ongoing.
 * Release rate: Monthly
 * Read until: Ch 63
 * Points: 
-    * Plot is just all about the 6 main characters
+    * Plot is all about the 6 main characters
     * Mostly on sweet / romance moments rather than "HAHAHA" funny (although there are some funny moments)
     * Some chapters (esp. the earlier ones) make a lot of references to popular otaku culture
       * These are usually explained in TL notes
@@ -128,7 +131,7 @@ Below is the list of manga that are still ongoing.
 * Should you read it: If you like stories that give you diabetes and you enjoy reading about otakus hanging out
 * **Tidbit**: Flat-chested Narumi
 
-### The Undefeatable Swordsman (Quality Score: 9/10, (+?))
+### The Undefeatable Swordsman (Quality Score: 9/10, (+2?))
 * Synopsis: MC is very badass
 * Genre: manhwa, shounen
 * Setting: Feudal times, Korea, martial arts, Taoism 
@@ -138,9 +141,9 @@ Below is the list of manga that are still ongoing.
   * The story still feels kinda young, it's only completed like maybe 1-2 story arcs
   * SPOILER-ISH: MC becomes pretty damn OP pretty quick, like maybe even abit too quick tbh
     * SPOILER-ISH: I'm honestly expecting the MC to fall to the dark side somewhere down the road because of how fast he is going
-* Should you read it: It's still too early to draw conclusions on the quality of this manhwa. So far, so good.
+* Should you read it: It's still too early to draw conclusions on the quality of this manhwa as it's only at around 38 chapters. So far, so good.
 
-### Oresama Teacher (Quality Score: 10/10 (+2*))
+### Oresama Teacher (Quality Score: 10/10 (+3))
 * Synopsis: Delinquent girl turns a new leaf (?) when she changes school 
 * Genre: shojo, romcom (focus on comedy)
 * Release rate: Irregular
@@ -149,10 +152,10 @@ Below is the list of manga that are still ongoing.
 * +ve points:
     * the facial expressions are on point and the humor is quite good
 * points:
-    * [SPOILER] I didn't expect her to slowly form a reverse harem lol.. Then again, this is a shojo
+    * [SPOILER-ISH] I didn't expect her to slowly form a reverse harem lol.. Then again, this is a shojo
     * Don't expect in-depth romance. Any romance is usually touch & go, unrequited or just really close friendships kinda thing.
 * Should you read it: I'd recommend it. It consistently delivers on the humor. The plot sometimes feels kinda shallow (e.g. everyone turns out to be a good guy in the end kinda vibes), and sometimes it's not too hard to guess the plot, but honestly it's pretty good.
-* Other notes: I give this a +2 even though I'm not in the discord server (this manga is simply not popular enough to have an active server)
+* Other notes: I give this a +2 even though I'm not in a discord server dedicated to this manga (this manga is simply not popular enough to have an active server)
 * **Tidbit**: Usa-chan Man!
 
 ### Hori-san to Miyamura-kun (Horimiya) (Quality Score: 10/10 (+3))
@@ -163,20 +166,18 @@ Below is the list of manga that are still ongoing.
 * Read until:
 * Special Note: I come back to this manga every few years to catch up
 * +ve points:
-    * although it's called horimiya, everyone is involved in the slice-of-life manga (although they get the spotlight)
+    * although it's called horimiya, everyone is involved in the slice-of-life manga (although main couple gets the spotlight)
 * points:
-    * I call this slice-of-life because there are a lot of filler chapters, limited plot progression (yes you literally wait years for the plot to progress), but the characters and relationships can get pretty deep.
+    * I call this slice-of-life because there are a lot of filler chapters, limited plot progression (yes you *literally* wait irl years for the plot (if there is any) to progress), but the characters and relationships are fleshed out.
     * Horimiya actually involves their relationship with their family (in particular the Hori family) which can be kinda refreshing for a romcom
 * -ve points:
     * some of the characters look too similar at the start so it's easy to mix up iura-kun
 * Should you read it: Hmmm. I'd say yes if you want a manga to read and kinda just chill. It's got that calming / soothing vibe to it since a lot of the scenes are at the Hori household. I don't recommend getting too attached because of how slow it is.
 * Disclaimer: That said, the story progresses very slowly (if ever) after ~ chapter 37 or so, hence I call it slice-of-life because you've probably retired by the time they graduate
-* **Tidbit**: See spoiler below
-
->! Hori likes being submissive uh...
+* **Tidbit**: [SPOILER] Hori likes being submissive uh...
 
 ### Grand Blue (Quality Score: 10/10 (+4))
-* Synopsis: A manga that about diving but is hardly about diving (and then jokes about that fact)
+* Synopsis: A manga that is about diving but there is hardly any diving (and then proceeds to joke about that fact)
 * Genre: comedy (funny, focus on friendships, there's some romance but it's not the focus imo)
 * Release rate: Monthly (somewhat inconsistent)
 * Read until: Ch 63
@@ -192,8 +193,24 @@ Below is the list of manga that are still ongoing.
 * Should you read it: Must read!
 * **Tidbit**: Oolong cha
 
-
 ## Reviews of Ongoing Weeklies Series
+
+### The Stereotypical Life of a Reincarnated Lady (Quality Score: 7/10, (-1))
+* Synopsis: Woman reincarnates as noble lady
+* Genre: romcom, manhwa
+* Release rate: Weekly
+* Read until: Ch 36
+* Should you read it: I wouldn't really recommend it. So why is this manhwa on this list? I don't know. I just couldn't stop reading it to the end. It's not a *terrible* manhwa per se, but if you were to ask me what I liked about it, I wouldn't be able to give you an answer.
+
+### Bakarina (Quality Score: 8/10, (+1))
+* Synopsis: "My Next Life as a Villainess: All Routes Lead to Doom!" That's right, the name of the manga is the synopsis
+* Genre: comedy, harem
+* Release rate: Weekly
+* Read until: In progress
+* points:
+    * Very dense MC
+    * Everyone noteworthy will fall in love with the MC. This could get dry real quick
+* Should you read it: It's a nice manga and the anime was quite well-done. The harem thing gets stale quite easily though.
 
 ### That Girl is not just cute (Quality Score: 9/10, (+0))
 * Synopsis: A love story between a really unlucky boy and a strong girl who protects him. Falling in love portion glossed over.
@@ -205,18 +222,44 @@ Below is the list of manga that are still ongoing.
 * Should you read it: I would recommend it to people who like sweet manga and that slice-of-life BGR.
 * **Tidbit**: Hachimatsu (  ´‿`)
 
+### The Pharmarcy Where the Wolf Howls (Quality Score: 9/10, (+0?))
+* Synopsis: Pharmacist meets shunned celebrity from her childhood
+* Genre: romcom, josei, manhwa
+* Release rate: Weekly
+* Read until: 35
+* Should you read it: There's quite a lot of drama in this manhwa (although it's not between the main ship), so if you're not into that sort of thing I wouldn't recommend this. There are some funny parts, but unfortunately I don't find it very memorable (largely because the manhwa is still in its early stages).
+
+### We May Be An Inexperienced Couple But... (Quality Score: 9/10, (+2))
+* Warning: M18+ content
+* Synopsis: Married life with a lot of emphasis on doing the putting it in and taking it out at the start
+* Genre: romcom, seinen, slice-of-life
+* Release rate: Weekly
+* Read until: 59
+* Should you read it: Some parts are borderline hentai (even when censored), so if you're not into that sort of thing I don't recommend this at all. If you're okay with that sort of thing, it's a pretty sweet romance manga with decent story progression and sometimes talks about adult life stuff (that isn't necessarily M18). Not a lot of drama.
+
 ### Kitsune Spirit (Quality Score: 10/10, (+3))
 * Synopsis: A married couple in a world with supernatural creatures
 * Genre: romcom (equal parts sweet and funny), shounen (yes, shounen. You'll see why. This can get dark real quick)
 * Release rate: Weekly
-* Read until: 100
+* Read until: 101
 * Points:
   * Some lewd moments
   * Like I said this can get dark quick
   * The chapters are a little short for a weekly
-  * Starts off as romcom and then becomes shounen lmao
+  * Starts off as romcom and then becomes shounen before going back to being a romcom again
 * Should you read it: Not gonna lie, the characters, setting and story is kinda refreshing.
-* **Tidbit**: No citeable tidbit... but this pair is so cute~~~! Ch 99
+* **Tidbit**: No citeable tidbit... but this pair is so cute~~~! e.g. Ch 99
+
+### Mission: Yozakura Family (Quality Score: 10/10, (+3))
+* Synopsis: You'll know after reading the first chapter haha (yes, it's a bit spoilerish to explain this)
+* Genre: romance, shounen
+* Release rate: Weekly
+* Read until: 58
+* Points:
+  * It follows your usual shounen manga storyline: MC meets new big bad, powers up, meets another new big bad and gets stronger etc. It's not boring, but just expect that sort of story.
+  * The story's a little too skewed towards the success of the protagonists.
+  * Gives me Hero Academia and a little bit of Demon Slayer vibes
+* Should you read it: Yes. It's quite well-written. I like how the story progresses. Sure, sometimes when you read a chapter you get the "Oh, this chapter is going to be about elaborating about this guy's personality" and such but I think overall it's well put together.
 
 ### Kaguya-sama: Love is War (Quality Score: 10/10 (+5))
 * Synopsis: high school life where two try to make the other confess
