@@ -2,7 +2,111 @@
 title: CS4246 Cheatsheet
 ---
 
-### Bellman Eqn
+### Problem Specification
+* Initial State
+* Possible Actions  Action(s)
+* Transition Model  Result(s,a)
+* Goal Test
+* Path Cost         c(s,a,s')
+
+**Admissible Heuristic**: Never overestimate cost to goal
+**Consistent / Monotonic**: Straight path (to goal) always shorter than a curved path. $h(n) \leq c(n,a,n')+h(n')$
+**Factored Representation**: State representeed as SAT
+* **Fluents**: state variables in said representation
+
+### **STRIPS**
+  * Problem spec: Initial State, Actions, Result, Goal
+    * Action: Action(params), 
+      * Precond: Descript
+      * Effect: Descript
+        * Negation (Delete list), otherwise Add List
+    * Goal: Partial state, must be fulfilled
+  * State: +ve literals ANDed together with no unknown variables or functions.
+    * Negation not allowed (use literals that are negative)
+    * If literal not specified in state, it is false (database semantics)
+* Search:
+  * Forward: wk 1 39/65
+  * Backward: wk 1 40/65 
+    * Relevant-state search: 
+      * Action must not negate an element of current goal
+      * Action must unify an element of the current goal
+      * Add preconditions to action to current goal descript
+  * Heuristics:
+    * Ignore preconditions
+    * Ignore delete lists
+    * Assume subgoal independence, decompose problem
+* Turning into SAT problem
+  * Complete the initial state by adding negations to omitted ground literals
+  * Complete the goal by taking every possible grounded combination of the goal and ORing them together.
+    * e.g. $(On(A,A)^T) \vee (On(A,B)^T) \vee$ ...
+* Axioms
+  * successor-state: $F^{t+1} <=> ActionCausesF^t \vee (F^t \wedge \neg ActionCausesNotF^t)$
+    * Solves Frame problem (most actions don't change fluents) 60/65
+  * Pre-condition: Action taken at time => Precondition was true
+  * Action Exclusion: both actions cannot be taken at same time step.
+    * Not (Action1 at t) v Not (Action2 at v)
+
+### Utility Theory
+* Axiomatic approach, assume agent has consistent preferences for outcomes (GT >, LT <, EQ ~). Represented as U(Outcome).
+  * Utility can be preserved with monotonically increasing transformation.
+* Axioms
+  * **Orderability / Completeness**: For any 2 outcomes, only 1 preference (agent prefers one, or both equal)
+  * **Transitivity**: (A > B) /\ (B > C) => (A > C). Otherwise irrational
+  * **Continuity**: If 3 outcomes: A > B > C where B is sandwiched. Then there must be a p where agent always get B, then A with probability p or C with probability (1 - p).
+* **Lotteries**: [p1, O1; p2, O2...] Probability p1 for outcome O1 etc 
+  * **Susbstitutability**: If A ~ B, then they can be swapped within a lottery
+  * **Monotonicity**: If A > B, then agent must prefer A. 
+  * **Decomposibility**: 16/52 Chained lotteries can be reduced to simpler ones
+* Expectations:
+  * Expected U(outcome): All probabilities x outcomes
+  * Principle of Maximum Expected Utility (MEU)
+    * Rational agents must maximize expected utility
+  * **Expected Monetary Value** (EMV): wk1, 28/52
+    * Risk-neutral: montonically increasing, line up
+    * Risk-averse: Log of money amount.
+    * Risk-seeking: U(L) is more than the straight line later on
+    * **Certainty Equivalent**: Value agent will accept in lieu of a lottery
+    * **Risk Premium**: EMV - certainty equiv
+  * **Normative** theory: how agents should act
+  * **Descriptive** theory: how they actually act
+    * Irrationalities: Ambiguity aversion, framing effect, anchoring effect (35/52)
+  * **Optimizer**'s curse: 36/52
+  * **Bayesian and Decision networks** 40/52
+    * Given observed outcomes, calculate probability of affected outcomes
+    * [Chain rule](https://en.wikipedia.org/wiki/Chain_rule_(probability))
+    * calculate expected outcome value based on these probabilities
+  * **Value of Perfect Information VPI**
+    * Given this new information, calculate new expected outcome
+      * Split into cases (See 47/52)
+        * Pr(info success) x Pr(success)
+        * Pr(info fail) x Pr(fail)
+      * VPI = new outcome - old outcome
+    * Non-negative expected value 
+    * Not additive with other VPIs
+
+### MDP
+**Principle of Optimality**: A value of a state is its reward + best future rewards from state. 20/54
+
+### Online Search 39/54
+* Handling curse of dimensionality with MDPs
+  * Imagine it as a tree
+  * Nodes: values , Edges: transitions
+    * Tree size: $|Actions|^D |States|^D$
+* **Sparse Sampling**: Don't check future for some states
+* **Rollout**: Simulate many trajectories from a state to estimate action with best returns
+* **Monte Carlo Tree Search**: 43/54
+  * **Selection**: Dig down the tree until depth reached or node not simulated yet
+    * GLIE. Explore first, then become more greedy (Decrease epsilon as time goes on).
+  * **Expansion**: If state not terminal, Create child nodes from this state.
+  * **Simulation**: Choose one of the child nodes,C, and do random rollout.
+  * **Backpropagation**: Propagate the reesult of the rollout to update node values from C to root.
+* **Upper Confidence Tree (UCT)** 48/54
+  * A strategy for selecting a node for MCTS
+  * $\pi_{U C T}(n)=\arg \max _{a}\left(\hat{Q}(n, a)+c \sqrt{\frac{\ln (N(n))}{N(n, a)}}\right)$
+    * Choose action that optimizes (current estimate + exploration * sqrt(ln(times node visited) / ln(times node visited and took action a))
+    * Balance expected value and exploration
+
+### Bellman Eqn 21/54
 * Evaluate policy using *dynamic programming*
 * **Value Evaluation**: Init V = 0
 * $R(s)$: $V(s) = R(s) + γ\ \max (E[V(s')])$

@@ -186,3 +186,9 @@ Trace comparison & delta debugging
         * "The major difference of these approaches to ours is that they require passing executions that are similar to the failing execution as an additional input. Hence, these approaches are limited to cases where it is possible to find adequate passing runs that cover large portions of the original error trace."
 * Paper C: Angelic Debugging
 * Paper D: DARWIN
+
+Simple 1 step Strategy
+estimate expected speed of next lane
+speed <= 1.5: 	favour going fast
+else: 		favour going slow and wait for cars to pass
+
