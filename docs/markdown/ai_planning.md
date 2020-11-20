@@ -650,12 +650,14 @@ Calculating the value function vectors:
 * **Strategy Profile**: Each player assigned a policy
   * Can be used to compute game's outcome 
 * A **solution** is a strat profile where all strats are rational (i.e. maximize their E[U])
+  * **Rational strategy**: maximize expected utility (regardless of other agents' possible actions)
   * Iteratively remove dominated strategies (e.g. prisoner's dilemma, will always be better if testifying)
   * How to evaluate a solution?
-  * out1 **Pareto optimal**: All players prefer outcome out1
+  * out1 **Pareto optimal**: All players prefer outcome out1 (the best value regardless of actions)
   * out1 **Pareto dominates** out2: All players prefer outcome out1
 
 ### Equilibriums
+* **Testing for Equilibrium**: Fix all except 1 strategy, see if changing the agent's strategy can improve his value
 * **Dominant Strategy Equilibrium**: Each player have their dominant (best) strategy
    **Nash Equilibrium** (local optimum): all all players can't get better outcomes from changing from their assigned strategies
     * Test by fixing all policies except the player's policy
@@ -668,39 +670,90 @@ Calculating the value function vectors:
   * hence dilemma
 
 ### Finding Pure Strategy Nash Equilibrium
-* Find optimal outcome for each action by either player
-  * max(rows) for left player, max(cols) for top player
+* Go through every column and mark cell (for tht column) which has maximum payoff for row player
+  * Basically the same as testing for equilibrium; fix strategy and find best
+* Go through every row and mark cell (for tht row) which was maximum payoff
 * If both players agree on their optimal outcomes, that is a **Pure Strategy Nash Equilibrium**
 
 ### Finding Mixed Strategy Nash Equilibrium
-* Doesn't always work
-* Assign probabilities to what *the other player* would do, then calculate expected returns with unknown variable
-* Using the 2 equations, solve variable s.t. you are happy no matter what action you take (**indifferent**)
-* This is the probability this *other player* should adopt as their mixed policy
+* This particular strategy doesn't always work
+* Do the same as findiing pure strategy: fix the other agents' strategy, then choose your best strategy
+  * Optimal for row player: Assign fixed probabilities to the actions of row player, then calculate the expected payoff for each action of the column player
+  * Choose probabilities such that it doesn't matter what the column player does.
+  ![](../../static/img/mixednash.jpg)
 * Repeat for the other player to get the mixture
+* Mixed solutions will always have at least 1 nash equilibrium
 
-![](../../static/img/msne.jpg)
-* e.g. as player A, assume B continue with Pr. p, swerve with Pr. (1-p)
 
 ### Finding 2 player 0-sum game solution
 * Sum of outcome (payoff) is 0
+* Follow the same concept as above; fix probabilities for one, then choose a strategy where the opponent's choice doesn't matter
+![](  ![](../../static/img/fk.jpg)
+
 * One player always positive outcome, the other player always negative outcome
 * Both players want to maximize / minimize
 * **Minimax strategy** gives a Nash Equilibrium
   * https://staff.ul.ie/burkem/Teaching/gametheory2.pdf
     * Page 3
-    * Player 1 assumes Player 2 knows their strategy & will minimize their profit
-    * Expected reward of Player 1:
-      * p = probability of player taking left action
-      * q = probability of player taking left action
+    * The first player assumes the 2nd player knows their strategy & will minimize their profit
+    * Assume the first player is the row player. Expected reward of row player:
+      * p = probability of row player taking left action
+      * q = probability of col player taking left action
       * ![](../../static/img/minimax2.jpg)
-      * R1(p, q) = (p)(5q+2(1−q)) + (1-p)(3q+4(1−q))
+      * $R1(p, q) = (p)(5q+2(1-q)) + (1-p)(3q+4(1-q))$
       * Find $\frac{\delta R_1(p,q)}{\delta q}$ i.e. rate of change of reward w.r.t. enemy policy.
-        * We want this to be 0 i.e. Player 1's strategy doesn't depend on Player 2's strategy.
-        * Differentiate eqn. and get player probabilities & expected reward
+        * We want this to be 0 i.e. row player strategy doesn't depend on col player's strategy.
+        * Differentiate eqn w.r.t. the enemy's probability q and get optimal row player probability.
+        * To calculate the expected value (iee. $R1(p,q)$), repeat the same procedure for the enemy; Differentiate eqn w.r.t p.
         * If it's 0-sum, both players will reach the same probability value
     * Partial Derivatives:
       * $\frac{\partial f(x,y)}{\partial r}=\frac{\partial f(x,y)}{\partial x} \cdot \frac{\partial x}{\partial r}+\frac{\partial f(x,y)}{\partial y} \cdot \frac{\partial y}{\partial r}$
 
 ![](../../static/img/minimax.jpg)
 * Given these expected outcomes w.r.t. p, choose p s.t. you maximize the minimum 
+
+minimax:
+* $\max _{x} \min _{y} x^{T} A y=\min _{y} \max _{x} x^{T} A y=v$
+  * x: probability vector representing strategy of row player
+  * y: probability vector representing strategy of col player (which is just [0,1], [1,0] since it's a pure strat)
+  * (row player uses strategy represented by probability vector x) + best by col player = v (value)
+  * A: payoff matrix for the row player	
+  * Linear programming solution: $\max _{x} \min _{j} \sum_{i=1}^{m} a_{i j} x_{i}$
+    * j: index of the column
+    * aij: cell of the payoff matrix A
+
+![](../../static/img/minimax_xtay.jpg)
+
+* this is a nash eqiuilibrium
+* pure strategy can be used (pure strat because the choices are discretizable even though the outcomes are based on opponent's probabilities
+
+![](../../static/img/pure_strat.jpg)
+
+PPAD-complete: computationally hard even for 2 player games
+
+Extensive form: game tree
+See 33:40 w12
+* Modelling uncertainty: players have a chance to take random actions (and these edges have probabilities associated with them)
+* Handling partial observability: define information sets
+	* **information set** = possible_current_nodes(previously_observed_actions)
+![](../../static/img/infoset.jpg)
+    * Imagine the game as a complete tree, where edge is an action and node is a state
+  	* information set is all the nodes you can possibly be at, given your observations of your initial state and what actions you observed happened
+  	* https://en.wikipedia.org/wiki/Information_set_(game_theory)
+
+
+sequential version / extensive form: look ahead and see best equilibrium based on 1st player subgame see 38:00
+* every subgame must also be perfect equilibrium
+
+repeated game: 
+* face same choices but with history of all player's choices
+* backward induction: 
+	* identify optimal solution for last solution
+	* identify previous solution that optimizes current solution and itself
+		* if reward indifferent to time, then it doesn't matter
+
+* cooperative equilibrium: 
+	* equilibrium: once enter don't want to switch
+	* e.g. prisoner's game
+		* perpetual punishment: start with cooperate, then never cooperate if other betrays
+		* tit-for-tat: start with cooperate, then copy other player's previous move

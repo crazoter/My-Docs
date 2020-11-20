@@ -27,10 +27,11 @@ title: CS4246 Cheatsheet
 * Search:
   * Forward: wk 1 39/65
   * Backward: wk 1 40/65 
-    * Relevant-state search: 
-      * Action must not negate an element of current goal
-      * Action must unify an element of the current goal
-      * Add preconditions to action to current goal descript
+    * **Relevant-state search:**
+      * Actions are relevant when:
+        * Action doesn't negate a predicate in the current goal
+        * Action unifies a predicate in the current goal
+      * Add the preconditions of the action to current goal descript
   * Heuristics:
     * Ignore preconditions
     * Ignore delete lists
