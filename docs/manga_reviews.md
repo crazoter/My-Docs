@@ -290,9 +290,14 @@ Below is the list of manga that are still ongoing, but only updated monthly / ir
 ### Cultivation Chat Group (Xianxia Comedy) (Score: 10/10 (+5))
 * Synopsis: Cultivation and martial arts in a modern world
 * Genre: Xianxia, shonen, comedy
-* Release rate: Weekly
-* Read until: Ch 263
-* Why you should read it: It is very funny and it brings a smile to my face when I think about all the silly things that happens in this series. The beginning's a little slow (the intro is effectively 10 chapters of reading text messages) and the MC is just stupidly lucky (or unlucky?) but it's really good.
+* Release rate: Weekly? (or maybe even every 3 days???)
+* Read until: Ch 1426 (webnovel)
+* Points:
+  * Definitely a very entertaining read and the story is kinda well-thought out, even though MC will often pull out heaven-defying plot devices and get heaven-defying benefits because of his insanely powerful connections.
+  * One of the interest aspects of this series is to bring a refreshing twist to xianxia by injecting modern elements into it. So you have these amazing battles with qi, blades and magical treasures, but these cultivators also use technology like handphones and such (hence the name). That being said, the use of handguns and rifles (in the conventional sense) is rather limited.
+  * Being a Chinese story, there are some very Chinese concepts (e.g. the concept of "face") and a couple of terms directly translated from Chinese e.g. (seek death / 找死)
+  * MC has plot armor / plot everything (to the point where it almost becomes a joke) and he is stupidly lucky/unlucky. Sure, he goes through many life and death tribulations, but in this story, there are many occasions where MC suddenly has a plot device to rescue him from complete death; it's not a story that's meant to be taken too seriously.
+* Why you should read it: It is very funny and it brings a smile to my face when I think about all the silly things that happens in this series. The beginning's a little slow (yes, you spend the first 10 manga chapters reading text messages in the chat group) and the MC is just stupidly lucky (or unlucky?) but it's really good, addictive even.
 * **Tidbit**: There's way too many things that make this memorable.
 
 ## Read but didn't like

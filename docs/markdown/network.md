@@ -3,53 +3,54 @@ title: Network
 ---
 
 
-<details><summary>Inter-domain Routing</summary><p>
-* Wk9-05-BGP
+## Inter-domain Routing
 * 2 types of routing algos
-
+  
 Comparison | Link State algo | Distance Vector algo
 -|-|-
-Router knowledge | All know full network topology & link cost info | Only know connected neighbors & link costs
-Algo type | Global / Centralized e.g. Djikstra | Decentralized, iteratively by exchanging info with neighbours
-Algo impl | Open Shortest Path First (OSPF) | Routing Info Prtcl (RIP)
+**Router knowledge** | All know full network topology & link cost info | Only know connected neighbors & link costs (to all nodes)
+**Algo type** | Global / Centralized e.g. Djikstra | Decentralized, iteratively by exchanging info with neighbours. Only determines next hop
+**Algo impl** | Open Shortest Path First (OSPF) | Routing Info Prtcl (RIP)
 
-Limitations : Link State Routing
+**Link State Routing Limitations**
 * High bandwidth: 
   * Topology info is flooded (to other routers)
 * Sensitive info released by nodes
 * High processing overhead: Everything computed locally by node
 * Unit representing distance is not the same for all nodes
 
-Distance Vector:
+**Distance Vector**
 * Send distance metric per destination 
-* Adv
+* **Adv**
   * Hide details of topology
   * Only next hop determined per node
-* Disadv
+* **Disadv**
   * Inconsistent units representing distance
   * Slow convergence due to counting-to-infinity
     *  Counting to infinity: (14:00) A - B - C, if link BC is cut, B will still think A can reach C and increment path cost, A will still think B can reach and increment path cost etc
 
-Path Vector
-* Extension of distance vector
+**Path Vector** = Extension of distance vector
   * Send entire path for each destination d 
-  * Adv:
+  * **Adv**:
     * Avoid count-to-infinity problem
-    * Avoid loops
-  * In terms of ASes, only 3 hops needed (flattening of the internet as they seek to shorten the path for customers)
+    * Detect and Avoid loops
+  * In terms of ASes, average of only 3 hops needed (flattening of the internet as they seek to shorten the path for customers)
 
-Border Gateway Protocol (BGP)
+## Border Gateway Protocol (BGP)
+* Inter-domain routing protocol (Slide 13)
+  * Allows subnet to advertise to rest of Internet
+  * Allows ASes to determine “good” routes to other networks
 * Main goals:
   * Fulfil agreements with other ISPs
     * Define who provide transit for what (based on relationship)
-      * Customer-provider
-        * Customer pays provider for internet routing
-          * multi-homing: if multiple providers to same customer
-        * Provider provides transit service to customer
-        * Customers:
-          * Nontransit AS: Provider never flows traffic through customer
-            * May not even need BGP if they don't intend to help route traffic; just need to know provider's static IP
-          * Selective Transit: Allows some AS to flow traffic through, others deny
+      * **Customer-Provider**
+        * **Providers**: Provide transit service to customer
+        * **Customers**: Pay provider for internet routing
+          * Types:
+            * "**multi-homing**" if customers has multiple providers
+            * **Nontransit AS**: Provider never flows traffic through customer
+              * **May not need BGP**: If no need to route traffic, can just use provider's static IP, no need IDR (Slide 36)
+            * **Selective Transit**: Allows some AS to flow traffic through, others deny
       * Peer to peer (P2P)
         * 2 ASes agree to transit between their customers
         * Usually don't pay each other
@@ -113,8 +114,6 @@ Border Gateway Protocol (BGP)
       * Do not pass on prefixes learnt from other iBGP speakers
         * Info not repeated, reduce overhead, scalable
   * Interior Gateway Protocol (IGP): The normal network routing
-  
-</p></details>
 
 ## BGP router / speaker
 * BGP is policy-based
@@ -189,5 +188,144 @@ Border Gateway Protocol (BGP)
   * All entities directly communicate
   * No structure; flat architecture
   * Unreliable; how to stay connected or lookup?
+* Napster
+  * Central index server
+    * People register with this server
+    * Central server knows all peers and files in network
+    * Search peers by keyword
+      * Delegation; delegate downloading to P2P
+    * Pros:
+      * Single server: consistent view of network
+      * Fast and efficient searching
+      * Guarantee correct search results
+    * Cons
+      * Single point of failure
+      * Large computation to handle queires
+      * Downloading from a single peer only
+      * Unreliable content
+      * Vulnerable to attacks
+      * Copyright issues
+* Gnutella
+  * Only peers
+    * People register by connecting to another active peer
+      * Switch topology
+        * Queries are flooded in the network
+        * Once joined, they learn about others and learn topology
+      * Download directly from peer
+    * Pros
+      * Fully distributed
+      * Open protocol
+      * Robust against node failures
+      * Robust to DOS
+    * Cons
+      * Inefficient queries flooding
+      * Poor network management: Nodes need to keep probing 
+* KaZaA
+  * 2 types of nodes
+    * Ordinary Node (ON): peer
+    * Supernode (SN): peer with more resources & responsibilities
+      * Promoted from ON if it has enough resources (bandwidth & uptime)
+      * Promotion is consensual with user
+      * Avg lifetime of 2.5 hours
+      * Don't cache info from disconnected ON
+  * SN - ON : One - Many relationship
+    * ON only connected to one SN (and nothing else) which acts as their gateway
+  * SN acts as local sever for all connected ON
+  * SN do not form a complete mesh
+* Skype
+  * Similar infrastructure to KaZaA
+  * P2P with proprietary application-layer encryption
+  * ON and SN infrastrcuture; distributed SNs help map usernames to IP addresses
+  * Problem of NAT
+    * NAT prevents peers outside of network to directly connect
+    * SNs are used to keep track of relay nodes
+    * Relay nodes used to handle NATs
+* BitTorrent
+  * A network (swarm) to distribute a file
+    * 1 main sever (seed) has the original copy broken into 256KB chunks
+    * Seed starts tracker server
+      * tracker keeps track of seeds and peers in the network (swarm)
+    * Seed creates torrent-file (metadata on chunks) and hosts it somewhere
+      * checksums
+    * Client obtains torrent-file
+    * Client contacts tracker and connects to peers
+    * Client downloads/exchange data with peers
+      * Downloading chunks from neighbors: rarest chunk first
+      * Uploading chunks to neighbors: 
+        * Send to top 4 neighbors that sends her chunks at the highest rate every 10s
+        * Send to random peer every 30s
+  * Pro
+    * Can send ".torrent" link which always refer to same file
+  * Con
+    * Hard to identify and find particular files
+* P2P lookup services
+  * **Searching VS Addressing**
+  * How network is constructed
+    * **Unstructured**: cannot use addressing
+      * But peers can join anyone and objects can be stored anywhere
+    * **Structured**
+      * Structured to define object locations
+      * Allow deterministic routing & addressing
+      * e.g. Key-value pairs, hashtables
+      * Massive index: Create a **distributed hash table**
+        * Every node handles multiple buckets (change as nodes join and leave)
+        * Nodes communicate with each other to maintain table
+  * How objectives are placed
+  * How efficient objects can be found
+  * **Addressing**
+    * Uniquely ID objects and maintain indexing structure
+  * Searching
+    * Need to make objects searchable
+* Distributed Hashtable
+  * Many solutions
+    * Differences below: How they design the address space and routing strategy
+  * Chord
+    * You have nodes and you have objects
+      * SHA-1 Hash both of them
+        * Node ID: Hash Node's IP addr
+        * Obj ID:  Hash Object's name
+    * Store Node IDs in circular linked list
+      * Each node in array keeps track of predecessor and successor in circular array (clockwise)
+      * **To store an object**: Hash the object to get its object ID, then step clock-wise from ID until you find a node (i.e. **immediate successor**). That node stores the object
+      * Circular linked list: O(n) time to for a node to access an object in another node
+        * **Finger table**: every node has shortcut links to non-neighbor nodes
+          * At most m shortcuts
+          * **Interval**: ith finger at least $2^{i-1}$ apart 
+            * 1st:1, 2nd:2, 3rd:4, 4th:8...
+            * Defined as [start, end)
+            * Exponential until it loops back O(log(n))
+          * **Start**: starting node of the interval (assuming all node IDs are occupied)
+          * **Node**: The actual node used. If there is no node with that node ID, finger points to its immediate successor; however, the interval definition is not affected; this variable tracks that
+            * i.e. if [4,6) but shifted to 5, it's still defined as [4,6) and next interval is still 4 spaces
+          * **When a node leaves**: 
+            * All nodes periodically ping successors
+            * The predecessor will detect it and change its immediate sucessor
+          * **Efficiency**
+            * Search: O(log(n))
+            * Responsibility N nodes and K objects: O(K/N) objects per node
+            * Node joining / leaving: O(logN x logN) messages to:
+              * re-establish routing and finger tables
+              * initialize finger tables for new node
+            * 
+  * CAN
+    * Think of Chord as a 1 dimensional donut (torus)
+      * 1 dimensional donut: predecessor and successor
+    * CAN: d-dimensional donut (torus)
+    * Doesn't use finger tables, can just use neighbors (since it's d-dimensional)
+      * the stuff in the slides is 2D; neighbors can go up down left right.
+        * When a new node joins:
+          * Cut area of responsibility by cutting vertically before cutting horizontally
+        * Object IDs are coordinates
+      * Slide 64: state refers to information maintained per node
+      * Avg path length: since we know predecessor and successor, we can cut the circular path in half and take the shorter path
+
+## CDN
+* Traffic has to go through internet (middle-mile) which can be congested
+  * Distance between user and server negatively affects latency, throughput
+  * Solutions: connect to a machine closer to client
+    * Big data center CDNs
+    * Highly distributed CDNs
+    * P2P
+
 <details><summary>Template</summary><p>
 </p></details>
