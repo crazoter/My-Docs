@@ -40,131 +40,135 @@ Comparison | Link State algo | Distance Vector algo
 * Inter-domain routing protocol (Slide 13)
   * Allows subnet to advertise to rest of Internet
   * Allows ASes to determine “good” routes to other networks
-* Main goals:
-  * Fulfil agreements with other ISPs
-    * Define who provide transit for what (based on relationship)
-      * **Customer-Provider**
-        * **Providers**: Provide transit service to customer
-        * **Customers**: Pay provider for internet routing
+* **Main goals:**
+  * 1) Fulfil agreements with other ISPs
+    * Define who provide transit for what (based on **relationship**)
+      * **Customer-Provider Relationship**
+        * AS defined as **Provider**: Provide transit service to customer
+        * AS defined as **Customer**: Pay provider for internet routing
           * Types:
-            * "**multi-homing**" if customers has multiple providers
-            * **Nontransit AS**: Provider never flows traffic through customer
+            * "**multi-homing**" if customers has multiple providers. **dual-homed** if has 2.
+            * **Nontransit AS**: Provider never flows traffic through customer.
               * **May not need BGP**: If no need to route traffic, can just use provider's static IP, no need IDR (Slide 36)
-            * **Selective Transit**: Allows some AS to flow traffic through, others deny
-      * Peer to peer (P2P)
-        * 2 ASes agree to transit between their customers
+            * **Selective Transit**: Allows some AS to flow traffic through, others deny. 
+              * Unless defined, customers never route traffic through themselves
+      * **AS Peer to peer Relationship**
+        * AS defined as **Peering**
+        * 2 (big) ASes agree to transit between their customers
+          * Only between the 2 ASes; relationship is not transitive
         * Usually don't pay each other
-        * Agreement only between the 2 ASes; relationship is not transitive
         * Usually confidential
-        * Usually between 2 big ASes
-        * Traffic Exchange Ratio should be roughly balanced
-        * Pros:
+        * **Traffic Exchange Ratio** should be roughly balanced
+        * **Pros**:
           * Reduce costs
           * Improve end-to-end performance
           * May be the only way
-        * Cons:
+        * **Cons**:
           * No profit
           * Peers are competition
           * Peering requires periodic renegotiation
-      * Sibling to sibling
-        * ASs belong to same company
+      * **Sibling to Sibling Relationship**
+        * AS-AS belong to same company
         * Share everything
-  * Minimize costs
-  * Ensure good performance for customers
-* Tiers:
-  * Tier 1 AS / ISP
-    * Top of the customer-provider hierarchy, only have peers (no upstream)
-      * Don't have to pay anyone
-    * P2P with each other to form a full-mesh
+  * 2) Minimize costs
+  * 3) Ensure good performance for customers
+* **Tiers**:
+  * **Tier 1 AS / ISP**: Top of the customer-provider hierarchy
+    * only have peers (no upstream)
+    * Don't have to pay anyone
+    * P2P with other T1s to form a full-mesh
       * Around 10-12 ASes (AT&T etc)
-    * Lower layer
-      * National / regional scope
-    * Stub ASes
-      * usually customers
+    * Lower layer: **National / regional scope**
+    * Stub ASes: **Customers**
     * List at CAIDA AS RANK
-* 2 BGP routers (between ASes) exchange messages
-  * advertise paths to different destination network prefixes
-* Application layer, TCP port 179
-  * exchange all active routes in their routing tables
-  * exchange incremental updates
-* BGP/IGP model used by ISPs (S15)
-  * eBGP: Between ASes: exchange reachability info
-    * Border routers are directly connected by TCP (no IGP)
+* **BGP Implementation**: 2 BGP routers (between ASes) exchange messages
+  * Depends on policy of AS (Slide 57)
+    * **Import policy**: Don't record prefixes that you don't want your AS to help route
+      * Rank customer routes over peer routes
+    * **Export policy**: Don't advert routes you don't want neighbour ASes to use
+      * Providers advertises with everyone it services
+      * e.g. if AS is Customer in Customer-Provider relationship:
+        * Customer don't want route traffic through itself
+          * Won't announce route to its peers
+      * e.g. P2P:
+        * Don't want peers to route stuff through them to another peer:
+          * AS exports only customer routes to a peer
+          * AS exports a peer's routes only to its customers
+    * **Manipulate route preferences**: Artificially make routes look longer / shorter to make external ASes prefer certain routes
+      
+  * Application layer, TCP port 179
+  * Advertise paths to different destination network prefixes
+  * **Procedure**: Slide 14
+  * 1) BGP routers (2 AS, 1 in each AS) start session on TCP port 179, by sending **OPEN** BGP msgs and ACK by **KEEPALIVE**.
+    * 1.1) BGP Router also learns of prefix-port mappings from BGP route adverts from iBGPs
+  * 2) Exchange all active routes in their routing tables by sending **UPDATE** BGP msgs
+  * 3) Exchange incremental updates using **UPDATE**, and correct errors using **NOTIFICATION**.
+    * **UPDATE message format**: Slide 19
+      * Marker (16b), Length (2b), Type (1b), Withdrawn Routes Length (2b), Withdrawn Routes  (variable), Path Attribute Length (2b), **Path Attributes**  (variable), **Network Layer Reachability Information (NLRI)**  (variable)
+      * Can withdraw many routes in 1 message
+      * **NLRI**: Reachable IP prefixes (IP subnet mask) using route defined by **Path Attribute**
+        * e.g. Prefix: 138.16.64/22
+      * **A route consists of NLRI (prefixes) + path (defined by path attr)**
+      * Thus, can only advertise 1 route per message
+      * Defining Path Attributes: Slide 21
+        * **well-known mandatory**: must be included if defining new route, and must be forwarded (S23)
+          * **ORIGIN**: Origin of prefix
+          * **AS-PATH**: Sequence of ASes in route (e.g. AS 79, AS 11)
+          * **NEXT-HOP**: IP Addr of BGP router in next-hop AS
+        * **well-known discretionary**
+        * **optional transitive**
+        * **optional non-transitive**: only to adjacent AS
+    * **No timeout on routes**: Invalid routes are removed with **UPDATE** message
+  * 3.1) **If multiple routes to same prefix**: Tie-break BGP routes by:
+    * 1) Shortest AS-PATH
+    * 2) **Hot Potato Routing**: Get it out of AS ASAP (S30)
+      * Use OSPF to choose closest NEXT-HOP AS router
+  * 3.2) Update RIB (Slide 56) and forwarding table (Slide 31) using inbound UPDATEs
+    * Build a database: Routing Information Base (RIBs)
+      * Adj-RIBs-In: unprocessed inbound UPDATEs
+        * Between Adj-RIB-In and Loc-RIB: Route selection. Tie break by (Slide 65):
+          * 1) Largest LOCAL_PREF: 4-byte unit (default 100) for BGP to indicate route preference. *This is not forwarded.*
+          * 2) Smallest AS_PATH
+          * 3) Smallest ORIGIN number
+          * 4) Smallest MULTI_EXIT_DISC (optional non-transitive). In use if peer AS has many BGP entry-points.
+          * 5) Routes from eBGP are preferred over iBGP
+          * 6) Smallest interior cost based on NEXT_HOP
+          * 7) COMMUNITY: for influencing neighbor's neighbors, used to group destinations
+      * Loc-RIB: selected best routes.
+      * Adj-RIBs-Out: selected routes for advertisement to peers 
+        * propagate inbound UPDATE as outbound UPDATE to peers
+    * Maintain forwarding table of prefix-port entries (e.g. 138.16.64/22, port 4)
+  * 4) Repeat 3 forever. Close connection with **NOTIFICATION** BGP msg.
+    * **Connection down:** Invalidate all routes through disconnected peer
+* **BGP/IGP model used by ISPs** (Slide 15)
+* **Types of BGP: eBGP and iBGP**
+  * **exterior BGP peering (eBGP): Between ASes** Slide 16 
+    * exchange reachability info between ASes
+    * Directly connected
     * ASes advertise their network prefix
     * No expiration timer for routes
     * All routes through peer become invalid if it goes down
-    * Message Info:
-      * Types: OPEN (TCP to peer), UPDATE (advertise/withdraw new/old paths), KEEPALIVE (Keep TCP open), NOTIFICATION (correct errors or FIN) (S18-19)
-      * Attributes
-        * Well-Known mandatory:
-          * AS-PATH: All ASes in the path (e.g. AS1 AS24)
-          * NEXT-HOP: IP addr of the first router in the next very next AS "next-hop-AS"
-      * Prefix (IP prefix (network mask e.g. 138.16.64/22) of the AS)
-      * Route: Contains Prefix + attribute
-    * BGP Routing & Updating the routing table (hot potato routing)
-      1. Init: Router learns of prefix from BGP route adverts from iBGPs
-      2. eBGP level: Use shortest AS-PATH
-      3. iBGP level: Find shortest path using OSPF to NEXT-HOP based on chosen AS-PATH
-      4. Updating the forwarding table: Identify port along OSPF shortest path, Add prefix-port entry to forwarding table (e.g. 138.16.64/22, port 4)
-  * iBGP: BGP inside the AS: 
-    * propagrate reachability info so that other border routers will know (and can exchange)
-    * Don't have to be directly connected (can use IGP)
-    * But they must be (logically) fully meshed
-      * Each pass on prefixes they learn from outside AS
-      * Do not pass on prefixes learnt from other iBGP speakers
+  * **interior BGP peering (iBGP): Within AS**: Slide 17
+    * Propagate reachability info to other border routers within AS
+    * Don't have to be directly connected
+    * MUST be (logically) fully meshed
+      * Each iBGP router pass on prefixes they learn from the other AS
+      * Does not pass on prefixes learnt from other iBGP speakers
         * Info not repeated, reduce overhead, scalable
-  * Interior Gateway Protocol (IGP): The normal network routing
+  * **Interior Gateway Protocol (IGP)**: The normal network routing
+### BGP Prefix Hijacking (S69)
+* 2 ASes share the same prefix
+* Some traffic lost to fake prefix holder:
+  * **Blackhole**: data traffic discarded
+  * **Spoofing / Impersonation**: Data traffic inspected and redirected
 
-## BGP router / speaker
-* BGP is policy-based
-  * Import policy: Filter unwanted routes from neighbour
-    * Rank customer routes over peer routes
-    * manipulate attributes to influence path selection for neighbors
-  * Export policy: Filter routes you don't want to tell your neighbor
-    * Dual-homed: attached to 2 networks
-    * e.g. don't want your neighbours to know and use the route
-    * e.g. Customer-Provider relationship:
-        * Customer wouldn't want to announce route to its peers (it don't want anything routing traffic through it)
-        * Providers advertises with everyone
-    * e.g. P2P:
-      * Don't want peers to route stuff through them to another peer:
-        * AS exports only customer routes to a peer
-        * AS exports a peer's routes only to its customers
-    
-* A routing entry:
-  * Route = prefix + attr + NLRI + (Path attr)
-* What to do with all the inbound UPDATE messages?
-* Build a db: Routing Information Base (RIBs)
-    * RIBs = Adj-RIBs-In + Loc-RIB + Adj-RIBs-Out
-    * Adj-RIBs-In: incoming routing info (inbound UPDATE)
-    * Loc-RIB: selected local routes by router
-    * Adj-RIBs-Out: selected for advertisement to peers
-1. Apply **Import Policies** on Inbound UPDATE
-2. Select best route from Adj-RIBs-In and pass to Loc-RIB
-   * You can choose any policy but this is the recommended process:
-   2. Highest degree of LOCAL_PREF (or the only route to the destination), then tie break:
-      * LOCAL_PREF: 4-byte unit (default 100) for BGP to indicate route preference. *This is not forwarded.*. Larger better
-      1. Smallest \# of ASs in the AS_PATH
-      2. Lowest origin \# in ORIGIN
-      3. Most preferred MULTI_EXIT_DISC (smaller better)
-      4. Routes from eBGP are preferred over iBGP
-      5. Lower interior cost based on NEXT_HOP
-      6. COMMUNITY: for influencing neighbor's neighbors
-3. Install best route as forwarding entries in IP Forwarding Table
-4. Apply export policies to Adj-RIB-Out
-   1. Propagate Inbound UPDATE as Outbound UPDATE to other BGP routers
-
-### BGP Prefix Hijacking
-* 2 shae the same prefix
-* Blackhole: data traffic discarded
-* Spoofing: Data traffic inspected and redirected
-  * Impersonation
-
-### BGP Subprefix Hijacking
-* 12.3.158.0/24 and 12.34.0.0/16
-  * Longer prefix matching will result in all traffic routed to 12.3.158.0/24
+### BGP Subprefix Hijacking (S70)
+* Exploit of **Longer prefix matching**
+* 1 AS with shorter (more general) prefix hijacked by longer (more specific) prefix
+  * e.g. 12.34.0.0/16 hijacked by 12.3.158.0/24
+    * All traffic routed to 12.3.158.0/24
   * Can visualize with BGPlay
-  * Can prevent with anomaly detection
+  * Can prevent with anomaly detection, checking prefix ownership
 
 ### BGP in practice
 * Preference (attr)
@@ -180,59 +184,58 @@ Comparison | Link State algo | Distance Vector algo
     * remote control 
 
 ### Peer 2 Peer
-* Client/server = assymetric
+* **Client/server = asymmetric**
   * Extension: iteratively/recursively delegate other servers to do task 
     * e.g. like DNS, a tree structure
-* Pure P2P
+* **Pure P2P**
   * No central entity
   * All entities directly communicate
   * No structure; flat architecture
   * Unreliable; how to stay connected or lookup?
-* Napster
-  * Central index server
+* **Napster: Central index server**
     * People register with this server
     * Central server knows all peers and files in network
     * Search peers by keyword
       * Delegation; delegate downloading to P2P
-    * Pros:
+    * **Pros**
       * Single server: consistent view of network
       * Fast and efficient searching
       * Guarantee correct search results
-    * Cons
+    * **Cons**
       * Single point of failure
       * Large computation to handle queires
       * Downloading from a single peer only
       * Unreliable content
       * Vulnerable to attacks
       * Copyright issues
-* Gnutella
+* **Gnutella: Peers are switches, flood queries**
   * Only peers
     * People register by connecting to another active peer
       * Switch topology
         * Queries are flooded in the network
         * Once joined, they learn about others and learn topology
       * Download directly from peer
-    * Pros
-      * Fully distributed
-      * Open protocol
-      * Robust against node failures
-      * Robust to DOS
-    * Cons
-      * Inefficient queries flooding
-      * Poor network management: Nodes need to keep probing 
-* KaZaA
+  * **Pros**
+    * Fully distributed
+    * Open protocol
+    * Robust against node failures
+    * Robust to DOS
+  * **Cons**
+    * Inefficient queries flooding
+    * Poor network management: Nodes need to keep probing 
+* **KaZaA: Peers only, but some peers delegated as local server**
   * 2 types of nodes
-    * Ordinary Node (ON): peer
-    * Supernode (SN): peer with more resources & responsibilities
+    * **Ordinary Node (ON)**: peer
+    * **Supernode (SN)**: peer with more resources & responsibilities
       * Promoted from ON if it has enough resources (bandwidth & uptime)
       * Promotion is consensual with user
       * Avg lifetime of 2.5 hours
       * Don't cache info from disconnected ON
-  * SN - ON : One - Many relationship
+  * **SN - ON : One - Many relationship**
     * ON only connected to one SN (and nothing else) which acts as their gateway
-  * SN acts as local sever for all connected ON
+  * SN acts as local server for all connected ON
   * SN do not form a complete mesh
-* Skype
+* **Skype: Similar to KaZaA with priorietary stuff**
   * Similar infrastructure to KaZaA
   * P2P with proprietary application-layer encryption
   * ON and SN infrastrcuture; distributed SNs help map usernames to IP addresses
@@ -240,25 +243,25 @@ Comparison | Link State algo | Distance Vector algo
     * NAT prevents peers outside of network to directly connect
     * SNs are used to keep track of relay nodes
     * Relay nodes used to handle NATs
-* BitTorrent
+* **BitTorrent: Seed split data into chunks, tracker help leechers download from each other** S23
   * A network (swarm) to distribute a file
-    * 1 main sever (seed) has the original copy broken into 256KB chunks
+    * 1 main server (seed) has the original copy broken into 256KB chunks
     * Seed starts tracker server
       * tracker keeps track of seeds and peers in the network (swarm)
-    * Seed creates torrent-file (metadata on chunks) and hosts it somewhere
-      * checksums
+    * Seed creates torrent-file (metadata on chunks with checksums) and hosts it on a webserver somewhere
     * Client obtains torrent-file
     * Client contacts tracker and connects to peers
     * Client downloads/exchange data with peers
-      * Downloading chunks from neighbors: rarest chunk first
-      * Uploading chunks to neighbors: 
-        * Send to top 4 neighbors that sends her chunks at the highest rate every 10s
-        * Send to random peer every 30s
-  * Pro
+      * **Download rarest chunk first from neighbors**
+      * **Uploading chunks to neighbors**: Tit-for-tat
+        * Send to top 4 neighbors currently sending her chunks at the highest rate, re-eval/10s
+        * Send to random peer every 30s to optimistically unchoke top 4
+  * **Pro**
     * Can send ".torrent" link which always refer to same file
-  * Con
+  * **Con**
     * Hard to identify and find particular files
-* P2P lookup services
+
+## P2P lookup services
   * **Searching VS Addressing**
   * How network is constructed
     * **Unstructured**: cannot use addressing
@@ -276,19 +279,16 @@ Comparison | Link State algo | Distance Vector algo
     * Uniquely ID objects and maintain indexing structure
   * Searching
     * Need to make objects searchable
-* Distributed Hashtable
-  * Many solutions
-    * Differences below: How they design the address space and routing strategy
-  * Chord
-    * You have nodes and you have objects
-      * SHA-1 Hash both of them
-        * Node ID: Hash Node's IP addr
-        * Obj ID:  Hash Object's name
-    * Store Node IDs in circular linked list
+* **Distributed Hashtable**
+  * **Chord** S38
+    * You have nodes and you have objects, SHA-1 Hash both of them
+        * **Node ID: Hash Node's IP addr**
+        * **Obj ID:  Hash Object's name**
+    * Store Node IDs in circular linked list S39
       * Each node in array keeps track of predecessor and successor in circular array (clockwise)
       * **To store an object**: Hash the object to get its object ID, then step clock-wise from ID until you find a node (i.e. **immediate successor**). That node stores the object
       * Circular linked list: O(n) time to for a node to access an object in another node
-        * **Finger table**: every node has shortcut links to non-neighbor nodes
+        * **Finger table**: every node has shortcut links to non-neighbor nodes S43
           * At most m shortcuts
           * **Interval**: ith finger at least $2^{i-1}$ apart 
             * 1st:1, 2nd:2, 3rd:4, 4th:8...
@@ -297,17 +297,16 @@ Comparison | Link State algo | Distance Vector algo
           * **Start**: starting node of the interval (assuming all node IDs are occupied)
           * **Node**: The actual node used. If there is no node with that node ID, finger points to its immediate successor; however, the interval definition is not affected; this variable tracks that
             * i.e. if [4,6) but shifted to 5, it's still defined as [4,6) and next interval is still 4 spaces
-          * **When a node leaves**: 
-            * All nodes periodically ping successors
-            * The predecessor will detect it and change its immediate sucessor
+          * **When a node leaves**: S50
+            * All nodes periodically ping successors and keep track of 2nd successor
+            * Predecessor will detect leave event and change its immediate sucessor
           * **Efficiency**
             * Search: O(log(n))
             * Responsibility N nodes and K objects: O(K/N) objects per node
             * Node joining / leaving: O(logN x logN) messages to:
               * re-establish routing and finger tables
               * initialize finger tables for new node
-            * 
-  * CAN
+  * **CAN** S54
     * Think of Chord as a 1 dimensional donut (torus)
       * 1 dimensional donut: predecessor and successor
     * CAN: d-dimensional donut (torus)
