@@ -20,7 +20,7 @@ title: CS4226 Cheatsheet
         * Model difference between arrival times ($T$) as continuous independent RV (**exponentially distributed**)
           * $P(T > t) = e^{-\lambda t}$
           * $P(T \leq t) = 1-e^{-\lambda t}$
-          * **Mean**: $\frac{1}{\lambda}$
+          * **Mean difference**: $\frac{1}{\lambda}$
           * **Memoryless**: $P\{T>s+t|T>s\} = P\{T>t\}$ (W2 Slide 7)
             * Given s time has elapsed, $P(T>t)$ is the same as $P(T>t+s)$
             * Proof: Tut2 Q2
@@ -31,6 +31,9 @@ title: CS4226 Cheatsheet
             * * **Mean**: $\frac{1}{\lambda_1 + \lambda_2}$
           * **Comparison**: Probability that exponential RV X > exponential RV Y (i.e. P(X > Y)):
             * $\frac{\lambda_y}{\lambda_x+\lambda_y}$
+          * **Poisson Distribution**: Number of times event occurs in an interval of time $\operatorname{Pr}(X=k)=\frac{\lambda^{k} e^{-\lambda}}{k !}$
+            * $\lambda$: rate (of arrival)
+            * k: number of occurences
         * **M/M/1**: 
           * Arrival Rate $\lambda = \mu - \frac{1}{E[W]}$
           * Server Processing Rate $\mu = \lambda + \frac{1}{E[W]}$
