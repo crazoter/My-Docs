@@ -18,6 +18,7 @@ title: CS4226 Cheatsheet
           * $\lambda$: Arrival RATE 
           * W: E[time in system] (WAITING / sojourn TIME)
         * Model difference between arrival times ($T$) as continuous independent RV (**exponentially distributed**)
+          * Note: Processing time is also exponentially distributed (Q16, Midterms)
           * $P(T > t) = e^{-\lambda t}$
           * $P(T \leq t) = 1-e^{-\lambda t}$
           * **Mean difference**: $\frac{1}{\lambda}$
@@ -25,7 +26,7 @@ title: CS4226 Cheatsheet
             * Given s time has elapsed, $P(T>t)$ is the same as $P(T>t+s)$
             * Proof: Tut2 Q2
             * Time elapsed doesn't affect probability
-          * **Merging**: Expected waiting time of multiple flows
+          * **Merging**: Expected minimum waiting time of multiple events/flows
             * $E[\min(T_1, T_2)]$
             * $P(\min(T_1, T_2) > t) = P(T_1 > t \wedge T_2 > t) = e^{-\lambda_{1} t} e^{-\lambda_{2} t} = e^{-(\lambda_{1} + \lambda_{2}) t}$
             * * **Mean**: $\frac{1}{\lambda_1 + \lambda_2}$
@@ -44,7 +45,7 @@ title: CS4226 Cheatsheet
           * Exact number of customers $\pi_i = P(L=i) = \rho^i(1-\rho)$
             * % of time that there is i things in queue + server
             * Probability that there is i things in queue + server
-          * E[# things in queue + server]: $E[L]=\frac{\rho}{1-\rho}$
+          * E[# things in queue + server]: $E[L]=\lambda E[W_s] = \frac{\rho}{1-\rho}$
           * E[# things in queue]: $E[Q]=E[L] - \rho = \frac{\rho^2}{1-\rho}$
           * E[time in queue + server]: $E[W]=\frac{1}{\mu-\lambda}$
           * E[time in server]: $E[W_s] = \frac{1}{\mu}$
@@ -58,14 +59,18 @@ title: CS4226 Cheatsheet
 
 ## Resource Management
 * **Max-Min Fairness**: Maximize smallest flow
-* **Resource R is Bottleneck** iff both: 
+* **Resource R is Bottleneck for flow I** iff both: 
   * resource R is at 100% usage
-  * more resource R cannot be allocated to the largest flow at R without hurting total flow for others (usually the case if there are multiple flows)
-    * Note: doesn't matter if largest flow is already maxed out; assume largest flow can increase further
+  * flow I has largest amount of resource R
 * **Water filling algo**: Calculating theoretical max-min fairness for all resources
   * Given a resource and multiple flows for that resource:
   * Allocation to flow = capacity x $flow_{weight} / \sum_\forall flow_{weight}$
-  * Blockages do not "carry over"; recalculate each resource with the initial flow amount.
+  * **When calculating final flow**: 
+    * 1) Calculate all flows for each resource without carried over blockages.
+    * 2) For each flow, set it to the minimum of its resources.
+    * 3) If step 2 frees up a resource, allocate that resource to other flows.
+    * 4) Repeat step 2 and 3 until all flows cannot increase anymore.
+    * 5) Evaluate bottlenecks for resources: compare by largest normalized allocation (final flow amt) / (flow weight)
 * **Generalized Process Sharing (GPS)**: Calc max-min fairness for 1 router
   * Router can process many packets at the same time
   * Same as water filling algo but on a time basis. At any time unit:
@@ -75,7 +80,8 @@ title: CS4226 Cheatsheet
     * GPS formalized (W3 Slide 18): Data processed is proportional to weight
   * **Weight Definition** $\emptyset_1:\emptyset_2 = a:b$: Larger weight = more compute priority
 * **Weighted Fair Queueing (WFQ)**: Calc max-min fairness for 1 router (more realistic) (W3 Slide 23)
-  * Router processes 1 packet at a time
+  * Packet-based, but doesn't mean you cannot split (See Tut5 Q1 last part, 1st arrival departs last lol)
+    * Only trust the V(t)
   * Work-Conserving: Don't plan for future arrivals
   * Concept: Ensure packets finish as close as possible to GPS
   * **Weight Definition** $a\emptyset_1=\emptyset_2 = b$: Larger weight = more compute priority
@@ -103,6 +109,7 @@ title: CS4226 Cheatsheet
       * **Virtual processing time** = [(packet size) / (full processing rate)] / (flow weight)
       * 4) $F_i$ = $\max(F_{prev}, V(t_{arr}))$ + (Virtual processing time)
     * 5) Use Slope to increment V(t) to next arrival / departure time, then repeat step (1)
+  * **Actual time elapsed** = [nextV(t) - currV(t)] * 1/slope
 
 ## SDN: Software Defined Networking
 * Networking **paradigm**
