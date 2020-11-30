@@ -79,7 +79,7 @@ title: CS4226 Cheatsheet
   * Work-Conserving: Don't plan for future arrivals
   * Concept: Ensure packets finish as close as possible to GPS
   * **Weight Definition** $a\emptyset_1=\emptyset_2 = b$: Larger weight = more compute priority
-    * Equate $\emptyset_2 = b$, $\emptyset_1=\frac{a}{b}$
+    * Equate $\emptyset_2 = b$, $\emptyset_1=\frac{b}{a}$
   * **Virtual Time**: # of time units completed so far if the system is running GPS
     * Global variable, 1 V(t) variable for all flows
     * Reset to 0 when all flows are empty
@@ -88,7 +88,7 @@ title: CS4226 Cheatsheet
       * Virtual Arrival/Current time $V(t_{pkt})$
       * Processing time $S_{pkt}$
       * Virtual Finishing time:
-        * if $F_{pkt} \leq V(t_{pkt}): F_{pkt} = V(t_{pkt}) + S_{pkt}$
+        * if $F_{prev} \leq V(t_{pkt}): F_{pkt} = V(t_{pkt}) + S_{pkt}$
           * Intuition: Packet is overdue, process it soon
         * else: $F_{pkt} = F_{prev} + S_{pkt}$
           * Intuition: Packet is not due yet
