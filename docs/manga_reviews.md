@@ -5,7 +5,7 @@ title: Manga Reviews
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Started a page on manga so I can keep track of what I read. Note that this list only contains manga I've read *after* 2020 Oct
+Started a page on manga so I can keep track of what I read. Note that this list only contains manga I've read *after* 2020 Oct.
 
 ## Manga personal preferences
 * I read manga during my free time to relax, so that kinda affects my manga choices. Stressful genres like horror are usually not my cup of tea.
@@ -25,10 +25,10 @@ Check the table of contents and start reading the reviews from the ones with the
 
 Manga on this page are scored by a base score plus a bonus score. As such, the total score can range from 1 to 15.
 
-* **Base score**: 1-10 out of 10, your normal review score. This is usually at least a 7, otherwise I wouldn't have even bothered to pick up the manga (unless I read a highly rated manga and believe it to be overrated)
-* **Bonus score:** wrapped in brackets, -2 to 5. I only add the manga which I believe can be considered readable on this page, so this bonus score is really meant to distinguish the "really good" and the "exceptionally good".
+* **Base score**: 1-10 out of 10. This is a subjective value based on how much I like the manga. This is usually at least a 7, otherwise I wouldn't have even bothered to pick up the manga (unless I read a highly rated manga and believe it to be overrated)
+* **Bonus score:** wrapped in brackets, -2 to 5. Each score correlates to the level of "must-read" that I associate with it (elaborated upon below). I only add the manga which I believe can be considered readable on this page, so this bonus score is really meant to distinguish the "really good" and the "exceptionally good".
   * The possible scores are as follows:
-    * -2 - Only worth reading if you are addicted to the genre and need something to nibble on
+    * -2 - Only worth reading if you need something to nibble on
     * -1 - Umm... The kind of manga where I'm kind of on the fence, which means you can do without reading it
     * 0 - Worth reading, but kind of forgettable... 
     * 1 - Highly worth reading, but some parts are kind of unsatisfactory, or I just don't feel attached to it for some unexplained reason
@@ -36,12 +36,13 @@ Manga on this page are scored by a base score plus a bonus score. As such, the t
     * 3 - Read it!!! The kind where you think back about when you read it and it still warms your heart / makes you want to re-read 
     * 4 - Must read, the kind where you draw inspiration from the manga or are reminded of the manga in your life every now and then
     * 5 - Must read, if you're prepared to become addicted to it. The kind where you're so attached to the characters you start reading the original novel, or related fanfic/art/doujinshi.
+* **Loopholes**: There are some manga where the base score is exceptional, but the bonus score isn't very high (e.g. That Girl is not just cute). This is because even though I like the series, I recognize it's not really impactful.
 
 Manga are presented in ascending order of their quality score.
 
 ## Tidbits
 
-Some manga are kinda unforgettable, and then some have this recurring joke or outstanding thing (good ones have multiple) that makes you immediately know what manga you're talking about when you mention it. I generally include the tidbit that most reminds me of the manga if I like it. This may contain spoilers for the manga, so readers beware.
+Some manga are kinda unforgettable, and then some have this recurring joke or outstanding thing (good ones have multiple) that makes you immediately know what manga you're talking about when you mention it. I generally include the tidbit that most reminds me of the manga if I like it but can't remember what it's about. This may contain spoilers for the manga, so readers beware.
 
 # Reviews
 
@@ -50,12 +51,12 @@ Some manga are kinda unforgettable, and then some have this recurring joke or ou
 <Tabs
   defaultValue="a"
   values={[
-    {label: "The Stereotypical Life of a Reincarnated Lady (Romcom) (7/10 (-1))", value: "a"},
+    {label: "The Stereotypical Life of a Reincarnated Lady (Romcom) (7/10 (-2))", value: "a"},
   ]}>
 
 <TabItem value="a">
 
-#### The Stereotypical Life of a Reincarnated Lady (Romcom) (7/10 (-1))
+#### The Stereotypical Life of a Reincarnated Lady (Romcom) (7/10 (-2))
 
 * **Synopsis**: Woman reincarnates as noble lady
 * **Genre**: romcom, manhwa
@@ -73,9 +74,8 @@ Some manga are kinda unforgettable, and then some have this recurring joke or ou
   defaultValue="e"
   values={[
     {label: "Bakarina (Harem Comedy) (8/10 (+0))", value: "e"},
-    {label: "That Girl is not just cute (romcom) (9/10 (+0))", value: "c"},
-    {label: "Wotakoi (Josei slice-of-life romcom) (9/10 (+0))", value: "b"},
     {label: "The Pharmarcy Where the Wolf Howls (Josei romcom) (9/10 (+0?))", value: "d"},
+    {label: "That Girl is not just cute (romcom) (9.5/10 (+0))", value: "c"},
     {label: "Tomo-chan wa Onnanoko (romcom) (10/10 (+0))", value: "a"},
   ]}>
 
@@ -96,40 +96,18 @@ Some manga are kinda unforgettable, and then some have this recurring joke or ou
 * **Tidbit**: This manga doesn't have a tidbit because I honestly don't remember any outstanding moments (aside from the confessions and the part where someone got angry)
 
 </TabItem>
-<TabItem value='b'>
-
-#### Wotakoi (Josei slice-of-life romcom) (9/10 (+0))
-
-* **Synopsis**: otakus
-* **Genre**: slice-of-life, romcom (focus on romance)
-* **Setting**: salarymen / women, working life
-* **Release rate**: Monthly
-* **Read until**: Ch 63
-* **Points**: 
-    * Plot is all about the 6 main characters
-    * Mostly on sweet / romance moments rather than "HAHAHA" funny (although there are some funny moments)
-    * Some chapters (esp. the earlier ones) make a lot of references to popular otaku culture
-      * These are usually explained in TL notes
-      * That said, if you are someone who enjoys that type of material, you'll likely enjoy these kinds of references
-    * Limited drama and tribulations, if you're into that sort of thing
-    * Abit cliche; all (initial) main characters are of different blood type groups 
-* **-ve points**:
-  * The otaku aspect gets a little stale after awhile, I'd prefer to see more facets of the characters (e.g. reactions to unexplored content for example)
-    * Yeah as you might guess the plot isn't super deep but it does have some flitting food for thought moments
-* **Should you read it**: If you like stories that give you diabetes and you enjoy reading about otakus hanging out
-* **Tidbit**: Flat-chested Narumi
-
-</TabItem>
 <TabItem value='c'>
 
-#### That Girl is not just cute (romcom) (9/10 (+0))
+#### That Girl is not just cute (romcom) (9.5/10 (+0))
 
-* **Synopsis**: A love story between a really unlucky boy and a strong girl who protects him. Falling in love portion glossed over.
-* **Genre**: romcom (cute, sweet, focus on friendships & romance)
+* **Synopsis**: A love story between a really unlucky boy and a strong girl who protects him.
+* **Genre**: slice-of-life, romcom (cute, sweet, focus on friendships & romance)
 * **Release rate**: Weekly
 * **Read until**: Ch 85
 * **+ve points**:
     * A lot of sweet and cute moments
+    * For this type of genre, the consistent weekly update and quality is definitely a plus
+    * The art is pretty high quality tbh, author loves to draw the female protag in various outfits. It's almost like a fashion show
 * **Should you read it**: I would recommend it to people who like sweet manga and that slice-of-life BGR.
 * **Tidbit**: Hachimatsu (  ´‿`)
 
@@ -164,14 +142,43 @@ Some manga are kinda unforgettable, and then some have this recurring joke or ou
 
 </Tabs>
 
-## Score +1: Highly worth, but tinge of dissatisfaction
+## Score +1: Worth reading but lacking in some way
 
 <Tabs
   defaultValue="a"
   values={[
-    {label: "Horimiya (Slice-of-life romcom) (9/10 (+1))", value: "a"},
+    {label: "Volcanic Age (Wuxia) (9/10 (+1))", value: "f"},
     {label: "Chitra (Isekai Reverse Harem) (9/10, (+1))", value: "c"},
+    {label: "Horimiya (Slice-of-life romcom) (9/10 (+1))", value: "a"},
+    {label: "Wotakoi (Josei slice-of-life romcom) (9/10 (+1))", value: "b"},
   ]}>
+
+<TabItem value='b'>
+
+#### Wotakoi (Josei slice-of-life romcom) (9/10 (+1))
+
+* **Synopsis**: otakus
+* **Genre**: slice-of-life, romcom (focus on romance)
+* **Setting**: salarymen / women, working life
+* **Release rate**: Monthly
+* **Read until**: Ch 63
+* **Points**: 
+    * Plot is all about the 6 main characters
+    * Mostly on sweet / romance moments rather than "HAHAHA" funny (although there are some funny moments)
+    * Some chapters (esp. the earlier ones) make a lot of references to popular otaku culture
+      * These are usually explained in TL notes
+      * That said, if you are someone who enjoys that type of material, you'll likely enjoy these kinds of references
+    * Limited drama and tribulations, if you're into that sort of thing
+    * Abit cliche; all (initial) main characters are of different blood type groups 
+    * Author loves to interact with his readers, so there's even some chapters where he draws fan-submitted situations of the characters. Although, at that point, the manga gives off doujin vibes rather than an actual manga...
+* **-ve points**:
+  * The otaku aspect gets a little stale after awhile. I'd prefer to see more facets of the characters (e.g. reactions to unexplored content for example)
+  * Yeah as you might guess the plot isn't super deep but it does have some flitting food for thought moments
+  * This is purely slice-of-life (and a monthly update at that), so plot progression is quite slow; character development sometimes feels like it's going nowhere.
+* **Should you read it**: If you like stories that give you diabetes and you enjoy reading about otakus hanging out
+* **Tidbit**: Flat-chested Narumi
+
+</TabItem>
 
 <TabItem value="a">
 
@@ -206,8 +213,29 @@ Some manga are kinda unforgettable, and then some have this recurring joke or ou
 * **Points**:
   * Reverse harem is strong in this manhwa
   * Sometimes feels like The Gamer with all the game pop-ups and gachapon
+  * Some parts of the manga feels kinda cringe, although I can't put my finger on the reason.
 * **Should you read it**: It's not bad, but the update rate is a bit iffy..
 * **Tidbit**: What does the rabbit eat?
+
+</TabItem>
+
+<TabItem value="f">
+
+#### Volcanic Age (Wuxia) (Score: 9/10, (+1))
+
+* **Warning**: This manga triggered some readers due to its portrayal of Tibetan Buddhism
+* **Synopsis**: MC experiences the same life again but with all of his knowledge
+* **Genre**: Wuxia, manhwa
+* **Release rate**: Weekly
+* **Read until**: 72
+* **Points**:
+  * So far, this follows a classic "MC is so stupidly OP" plotline. Not surprising given the premise of MC being reborn with all his knowledge.
+  * Some parts aren't very well translated (or the manhwa isn't very clear on what's actually happening / being conveyed, or the translators keep changing the names). This hinders the quality of the manhwa because you have to do guesswork on what is actually being said and what is actually happening.
+  * Reader should have some prior knowledge about cultivation concepts (otherwise you might get a little lost about how he's powering up).
+  * Characters, sects and names in general are poorly introduced (or at least, not memorably so). Sometimes you don't know who/what they are referring to.
+  * Sometimes characters just disappear altogether from the location without any explanation on where they went.
+  * Art isn't too bad; fight scenes are pretty solid.
+* **Should you read it**: Hmm. It's a fun read if you don't mind the fact that the MC knows everything that happened in the future, and thus also knows all the secrets (and takes them for himself to become stupidly powerful). MC outclasses his enemies so much that you can count the number of times he gets injured with one hand and he's only lost once to a super OP elder.
 
 </TabItem>
 
@@ -215,19 +243,19 @@ Some manga are kinda unforgettable, and then some have this recurring joke or ou
 
 ## Score +2: Definitely worth reading
 
-
 <Tabs
   defaultValue="b"
   values={[
     {label: "The Undefeatable Swordsman (Action) (9/10 (+2?))", value: "b"},
+    {label: "Leveling Up by only Eating (slice-of-life shonen?) (9/10 (+2))", value: "d"},
     {label: "Jitsu Wa Watashi Wa (Romcom) (9/10 (+2))", value: "a"},
     {label: "We May Be An Inexperienced Couple But... (Seinen romcom) (9/10 (+2))", value: "c"},
-    {label: "Leveling Up by only Eating (slice-of-life shonen?) (9/10 (+2))", value: "d"},
   ]}>
 
 <TabItem value="a">
 
 #### Jitsu Wa Watashi Wa (Romcom) (Score: 9/10 (+2))
+
 * **Synopsis**: A high-school love story between a human and a vampire; expect lots of other weird entities too.
 * **Genre**: romcom (funny & touching, focus on comedy, friendships, love, discrimination and long-term perserverance)
 * **Setting**: high school
@@ -489,7 +517,41 @@ Some manga are kinda unforgettable, and then some have this recurring joke or ou
 * Read until: 1st 2 chapters
 * Relationship felt a little toxic
 
-## Read but too short to list
+## Read but review is too short to list
 
-#### My Brother is From Deep Mountain (9/10 +2)
-* A cute, relaxing and comedic slice-of-life fantasy manhwa about a sister who reunites with a brother she didn't even know of.
+#### My Brother is From Deep Mountain (9/10 +1)
+* Ongoing
+* **Summary**: A cute, relaxing and comedic slice-of-life fantasy manhwa about a sister who reunites with a brother she didn't even know of.
+
+#### Kimetsu No Yaiba (9.5/10 +3)
+* Completed
+* **Summary**: Humans using techniques to kill demons. 
+* **Worth reading**: Nice series, but repetitive progression (fight big bad, defeat big bad, find out that big bad has tragic past that turned him into a demon, repeat). Death of main cast is a very common theme.
+  * Anime adaptation is really good.
+  * Final fight scenes don't have enough people in the battle; feels like a 1v1 as opposed to army of demon slayers vs army of demons.
+  * Ending feels rushed and it is very disappointing; feels like a plot cop out.
+
+#### Bokuben (10/10 +1)
+* Ongoing (soon to be completed)
+* **Summary**: Trashy romcom
+* **Worth reading**: A lot of filler / fanservice throughout the story. An enjoyable read, but like I said it's a pretty trashy romcom; a guilty pleasure. Some characters don't get enough justice.
+
+## Series that I currently follow:
+
+**Irregular**
+* Leveling Up by only Eating
+* Mission: Yozakura Family
+
+**Monthlies**
+* Wotakoi
+* Grand Blue
+
+**Weeklies**
+* Cultivation Chat Group
+* Peerless Dad
+* We May Be An Inexperienced Couple But...
+* Kitsune Spirit
+* Kaguya-sama: Love is War
+
+**Unreviewed**
+* Bokuben
