@@ -49,7 +49,7 @@ Some manga are kinda unforgettable, and then some have this recurring joke or ou
 
 ## Full list of reviews
 
-A summary of all manhwa/manga/novels reviewed here, highlighting the strong points of the series. Good if you're looking for a particular type of manga.
+A summary of all manhwa/manga/novels reviewed here, highlighting the strong points of the series. Good if you're looking for a particular type of manga; just search using the emojis below. 
 
 Template
 
@@ -62,7 +62,7 @@ Template
     * *How much I laughed when reading it*
   * Action: 🤜🔪⚔️💣💥
     * *The quality of combat depicted in the manga and level of excitation.*
-  * Intrigue: 🕯️💡🧠🤯👽
+  * Intrigue: 🕯️ 💡🧠🤯👽
     * *The amount and quality of big brain plays / strategizing / scheming involved.*
   * Storytelling: ✋😑👌 👍💯
     * *The quality of the author's storytelling. Reflective of pacing of story, world building, character development, author's ability to keep the reader guessing what will happen next and ability to keep reader interested in the story.*
@@ -112,7 +112,7 @@ Template
 * Jitsu Wa Watashi Wa
 ```
   * Sweetness:    🙂😊❤️💘🚑
-  * Action:       👊
+  * Action:       🤜
   * Comedy:       🙂😀😆😂🤣
   * Storytelling: ✋😑👌 👍💯
 ```
@@ -127,14 +127,14 @@ Template
 ```
   * Sweetness:    🙂😊❤️💘
   * Comedy:       🙂😀
-  * Action:       👊🔪⚔️💣💥
+  * Action:       🤜🔪⚔️💣💥
   * Storytelling: ✋😑👌👍
 ```
 * Kishuku Gakkou no Juliet
 ```
   * Sweetness:    🙂😊❤️💘🚑
   * Comedy:       🙂😀😆😂
-  * Intrigue:     🕯️
+  * Intrigue:     🕯️ 
   * Storytelling: ✋😑👌
 ```
 * Kitsune Spirit
@@ -147,14 +147,14 @@ Template
 ```
   * Sweetness:    🙂
   * Comedy:       🙂😀😆
-  * Action:       👊🔪⚔️💣
+  * Action:       🤜🔪⚔️💣
   * Storytelling: ✋😑👌
 ```
 * Mission: Yozakura Family
 ```
   * Sweetness:    🙂😊❤️💘
   * Comedy:       🙂😀😆
-  * Action:       👊🔪⚔️💣
+  * Action:       🤜🔪⚔️💣
   * Storytelling: ✋😑👌
 ```
 * My Brother is From Deep Mountain
@@ -166,7 +166,7 @@ Template
 ```
   * Sweetness:    🙂
   * Comedy:       🙂😀😆😂
-  * Action:       👊🔪⚔️
+  * Action:       🤜🔪⚔️
   * Intrigue:     🕯️ 💡
   * Storytelling: ✋😑👌
 ```
@@ -174,14 +174,14 @@ Template
 ```
   * Sweetness:    🙂😊❤️💘
   * Comedy:       🙂😀😆
-  * Action:       👊🔪⚔️💣💥
+  * Action:       🤜🔪⚔️💣💥
   * Intrigue:     🕯️ 💡🧠
   * Storytelling: ✋😑👌 👍💯
 ```
 * Sijin
 ```
   * Sweetness:    🙂😊
-  * Action:       👊🔪
+  * Action:       🤜🔪
   * Intrigue:     🕯️ 💡🧠🤯👽
   * Storytelling: ✋😑👌 👍
 ```
@@ -198,21 +198,21 @@ Template
 ```
 * The Undefeatable Swordsman
 ```
-  * Action:       👊🔪⚔️💣
+  * Action:       🤜🔪⚔️💣
   * Storytelling: ✋😑👌 👍
 ```
 * Tomo-chan wa Onnanoko
 ```
   * Sweetness:    🙂😊❤️💘
   * Comedy:       🙂😀
-  * Action:       👊🔪
+  * Action:       🤜🔪
   * Storytelling: ✋😑👌
 ```
 * Volcanic Age
 ```
   * Sweetness:    🙂
   * Comedy:       🙂😀
-  * Action:       👊🔪⚔️💣💥
+  * Action:       🤜🔪⚔️💣💥
   * Intrigue:     🕯️ 💡🧠
   * Storytelling: ✋😑
 ```
@@ -375,7 +375,7 @@ Template
     * Author loves to interact with his readers, so there's even some chapters where he draws fan-submitted situations of the characters. Although, at that point, the manga gives off doujin vibes rather than an actual manga...
 * **-ve points**:
   * Sometimes uses lazy character development; telling instead of showing. e.g. manga becomes a slideshow of how each character would do something e.g. peel tangerines in Ch24 as opposed to *revealing* that fact through storytelling by putting them in a scenario that brings out how they would peel tangerines (e.g. characters come together for a party, and they react to Hirotaka peeling tangerines). 
-  * Sometimes splits the story into multiple unstated timelines (e.g. Ch 53 and 53.5) where the chronological order is uncertain. This is makes the manga's chronology very messy. The weaker timeline ends up feeling like a spin-off, and the sum of the two parts is weaker than what it would've been if it were presented in chronological order a whole.
+  * Sometimes splits the story into multiple unstated timelines (e.g. Ch 53 and 53.5) where the chronological order is uncertain. This is makes the manga's chronology very messy. The weaker timeline ends up feeling like a spin-off, and the sum of the two parts is weaker than what it would've been if it were presented in chronological order as a whole.
   * The otaku aspect gets a little stale after awhile. I'd prefer to see more facets of the characters (e.g. reactions to unexplored content for example)
   * Yeah as you might guess the plot isn't super deep but it does have some flitting food for thought moments
 * **Should you read it**: If you like stories that give you diabetes and you enjoy reading about otakus hanging out. For all its shortcomings, I personally found this a pretty good read, and the initial part of the manga is a pretty good hook.
@@ -564,7 +564,7 @@ Template
 * **Points**:
   * [BIG SPOILERS FROM FINISHED NOVEL]: 49f0bad299687c62334182178bfd75d8 7f021a1415b86f2d013b2618fb31ae53. Still, it's not too bad because the story is implied to 0663b8af9df17b966dc2116a2a4ce571 with less 21c3a46e069cdaac3ea89bd54449edaf.
     * Use MD5 decryptor to see the spoilers.
-* **Should you read it**: The story is less like manga / manhwa and more of chinese drama with all the tragedy, scheming and plotting. It's a read I found hard to put down.
+* **Should you read it**: The story is less like manga / manhwa and more like chinese drama with all the tragedy, scheming and plotting. It's a read I found hard to put down.
 
 
 </TabItem>
@@ -628,7 +628,7 @@ Template
 #### Kitsune Spirit (Shonen romcom) (Score: 10/10, (+3))
 * **Synopsis**: A married couple in a world with supernatural creatures
 * **Genre**: romcom (equal parts sweet and funny), shonen (yes, shonen. You'll see why. This can get dark real quick)
-*** Release rate:** Weekly (but very short chapters)
+* **Release rate:** Irregular (and very short chapters)
 * **Read until:** 101
 * **Points**:
   * Some lewd moments
@@ -644,7 +644,7 @@ Template
 #### Mission: Yozakura Family (Shonen romcom) (Score: 10/10, (+3))
 * **Synopsis**: You'll know after reading the first chapter haha (yes, it's a bit spoilerish to explain this)
 * **Genre**: romcom, shonen
-*** Release rate**: Weekly
+* **Release rate**: Irregular
 * **Read until**: 58
 * **Points**:
   * It follows your usual shonen manga storyline: MC meets new big bad, powers up, meets another new big bad and gets stronger etc. It's not boring, but just expect that sort of story.
@@ -672,7 +672,7 @@ Template
 #### Peerless Dad (Action) (Score: 10/10 (+4))
 * **Synopsis**: A father and his children
 * **Genre**: Action, martial arts (wuxia), slice-of-life, manhwa
-* **Release rate**: Weekly
+* **Release rate**: Irregular
 * **Chapters**: 151
 * **Points**: 
   * Some of the characters (and the story in general) is really quite well-written.
@@ -757,7 +757,7 @@ Template
   * One of the interest aspects of this series is to bring a refreshing twist to xianxia by injecting modern elements into it. So you have these amazing battles with qi, blades and magical treasures, but these cultivators also use technology like handphones and such (hence the name). That being said, the use of handguns and rifles (in the conventional sense) is rather limited.
   * Being a Chinese story, there are some very Chinese concepts (e.g. the concept of "face") and a couple of terms directly translated from Chinese e.g. (seek death / 找死)
   * MC has plot armor / plot everything (to the point where it almost becomes a joke) and he is stupidly lucky/unlucky. Sure, he goes through many life and death tribulations, but in this story, there are many occasions where MC suddenly has a plot device to rescue him from complete death; it's not a story that's meant to be taken too seriously.
-* Why you should read it: It is very funny and it brings a smile to my face when I think about all the silly things that happens in this series. The beginning's a little slow (yes, you spend the first 10 manga chapters reading text messages in the chat group) and the MC is just stupidly lucky (or unlucky?) but it's really good, addictive even.
+* **Why you should read it**: It is very funny and it brings a smile to my face when I think about all the silly things that happens in this series. The beginning's a little slow (yes, you spend the first 10 manga chapters reading text messages in the chat group) and the MC is just stupidly lucky (or unlucky?) but it's really good, addictive even.
 * **Tidbit**: There's way too many things that make this memorable.
 
 </TabItem>
