@@ -7,6 +7,6 @@ module.exports = {
     Networks: ['markdown/network', 'markdown/CS4226_summary'],
     "Software Development": ['markdown/formal_verification'],
     Misc: ["markdown/tech","markdown/code_snippets"],
-    Hobbies: ["manga_reviews"]
+    Hobbies: ["manga_reviews", "book_summaries"]
   },
 };

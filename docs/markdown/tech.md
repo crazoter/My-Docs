@@ -1,5 +1,5 @@
 ---
-title: Technologies you should know
+title: Tech lookup
 slug: /
 ---
 

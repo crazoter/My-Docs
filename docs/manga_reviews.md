@@ -16,10 +16,13 @@ Started a page on manga so I can keep track of what I read. Note that this list 
   * I'm not really a fan of plot armor or improbably idealistic outcomes; If a tragedy is more likely to happen in a story, I'd rather it happened as opposed to a sudden plot twist that made things all good again (although most stories tend to twist it to the latter). That said, I don't mind the happy endings... just make it more believable
   * I don't really like harems.
 * I prefer certainty of continuation. I tend to avoid starting on series that are no longer being maintained (e.g. Vagabond). 
-
+* I like plot progression / character development and I hate stagnation. I'd be dissatisfied if I read a few chapters in a row and come out thinking that the plot didn't progress / there was zero character development.
+  
 ## Can you recommend a manga / manhwa for me to read?
 
-Check the table of contents and start reading the reviews from the ones with the highest quality scores. If they have the same score, the manga that is more to the right is my preference. My all-time favourites when it comes to comedy is Grand Blue and when it comes to romcoms it's Kaguya Love is War. I don't have a favourite shonen series because that genre is saturated with good stuff.
+Check the table of contents and start reading the reviews from the ones with the highest quality scores. If they have the same bonus score, the manga that is more to the right is my preference. 
+
+My all-time favourites when it comes to comedy is Grand Blue and when it comes to romcoms it's Kaguya Love is War. I don't have a favourite shonen/action series because that genre is saturated with good stuff.
 
 ## Quality Scoring System
 
@@ -44,7 +47,204 @@ Manga are presented in ascending order of their quality score.
 
 Some manga are kinda unforgettable, and then some have this recurring joke or outstanding thing (good ones have multiple) that makes you immediately know what manga you're talking about when you mention it. I generally include the tidbit that most reminds me of the manga if I like it but can't remember what it's about. This may contain spoilers for the manga, so readers beware.
 
-# Reviews
+## Full list of reviews
+
+A summary of all manhwa/manga/novels reviewed here, highlighting the strong points of the series. Good if you're looking for a particular type of manga.
+
+Template
+
+* *Manga*
+  * *Defining Characteristic*: *1 to 5 emojis depending on how satisfactory the manga is in that regard.*
+    * *If it is not listed, it means it's not a strong point.*
+  * Sweetness: 🙂😊❤️💘🚑
+    * *How sweet/cute/heartwarming I found the manga*
+  * Comedy: 🙂😀😆😂🤣
+    * *How much I laughed when reading it*
+  * Action: 🤜🔪⚔️💣💥
+    * *The quality of combat depicted in the manga and level of excitation.*
+  * Intrigue: 🕯️💡🧠🤯👽
+    * *The amount and quality of big brain plays / strategizing / scheming involved.*
+  * Storytelling: ✋😑👌 👍💯
+    * *The quality of the author's storytelling. Reflective of pacing of story, world building, character development, author's ability to keep the reader guessing what will happen next and ability to keep reader interested in the story.*
+
+*** 
+* Bakarina 
+```
+  * Sweetness:    🙂😊
+  * Comedy:       🙂😀
+```
+* Bokuben 
+```
+  * Sweetness:    🙂😊❤️💘🚑
+  * Comedy:       🙂😀
+```
+* Chitra
+```
+  * Sweetness:    🙂😊
+  * Comedy:       🙂😀
+  * Storytelling: ✋😑👌
+```
+* Cultivation Chat Group
+```
+  * Sweetness:    🙂😊❤️
+  * Comedy:       🙂😀😆😂🤣
+  * Action:       🤜🔪⚔️💣
+  * Storytelling: ✋😑👌 👍💯
+```
+* Grand Blue
+```
+  * Sweetness:    🙂😊
+  * Comedy:       🙂😀😆😂🤣
+  * Storytelling: ✋😑
+```
+* Horimiya
+```
+  * Sweetness:    🙂😊❤️💘
+  * Comedy:       🙂😀
+  * Storytelling: ✋😑
+```
+* I'm a spider, so what?
+```
+  * Action:       🤜🔪⚔️💣💥
+  * Storytelling: ✋😑👌
+```
+* Jitsu Wa Watashi Wa
+```
+  * Sweetness:    🙂😊❤️💘🚑
+  * Action:       👊🔪
+  * Comedy:       🙂😀😆😂🤣
+  * Storytelling: ✋😑👌 👍💯
+```
+* Kaguya-sama: Love is War
+```
+  * Sweetness:    🙂😊❤️💘🚑
+  * Comedy:       🙂😀😆😂🤣
+  * Intrigue:     🕯️ 💡🧠
+  * Storytelling: ✋😑👌 👍💯
+```
+* Kimetsu No Yaiba
+```
+  * Sweetness:    🙂😊❤️💘
+  * Comedy:       🙂😀
+  * Action:       👊🔪⚔️💣💥
+  * Storytelling: ✋😑👌👍
+```
+* Kishuku Gakkou no Juliet
+```
+  * Sweetness:    🙂😊❤️💘🚑
+  * Comedy:       🙂😀😆😂
+  * Intrigue:     🕯️
+  * Storytelling: ✋😑👌
+```
+* Kitsune Spirit
+```
+  * Sweetness:    🙂😊❤️💘🚑
+  * Comedy:       🙂😀😆😂
+  * Storytelling: ✋😑👌
+```
+* Leveling Up by only Eating
+```
+  * Sweetness:    🙂
+  * Comedy:       🙂😀😆
+  * Action:       👊🔪⚔️💣
+  * Storytelling: ✋😑👌
+```
+* Mission: Yozakura Family
+```
+  * Sweetness:    🙂😊❤️💘
+  * Comedy:       🙂😀😆
+  * Action:       👊🔪⚔️💣
+  * Storytelling: ✋😑👌
+```
+* My Brother is From Deep Mountain
+```
+  * Sweetness:    🙂😊❤️
+  * Comedy:       🙂😀
+```
+* Oresama Teacher
+```
+  * Sweetness:    🙂
+  * Comedy:       🙂😀😆😂
+  * Action:       👊🔪⚔️
+  * Intrigue:     🕯️ 💡
+  * Storytelling: ✋😑👌
+```
+* Peerless Dad
+```
+  * Sweetness:    🙂😊❤️💘
+  * Comedy:       🙂😀😆
+  * Action:       👊🔪⚔️💣💥
+  * Intrigue:     🕯️ 💡🧠
+  * Storytelling: ✋😑👌 👍💯
+```
+* Sijin
+```
+  * Sweetness:    🙂😊
+  * Action:       👊🔪
+  * Intrigue:     🕯️ 💡🧠🤯👽
+  * Storytelling: ✋😑👌 👍
+```
+* That Girl is not just cute
+```
+  * Sweetness:    🙂😊❤️💘🚑
+  * Comedy:       🙂😀
+```
+* The Pharmarcy Where the Wolf Howls
+```
+  * Sweetness:    🙂😊❤️
+  * Comedy:       🙂😀
+  * Storytelling: ✋😑
+```
+* The Undefeatable Swordsman
+```
+  * Action:       👊🔪⚔️💣
+  * Storytelling: ✋😑👌 👍
+```
+* Tomo-chan wa Onnanoko
+```
+  * Sweetness:    🙂😊❤️💘
+  * Comedy:       🙂😀
+  * Action:       👊🔪
+  * Storytelling: ✋😑👌
+```
+* Volcanic Age
+```
+  * Sweetness:    🙂
+  * Comedy:       🙂😀
+  * Action:       👊🔪⚔️💣💥
+  * Intrigue:     🕯️ 💡🧠
+  * Storytelling: ✋😑
+```
+* We May Be An Inexperienced Couple But...
+```
+  * Sweetness:    🙂😊❤️💘🚑
+  * Comedy:       🙂😀
+```
+* Wotakoi
+```
+  * Sweetness:    🙂😊❤️💘🚑
+  * Comedy:       🙂😀😆
+```
+  
+## Series that I currently follow:
+
+**Irregular**
+* Leveling Up by only Eating
+* Mission: Yozakura Family
+* Peerless Dad
+* Kitsune Spirit
+
+**Monthlies**
+* Wotakoi
+* Grand Blue
+* Sijin
+
+**Weeklies**
+* Cultivation Chat Group
+* We May Be An Inexperienced Couple But...
+* Kaguya-sama: Love is War
+
+## Reviews by score
 
 ## Score negative: I don't know why I read and reviewed this
 
@@ -147,6 +347,7 @@ Some manga are kinda unforgettable, and then some have this recurring joke or ou
 <Tabs
   defaultValue="a"
   values={[
+    {label: "My Brother is From Deep Mountain (Slice-of-life) (9/10 +1)", value: "g"},
     {label: "Volcanic Age (Wuxia) (9/10 (+1))", value: "f"},
     {label: "Chitra (Isekai Reverse Harem) (9/10, (+1))", value: "c"},
     {label: "Horimiya (Slice-of-life romcom) (9/10 (+1))", value: "a"},
@@ -172,10 +373,11 @@ Some manga are kinda unforgettable, and then some have this recurring joke or ou
     * Abit cliche; all (initial) main characters are of different blood type groups 
     * Author loves to interact with his readers, so there's even some chapters where he draws fan-submitted situations of the characters. Although, at that point, the manga gives off doujin vibes rather than an actual manga...
 * **-ve points**:
+  * Sometimes uses lazy character development; telling instead of showing. e.g. manga becomes a slideshow of how each character would do something e.g. peel tangerines in Ch24 as opposed to *revealing* that fact through storytelling by putting them in a scenario that brings out how they would peel tangerines (e.g. characters come together for a party, and they react to Hirotaka peeling tangerines). 
+  * Sometimes splits the story into multiple unstated timelines (e.g. Ch 53 and 53.5) where the chronological order is uncertain. This is makes the manga's chronology very messy. The weaker timeline ends up feeling like a spin-off, and the sum of the two parts is weaker than what it would've been if it were presented in chronological order a whole.
   * The otaku aspect gets a little stale after awhile. I'd prefer to see more facets of the characters (e.g. reactions to unexplored content for example)
   * Yeah as you might guess the plot isn't super deep but it does have some flitting food for thought moments
-  * This is purely slice-of-life (and a monthly update at that), so plot progression is quite slow; character development sometimes feels like it's going nowhere.
-* **Should you read it**: If you like stories that give you diabetes and you enjoy reading about otakus hanging out
+* **Should you read it**: If you like stories that give you diabetes and you enjoy reading about otakus hanging out. For all its shortcomings, I personally found this a pretty good read, and the initial part of the manga is a pretty good hook.
 * **Tidbit**: Flat-chested Narumi
 
 </TabItem>
@@ -219,6 +421,15 @@ Some manga are kinda unforgettable, and then some have this recurring joke or ou
 
 </TabItem>
 
+<TabItem value="g">
+
+#### My Brother is From Deep Mountain (Slice-of-life) (9/10 +1)
+* Ongoing
+* **Summary**: A cute, relaxing and comedic slice-of-life fantasy manhwa about a sister who reunites with a brother she didn't even know of.
+
+
+</TabItem>
+
 <TabItem value="f">
 
 #### Volcanic Age (Wuxia) (Score: 9/10, (+1))
@@ -247,8 +458,11 @@ Some manga are kinda unforgettable, and then some have this recurring joke or ou
   defaultValue="b"
   values={[
     {label: "The Undefeatable Swordsman (Action) (9/10 (+2?))", value: "b"},
+    {label: "Bokuben (9/10 (+2))", value: "f"},
     {label: "Leveling Up by only Eating (slice-of-life shonen?) (9/10 (+2))", value: "d"},
+    {label: "I'm a spider, so what? (Reincarnation action seinen) (9/10 (+2))", value: "g"},
     {label: "Jitsu Wa Watashi Wa (Romcom) (9/10 (+2))", value: "a"},
+    {label: "Sijin (Drama Tragedy) (9/10 (+2))", value: "e"},
     {label: "We May Be An Inexperienced Couple But... (Seinen romcom) (9/10 (+2))", value: "c"},
   ]}>
 
@@ -285,6 +499,29 @@ Some manga are kinda unforgettable, and then some have this recurring joke or ou
 * **Will I re-read it:** Probably not, there's too many fillers, but some parts are legit hilarous
 * **Tidbit**: ( ⚆ _ ⚆ ) ( ⚆ _ ⚆ ) when they find out what sucking blood really means to vampires
 
+
+</TabItem>
+
+<TabItem value="g">
+
+#### I'm a spider, so what? (Reincarnation action seinen) (9/10 (+2))
+* **Synopsis**: Girl reincarnates as spider
+  * Similar to Slime Rimuru plot, but a lot more gruesome and interaction with humans comes at a much later stage.
+* **Genre**: action, seinen
+* **Release rate**: Monthly
+* **Points**:
+  * MC undergoes tremendous suffering and has plot armor. 
+* **Should you read it:** Art quality is exceptional and it is exciting to read. Unfortunately, the release rate is slow as hell for the manga (like Slime Rimuru) and it feels like a Slime Rimuru alternate universe with all the exposition into monster skills and how overpowered the MC grows. Also very lacking in proper social interaction (the author literally creates a skill so that MC can split her consciousness to talk to multiple mental copies of herself); for the entire manga so far you can count with one hand the number of (proper) conversations the MC has had with other creatures.
+
+</TabItem>
+
+<TabItem value="f">
+
+#### Bokuben (9/10 +2)
+* Ongoing (soon to be completed)
+* **Summary**: Trashy romcom
+* **Worth reading**: A lot of filler / fanservice throughout the story. An enjoyable read, but like I said it's a pretty trashy romcom; a guilty pleasure. Some characters don't get enough justice.
+
 </TabItem>
 
 <TabItem value="d">
@@ -317,6 +554,19 @@ Some manga are kinda unforgettable, and then some have this recurring joke or ou
 * **Should you read it**: It's still too early to draw conclusions on the quality of this manhwa as it's only at around 38 chapters. So far, so good.
 
 </TabItem>
+<TabItem value="e">
+
+#### Sijin (Drama Tragedy) (Score: 9/10, (+2))
+* **Synopsis**: Woman relives her life with all her knowledge
+* **Genre**: manhwa, romcom?, drama, revenge, schemes, tragedy
+* **Release rate**: Weekly
+* **Points**:
+  * [BIG SPOILERS FROM FINISHED NOVEL]: 49f0bad299687c62334182178bfd75d8 7f021a1415b86f2d013b2618fb31ae53. Still, it's not too bad because the story is implied to 0663b8af9df17b966dc2116a2a4ce571 with less 21c3a46e069cdaac3ea89bd54449edaf.
+    * Use MD5 decryptor to see the spoilers.
+* **Should you read it**: The story is less like manga / manhwa and more of chinese drama with all the tragedy, scheming and plotting. It's a read I found hard to put down.
+
+
+</TabItem>
 <TabItem value="c">
 
 #### We May Be An Inexperienced Couple But... (Seinen romcom) (Score: 9/10, (+2))
@@ -336,14 +586,15 @@ Some manga are kinda unforgettable, and then some have this recurring joke or ou
 <Tabs
   defaultValue="a"
   values={[
-    {label: "Oresama Teacher (Shojo Romcom) (10/10 (+3))", value: "a"},
+    {label: "Oresama Teacher (Shojo Romcom) (9.5/10 (+3))", value: "a"},
+    {label: "Kimetsu No Yaiba (9.5/10 +3)", value: "b"},
     {label: "Mission: Yozakura Family (Shonen romcom) (10/10 (+3))", value: "c"},
     {label: "Kitsune Spirit (Shonen romcom) (10/10 (+3))", value: "b"},
   ]}>
 
 <TabItem value="a">
 
-#### Oresama Teacher (Shojo Romcom) (Score: 10/10 (+3))
+#### Oresama Teacher (Shojo Romcom) (Score: 9.5/10 (+3))
 * **Synopsis**: Delinquent girl turns a new leaf (?) when she changes school 
 * **Genre**: shojo, romcom (focus on comedy)
 * **Release rate**: Irregular
@@ -357,6 +608,18 @@ Some manga are kinda unforgettable, and then some have this recurring joke or ou
 * **Should you read it:** I'd recommend it. It consistently delivers on the humor. The plot sometimes feels kinda shallow (e.g. everyone turns out to be a good guy in the end kinda vibes), and sometimes it's not too hard to guess the plot, but honestly it's pretty good.
 * **Other notes:** I give this a +2 even though I'm not in a discord server dedicated to this manga (this manga is simply not popular enough to have an active server)
 * **Tidbit**: Usa-chan Man!
+
+</TabItem>
+<TabItem value="d">
+
+
+#### Kimetsu No Yaiba (9.5/10 +3)
+* Completed
+* **Summary**: Humans using swords and mystical breathing techniques to kill demons. 
+* **Worth reading**: Nice series, but repetitive progression (fight big bad, defeat big bad, find out that big bad has tragic past that turned him into a demon, repeat). Death of main cast is a very common theme.
+  * Anime adaptation is really good. Like, **really** good.
+  * Final fight scenes don't have enough people in the battle; feels like a 1v1 as opposed to army of demon slayers vs army of demons.
+  * Ending feels rushed and it is very disappointing; feels like a plot cop out.
 
 </TabItem>
 <TabItem value="b">
@@ -516,42 +779,3 @@ Some manga are kinda unforgettable, and then some have this recurring joke or ou
 #### Tonari No Kaibutsu-Kun
 * Read until: 1st 2 chapters
 * Relationship felt a little toxic
-
-## Read but review is too short to list
-
-#### My Brother is From Deep Mountain (9/10 +1)
-* Ongoing
-* **Summary**: A cute, relaxing and comedic slice-of-life fantasy manhwa about a sister who reunites with a brother she didn't even know of.
-
-#### Kimetsu No Yaiba (9.5/10 +3)
-* Completed
-* **Summary**: Humans using techniques to kill demons. 
-* **Worth reading**: Nice series, but repetitive progression (fight big bad, defeat big bad, find out that big bad has tragic past that turned him into a demon, repeat). Death of main cast is a very common theme.
-  * Anime adaptation is really good.
-  * Final fight scenes don't have enough people in the battle; feels like a 1v1 as opposed to army of demon slayers vs army of demons.
-  * Ending feels rushed and it is very disappointing; feels like a plot cop out.
-
-#### Bokuben (10/10 +1)
-* Ongoing (soon to be completed)
-* **Summary**: Trashy romcom
-* **Worth reading**: A lot of filler / fanservice throughout the story. An enjoyable read, but like I said it's a pretty trashy romcom; a guilty pleasure. Some characters don't get enough justice.
-
-## Series that I currently follow:
-
-**Irregular**
-* Leveling Up by only Eating
-* Mission: Yozakura Family
-
-**Monthlies**
-* Wotakoi
-* Grand Blue
-
-**Weeklies**
-* Cultivation Chat Group
-* Peerless Dad
-* We May Be An Inexperienced Couple But...
-* Kitsune Spirit
-* Kaguya-sama: Love is War
-
-**Unreviewed**
-* Bokuben
