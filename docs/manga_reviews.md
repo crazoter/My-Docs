@@ -13,8 +13,8 @@ Started a page on manga so I can keep track of what I read. Note that this list 
 * I have a tendency to read romcoms
 * I like believable stories.
   * I prefer stories that [evoke secondary belief](https://dianetibert.com/2019/10/25/j-r-r-tolkien-evoking-secondary-belief); that is, given the story's fictional (or non-fictional) setting, the story and characters' actions should be reasonably believable
-  * I'm not really a fan of plot armor or improbably idealistic outcomes; If a tragedy is more likely to happen in a story, I'd rather it happened as opposed to a sudden plot twist that made things all good again (although most stories tend to twist it to the latter). That said, I don't mind the happy endings... just make it more believable
-  * I don't really like harems.
+  * I'm not really a fan of plot armor or improbably idealistic outcomes; If a tragedy is more likely to happen in a story, I'd rather it happened as opposed to a sudden plot twist that made things all good again (although most stories tend to twist it to the latter). I am aware that this is something that happens all the time in manga and manhwa, so I usually turn a blind eye to its occurence.
+  * I don't really like harems, yuri or yaoi, even though they are not deal-breakers.
 * I prefer certainty of continuation. I tend to avoid starting on series that are no longer being maintained (e.g. Vagabond). 
 * I like plot progression / character development and I hate stagnation. I'd be dissatisfied if I read a few chapters in a row and come out thinking that the plot didn't progress / there was zero character development.
   
@@ -45,7 +45,7 @@ Manga are presented in ascending order of their quality score.
 
 ## Tidbits
 
-Some manga are kinda unforgettable, and then some have this recurring joke or outstanding thing (good ones have multiple) that makes you immediately know what manga you're talking about when you mention it. I generally include the tidbit that most reminds me of the manga if I like it but can't remember what it's about. This may contain spoilers for the manga, so readers beware.
+Some manga are kinda unforgettable, and then some have this recurring joke or outstanding thing (good ones have multiple) that makes you immediately know what manga you're talking about when you mention it. I generally include the tidbit that most reminds me of the manga if I like it but can't remember what it's about. This may contain spoilers for the manga, so readers beware. The exception to this is when a manga is so good that you just won't forget about it, or so lack-lustre there's nothing worth bringing up.
 
 ## Full list of reviews
 
@@ -82,7 +82,8 @@ Template
 ```
   * Sweetness:    🙂😊
   * Comedy:       🙂😀
-  * Storytelling: ✋😑👌
+  * Action:       🤜🔪
+  * Storytelling: ✋😑
 ```
 * Cultivation Chat Group
 ```
@@ -111,7 +112,7 @@ Template
 * Jitsu Wa Watashi Wa
 ```
   * Sweetness:    🙂😊❤️💘🚑
-  * Action:       👊🔪
+  * Action:       👊
   * Comedy:       🙂😀😆😂🤣
   * Storytelling: ✋😑👌 👍💯
 ```
@@ -345,7 +346,7 @@ Template
 ## Score +1: Worth reading but lacking in some way
 
 <Tabs
-  defaultValue="a"
+  defaultValue="g"
   values={[
     {label: "My Brother is From Deep Mountain (Slice-of-life) (9/10 +1)", value: "g"},
     {label: "Volcanic Age (Wuxia) (9/10 (+1))", value: "f"},
@@ -587,7 +588,7 @@ Template
   defaultValue="a"
   values={[
     {label: "Oresama Teacher (Shojo Romcom) (9.5/10 (+3))", value: "a"},
-    {label: "Kimetsu No Yaiba (9.5/10 +3)", value: "b"},
+    {label: "Kimetsu No Yaiba (9.5/10 +3)", value: "d"},
     {label: "Mission: Yozakura Family (Shonen romcom) (10/10 (+3))", value: "c"},
     {label: "Kitsune Spirit (Shonen romcom) (10/10 (+3))", value: "b"},
   ]}>
@@ -598,7 +599,7 @@ Template
 * **Synopsis**: Delinquent girl turns a new leaf (?) when she changes school 
 * **Genre**: shojo, romcom (focus on comedy)
 * **Release rate**: Irregular
-*** Read until**: 155
+* **Read until**: 155
 * **Fav chapter**: probably 72 lol really made me burst out loud
 * **+ve points:**
     * the facial expressions are on point and the humor is quite good
