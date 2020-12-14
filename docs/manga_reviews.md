@@ -77,7 +77,7 @@ Template
 ```
   * Sweetness:    🙂😊
   * Comedy:       🙂😀
-  * Verdict:      Skippable
+  * Verdict:      Skippable manga. Watch the anime. Take up the novel if you like the plot.
 ```
 * Bokuben 
 ```
@@ -387,8 +387,8 @@ Template
 * **Points**:
     * Very dense MC
     * Everyone noteworthy will fall hopelessly in love with the MC and devote their lives to her. This could get dry real quick
-    * The release rate for the manga sucks. The anime adaptation was quite well done.
-* **Should you read it**: It's a nice manga and the anime was quite well-done. The main appeal of this manga is that it loves to pull off ironic situations. The harem thing gets stale quite easily though and the characters are currently kinda skin-deep in general. There's some tension when characters get into potentially dangerous situations, but with this kind of manga you don't have to worry too much.
+    * The release rate for the manga sucks and it isn't as good as the anime. The anime adaptation was quite well done.
+* **Should you read it**: It's a moderate manga; the anime brings the plot out better than the manga. The main appeal of this manga is that it loves to pull off ironic situations. The harem thing gets stale quite easily though and the characters are currently kinda skin-deep in general. There's some tension when characters get into potentially dangerous situations, but with this kind of manga you don't have to worry too much.
 * **Tidbit**: Did you know the pet name for this manga is Bakarina? It is quite easy to guess why..
 
 </TabItem>
