@@ -139,6 +139,111 @@ Legend:
 * calculate zscore values: `zscore(df['col'])`
   * z-score is the number of standard deviations by which an observation is above the mean - so if it is negative, it means the observation is below the mean.
 
+### matplotlib.pyplot
+`import matplotlib.pyplot as plt`
+* Think of `plt` as some kind of a global variable to attach stuff to
+* Change Styles:
+  * **Use style**: `plt.style.use(style_name)`
+  * **Show available styles**: `plt.style.available`
+* Graphs
+  * Create multiple graphs:
+    * Automatically using `plt.subplot(rows, columns, active_subplot_idx)`
+      * Call the function with a new `active_subplot_idx` = row x rowlen * column to change the current graph.
+        * `active_subplot_idx` starts from 1
+    * Specify axes directly: 
+    * **Change axes**: `plt.axes([xlower, ylower, width_%, height_%])`, args passed as a list
+      * Think of these as rectangle bounds of your current graph.
+        * e.g. if you want 2 graphs side-by-side: 
+          * First set the axes for the left one `plt.axes([0.05, 0.05, 0.425, 0.9])` 
+          * Then plot the left graph `plt.plot(year, physical_sciences, color='blue')`
+          * The set the axes for the right one `plt.axes([0.525, 0.05, 0.425, 0.9])`
+          * and plot that graph `plt.plot(year, computer_science, color='red')`
+  * Plot graph in active subplot:
+    * **Plot line**:
+    ```
+    plt.plot(x_positions_of_points, y_positions_of_points, 
+        color='blue', 
+        label=str     # Used to label the line in the legend
+    )
+    ```
+    * **Scatter**: `plt.scatter(x_data, y_data, label='data', color='red', marker='o')`
+    * **Add title**: `plt.title(str)`
+    * **Change x and y labels**: `plt.xlabel(str)` and `plt.ylabel(str)`
+    * **Change x and y limits (set range)**: `plt.xlim(lower,upper)` and `plt.ylim(lower,upper)`
+      * Inclusive
+      * **Change both at the same time**: `plt.axis((x_lower,x_upper,y_lower, y_upper))`
+  * **Improve the spacing between subplots**: `plt.tight_layout()`
+  * **Add legend**: `plt.legend(loc='lower center')`
+  * **Annotate**
+    ```
+    plt.annotate(text, 
+        xy=(x_pos, y_pos),    # xy of value you're pointing to
+        xytext=(x_pos, y_pos), 
+        arrowprops=dict(facecolor='black')
+    )
+    ```
+  * **2D histogram**:
+    * `plt.hist2d(horizontal_data, vertical_data, bins=(x_cols, y_rows), range=((x_min, x_max), (y_min, y_max)))`
+    * Instead of plotting the points directly on a graph, you turn it into something of a density map; the graph is split into a grid, and boxes with a lot of points will have a color of higher intensity.
+  * **2D hex histogram**:
+    * `plt.hexbin(horizontal_data, vertical_data, gridsize=(x_cols, y_rows), extent=(x_min, x_max, y_min, y_max))`
+  * **Display points w/ color**: `plt.pcolor(2D_arr,...)`
+    * Add param `cmap='Blues'` to config colormapping to Blues
+  * **Display color and intensity mapping**: `plt.colorbar()`
+    * Note that the bottom left part of the image maps to the top left part of the numpy array
+  * **Display points as contours**: `plt.contour(X, Y, Z, contour_count, cmap='color_map')`
+    * Filled: `plt.contourf(...)`
+    * [See](https://jakevdp.github.io/PythonDataScienceHandbook/04.04-density-and-contour-plots.html)
+* Images
+  * **Load img**: `npRGB = plt.imread(filepath)`
+  * **Display img**: 
+  ```
+  plt.imshow(npRGB,
+      cmap='gray',
+      extent=(-1, 1, -1, 1) # horizontal extent from -1 to 1, vertical extent from -1 to 1
+      aspect=1              # aspect ratio (# of vertical pixels : # of horizontal pixels). 
+                            # \lt 1 means img is squashed downwards; \gt 1 means img is stretched upwards
+  )
+  ```
+    * Add cmap if only 1 channel
+  * **RGB to monochannel**: `npRGB.sum(axis=2)`
+  * **Hide axes**: `plt.axis('off')`
+  * Others:
+    * Normalize intensity:
+      * `256*(img-img.min())/(img.max()-img.min())`
+* Export:
+  * **Show on GUI**: `plt.show()`
+  * **Save to file**: `plt.savefig(filepath)`
+
+### seaborn
+`import seaborn as sns`
+* **Simple linear regression**:
+  ```
+  sns.lmplot(x='x_pos_col_in_df', y='y_pos_col_in_df', data=dataframe
+      hue='categorical_col_in_df', # This will be used to group each point
+      row='groupby_row_wise'
+      palette='Set1'
+  )
+  ```
+  * straight line best fit
+  * hue: e.g. you have a col "gender" that allows only {'M','F'}. 
+    * Graph will color points that have value 'M' to one color, and 'F' to another color (i.e. groupby)
+  * row: same purpose as hue, but groupby row-wise
+    * i.e. Segregate points by each category and plot a separate graph for each
+  * plots on current plt graph. Use `plt.show()` to show 
+* **2nd order regression**: 
+  ```
+  sns.regplot(x='x_col_in_df', y='y_col_in_df', data=dataframe,
+      color='green', 
+      scatter=None,         # Set scatter to None if you don't want to plot the scatter points; else ignore this line
+      order=2,              # 1 for simple lin. regr., 2 for 2nd order etc
+      label='legend_label'  # label for legend
+  )
+  ```
+  * curved line best fit
+  * 
+* **Residual plot**: `sns.residplot(x='x_col_in_df', y='y_col_in_df', data=dataframe, color=color_str)`
+  * Visualize how far datapoints diverge from the regression line.
 ## Numpy
 * **Import**: ```import numpy as np```
 * **Numpy Array**
@@ -173,6 +278,10 @@ Legend:
   * **NaN**: `np.nan`
 * **Operations**
   * **Log10**: `np.log10(nd_arr or dataframe)`
+* **Generate uniformly spaced list**: `np.linspace(lower_lim, upper_lim, number_of_items)`
+* **Meshgrid: create a grid by using coordinates of each dimension**: `np.meshgrid(columns, rows)`
+  * [See](https://stackoverflow.com/a/42404323)
+
 ## Pandas
 * **Import**: `import pandas as pd`
 * **Series** (Pandas labelled list)
@@ -183,15 +292,16 @@ Legend:
     * **From CSV File**: 
 
       ```
-      dataframe = pd.read_csv(string_filename, [
-          index_col   = i, # Column to use as row labels of the df. Set to False to force pandas not to use the first column as the index, or to a col name if you want to use that col
-          chunksize   = n, 
+      dataframe = pd.read_csv(string_filename, 
+          delimiter   = str,          # The shorthand 'sep' serves the same purpose
           header      = line_no_start_of_data, 
+          index_col   = i, # Column to use as row labels of the df. Set to False to force pandas not to use the first column as the index, or to a col name if you want to use that col
+
+          [chunksize   = n, 
           names       = new_col_labels_list, 
-          delimiter   = str, 
           comment     = str_prefix, 
           parse_dates = [date_col...]
-      ])
+      )
       ```
       * Note that dataframes are iterables, so you can use "next(iterable)" on them (to get them in the chunksize)
   * **Converting from DataFrame**
@@ -202,7 +312,7 @@ Legend:
     * Slicing
       * **Get column as Series**: `dataframe["column"]`
         * **Convert series to numpy.ndarray**: `series.values`
-      * **Get column as Dataframe**: `dataframe[["column",...]]`
+      * **Extract columns from DF**: `dataframe[["column",...]]`
         * **Dataframe as rows**: `dataframe[startIdxIncl: endIdxExcl]`
     * Array based selection
       * **Select by label**: 
@@ -216,6 +326,9 @@ Legend:
           * `dataframe.loc[:,* [cols]]` (Returns Dataframe)
         * **MultiIndexes**: `df.loc[(top_lvl_idx,2nd_lvl_idx,...), <slicing for column>]`
           * e.g. `sales.loc[('NY',1),:], sales.loc[(slice(None),2),:]`
+          * If you have to use `:` for slicing, replace the tuple with `pd.IndexSlice[top_lvl_idx,2nd_lvl_idx,...]`
+            * e.g. `df.loc[pd.IndexSlice[:,2nd_lvl_idx,...], <slicing for column>]`
+            * *Datacamp loves to create the alias `idx=pd.IndexSlice` to shorten the .loc call.*
           * MultiIndexes: the index is an array instead of a single value (think of nested arrays. e.g. arr[1][2], MultiIndex would be (1,2) or something)
         * **By Datetime** (if index is datetime): `ts0.loc['2010-August':'2010-10-11 22:00:00']` 
           * *can even be like '2010-Aug'*
@@ -239,22 +352,55 @@ Legend:
   * **Modifying Data**:
     * New Column:
       * **Add new value**: `df.loc[lbl, col] = val` (do this for every row to add the column)
+      * **Set column to that value for every row**: `df['col'] = val`
       * **Modify by transformation function**: `df**["newCol"] = df["oldCol"].apply(transformFx)`
       * **Modify by mapping values to a dictionary**: `df['col'].map(dict_map_vals)`
     * New Row:
       * **Append**: `df.append(df,ignore_index=bool)`
         * *Ignore index: Preserve index (False) or Number everything from 0 to n (True)*
-      * **Concatenating list of series/dataframes**: 
+      * **Concatenating / Joining list of series/dataframes**: 
         ```
-        pd.concat(list_of_dataframes, 
-            axis=column_index,
-            keys=['one','col','name','per','dataframe','in','list']
+        pd.concat(list_of_dataframes, # Concatenating a dictionary will result in the keys becoming the indexes
+            axis=num,         # 0/’index’ (rows), 1/’columns’
+            keys=['one','col','name','per','dataframe','in','list'],
+            join='inner',     # optional, keep only rows that share common index labels.
+            ignore_index=bool # If True, prevents repeated integer indices
         )
         ```
         * [axis{0/’index’, 1/’columns’}, default 0](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html)
+          * 0: Stack below ("vertically"), 1: Stack to the right ("horizontally")
         * Keys: 1 key per DataFrame in the list, forming the outer index in the MultiIndex. The resulting DataFrame will be something like df['one'][n] to access the first DataFrame, df['col'][n] to access the 2nd DataFrame etc.
+        ```
+        # Inner join, Equivalent to pd.concat([leftDF, rightDF], 'columns', join='inner')
+        pd.merge(leftDF, rightDF, 
+            on=column_label, # See exposition below
+            how='inner',     # Type of join. See below
+            suffixes=[sfx_forDF1, sfx_forDF2] # If both DFs have columns of same name, add suffix at the end if not merging on those columns
+        )
+        ```
+        * **on:** If multiple columns form the identifier: use `on=[col1,col2,...]`. Otherwise, the join will horizontally append copies of the columns even if they are the same.
+        * **on:** If df1 and df2 use different labels for the same identifier, use `left_on` and `right_on`.
+        * **how:** You can also define various types of joins as specified [here](https://mode.com/sql-tutorial/sql-outer-joins/) 
+        * See [documentation](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.merge.html) if need to be more specific
+        ```
+        # Same as pd.merge above, but designed for ordered data like time series and filling and interpolation.
+        pd.merge_ordered(leftDF, rightDF,
+            fill_method="ffill" # Forward-filling: Replace NaN entries with the most recent non-null entry,
+            # Other params same as above)
+        ```
+        ```
+        pd.merge_asof(...)
+        # pd.merge_asof() is like the pd.merge_ordered() function; it merges values in order using the on column
+        # but for each row in the left DataFrame, only rows from the right DataFrame whose 'on' column values are less than the left value will be kept.
+        ```
     * Deletion:
       * **Drop columns**: `df.drop(arr_of_cols, axis='columns')`
+    * Dividing one DF by another:
+      ```
+      DF1.divide(DF2, 
+          axis='rows'/'columns' # Divide the DF1 by DF2 along each row
+      )
+      ```
     * Metadata:
       * Column datatype conversion
         * **Convert to datetime**: `pd.to_datetime(df['col'][,format=date_str_format,infer_datetime_format = <True/* False>,  errors = <'raise'/'coerce'/'ignore'>])`
@@ -286,11 +432,14 @@ Legend:
     * **Get Uniques**: `df.unique()`
     * **Find missing values**: `df.isna()`
       * *returns bool arr with same dimensions*
-    * **Compute % change from the immediate previous**: `series.pct_change()`: 
-      * Row by default. Useful in comparing the percentage of change in a time series of elements.
+    * **Compute % change from the immediate previous**: `series.pct_change(offset=1)`: 
+      * Row by default. Useful in comparing the percentage of change in a time series of elements. 
+      * Offset is in unit time specified in sample
   * Grouping Data:
     * **Downsample time series**: `df['col'].resample(time_str_format).agg_fx()`
-    * e.g. `df.Temperature.resample('6h').mean()` = group an hourly based time series into averaged quarterly data
+      * e.g. `df.Temperature.resample('6h').mean()` = group an hourly based time series into averaged quarterly data
+      * `df.resample('A').mean()`: resample w/ annual frequency, assumes index is a datetime
+      * `df.resample('A', on=column_label).mean()`: resample w.r.t a column label that isn't the index
     * `groupby` function:
       * **Group-by (Single index)**: `df.groupby('idx')`
       * **Group-by (Multi-Index)**: `df.groupby([indexes])`
@@ -315,10 +464,12 @@ Legend:
   * Aggregation Operations
     * **Aggregate duplicates**: `df.groupby(by = arr_of_col_names).agg(col_to_fx_dict).reset_index()`
       * *col_to_fx_dict*: e.g. {'height: 'max', 'weight': mean}
-    * **sum**: `df['col'].sum()` or `df['col'].sum(axis=1)`
+      * **sum**: `df['col'].sum()` or `df['col'].sum(axis=1)`
       * *Include axis=1 in aggregate f(x)s if you want to sum multiple columns, but keep the rows*
       * *You can also sum booleans to count number of True values*
       * **mean**: `df['col'].mean()`
+      * **max**: `df['col'].max()`
+      * **argmax** (idx of max val): `df['col'].argmax()`
       * **count**: `df['col'].count()`
       * **quantile**: `quantile([start, end (0-1)])`
       * **std.dev**: `std()`
@@ -327,9 +478,14 @@ Legend:
       * **Count times value appeared**: `value_counts()` / `series.value_counts()`
         * Returns dataframe (dictionary)
   * Sorting Operations
+    * **Sort by current index**: `df.sort_index(level=idx_lvl)`
+      * You may want to change the index by using `df.set_index()` first
     * **Sort values by column name**: `df.sort_values(by = arr_of_col_names)` or `df.sort_values('col')`
       * **Sort df chosen by boolean array**: `df[duplicates_bool].sort_values(...)`
-    * **Sort by index**: `df.sort_index()`
+  * Windowing Operations
+    * [Documentation](https://pandas.pydata.org/pandas-docs/stable/user_guide/computation.html)
+    * `df.expanding()`
+      * See [this](https://stackoverflow.com/questions/45370666/what-are-pandas-expanding-window-functions): "A common alternative to rolling statistics is to use an expanding window, which yields the value of the statistic with all the data available up to that point in time"
   * Operations involving DataFrame and boolean array:
     * **Get duplicate rows**: `df[df.duplicated()]`
   * Operations involving indexes:
@@ -339,6 +495,7 @@ Legend:
       * **Reindex** (Change values of the 1st column): `df = df.reindex(col/df2.index,[method=pad/backfill/nearest])`
         * *Conform DataFrame to new index with optional filling logic, placing NA/NaN in locations having no value in the previous index. A new object is produced unless the new index is equivalent to the current one and copy=False*
       * **Change index entirely**: `df.set_index('colname',inplace=bool)`. 
+        * This is usually done as an interim operation to make naivgating the DF easier, or for using `sort_index()`
         * [Reindex vs set_index](https://stackoverflow.com/questions/50741330/difference-between-df-reindex-and-df-set-index-methods-in-pandas)
       * **Reset index**: `df.reset_index()`
       * **Rename columns**: `df.columns = arr`
@@ -385,7 +542,12 @@ Legend:
       * `dataframe.plot(kind='scatter', x='col1', y='col2', [color='str', s=size_value,subplots=bool])`
         * you can plot all data by omitting x and y
         * subplots: plot in separate graphs
-      * `df[list_of_columns].plot() `
+      * `df.boxplot(column = [y_axis_col_values], by=[x_axis_col_values])`
+      * `ax = df[list_of_columns].plot() `
+        * You can customize the plot by calling the functions below on ax:
+          * `ax.set_ylabel("% Change of Host Country Medal Count")`
+          * `ax.set_title("Is there a Host Country Advantage?")`
+          * `ax.set_xticklabels(editions['City'])`
         * plot all of the columns (their x and y) on the same graph with their own colours
         * plt.title(str)
         * plt.xlabel(str)
@@ -395,3 +557,4 @@ Legend:
         * `fig, axes = plt.subplots(nrows=num_of_rows, ncols=num_of_columns)`
         * `df.plot(ax=axes[0], kind='hist', normed=True, bins=30, range=(0,.3))`
         * `df.fraction.plot(ax=axes[1], kind='hist', normed=True, cumulative=True, bins=30, range=(0,.3))`
+          * `kind='bar'`

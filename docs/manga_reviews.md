@@ -57,33 +57,41 @@ Template
   * *Defining Characteristic*: *1 to 5 emojis depending on how satisfactory the manga is in that regard.*
     * *If it is not listed, it means it's not a strong point.*
   * Sweetness: 🙂😊❤️💘🚑
-    * *How sweet/cute/heartwarming I found the manga*
+    * *How sweet/cute/heartwarming I found it*
   * Comedy: 🙂😀😆😂🤣
-    * *How much I laughed when reading it*
+    * *How much I laughed when I read it*
   * Action: 🤜🔪⚔️💣💥
-    * *The quality of combat depicted in the manga and level of excitation.*
+    * *The quality of action (usually combat) depicted in the manga; usually reflective of level of excitation.*
   * Intrigue: 🕯️ 💡🧠🤯👽
     * *The amount and quality of big brain plays / strategizing / scheming involved.*
   * Storytelling: ✋😑👌 👍💯
     * *The quality of the author's storytelling. Reflective of pacing of story, world building, character development, author's ability to keep the reader guessing what will happen next and ability to keep reader interested in the story.*
 
 *** 
+* 5-Toubun
+```
+  * Sweetness:    🙂😊❤️💘
+  * Verdict:      This is trash, I like and hate it
+```
 * Bakarina 
 ```
   * Sweetness:    🙂😊
   * Comedy:       🙂😀
+  * Verdict:      Skippable
 ```
 * Bokuben 
 ```
   * Sweetness:    🙂😊❤️💘🚑
   * Comedy:       🙂😀
+  * Verdict:      This is trash but I like it
 ```
 * Chitra
 ```
   * Sweetness:    🙂😊
   * Comedy:       🙂😀
-  * Action:       🤜🔪
+  * Action:       🤜🔪⚔️
   * Storytelling: ✋😑
+  * Verdict:      Skippable
 ```
 * Cultivation Chat Group
 ```
@@ -91,23 +99,27 @@ Template
   * Comedy:       🙂😀😆😂🤣
   * Action:       🤜🔪⚔️💣
   * Storytelling: ✋😑👌 👍💯
+  * Verdict:      This is really good
 ```
 * Grand Blue
 ```
   * Sweetness:    🙂😊
   * Comedy:       🙂😀😆😂🤣
   * Storytelling: ✋😑
+  * Verdict:      This is really good
 ```
 * Horimiya
 ```
   * Sweetness:    🙂😊❤️💘
   * Comedy:       🙂😀
   * Storytelling: ✋😑
+  * Verdict:      This is good
 ```
 * I'm a spider, so what?
 ```
   * Action:       🤜🔪⚔️💣💥
-  * Storytelling: ✋😑👌
+  * Storytelling: ✋
+  * Verdict:      On the fence
 ```
 * Jitsu Wa Watashi Wa
 ```
@@ -115,13 +127,15 @@ Template
   * Action:       🤜
   * Comedy:       🙂😀😆😂🤣
   * Storytelling: ✋😑👌 👍💯
+  * Verdict:      I love and hate it
 ```
 * Kaguya-sama: Love is War
 ```
   * Sweetness:    🙂😊❤️💘🚑
-  * Comedy:       🙂😀😆😂🤣
+  * Comedy:       🙂😀😆😂
   * Intrigue:     🕯️ 💡🧠
   * Storytelling: ✋😑👌 👍💯
+  * Verdict:      This is really good
 ```
 * Kimetsu No Yaiba
 ```
@@ -129,6 +143,7 @@ Template
   * Comedy:       🙂😀
   * Action:       🤜🔪⚔️💣💥
   * Storytelling: ✋😑👌👍
+  * Verdict:      This is good
 ```
 * Kishuku Gakkou no Juliet
 ```
@@ -136,12 +151,14 @@ Template
   * Comedy:       🙂😀😆😂
   * Intrigue:     🕯️ 
   * Storytelling: ✋😑👌
+  * Verdict:      This is really good
 ```
 * Kitsune Spirit
 ```
   * Sweetness:    🙂😊❤️💘🚑
   * Comedy:       🙂😀😆😂
   * Storytelling: ✋😑👌
+  * Verdict:      This is really good
 ```
 * Leveling Up by only Eating
 ```
@@ -149,6 +166,7 @@ Template
   * Comedy:       🙂😀😆
   * Action:       🤜🔪⚔️💣
   * Storytelling: ✋😑👌
+  * Verdict:      This is good
 ```
 * Mission: Yozakura Family
 ```
@@ -156,19 +174,22 @@ Template
   * Comedy:       🙂😀😆
   * Action:       🤜🔪⚔️💣
   * Storytelling: ✋😑👌
+  * Verdict:      This is good
 ```
 * My Brother is From Deep Mountain
 ```
   * Sweetness:    🙂😊❤️
   * Comedy:       🙂😀
+  * Verdict:      This is good
 ```
 * Oresama Teacher
 ```
-  * Sweetness:    🙂
+  * Sweetness:    🙂😊
   * Comedy:       🙂😀😆😂
   * Action:       🤜🔪⚔️
   * Intrigue:     🕯️ 💡
   * Storytelling: ✋😑👌
+  * Verdict:      This is good
 ```
 * Peerless Dad
 ```
@@ -177,6 +198,7 @@ Template
   * Action:       🤜🔪⚔️💣💥
   * Intrigue:     🕯️ 💡🧠
   * Storytelling: ✋😑👌 👍💯
+  * Verdict:      This is really good
 ```
 * Sijin
 ```
@@ -184,22 +206,26 @@ Template
   * Action:       🤜🔪
   * Intrigue:     🕯️ 💡🧠🤯👽
   * Storytelling: ✋😑👌 👍
+  * Verdict:      This is good
 ```
 * That Girl is not just cute
 ```
   * Sweetness:    🙂😊❤️💘🚑
   * Comedy:       🙂😀
+  * Verdict:      This is good
 ```
 * The Pharmarcy Where the Wolf Howls
 ```
   * Sweetness:    🙂😊❤️
   * Comedy:       🙂😀
   * Storytelling: ✋😑
+  * Verdict:      Skippable
 ```
 * The Undefeatable Swordsman
 ```
   * Action:       🤜🔪⚔️💣
   * Storytelling: ✋😑👌 👍
+  * Verdict:      On the fence
 ```
 * Tomo-chan wa Onnanoko
 ```
@@ -207,6 +233,7 @@ Template
   * Comedy:       🙂😀
   * Action:       🤜🔪
   * Storytelling: ✋😑👌
+  * Verdict:      On the fence
 ```
 * Volcanic Age
 ```
@@ -215,16 +242,19 @@ Template
   * Action:       🤜🔪⚔️💣💥
   * Intrigue:     🕯️ 💡🧠
   * Storytelling: ✋😑
+  * Verdict:      On the fence
 ```
 * We May Be An Inexperienced Couple But...
 ```
   * Sweetness:    🙂😊❤️💘🚑
   * Comedy:       🙂😀
+  * Verdict:      This is good
 ```
 * Wotakoi
 ```
   * Sweetness:    🙂😊❤️💘🚑
   * Comedy:       🙂😀😆
+  * Verdict:      This is good
 ```
   
 ## Series that I currently follow:
@@ -272,9 +302,11 @@ Template
 ## Score +0: Worth reading but forgettable
 
 <Tabs
-  defaultValue="e"
+  defaultValue="h"
   values={[
+    {label: "I'm a spider, so what? (Reincarnation action seinen) (6/10 (+0))", value: "h"},
     {label: "Bakarina (Harem Comedy) (8/10 (+0))", value: "e"},
+    {label: "5-Toubun (8/10 (+0))", value: "f"},
     {label: "The Pharmarcy Where the Wolf Howls (Josei romcom) (9/10 (+0?))", value: "d"},
     {label: "That Girl is not just cute (romcom) (9.5/10 (+0))", value: "c"},
     {label: "Tomo-chan wa Onnanoko (romcom) (10/10 (+0))", value: "a"},
@@ -295,6 +327,26 @@ Template
     * Clicking through the pages can be a pain
 * **Should you read it**: Hm. Thinking back to this manga now I don't really have any outstanding memories of it. Don't get me wrong, it's got sweet and funny moments and it was kinda refreshing to read with its 1 page structure, but it's not terribly memorable. 
 * **Tidbit**: This manga doesn't have a tidbit because I honestly don't remember any outstanding moments (aside from the confessions and the part where someone got angry)
+
+</TabItem>
+<TabItem value='f'>
+
+#### 5-Toubun (8/10 (+0))
+
+* **Synopsis**: Poor guy falls in love with the quintuplets he tutors
+* **Genre**: romcom, school life
+* **Release rate**: Completed
+* **Summary**: 
+  * This is a trashy romcom:
+    * I call this a "romcom", but in truth there isn't a lot of comedy
+    * It (probably) won't be too bad if you've not read trashy manga romcoms before, but if you have, you might find this a little boring.
+    * Get ready for cliche plot devices utilized in Niseikoi, Bokuben etc; these have been used ad nauseam and there isn't really any oustanding new innovation by the author here. Author loves to play one cliche after another. He'll play the "MC will marry one of them" card by doing a flashforward of MC getting married to one of the five, he'll play the childhood friend card, he'll play the "they will stay together if they do this in the festival" with the "everyone participated so it doesn't matter", he'll play the "we originally didn't want him but now we do" card etc etc etc.
+      * That said, the concept of quintuplets do give the mangaka some rather interesting scenarios to play with regarding some "whodunnit" and "who is that" situations.
+    * Get ready for cliche "they all will somehow fall in love with MC in some way for some (weak) reason or another"
+      * Get ready for the cliche too-shy-to-fess-up ML, cliche I-love-him-too-but-lemme-bottle-it-up-for-others ML, inevitable love struggles between MLs, dense MC, etc
+      * Get ready for MC-has-to-choose-one (as opposed to bokuben's solution to this problem)
+    * Get ready to be annoyed by everyone in the story in some way or another at the start
+* **Is it worth reading**: Uhhhhm. I found the manga a little too cliche for my tastes, but it is quite popular in some circles.
 
 </TabItem>
 <TabItem value='c'>
@@ -338,6 +390,28 @@ Template
     * The release rate for the manga sucks. The anime adaptation was quite well done.
 * **Should you read it**: It's a nice manga and the anime was quite well-done. The main appeal of this manga is that it loves to pull off ironic situations. The harem thing gets stale quite easily though and the characters are currently kinda skin-deep in general. There's some tension when characters get into potentially dangerous situations, but with this kind of manga you don't have to worry too much.
 * **Tidbit**: Did you know the pet name for this manga is Bakarina? It is quite easy to guess why..
+
+</TabItem>
+
+<TabItem value="h">
+
+#### I'm a spider, so what? (Reincarnation action seinen) (6/10 (+0))
+* **Synopsis**: Reincarnates as spider
+* **Genre**: action, seinen
+* **Release rate**: Monthly
+* **Points**:
+  * MC undergoes tremendous suffering and has plot armor. 
+  * Similar to Slime Rimuru plot, but more gruesome and interaction with humans (and other intelligent beings) comes at a much later stage.
+  * However, unlike Slime Rimuru, there is significantly less planning and strategizing. The quality of novel TLs is also significantly weaker. Think of it as comparing a hack-and-slash game to a RPG game.
+  * Novel TL quality is, frankly speaking, pretty bad.
+  * An unpolished gemstone. There is a lot of potential in this story and you can tell there was a lot of effort. Unfortunately, the way it is told is  very lacklustre; there is not enough explanation when it is needed (e.g. the definition of "MA" in the universe and its importance to the story, etc), which makes what could've been a very interesting story a very *unsatisfying* and *difficult* read (especially with its inconsistent perspective storytelling method; I'd rather the author stuck to the perspective of MC 1, then stuck to the perspective of MC 2 for example as opposed to jumping from MC1 to MC2 to MC3 and back to MC1 with every new chapter).
+    * The author in the novel loves to tell the story from different perspectives, but sometimes forgets to say *whose* perspective it is. 
+    * Sometimes only reveals the percept of a character after the character has reacted to it (e.g. author shows MC getting angry and then going to beat up someone, but doesn't tell u why she got angry, or even what she saw until after she beat up the person) 
+    * The TL quality for the novel is pretty bad. 
+    * After reading quite a bit and learning more about the world, the plot feels quite shallow and tbh I don't understand the motivation of some of the characters even after reading it (due to bad TL quality and poor storytelling)
+    * Hopefully the manga improves upon what is already there, or else it will remain a dirty piece of rock.
+    * It's hard to avoid drawing comparisons to Slime Rimuru. IMO, the plot progression is much faster than Rimuru, but the quality and depth of storytelling and the plot itself just cannot compare at all.
+* **Should you read it:** Art quality is exceptional and combat is interesting. Unfortunately, the release rate is slow as hell for the manga, even though the story progression is faster than Slime Rimuru. Also, expect the story to change midway through. At the first part, it is very lacking in proper social interaction at the start of the manga (the author literally creates a skill so that MC can split her consciousness to talk to multiple mental copies of herself); for the entire manga so far you can count with one hand the number of (proper) conversations the MC has had with other creatures. In the second part, the quality of interactions remains quite meh. IMO don't read it and you won't be disappointed.
 
 </TabItem>
 
@@ -461,7 +535,6 @@ Template
     {label: "The Undefeatable Swordsman (Action) (9/10 (+2?))", value: "b"},
     {label: "Bokuben (9/10 (+2))", value: "f"},
     {label: "Leveling Up by only Eating (slice-of-life shonen?) (9/10 (+2))", value: "d"},
-    {label: "I'm a spider, so what? (Reincarnation action seinen) (9/10 (+2))", value: "g"},
     {label: "Jitsu Wa Watashi Wa (Romcom) (9/10 (+2))", value: "a"},
     {label: "Sijin (Drama Tragedy) (9/10 (+2))", value: "e"},
     {label: "We May Be An Inexperienced Couple But... (Seinen romcom) (9/10 (+2))", value: "c"},
@@ -500,19 +573,6 @@ Template
 * **Will I re-read it:** Probably not, there's too many fillers, but some parts are legit hilarous
 * **Tidbit**: ( ⚆ _ ⚆ ) ( ⚆ _ ⚆ ) when they find out what sucking blood really means to vampires
 
-
-</TabItem>
-
-<TabItem value="g">
-
-#### I'm a spider, so what? (Reincarnation action seinen) (9/10 (+2))
-* **Synopsis**: Girl reincarnates as spider
-  * Similar to Slime Rimuru plot, but a lot more gruesome and interaction with humans comes at a much later stage.
-* **Genre**: action, seinen
-* **Release rate**: Monthly
-* **Points**:
-  * MC undergoes tremendous suffering and has plot armor. 
-* **Should you read it:** Art quality is exceptional and it is exciting to read. Unfortunately, the release rate is slow as hell for the manga (like Slime Rimuru) and it feels like a Slime Rimuru alternate universe with all the exposition into monster skills and how overpowered the MC grows. Also very lacking in proper social interaction (the author literally creates a skill so that MC can split her consciousness to talk to multiple mental copies of herself); for the entire manga so far you can count with one hand the number of (proper) conversations the MC has had with other creatures.
 
 </TabItem>
 
