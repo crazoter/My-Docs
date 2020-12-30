@@ -22,7 +22,7 @@ Started a page on manga so I can keep track of what I read. Note that this list 
 
 Check the table of contents and start reading the reviews from the ones with the highest quality scores. If they have the same bonus score, the manga that is more to the right is my preference. 
 
-My all-time favourites when it comes to comedy is Grand Blue and when it comes to romcoms it's Kaguya Love is War. I don't have a favourite shonen/action series because that genre is saturated with good stuff.
+My all-time favourites when it comes to comedy is Grand Blue and when it comes to romcoms it's Kaguya Love is War. I don't have a favourite shounen/action series because that genre is saturated with good stuff.
 
 ## Quality Scoring System
 
@@ -35,8 +35,8 @@ Manga on this page are scored by a base score plus a bonus score. As such, the t
     * -1 - Umm... The kind of manga where I'm kind of on the fence, which means you can do without reading it
     * 0 - Worth reading, but kind of forgettable... 
     * 1 - Highly worth reading, but some parts are kind of unsatisfactory, or I just don't feel attached to it for some unexplained reason
-    * 2 - Definitely worth reading, I really liked it. Manga with +2 onwards are manga that I believe can be safely recommended to others who like the genre (if they don't mind the negative points brought up)
-    * 3 - Read it!!! The kind where you think back about when you read it and it still warms your heart / makes you want to re-read 
+    * 2 - Definitely worth reading, I really liked it.
+    * 3 - Read it!!! The kind where you think back about when you read it and it still warms your heart / makes you want to re-read. Can be safely recommended to others.
     * 4 - Must read, the kind where you draw inspiration from the manga or are reminded of the manga in your life every now and then
     * 5 - Must read, if you're prepared to become addicted to it. The kind where you're so attached to the characters you start reading the original novel, or related fanfic/art/doujinshi.
 * **Loopholes**: There are some manga where the base score is exceptional, but the bonus score isn't very high (e.g. That Girl is not just cute). This is because even though I like the series, I recognize it's not really impactful.
@@ -71,13 +71,22 @@ Template
 * 5-Toubun
 ```
   * Sweetness:    🙂😊❤️💘
+  * Storytelling: ✋😑👌 👍*
   * Verdict:      This is trash, I like and hate it
+  * Storytelling: Storytelling isn't exceptional, but the plot twists may make this interesting to read a second time
 ```
 * Bakarina 
 ```
   * Sweetness:    🙂😊
   * Comedy:       🙂😀
   * Verdict:      Skippable manga. Watch the anime. Take up the novel if you like the plot.
+```
+* Beware of The Villainess!
+```
+  * Sweetness:    🙂
+  * Comedy:       🙂😀😆😂🤣
+  * Storytelling: ✋😑
+  * Verdict:      Quite funny
 ```
 * Bokuben 
 ```
@@ -119,7 +128,7 @@ Template
 ```
   * Action:       🤜🔪⚔️💣💥
   * Storytelling: ✋
-  * Verdict:      On the fence
+  * Verdict:      Skippable
 ```
 * Jitsu Wa Watashi Wa
 ```
@@ -168,6 +177,14 @@ Template
   * Storytelling: ✋😑👌
   * Verdict:      This is good
 ```
+* Love Advice from the Great Duke of Hell
+```
+  * Sweetness:    🙂
+  * Comedy:       🙂😀😆😂🤣
+  * Action:       🤜🔪⚔️💣
+  * Storytelling: ✋😑👌 👍💯
+  * Verdict:      This is really good, but read review
+```
 * Mission: Yozakura Family
 ```
   * Sweetness:    🙂😊❤️💘
@@ -180,7 +197,16 @@ Template
 ```
   * Sweetness:    🙂😊❤️
   * Comedy:       🙂😀
-  * Verdict:      This is good
+  * Verdict:      This is sorta good
+```
+* My Wife Is A Demon Queen
+```
+  * Sweetness:    🙂😊❤️
+  * Comedy:       🙂😀
+  * Action:       🤜🔪⚔️💣💥
+  * Intrigue:     🕯️ 
+  * Storytelling: ✋😑👌 👍
+  * Verdict:      This is pretty good (See review)
 ```
 * Oresama Teacher
 ```
@@ -214,6 +240,13 @@ Template
   * Comedy:       🙂😀
   * Verdict:      This is good
 ```
+* The Duchess' 50 Tea Recipes
+```
+  * Sweetness:    🙂😊❤️💘🚑
+  * Storytelling: ✋😑👌*
+  * Verdict:      This is really good
+  * Storytelling: Plot is nothing amazing (or at least it picks up slowly), but interesting tea trivia
+```
 * The Pharmarcy Where the Wolf Howls
 ```
   * Sweetness:    🙂😊❤️
@@ -226,6 +259,12 @@ Template
   * Action:       🤜🔪⚔️💣
   * Storytelling: ✋😑👌 👍
   * Verdict:      On the fence
+```
+* The Young Lady I Served Became a Young Master
+```
+  * Sweetness:    🙂
+  * Storytelling: ✋
+  * Verdict:      Too early to tell
 ```
 * Tomo-chan wa Onnanoko
 ```
@@ -248,7 +287,7 @@ Template
 ```
   * Sweetness:    🙂😊❤️💘🚑
   * Comedy:       🙂😀
-  * Verdict:      This is good
+  * Verdict:      This is quite good
 ```
 * Wotakoi
 ```
@@ -259,9 +298,10 @@ Template
   
 ## Series that I currently follow:
 
+While I am usually reading new manga, these are the series that I follow on a regular basis:
+
 **Irregular**
 * Leveling Up by only Eating
-* Mission: Yozakura Family
 * Peerless Dad
 * Kitsune Spirit
 
@@ -274,6 +314,7 @@ Template
 * Cultivation Chat Group
 * We May Be An Inexperienced Couple But...
 * Kaguya-sama: Love is War
+* My Wife Is A Demon Queen
 
 ## Reviews by score
 
@@ -287,13 +328,13 @@ Template
 
 <TabItem value="a">
 
-#### The Stereotypical Life of a Reincarnated Lady (Romcom) (7/10 (-2))
+#### The Stereotypical Life of a Reincarnated Lady (Romcom) (5/10 (-2))
 
 * **Synopsis**: Woman reincarnates as noble lady
 * **Genre**: romcom, manhwa
 * **Release rate:** Weekly
 * **Read until**: Ch 36
-* **Should you read it**: I wouldn't really recommend it. So why is this manhwa on this list? I don't know. I just couldn't stop reading it to the end. It's not a *terrible* manhwa per se, but if you were to ask me what I liked about it, I wouldn't be able to give you an answer.
+* **Should you read it**: I wouldn't really recommend it. So why is this manhwa on this list? I don't know. I just couldn't stop reading it. It's not a *terrible* manhwa per se, but if you were to ask me what I liked about it, I wouldn't be able to give you an answer.
 
 </TabItem>
 
@@ -307,10 +348,26 @@ Template
     {label: "I'm a spider, so what? (Reincarnation action seinen) (6/10 (+0))", value: "h"},
     {label: "Bakarina (Harem Comedy) (8/10 (+0))", value: "e"},
     {label: "5-Toubun (8/10 (+0))", value: "f"},
+    {label: "Beware of the Villainess! (Shoujo isekai romcom) (9/10 (+0))", value: "g"},
     {label: "The Pharmarcy Where the Wolf Howls (Josei romcom) (9/10 (+0?))", value: "d"},
     {label: "That Girl is not just cute (romcom) (9.5/10 (+0))", value: "c"},
     {label: "Tomo-chan wa Onnanoko (romcom) (10/10 (+0))", value: "a"},
   ]}>
+
+<TabItem value="g">
+
+#### Beware of the Villainess! (Shoujo isekai romcom) (9/10 (+0))
+
+* **Synopsis**: Protagonist reincarnates as villainess in a shoujo novel and protects original MC from her love interests
+* **Genre**: webtoon, shoujo, isekai, romcom
+* **Release rate**: Irregular (3 times a month)
+* **Read until**: 55
+* **Should you read it**: The plot is honestly not very deep, but it is a somewhat entertaining read with some interesting personalities. 
+  * Expect shoujo level of romance.
+  * Expect the usual "ah, I have this special advantage because I read this part in the novel."
+  * SPOILER: Also expect abit of yuri.
+
+</TabItem>
 
 <TabItem value="a">
 
@@ -336,17 +393,17 @@ Template
 * **Synopsis**: Poor guy falls in love with the quintuplets he tutors
 * **Genre**: romcom, school life
 * **Release rate**: Completed
-* **Summary**: 
+* **Points**: 
   * This is a trashy romcom:
     * I call this a "romcom", but in truth there isn't a lot of comedy
-    * It (probably) won't be too bad if you've not read trashy manga romcoms before, but if you have, you might find this a little boring.
-    * Get ready for cliche plot devices utilized in Niseikoi, Bokuben etc; these have been used ad nauseam and there isn't really any oustanding new innovation by the author here. Author loves to play one cliche after another. He'll play the "MC will marry one of them" card by doing a flashforward of MC getting married to one of the five, he'll play the childhood friend card, he'll play the "they will stay together if they do this in the festival" with the "everyone participated so it doesn't matter", he'll play the "we originally didn't want him but now we do" card etc etc etc.
-      * That said, the concept of quintuplets do give the mangaka some rather interesting scenarios to play with regarding some "whodunnit" and "who is that" situations.
-    * Get ready for cliche "they all will somehow fall in love with MC in some way for some (weak) reason or another"
-      * Get ready for the cliche too-shy-to-fess-up ML, cliche I-love-him-too-but-lemme-bottle-it-up-for-others ML, inevitable love struggles between MLs, dense MC, etc
-      * Get ready for MC-has-to-choose-one (as opposed to bokuben's solution to this problem)
+    * Get ready for a lot of cliche plot devices utilized in Niseikoi, Bokuben etc. Author loves to play one cliche after another. He'll play the "MC will marry one of them" card by doing a flashforward of MC getting married to one of the five, he'll play the childhood friend card, he'll play the "they will stay together if they do this in the festival" with the "everyone participated so it doesn't matter", he'll play the "we originally didn't want him but now we do" card, he'll play the "MC is suddenly in his popular phase" card, the cliche too-shy-to-fess-up ML, cliche I-love-him-too-but-lemme-bottle-it-up-for-others ML, inevitable love struggles between MLs etc etc etc.
+    * Get ready for MC-has-to-choose-one (as opposed to bokuben's solution to this problem).
     * Get ready to be annoyed by everyone in the story in some way or another at the start
-* **Is it worth reading**: Uhhhhm. I found the manga a little too cliche for my tastes, but it is quite popular in some circles.
+  * The concept of quintuplets is one of the manga's strongest unique points which the mangaka will use again and again to play with some "whodunnit" and "who is that" situations.
+  * There isn't really a moment of peace in this manga (or at least, not that I can recall). The characters are almost always either under stress due to their studies, or stress from work, or stress from dramatic relationships. If that's not the case, then the chapter is busy dropping big plot bombs. Don't expect a chapter where the characters just sit down for a cup of tea and the chapter passes by peacefully. 
+  * All points said, there are still plot twists to keep things interesting (but they don't subvert the cliches I raised above)
+    * This can make the manga worth reading a second time.
+* **Is it worth reading**: Uhhhhm. I found the manga a little too cliche for my tastes, but the manga did get better in the later half. 
 
 </TabItem>
 <TabItem value='c'>
@@ -408,10 +465,10 @@ Template
     * The author in the novel loves to tell the story from different perspectives, but sometimes forgets to say *whose* perspective it is. 
     * Sometimes only reveals the percept of a character after the character has reacted to it (e.g. author shows MC getting angry and then going to beat up someone, but doesn't tell u why she got angry, or even what she saw until after she beat up the person) 
     * The TL quality for the novel is pretty bad. 
-    * After reading quite a bit and learning more about the world, the plot feels quite shallow and tbh I don't understand the motivation of some of the characters even after reading it (due to bad TL quality and poor storytelling)
+    * After reading quite a bit and learning more about the world, the plot feels quite shallow and tbh I don't understand the motivation of some of the characters even after reading it (either due to bad TL quality or just plain poor storytelling by the author)
     * Hopefully the manga improves upon what is already there, or else it will remain a dirty piece of rock.
-    * It's hard to avoid drawing comparisons to Slime Rimuru. IMO, the plot progression is much faster than Rimuru, but the quality and depth of storytelling and the plot itself just cannot compare at all.
-* **Should you read it:** Art quality is exceptional and combat is interesting. Unfortunately, the release rate is slow as hell for the manga, even though the story progression is faster than Slime Rimuru. Also, expect the story to change midway through. At the first part, it is very lacking in proper social interaction at the start of the manga (the author literally creates a skill so that MC can split her consciousness to talk to multiple mental copies of herself); for the entire manga so far you can count with one hand the number of (proper) conversations the MC has had with other creatures. In the second part, the quality of interactions remains quite meh. IMO don't read it and you won't be disappointed.
+    * It's hard to avoid drawing comparisons to Slime Rimuru. IMO, the plot progression is much faster than Rimuru, but the quality and depth of storytelling and the plot itself just far worse.
+* **Should you read it:** Art quality is exceptional and combat is interesting. Unfortunately, the release rate is slow as hell for the manga, even though the story progression is faster than Slime Rimuru. Also, expect the story to change midway through. At the first part, it is very lacking in proper social interaction at the start of the manga (the author literally creates a skill so that MC can split her consciousness to talk to multiple mental copies of herself); for the entire manga so far you can count with one hand the number of (proper) conversations the MC has had with other creatures. In the second part, the quality of interactions remains quite meh. Honestly, what makes this series bad is not really the quality itself, but how the story could've been so much better if the plot was better fleshed out and the storytelling done better. It is the disappointment with the plot and storytelling that makes it a no for me.
 
 </TabItem>
 
@@ -534,11 +591,27 @@ Template
   values={[
     {label: "The Undefeatable Swordsman (Action) (9/10 (+2?))", value: "b"},
     {label: "Bokuben (9/10 (+2))", value: "f"},
-    {label: "Leveling Up by only Eating (slice-of-life shonen?) (9/10 (+2))", value: "d"},
+    {label: "Leveling Up by only Eating (slice-of-life shounen?) (9/10 (+2))", value: "d"},
     {label: "Jitsu Wa Watashi Wa (Romcom) (9/10 (+2))", value: "a"},
     {label: "Sijin (Drama Tragedy) (9/10 (+2))", value: "e"},
     {label: "We May Be An Inexperienced Couple But... (Seinen romcom) (9/10 (+2))", value: "c"},
   ]}>
+
+<TabItem value="g">
+
+#### The Duchess' 50 Tea Recipes (10/10 (+2))
+* **Synopsis**: An isekai story about nobility, tea, business (a little) and love
+* **Genre**: manhwa, josei, romance, isekai (british nobility)
+* **Read until**: Ch100
+* **Points**:
+  * Not gonna lie, the start's quite different from the general vibe of the manhwa with all the in-fighting and doubting of MC. Similar types of drama will continue to occur every now and then in the series, but just not at same the frequency and intensity at the start.
+  * This manhwa is easily one of the sweetest manga/manhwa I've ever read. The entire manhwa is about tea; the vivid description of the characters brewing tea and drinking it makes me feel as if I can smell and taste the tea, giving the manhwa a very sweet and soothing vibe (literally as I imagine tasting the tea). This literal sweetness complements the sweetness of the numerous wholesome/romance scenes in the manhwa, and the end result is something that ridiculously sweet.
+  * Interesting trivia knowledge on tea and a little bit on business and history. Honestly makes me want to drink tea myself...
+    * MC is so knowledgeable about tea is almost breaks secondary belief tbh. But I can overlook that
+  * Okay, some readers in the comments didn't really like the (obsessive) focus on tea. Personally I thought it was fine.
+* **Should you read it:** I can't emphasize how sweet this manhwa is, so read it if you're into that sort of wholesome stuff. The first 10 or so chapters may be a pill to swallow if you're only here for wholesome content (and it's a theme that will come up every now and then), but in general, quite wholesome and sweet. The only thing keeping me from pushing this to a bonus score +3 and calling it a safe recommendation is due to the (excessive) amount of PDA and/or tea appreciation in the manhwa (to the point that tea literally make or break national relations) which may make it a turn-off for some readers. Don't expect explicit scenes, but expect a lot of kissing and implied xxx, so it's a little nsfw.
+
+</TabItem>
 
 <TabItem value="a">
 
@@ -573,7 +646,6 @@ Template
 * **Will I re-read it:** Probably not, there's too many fillers, but some parts are legit hilarous
 * **Tidbit**: ( ⚆ _ ⚆ ) ( ⚆ _ ⚆ ) when they find out what sucking blood really means to vampires
 
-
 </TabItem>
 
 <TabItem value="f">
@@ -589,7 +661,7 @@ Template
 
 #### Leveling Up by only Eating (9/10 (+2))
 * **Synopsis**: MC who can't stop eating plays a realistic VR MMORPG so that he won't get fatter
-* **Genre**: manhwa, shonen, slice-of-life, VR, food
+* **Genre**: manhwa, shounen, slice-of-life, VR, food
 * **Release rate**: Unknown (new manhwa)
 * **Read until**: 49
 * **Points**:
@@ -604,7 +676,7 @@ Template
 
 #### The Undefeatable Swordsman (Action) (Score: 9/10, (+2?))
 * **Synopsis**: MC is very badass
-* **Genre**: manhwa, shonen
+* **Genre**: manhwa, shounen
 * **Setting**: Feudal times, Korea, martial arts, Taoism 
 * **Release rate**: Irregular
 * **Read until**: Ch38
@@ -647,24 +719,81 @@ Template
 <Tabs
   defaultValue="a"
   values={[
-    {label: "Oresama Teacher (Shojo Romcom) (9.5/10 (+3))", value: "a"},
+    {label: "Oresama Teacher (Shoujo Romcom) (9/10 (+3))", value: "a"},
     {label: "Kimetsu No Yaiba (9.5/10 +3)", value: "d"},
-    {label: "Mission: Yozakura Family (Shonen romcom) (10/10 (+3))", value: "c"},
-    {label: "Kitsune Spirit (Shonen romcom) (10/10 (+3))", value: "b"},
+    {label: "Mission: Yozakura Family (Shounen romcom) (10/10 (+3))", value: "c"},
+    {label: "Kitsune Spirit (Shounen romcom) (10/10 (+3))", value: "b"},
+    {label: "My Wife Is A Demon Queen (Shounen) (10/10 (+3))", value: "h"},
+    {label: "The Duchess' 50 Tea Recipes (Josei romance isekai) (10/10 (+3))", value: "g"},
+    {label: "Love Advice from the Great Duke of Hell (Comedy action comic) (10/10 (+3))", value: "f"},
   ]}>
+
+<TabItem value="h">
+
+#### My Wife Is A Demon Queen (Shounen) (10/10 (+3))
+* **Synopsis**: An isekai story where protagonist is summoned into a fantasy world
+* **Genre**: manhwa, shounen, isekai, romance (abit)
+* **Release Rate:** original manhwa releases twice a week (yes, chinese manhwa artists are madmen)
+* **Points**:
+  * Fantasy world (think renaissance era) with magic, (simple) martial arts, swordfighting and archery as the main combat techniques
+  * Interesting mechanic of forging, the protagonist will make this manga interesting by bringing in modern technology into this fantasy world
+  * Don't expect a lot of romance (at least, action would dominate the manga).
+  * Some fanservice.
+  * There is the occasional plot armor.
+  * Makes references and pays tribute to other popular series (some concepts will be similar)
+  * Spoilers alert:
+    * Protagonist will become very OP, but in an unconventional manner. 
+    * Demon queen is tsundere
+* **Should you read it:** Yes! It is a very entertaining read. The quality of this chinese manhwa is really good, even though the plot starts off a little shallow. If you're looking for a shounen manga to sink your teeth into, this is a good one.
+
+</TabItem>
+
+<TabItem value="g">
+
+#### The Duchess' 50 Tea Recipes (10/10 (+3))
+* **Synopsis**: An isekai story about nobility, tea, business (a little) and love
+* **Genre**: manhwa, josei, romance, isekai (british nobility)
+* **Read until**: Ch100
+* **Points**:
+  * Not gonna lie, the start's quite different from the general vibe of the manhwa with all the in-fighting and doubting of MC. Similar types of drama will continue to occur every now and then in the series, but just not at same the frequency and intensity at the start.
+  * This manhwa is easily one of the sweetest manga/manhwa I've ever read. The manga really focuses on tea; the vivid description of the characters brewing tea and drinking it makes me feel as if I can smell and taste the tea, giving the manhwa a very sweet and soothing vibe (literally, since I can't help but imagine tasting the tea and smelling the tea leaves). This literal sweetness complements the sweetness of the numerous wholesome / romance scenes in the manhwa, and the end result is something that ridiculously sweet.
+  * Of course, as an isekai manga, expect the MC to use her past life to great advantage in her current life
+  * Interesting trivia knowledge on tea and a little bit on business and history. Honestly makes me want to drink tea myself...
+    * MC is so knowledgeable about tea is almost breaks secondary belief tbh. But I can overlook that
+  * Okay, some readers in the manga's comments didn't really like the (obsessive) focus on tea. Personally I thought it was fine (although I prefer tea over coffee myself, so that is my bias)
+* **Should you read it:** I can't emphasize how sweet this manhwa is, so read it if you're into wholesome stuff. The first 10 or so chapters may be a pill to swallow if you're only here for wholesome content (and it's a theme that will come up every now and then), but in general, quite wholesome and sweet. The only thing keeping me from calling it a safe recommendation is due to the (excessive) amount of PDA and/or tea appreciation in the manhwa (to the point that tea literally make or break national relations) which may make it a turn-off for some readers (it doesn't break secondary belief imo though, because it is still quite well-written). Don't expect explicit scenes, but expect a lot of kissing and implied xxx, so it's a little nsfw.
+
+</TabItem>
+
+<TabItem value="f">
+
+#### Love Advice from the Great Duke of Hell (10/10 (+3))
+* **Synopsis**: Boy summons great duke of hell for love advice
+* **Genre**: comic, comedy, action, romance(?)
+* **Release rate**: Irregular, still ongoing. Split into seasons. Release rate when a season is active is once every Friday.
+* **Points**:
+  * The facial expressions are on point.
+  * There's a few spoilers on the structure of the manga, so read at your own discretion. If you just want a yes/no recommendation, I'd say the comic is very well written, but if you're turned off by the slapstick comedy and *very* awkward moments at the first half of the comic, you may find it a long wait for you to really enjoy the full extent of the comic.
+  * This comic is very interestingly written, but the structure is pretty wack.
+    * The first season of the comic deploys slapstick comedy that is absolutely hilarious, but makes you go "wtf" at the same time.
+    * The second season of the comic (which is maybe around chapter 70+) is when the author starts making huge plot advancements, revealing plot twists and where all the action comes in, the comedy tones down. This is also the part where you start to go "holy crap".
+    * The third season hasn't started yet.
+    * There isn't that much romance so far, and I've read like 100+ chapters already. There's obviously some love involved, but calling it a **romance** comic is a bit of a stretch.
+
+</TabItem>
 
 <TabItem value="a">
 
-#### Oresama Teacher (Shojo Romcom) (Score: 9.5/10 (+3))
+#### Oresama Teacher (Shoujo Romcom) (Score: 9/10 (+3))
 * **Synopsis**: Delinquent girl turns a new leaf (?) when she changes school 
-* **Genre**: shojo, romcom (focus on comedy)
+* **Genre**: shoujo, romcom (focus on comedy)
 * **Release rate**: Irregular
 * **Read until**: 155
 * **Fav chapter**: probably 72 lol really made me burst out loud
 * **+ve points:**
     * the facial expressions are on point and the humor is quite good
 * **Points**:
-    * [SPOILER-ISH] I didn't expect her to slowly form a reverse harem lol.. Then again, this is a shojo
+    * [SPOILER-ISH] I didn't expect her to slowly form a reverse harem lol.. Then again, this is a shoujo
     * Don't expect in-depth romance. Any romance is usually touch & go, unrequited or just really close friendships kinda thing.
 * **Should you read it:** I'd recommend it. It consistently delivers on the humor. The plot sometimes feels kinda shallow (e.g. everyone turns out to be a good guy in the end kinda vibes), and sometimes it's not too hard to guess the plot, but honestly it's pretty good.
 * **Other notes:** I give this a +2 even though I'm not in a discord server dedicated to this manga (this manga is simply not popular enough to have an active server)
@@ -685,29 +814,29 @@ Template
 </TabItem>
 <TabItem value="b">
 
-#### Kitsune Spirit (Shonen romcom) (Score: 10/10, (+3))
+#### Kitsune Spirit (Shounen romcom) (Score: 10/10, (+3))
 * **Synopsis**: A married couple in a world with supernatural creatures
-* **Genre**: romcom (equal parts sweet and funny), shonen (yes, shonen. You'll see why. This can get dark real quick)
+* **Genre**: romcom (equal parts sweet and funny), shounen (yes, shounen. You'll see why. This can get dark real quick)
 * **Release rate:** Irregular (and very short chapters)
 * **Read until:** 101
 * **Points**:
   * Some lewd moments
   * Like I said this can get dark quick
   * The chapters are a little short for a weekly
-  * Starts off as romcom and then becomes shonen before going back to being a romcom again
+  * Starts off as romcom and then becomes shounen before going back to being a romcom again
 * **Should you read it:** Not gonna lie, the characters, setting and story is kinda refreshing.
 * **Tidbit**: No citeable tidbit... but this pair is so cute~~~! e.g. Ch 99
 
 </TabItem>
 <TabItem value="c">
 
-#### Mission: Yozakura Family (Shonen romcom) (Score: 10/10, (+3))
+#### Mission: Yozakura Family (Shounen romcom) (Score: 10/10, (+3))
 * **Synopsis**: You'll know after reading the first chapter haha (yes, it's a bit spoilerish to explain this)
-* **Genre**: romcom, shonen
+* **Genre**: romcom, shounen
 * **Release rate**: Irregular
 * **Read until**: 58
 * **Points**:
-  * It follows your usual shonen manga storyline: MC meets new big bad, powers up, meets another new big bad and gets stronger etc. It's not boring, but just expect that sort of story.
+  * It follows your usual shounen manga storyline: MC meets new big bad, powers up, meets another new big bad and gets stronger etc. It's not boring, but just expect that sort of story.
   * The story's a little too skewed towards the success of the protagonists.
   * Gives me Hero Academia vibes.
   * Also gives me some Demon Slayer vibes. Death is a common topic in this manga.
@@ -808,7 +937,7 @@ Template
 
 #### Cultivation Chat Group (Xianxia Comedy) (Score: 9.5/10 (+5))
 * **Synopsis**: Cultivation and martial arts in a modern world
-* **Genre**: Xianxia, shonen, comedy
+* **Genre**: Xianxia, shounen, comedy
 * **Release rate:** Weekly? (or maybe even every 3 days for the manhwa???)
 * **Read until**: Ch 1432 (webnovel)
 * **Points**:
@@ -840,3 +969,20 @@ Template
 #### Tonari No Kaibutsu-Kun
 * Read until: 1st 2 chapters
 * Relationship felt a little toxic
+
+## Classics
+
+There are some classic manga / series that I have read but don't list because I read it prior to creating the list. It is non-exhaustive.
+
+Shounen
+* Jojo Bizarre Adventures
+* Naruto
+* One Piece
+
+Shoujo
+* Ouran High School Host Club
+* Kaichou Wa Maid-Sama!
+* Kamisama Kiss
+
+Harem
+* Negima

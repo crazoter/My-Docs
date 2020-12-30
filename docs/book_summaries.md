@@ -47,3 +47,35 @@ Quotations from the ebook: http://www.gutenberg.org/files/1232/1232-h/1232-h.htm
 * On the topic of **foresight and planning**:
   * "...**prudent princes ought to do, who have to regard not only present troubles, but also future ones, for which they must prepare with every energy, because, when foreseen, it is easy to remedy them**; but if you wait until they approach, the medicine is no longer in time because the malady has become incurable; ..."
   * "...**when the evils that arise have been foreseen** (which it is only given to a wise man to see), **they can be quickly redressed, but when, through not having been foreseen, they have been permitted to grow in a way that every one can see them, there is no longer a remedy**. Therefore, the Romans, foreseeing troubles, dealt with them at once, and, even to avoid a war, would not let them come to a head, for they knew that war is not to be avoided, but is only to be put off to the advantage of others; ..."
+* To be continued
+
+### Crash Course Philosophy
+src: [CrashCourse on Youtube](https://www.youtube.com/watch?v=1A_CAkYt3GY)
+
+* Episode 1:
+  * Philosophy = Thinking about questions
+    * Questioning the nature of reality; asking about things that cannot be explained by science
+    * Metaphysics: Fundamental questions on the world
+    * Epistemology: Studying how we know what we know
+      * How we know what is what we see it is
+    * Value Theory split in 2:
+      * Ethics: How humans should live, evaluate human conduct
+      * Aesthetics: Study of the concept of beauty and art
+    * Definitions: Philos (Science) Mythos (Storytelling)
+* Episode 2:
+  * Rationality:
+    * People can be persuaded by arguments
+  * Plato's belief on the tripartite (3 parts) soul:
+    * Rational (Logical)
+      * Facts & arguments
+    * Spirited (Emotional)
+      * How feelings fuel your actions
+    * Appetitive (Physical desires)
+      * Basic human needs (eat etc)
+    * Plato believed the best people were ruled by rationality rather than their spirited or appetitive parts soul
+      * Most agree that reasoning should be the driver, but do not agree that not being rational necessarily makes a human lesser than others
+  * Arguments:
+    * Premises -> Conclusion
+      * Deductive: conclusion is valid (reasonable) given premises (which are not necessarily true)
+        * Deductive soundness: all premises are true and conclusion is valid
+      * Entailment: Premise implies premise / conclusion

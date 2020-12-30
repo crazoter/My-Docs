@@ -12,7 +12,6 @@ Legend:
 * idx: Index
 * int#: Integer variable
 
-
 ## Pure Python
 * Exponentiation: val ** power
 * Type conversion: *type*(val), where *type* in {int, float, str, bool}
@@ -86,6 +85,13 @@ Legend:
   * `dt.date.today()`
 
 ## Libraries / Modules
+
+### Regex
+* **Create Pattern**: `pattern = re.compile(r"regex_pattern")`
+* **Match**: `matches = re.match(pattern, str)`
+  * Returns None if no matches found
+  * **Get found values**: `matches.group(n), n = 0 if no groups defined` 
+* 
 ### Recordlinkage (Join datasets w/o common UID)
 * `import recordlinkage`
 * Purpose: **Join different datasets when they don't share a unique identifier.** See [Documentation](https://recordlinkage.readthedocs.io/en/latest/ref-index.html)
@@ -139,19 +145,22 @@ Legend:
 * calculate zscore values: `zscore(df['col'])`
   * z-score is the number of standard deviations by which an observation is above the mean - so if it is negative, it means the observation is below the mean.
 
-### matplotlib.pyplot
+### matplotlib.pyplot (Graphs & Images)
 `import matplotlib.pyplot as plt`
 * Think of `plt` as some kind of a global variable to attach stuff to
 * Change Styles:
   * **Use style**: `plt.style.use(style_name)`
   * **Show available styles**: `plt.style.available`
+  * **Improve the spacing between subplots**: `plt.tight_layout()`
+  * **Hide gridlines**: `plt.grid('off')`
+  * **Hide axes**: `plt.axis('off')`
 * Graphs
   * Create multiple graphs:
     * Automatically using `plt.subplot(rows, columns, active_subplot_idx)`
       * Call the function with a new `active_subplot_idx` = row x rowlen * column to change the current graph.
         * `active_subplot_idx` starts from 1
     * Specify axes directly: 
-    * **Change axes**: `plt.axes([xlower, ylower, width_%, height_%])`, args passed as a list
+    * **Define bounding box (axes)**: `plt.axes([xlower, ylower, width_%, height_%])`, args passed as a list
       * Think of these as rectangle bounds of your current graph.
         * e.g. if you want 2 graphs side-by-side: 
           * First set the axes for the left one `plt.axes([0.05, 0.05, 0.425, 0.9])` 
@@ -161,19 +170,39 @@ Legend:
   * Plot graph in active subplot:
     * **Plot line**:
     ```
-    plt.plot(x_positions_of_points, y_positions_of_points, 
+    plt.plot(
+        OPTION 1 WITH TWO LISTS: x_positions_of_points, y_positions_of_points, 
+        OPTION 2 WITH 1 DATAFRAME: dataframe_of_x_and_y 
         color='blue', 
         label=str     # Used to label the line in the legend
     )
     ```
     * **Scatter**: `plt.scatter(x_data, y_data, label='data', color='red', marker='o')`
+    * **Histogram**: 
+    ```
+    plt.hist(pixels, bins=64, 
+        range=(0, 256),   # x-axis range
+        normed=True,      # normalized histogram
+        cumulative=True,  # cumulative density function instead of probability density function
+        color='red', 
+        alpha=0.4,
+    )
+
+    # Alternatively
+    dataframe.hist()
+    ```
+    * **Boxplot**: `dataframe.boxplot(column = [y_axis_col_values], by=[x_axis_col_values])`
     * **Add title**: `plt.title(str)`
     * **Change x and y labels**: `plt.xlabel(str)` and `plt.ylabel(str)`
     * **Change x and y limits (set range)**: `plt.xlim(lower,upper)` and `plt.ylim(lower,upper)`
       * Inclusive
       * **Change both at the same time**: `plt.axis((x_lower,x_upper,y_lower, y_upper))`
-  * **Improve the spacing between subplots**: `plt.tight_layout()`
+    * **Configuring xticks / yticks**: `plt.xticks(rotation=degs)` and `plt.yticks(rotation=degs)`
+      * ticks: the markers showing the coordinates on the x and y axis
+      * rotation: angle at which ticks are displayed
   * **Add legend**: `plt.legend(loc='lower center')`
+  * **Overlay plots**: `plt.twinx()`
+    * Use plt.twinx() to overlay plots with different vertical scales on a common horizontal axis.
   * **Annotate**
     ```
     plt.annotate(text, 
@@ -184,6 +213,7 @@ Legend:
     ```
   * **2D histogram**:
     * `plt.hist2d(horizontal_data, vertical_data, bins=(x_cols, y_rows), range=((x_min, x_max), (y_min, y_max)))`
+    * Range is optional
     * Instead of plotting the points directly on a graph, you turn it into something of a density map; the graph is split into a grid, and boxes with a lot of points will have a color of higher intensity.
   * **2D hex histogram**:
     * `plt.hexbin(horizontal_data, vertical_data, gridsize=(x_cols, y_rows), extent=(x_min, x_max, y_min, y_max))`
@@ -195,8 +225,8 @@ Legend:
     * Filled: `plt.contourf(...)`
     * [See](https://jakevdp.github.io/PythonDataScienceHandbook/04.04-density-and-contour-plots.html)
 * Images
-  * **Load img**: `npRGB = plt.imread(filepath)`
-  * **Display img**: 
+  * **Load image**: `npRGB = plt.imread(filepath)`
+  * **Display image**: 
   ```
   plt.imshow(npRGB,
       cmap='gray',
@@ -207,20 +237,22 @@ Legend:
   ```
     * Add cmap if only 1 channel
   * **RGB to monochannel**: `npRGB.sum(axis=2)`
-  * **Hide axes**: `plt.axis('off')`
   * Others:
+    * **Split RGB into channels:**
+      * `red, green, blue = img[:,:,0], img[:,:,1], img[:,:,2]`
+      * **Flatten monochannel image (without modifying values) into 1-D array**: `image.flatten()`
     * Normalize intensity:
       * `256*(img-img.min())/(img.max()-img.min())`
 * Export:
   * **Show on GUI**: `plt.show()`
   * **Save to file**: `plt.savefig(filepath)`
 
-### seaborn
+### Seaborn (Graphs)
 `import seaborn as sns`
 * **Simple linear regression**:
   ```
   sns.lmplot(x='x_pos_col_in_df', y='y_pos_col_in_df', data=dataframe
-      hue='categorical_col_in_df', # This will be used to group each point
+      hue='categorical_col_in_df', # This col is categorical; will be used to group the points by colour
       row='groupby_row_wise'
       palette='Set1'
   )
@@ -244,6 +276,217 @@ Legend:
   * 
 * **Residual plot**: `sns.residplot(x='x_col_in_df', y='y_col_in_df', data=dataframe, color=color_str)`
   * Visualize how far datapoints diverge from the regression line.
+* **Strip plot**: A scatter plot where the x axis represents a categorical variable.
+  ```
+  sns.stripplot(x='x_col_in_df', y='y_col_in_df', data=df,
+      size = n,   # Size of dots
+      jitter=True # Useful when many points overlap, easier to see distribution. 
+  )
+  ```
+  * [Documentation](https://seaborn.pydata.org/generated/seaborn.stripplot.html)
+* **Swarm plot**: Similar to strip plot, but the points visually spread out to avoid overlap
+  ```
+  sns.swarmplot(x='x_col_in_df', y='y_col_in_df', data=df,
+      orient = 'h'/'v'  # h: y is now the categorical var. v: same as stripplot
+      size = n,         # Size of dots
+      hue='col',        # Categorical column to colour points by
+  )
+  ```
+* **Violin plot**: Similar to a box plot, with the addition of a rotated kernel density plot on each side
+  ```
+  sns.violinplot(x='x_col_in_df', y='y_col_in_df', data=df,
+      color='lightgray',  # If you want all violins to be of the same color
+      inner=None          # Points are visualized in the center of each x coord. inner=None to only show the violin body.
+  )
+  ```
+* **Joint plot**: Main plot in the middle defined by `kind`, combined with histograms aligned to the x and y axis at the side.
+  ```
+  sns.jointplot(x='hp', y='mpg',data=auto,
+      kind = 'scatter' | 'reg' | 'resid' | 'kde' | 'hex'
+  )
+  ```
+  * kind='scatter': scatter plot of the data points
+  * kind='reg': regression plot (default order 1)
+  * kind='resid': residual plot
+  * kind='kde': kernel density estimate of the joint distribution
+  * kind='hex': hexbin plot of the joint distribution
+
+* **Pair(wise) plot**: Take every pairwise combination of every non-categorical column in dataframe and plot main plot + histogram.
+  ```
+  sns.pairplot(df, kind = 'scatter' | 'reg' | 'resid' | 'kde' | 'hex'
+      hue = 'categorical_col' # Categorical column to colour points by
+  )```
+
+* **Heatmap**: Good for visualizing 2D arrays (e.g. covariance matrices)
+  ```
+  sns.heatmap(df)
+  ```
+
+### scikit-learn
+`import sklearn`
+**train_test_split**
+* `from sklearn.model_selection import train_test_split`
+* Use stratified sampling to split up the dataset according to the categorical_y_data dataset
+  * `X_train, X_test, y_train, y_test = train_test_split(data_x, categorical_y_data, stratify=categorical_y_data)`
+  * Stratified: Make the distribution of each feature as close as possible to the original in the training and test sets
+  * 75% into training set and 25% into test set
+
+**Concepts**
+
+Data Standardization (normalization):
+* Preprocessing task performed on numerical, continuous data to **make it normally distributed**. Standardize (assuming linear space) when:
+  * 1. Using a model that is in a linear space (any kind of model that uses a linear distance metric or operates in a linear space like k-nearest neighbors, linear regression, or k-means clustering). The model is assuming that the data and features you're giving it are related in a linear fashion, or can be measured with a linear distance metric. 
+  * 2. When a feature or features in your dataset have high variance ; if a feature in your dataset has a variance that's an order of magnitude or more greater than the other features, this could impact the model's ability to learn from other features in the dataset. 
+  * 3. When features are of different scales e.g. height & weight. To compare these features, they must be in the same linear space, and therefore must be standardized in some way. 
+* **StandardScaler**: For Data Standardization
+  * Finds mean and centers data around it (no limit to max / min)
+  * **Import**: `from sklearn.preprocessing import StandardScaler`
+  * **Creation**: `ss = StandardScaler()`
+  * **Fit**: `ss.fit(training_df_column)` (Call before transform)
+    * only fit with training data to avoid data leakage (won't have access to test data)
+  * **Normalize scale**: `ss.transform(dataframe_subset (columns))`
+    * transform training data
+    * Use `.fit_transform(...)` to fit, then transform data
+* **MinMaxScaling**: For normalizing linear values to 0-1 by squashing min and max range to 0-1
+  * Use only when you know your data has a strict lower and upper bound
+  * **Import**: `from sklearn.preprocessing import MinMaxScaler`
+  * **Creation**: `MM_scaler = MinMaxScaler()`
+  * **Fit**: `MM_scaler.fit(training_df_column)` (Call before transform)
+    * only fit with training data
+  * **Transform**: `resultantCol = MM_scaler.transform(training_df_column)`
+    * transform training data
+    * Use `.fit_transform(...)` to fit, then transform data
+* **Log transform**: 
+  * **Import**: `from sklearn.preprocessing import PowerTransformer`
+  * **Creation**: `pow_trans = PowerTransformer()`
+  * **Fit**: `pow_trans.fit(training_df_column)` (Call before transform)
+    * only fit with training data
+  * **Normalize scale**: `pow_trans.transform(dataframe_subset (columns))`
+    * transform training data
+    * Use `.fit_transform(...)` to fit, then transform data
+
+Data Sanitization
+* Outlier Removal
+  * Quantile (percentage) based
+    * 1. Find quantile: `quantile = dataframe['col'].quantile(0.95)`
+    * 2. Trim: `trimmed_df = dataframe[dataframe['col'] < quantile]`
+  * standard dev based
+    * Get mean and std dev
+    * Calculate cutoff e.g. `3 * std`, and lower (`mean - cutoff`) + upper (`mean + cutoff`) bounds
+    * Trim outliers `df[(df['col'] < upper) & (df['col'] > lower)]`
+
+
+Feature Engineering
+* Descript: Creation of new features from existing features (e.g. string/timestamp subsetting, aggregate numeric data across columns etc)
+* **LabelEncoder**: Converting labelled column into {0,1} column
+  * **Creation**: `enc = LabelEncoder()`
+  * **Encode as binary**: `new_col = enc.fit_transform(dataframe['col'])`
+* **One Hot Encoding**: Convert column of categories into 2D binary array
+  * Do this instead of mapping categories to numbers, to avoid encoding ordering to the categories
+* **Dummy Encoding**: Same as one-hot encoding, but the first column dropped. Membership to the first column is indicated (implied) when all OHE are set to 0.
+  * Both OHE & Dummy use the same command:
+  ```
+  pd.get_dummies(dataframe,
+      columns = [column_labels], 
+      drop_first=True, 
+      prefix='col_prefix'
+  )
+  ```
+* **CountVectorizer**: Vectorize text with word count
+  * **Import**: `from sklearn.feature_extraction.text import CountVectorizer`
+  * **Creation**: 
+  ```
+  cv = CountVectorizer(
+      min_df: 0-1,   # Use only words that occur in more than this percentage of documents. This can be used to remove outlier words that will not generalize across texts.
+      max_df: 0-1,   # Use only words that occur in less than this percentage of documents. This is useful to eliminate very common words that occur in every corpus without adding value such as "and" or "the".
+  )
+  ```
+  * **Fit**: `cv.fit(speech_df['text_clean'])`
+  * **Get word list**: `cv.get_feature_names()` 
+  * **Transform**: `cv_transformed = cv.transform(speech_df['text_clean'])`
+    * returns sparse array
+    * **To array**: `cv_transformed.toarray()`
+      * 1 row per block of text and a column for each of the features generated by the vectorizer
+* **tf-idf**: Term Frequency - Inverse Document Frequency vector
+  * Descript: Text vectorization converts text to numerical input
+  * [(# of word occurences) / (total words in document)] / log(# of docs word is in / total number of docs)
+    * Divide proportion of word occurence by proportion that it appears in all documents
+      * reduces value of common words
+  * **Import**: `from sklearn.feature_extraction.text import TfidfVectorizer`
+  * **Creation**: 
+  ```
+  tfidf_vec = TfidfVectorizer(
+    max_features=n, 
+    stop_words='english',
+    ngram_range = (start, stop) # Adding some ordering. bi-gram ("not happy") tri-gram ("never not happy"). Try to fix bag of words problem
+  )
+  ```
+    * stop_words will remove common words like 'the'
+  * **Transform**: `text_tfidf = tfidf_vec.fit_transform(title_text)`
+    * returns sparse array
+    * **To array**: `cv_transformed.toarray()`
+    * Indices and weights will be stored in the tfidf vector `text_tfidf`
+    * Vocabulary and weights will be stored in the TfidfVectorizer `tfidf_vec`.
+    * Example
+    ```
+    # Instantiate TfidfVectorizer
+    tv = TfidfVectorizer(max_features=100, stop_words='english')
+
+    # Fit the vectroizer and transform the data
+    tv_transformed = tv.fit_transform(train_speech_df['text_clean'])
+
+    # Transform test data
+    test_tv_transformed = tv.transform(test_speech_df['text_clean'])
+
+    # Create new features for the test set
+    test_tv_df = pd.DataFrame(test_tv_transformed.toarray(), 
+                              columns=tv.get_feature_names()).add_prefix('TFIDF_')
+    print(test_tv_df.head())
+    ```
+    * **Get word list**: `cv.get_feature_names()` 
+    * **Get word to index map**: `str_idx_map = tfidf_vec.vocabulary_`
+      * **Get index to word map**: `idx_str_map = {v:k for k,v in tfidf_vec.vocabulary_.items()}`
+    * **Get weights for every word in row**: `text_tfidf[row_index].data`
+      * If row_index is not number, use `iloc[n]`
+    * **Get indices for every word in row**: `text_tfidf[row_index].indices`
+      * **Get indices to weights map for row**: `idx_wgts_map = dict( zip(text_tfidf[row_index].indices, text_tfidf[row_index].data)`
+        * **Get word to weights map for row**: `str_wgts_map = {idx_str_map[i]:idx_wgts_map[i] for i in text_tfidf[row_index].indices}`
+    * **Get indices of top n weights**: `top_n_idx = pd.Series(str_wgts_map).sort_values(ascending=False)[:top_n].index`
+    * **Get words of top n weights**: `top_n_str = [idx_str_map[i] for i in top_n_idx]`
+
+Feature Selection
+* Removing **redundant** (noisy|correlated|duplicated) features.
+  * e.g. features that generated an aggregate statistic
+
+Feature Extraction
+* Transform data into new featurees
+* **Dimensionality Reduction**: Reduce feature space
+  * Turning numericals into binned vals / binary
+  * **Principle Component Analysis (PCA)**: linear transformation to uncorrelated space
+    * Variance captured in a meaningful way by combining features into components
+    * Number of components = number of input features
+    * Difficult to interpret components, should be left to the end-of-preprocessing journey
+    * **Creation**: `pca = PCA()`
+    * **Transform**: `transformed_X = pca.fit_transform(dataframe_X)`
+      * **How much variance is explained by each component**: `pca.explained_variance_ratio_`
+
+
+Models
+
+**K-Nearest Neighbour (KNN)** Classifier. [See](https://www.datacamp.com/community/tutorials/k-nearest-neighbor-classification-scikit-learn)
+* Return label of closest neighbour as prediction
+* **Import**: `from sklearn.neighbors import KNeighborsClassifier`
+* **Create**: `knn = KNeighborsClassifier(n_neighbors=3)`
+* **Training**: `knn.fit(X_train (features), y_train (labels))`
+* **Scoring**: `knn.score(X_test, y_test)`
+* **Predict**: `predicted = knn.predict(input)`
+
+**Naive Bayes** Classifier: 
+* Assumes features are independent, works well with high-dimensional text data
+* **Training**: `nb.fit(X_train (features), y_train (labels))`
+* **Scoring**: `nb.score(X_test, y_test)`
+* **Predict**: `predicted = nb.predict(input)`
+
 ## Numpy
 * **Import**: ```import numpy as np```
 * **Numpy Array**
@@ -253,6 +496,7 @@ Legend:
     * **Shape**: `np_list.shape`
   * Unary Operations
     * **Transpose array**: `np.transpose(list)`
+    * **Reshape**: `np.reshape(np_array, (new, shape, dimensions))`. [Doc](https://numpy.org/doc/stable/reference/generated/numpy.reshape.html)
   * Operation with scalar
     * **Slicing 2D numpy array (get row / get col)**: `np_2d[row,:]`, `np_2d[:,col]`
     * **Mass multiplication**: `np_list *= val`
@@ -269,6 +513,7 @@ Legend:
     * **Mean**: `np.mean(np_list)`
     * **Median**: `np.median(np_list)`
     * **Std Dev**: `np.std(np_list)`
+    * **Variance**: `np.var(np_list)`
     * **Correlation Coeff**: `np.corrcef(np_list1, np_list2)`
 * **Numpy Random**
   * **Init with Seed**: `np.random.seed(seed)`
@@ -278,283 +523,370 @@ Legend:
   * **NaN**: `np.nan`
 * **Operations**
   * **Log10**: `np.log10(nd_arr or dataframe)`
+  * **1D interpolation**: [doc](https://numpy.org/doc/stable/reference/generated/numpy.interp.html)
+  ```
+  np.interp(xcoords_to_interpolate, data_xcoords, data_ycoords, left=None, right=None, period=None)
+  ```
 * **Generate uniformly spaced list**: `np.linspace(lower_lim, upper_lim, number_of_items)`
 * **Meshgrid: create a grid by using coordinates of each dimension**: `np.meshgrid(columns, rows)`
   * [See](https://stackoverflow.com/a/42404323)
 
 ## Pandas
 * **Import**: `import pandas as pd`
-* **Series** (Pandas labelled list)
-  * **From list**: `pd.Series(array, ..., index=arr)`
-* **DataFrame** (Pandas labelled excel sheets / dictionaries)
-  * **Converting into DataFrame**
-    * **From Dictionary**: ```pd.DataFrame(dict)```
-    * **From CSV File**: 
+#### Series (Pandas labelled list)
+* **From list**: `pd.Series(array, ..., index=arr)`
+#### DataFrame (Pandas labelled excel sheets / dictionaries)
+Creation / Conversion
+* **From Dictionary**: ```pd.DataFrame(dict)```
+* **From CSV File**: 
+  ```
+  dataframe = pd.read_csv(string_filename, 
+      delimiter   = str,          # The shorthand 'sep' serves the same purpose
+      header      = line_no_start_of_data, 
+      index_col   = i, # Column to use as row labels of the df. Set to False to force pandas not to use the first column as the index, or to a col name if you want to use that col
 
-      ```
-      dataframe = pd.read_csv(string_filename, 
-          delimiter   = str,          # The shorthand 'sep' serves the same purpose
-          header      = line_no_start_of_data, 
-          index_col   = i, # Column to use as row labels of the df. Set to False to force pandas not to use the first column as the index, or to a col name if you want to use that col
+      [chunksize   = n, 
+      names       = new_col_labels_list, 
+      comment     = str_prefix, 
+      parse_dates = [date_col...]
+  )
+  ```
+  * Note that dataframes are iterables, so you can use "next(iterable)" on them (to get them in the chunksize)
+* **Converting to set**: `set(df['col'])`
+* **add_prefix to all cols**: `df.add_prefix(str)`
 
-          [chunksize   = n, 
-          names       = new_col_labels_list, 
-          comment     = str_prefix, 
-          parse_dates = [date_col...]
-      )
-      ```
-      * Note that dataframes are iterables, so you can use "next(iterable)" on them (to get them in the chunksize)
-  * **Converting from DataFrame**
-    * **To set**: `set(df['col'])`
-  * **Accessing**:
-    * **For Loop for each row** (note that row is a dataframe / dictionary)
-      * `for idx, row in df.iterrows(): ...`
-    * Slicing
-      * **Get column as Series**: `dataframe["column"]`
-        * **Convert series to numpy.ndarray**: `series.values`
-      * **Extract columns from DF**: `dataframe[["column",...]]`
-        * **Dataframe as rows**: `dataframe[startIdxIncl: endIdxExcl]`
-    * Array based selection
-      * **Select by label**: 
-        * `dataframe.loc[label]` (transposed / series / numpy array)
-        * `dataframe.loc[[rowLbl1, rowLbl2..* .],[colLbl1, colLbl2...]]` (tabular / dataframe)
-        * **Select by index**: Replace loc with iloc
-          * `df.iloc[<slicing for row>, <slicing for column>]`
-        * **Select all rows by column**: Replace label with ':' 
-          * `dataframe.loc[<slicing for row>, <slicing for column>]`
-          * `dataframe.loc[:,col]` (Returns numpy array)
-          * `dataframe.loc[:,* [cols]]` (Returns Dataframe)
-        * **MultiIndexes**: `df.loc[(top_lvl_idx,2nd_lvl_idx,...), <slicing for column>]`
-          * e.g. `sales.loc[('NY',1),:], sales.loc[(slice(None),2),:]`
-          * If you have to use `:` for slicing, replace the tuple with `pd.IndexSlice[top_lvl_idx,2nd_lvl_idx,...]`
-            * e.g. `df.loc[pd.IndexSlice[:,2nd_lvl_idx,...], <slicing for column>]`
-            * *Datacamp loves to create the alias `idx=pd.IndexSlice` to shorten the .loc call.*
-          * MultiIndexes: the index is an array instead of a single value (think of nested arrays. e.g. arr[1][2], MultiIndex would be (1,2) or something)
-        * **By Datetime** (if index is datetime): `ts0.loc['2010-August':'2010-10-11 22:00:00']` 
-          * *can even be like '2010-Aug'*
-        * (See more: https://www.w3resource.com/pandas/dataframe/dataframe-loc.php)
-          * slicing refers to x[start:end:step].
-          * Special slices:
-            * [:] => Select all
-            * [n:] => from the nth element (inclusive) to the end; note that n starts from 0
-            * [:n] => from the first element to the nth element
-    * Conditional Select
-      * **Get**: `dataframe**[dataframe["column"] == condition]`
-      * **Assignment:** `df**.loc[df['col'] <condition>] = value_to_assign`
-      * **Multiple conditional**: `(df['col'] == condition) & (df['col'] == condition)`
-      * `dataframe["col"] = dataframe['col'] == condition`
-    * **Get data as datetime**: df['col'].dt
-      * **Format datetime**: df['col'].dt.strftime('formatstr')
-        * formatstr: e.g. '%Y' to only get the year
-    * **Get data as str**: df['col'] = df['col'].str
-      * *This can be combined by concatenating string functions behind e.g. lower(), strip(), upper(), replace(dict), replace("old","new"), len()*
-      * *Note that these string functions return a df, which can be combined with other str or aggregation functions*
-  * **Modifying Data**:
-    * New Column:
-      * **Add new value**: `df.loc[lbl, col] = val` (do this for every row to add the column)
-      * **Set column to that value for every row**: `df['col'] = val`
-      * **Modify by transformation function**: `df**["newCol"] = df["oldCol"].apply(transformFx)`
-      * **Modify by mapping values to a dictionary**: `df['col'].map(dict_map_vals)`
-    * New Row:
-      * **Append**: `df.append(df,ignore_index=bool)`
-        * *Ignore index: Preserve index (False) or Number everything from 0 to n (True)*
-      * **Concatenating / Joining list of series/dataframes**: 
-        ```
-        pd.concat(list_of_dataframes, # Concatenating a dictionary will result in the keys becoming the indexes
-            axis=num,         # 0/’index’ (rows), 1/’columns’
-            keys=['one','col','name','per','dataframe','in','list'],
-            join='inner',     # optional, keep only rows that share common index labels.
-            ignore_index=bool # If True, prevents repeated integer indices
-        )
-        ```
-        * [axis{0/’index’, 1/’columns’}, default 0](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html)
-          * 0: Stack below ("vertically"), 1: Stack to the right ("horizontally")
-        * Keys: 1 key per DataFrame in the list, forming the outer index in the MultiIndex. The resulting DataFrame will be something like df['one'][n] to access the first DataFrame, df['col'][n] to access the 2nd DataFrame etc.
-        ```
-        # Inner join, Equivalent to pd.concat([leftDF, rightDF], 'columns', join='inner')
-        pd.merge(leftDF, rightDF, 
-            on=column_label, # See exposition below
-            how='inner',     # Type of join. See below
-            suffixes=[sfx_forDF1, sfx_forDF2] # If both DFs have columns of same name, add suffix at the end if not merging on those columns
-        )
-        ```
-        * **on:** If multiple columns form the identifier: use `on=[col1,col2,...]`. Otherwise, the join will horizontally append copies of the columns even if they are the same.
-        * **on:** If df1 and df2 use different labels for the same identifier, use `left_on` and `right_on`.
-        * **how:** You can also define various types of joins as specified [here](https://mode.com/sql-tutorial/sql-outer-joins/) 
-        * See [documentation](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.merge.html) if need to be more specific
-        ```
-        # Same as pd.merge above, but designed for ordered data like time series and filling and interpolation.
-        pd.merge_ordered(leftDF, rightDF,
-            fill_method="ffill" # Forward-filling: Replace NaN entries with the most recent non-null entry,
-            # Other params same as above)
-        ```
-        ```
-        pd.merge_asof(...)
-        # pd.merge_asof() is like the pd.merge_ordered() function; it merges values in order using the on column
-        # but for each row in the left DataFrame, only rows from the right DataFrame whose 'on' column values are less than the left value will be kept.
-        ```
-    * Deletion:
-      * **Drop columns**: `df.drop(arr_of_cols, axis='columns')`
-    * Dividing one DF by another:
-      ```
-      DF1.divide(DF2, 
-          axis='rows'/'columns' # Divide the DF1 by DF2 along each row
-      )
-      ```
-    * Metadata:
-      * Column datatype conversion
-        * **Convert to datetime**: `pd.to_datetime(df['col'][,format=date_str_format,infer_datetime_format = <True/* False>,  errors = <'raise'/'coerce'/'ignore'>])`
-          * A datetime column will allow you to manipulate the datetime directly & search for rows that match the date using df.loc
-          * *infer_datetime_format = Infer format based on first non-NaN element. Can increase parsing speed by 5-10x (disabled by default)*
-          * *errors: raise = raise exception, coerce = set to NaT, ignore = ignore*
-          * Example of merging 2 string cols into 1 datetime: `times_tz_none = pd.to_datetime( la['Date (MM/DD/YYYY)'] + ' ' + la['Wheels-off Time']`)
-        * **Convert to numeric**: `pd.to_numeric(df['col'], errors='coerce')`
-        * **Convert to categorical**: `df['col'] = pd.Categorical(values=df['col'], categories=arr_of_values, ordered=True)` 
-          * *Ordered: ordered / non-ordered categoricals*
-        * **Convert numbers to categories**: `df['col'] = pd.cut(df['col'], bins = arr_of_bin_edges, labels = arr_of_categories)`
-          * *arr_of_bin_edges: e.g. [0, 60, 180, np.inf]*
-          * *arr_of_categories: e.g. ['short', 'medium', 'long']*
-        * **Convert to others**: `df['newCol'] = df['dataCol'].astype('type')`
-    * Datetime
-      * **Localizing timezone**: series.dt.tz_localize("US/Central")
-      * **Converting timezone**: series.dt.tz_convert("US/Central")
-    * **Re-labelling columns**: df.columns = arr_of_labels
+Accessing / Selection
+* **For Loop for each row** (note that row is a dataframe / dictionary)
+  * `for idx, row in df.iterrows(): ...`
+* Slicing
+  * **Get column as Series**: `dataframe["column"]`
+    * **Convert series to numpy.ndarray**: `series.values`
+  * **Extract columns from DF**: `dataframe[["column",...]]`
+    * **Dataframe as rows**: `dataframe[startIdxIncl: endIdxExcl]`
+* Array based selection
+  * **Select by label**: 
+    * `dataframe.loc[label]` (transposed / series / numpy array)
+    * `dataframe.loc[[rowLbl1, rowLbl2..* .],[colLbl1, colLbl2...]]` (tabular / dataframe)
+    * **Select by index, not name**: Replace loc with iloc
+      * `df.iloc[<slicing for row>, <slicing for column>]`
+    * **Select all rows by column**: Replace label with ':' 
+      * `dataframe.loc[<slicing for row>, <slicing for column>]`
+      * `dataframe.loc[:,col]` (Returns numpy array)
+      * `dataframe.loc[:,* [cols]]` (Returns Dataframe)
+    * **MultiIndexes**: `df.loc[(top_lvl_idx,2nd_lvl_idx,...), <slicing for column>]`
+      * e.g. `sales.loc[('NY',1),:], sales.loc[(slice(None),2),:]`
+      * If you have to use `:` for slicing, replace the tuple with `pd.IndexSlice[top_lvl_idx,2nd_lvl_idx,...]`
+        * e.g. `df.loc[pd.IndexSlice[:,2nd_lvl_idx,...], <slicing for column>]`
+        * *Datacamp loves to create the alias `idx=pd.IndexSlice` to shorten the .loc call.*
+      * MultiIndexes: the index is an array instead of a single value (think of nested arrays. e.g. arr[1][2], MultiIndex would be (1,2) or something)
+    * **By Datetime** (if index is datetime): `ts0.loc['2010-August':'2010-10-11 22:00:00']` 
+      * *can even be like '2010-Aug'*
+    * (See more: https://www.w3resource.com/pandas/dataframe/dataframe-loc.php)
+      * slicing refers to x[start:end:step].
+      * Special slices:
+        * [:] => Select all
+        * [n:] => from the nth element (inclusive) to the end; note that n starts from 0
+        * [:n] => from the first element to the nth element
+* Conditional Select
+  * **Get by bool arr**: `df[bool_arr]`
+  * **Get**: `dataframe[dataframe["column"] == condition]`
+  * **Assignment:** `df.loc[df['col'] <condition>, 'column_to_set'] = value_to_assign`
+  * **Multiple conditional**: `(df['col'] == condition) & (df['col'] == condition)`
+  * `dataframe["col"] = dataframe['col'] == condition`
+  * **By data type**: `df.select_dtypes(include=[int, float])`
+* **Get data as datetime**: `df['col'].dt`
+  * **Format datetime**: `df['col'].dt.strftime('formatstr')`
+    * formatstr: e.g. '%Y' to only get the year
+* **Get data as str**: `df['col'] = df['col'].str`
+  * *This can be combined by concatenating string functions behind e.g. .lower(), .strip(), .upper(), .replace(dict), .replace("old","new"), .len()*
+  * Chains must be prefixed with a `.str` in front e.g. `.str.replace('x','').str.replace(...)
+  * *Note that these string functions return a df, which can be combined with other str or aggregation functions*
+  * **Word count**: `df['col'].str.split().str.len()`
 
-  * Unary Operations
-    * Check / Get Membership
-      * **Check membership (returns boolean array)**: `df['col'].isin(arr_of_acceptable_values)`
-      * **Negate boolean array**: `~bool_arr`
-    * **Get duplicates as boolean array**: `df.duplicated()`
-      * *default behavior*: `returns exact duplicates after the first occurence`
-      * *syntax*: `df.duplicated([subset = arr_of_col_names, keep = <'first' / 'last' / False>)`
-        * *keep values*: `first, last or all (false) duplicate values`
-    * **Drop duplicates**: `df.drop_duplicates([([subset = arr_of_col_names, keep = <'first' / 'last' / False>, inplace = bool)`
-    * **Get Uniques**: `df.unique()`
-    * **Find missing values**: `df.isna()`
-      * *returns bool arr with same dimensions*
-    * **Compute % change from the immediate previous**: `series.pct_change(offset=1)`: 
-      * Row by default. Useful in comparing the percentage of change in a time series of elements. 
-      * Offset is in unit time specified in sample
-  * Grouping Data:
-    * **Downsample time series**: `df['col'].resample(time_str_format).agg_fx()`
-      * e.g. `df.Temperature.resample('6h').mean()` = group an hourly based time series into averaged quarterly data
-      * `df.resample('A').mean()`: resample w/ annual frequency, assumes index is a datetime
-      * `df.resample('A', on=column_label).mean()`: resample w.r.t a column label that isn't the index
-    * `groupby` function:
-      * **Group-by (Single index)**: `df.groupby('idx')`
-      * **Group-by (Multi-Index)**: `df.groupby([indexes])`
-      * **Group-by (Rows)**: `df.groupby(pd.Series(['row_vals'])`
-      * Note that the groupby function should be followed up with a column + aggregate for it to be useful, unless you want to literally count the number of rows etc
-        * e.g. count_by_class = by_class['survived'].count()
-      * Group by Day example: `by_day = sales.groupby(sales.index.strftime('%a'))`
-      * **Multiple Aggregation (columns)**: `sales.groupby('city')[['bread','butter']].max()`
-        * ![](../../static/img/groupby-max.jpg)
-      * **Multiple aggregation (functions)**: `sales.groupby('city')[['bread','butter']].agg(['max','sum'])`
-        * ![](../../static/img/groupby-max-sum.jpg)
-        * **Custom aggregation (own function)**: You can define a function that accepts a Series and returns a single value.
-        * **Separate aggregation per column (dictionary)**: You can define a dictionary and put it into .agg; the key is the column, the value is the aggregation function (e.g. max, min)
-        * `df.groupby(...).transform(fx)`: Transform after aggregation (group by, then transform values based on their groups)
-          * Output is the same shape as before groupby.
-          * e.g. `def zscore(series): return (series - series.mean()) / series.std()
-          * Usage: `df.groupby('x')['y'].transform(zscore)`
-    * **Filtering (after groupby)**:
-      * `by_company = sales.groupby("Company")`
-      * **Compute sum of 'Units'**: `by_com_sum = sales['Units'].sum()`
-      * **Filter 'Units' where sum > 35**: `by_com_filt = by_company.filter(lambda g:g['Units'].sum() > 35)`
-  * Aggregation Operations
-    * **Aggregate duplicates**: `df.groupby(by = arr_of_col_names).agg(col_to_fx_dict).reset_index()`
-      * *col_to_fx_dict*: e.g. {'height: 'max', 'weight': mean}
-      * **sum**: `df['col'].sum()` or `df['col'].sum(axis=1)`
-      * *Include axis=1 in aggregate f(x)s if you want to sum multiple columns, but keep the rows*
-      * *You can also sum booleans to count number of True values*
-      * **mean**: `df['col'].mean()`
-      * **max**: `df['col'].max()`
-      * **argmax** (idx of max val): `df['col'].argmax()`
-      * **count**: `df['col'].count()`
-      * **quantile**: `quantile([start, end (0-1)])`
-      * **std.dev**: `std()`
-      * **rolling mean**: `df['col'].rolling(window=numRows).mean()`
-      * **# of uniques:** `nunique()`
-      * **Count times value appeared**: `value_counts()` / `series.value_counts()`
-        * Returns dataframe (dictionary)
-  * Sorting Operations
-    * **Sort by current index**: `df.sort_index(level=idx_lvl)`
-      * You may want to change the index by using `df.set_index()` first
-    * **Sort values by column name**: `df.sort_values(by = arr_of_col_names)` or `df.sort_values('col')`
-      * **Sort df chosen by boolean array**: `df[duplicates_bool].sort_values(...)`
-  * Windowing Operations
-    * [Documentation](https://pandas.pydata.org/pandas-docs/stable/user_guide/computation.html)
-    * `df.expanding()`
-      * See [this](https://stackoverflow.com/questions/45370666/what-are-pandas-expanding-window-functions): "A common alternative to rolling statistics is to use an expanding window, which yields the value of the statistic with all the data available up to that point in time"
-  * Operations involving DataFrame and boolean array:
-    * **Get duplicate rows**: `df[df.duplicated()]`
-  * Operations involving indexes:
-    * **Interpolate**: `ts2_interp = ts2.reindex(ts1.index).interpolate(how='linear') `
-      * in the above example, the index is changed to datetime. ts1 contains all datetime, ts2 has some missing data
-    * **Changing metadata / restructuring**
-      * **Reindex** (Change values of the 1st column): `df = df.reindex(col/df2.index,[method=pad/backfill/nearest])`
-        * *Conform DataFrame to new index with optional filling logic, placing NA/NaN in locations having no value in the previous index. A new object is produced unless the new index is equivalent to the current one and copy=False*
-      * **Change index entirely**: `df.set_index('colname',inplace=bool)`. 
-        * This is usually done as an interim operation to make naivgating the DF easier, or for using `sort_index()`
-        * [Reindex vs set_index](https://stackoverflow.com/questions/50741330/difference-between-df-reindex-and-df-set-index-methods-in-pandas)
-      * **Reset index**: `df.reset_index()`
-      * **Rename columns**: `df.columns = arr`
-  * MultiIndexes    
-    * **Pivot (reorder data by changing the index, columns & values. REQUIRES UNIQUE INDEX)**: 
-      * `df.pivot(index=new_row_index, columns=new_columns, values=old_cols_to_vals)`
-      * **Index**: Each unique value in the column is now a primary key of the row. Aggfunc aggregates if there are duplicate PKs.
-      * **Columns**: Each unique value in the column is now a column.
-      * **Values**: Each value in the column are now assigned to row-column where they occur. Aggregate if needed. 
-    * **Pivot Table: Same as pivot, but deal with duplicate index values with a reduction**:
-    * `df.pivot_table(same_as_pivot,aggfunc=fx/'predefined_fx', margins=bool)`
-      * **margins**: If True, add a "All" row at the bottom which aggregates all data
-    * **Melt: undoing a pivot**: `pd.melt(df, id_vars=['cols'], value_vars=['cols'], value_name='value_col_name'])`
-      * **id_vars**: column name to keep as columns
-      * **value_vars**: column names to convert into key-value pairs, under two columns: 1 column specified as "variable" which uses the original column name and the 2nd column whose name is specified by value_name
-      * you can also use col_level = 0 to convert it into purely variable-value pair, removing any id_vars / indexes currently in use
-      * [documentation](https://pandas.pydata.org/docs/reference/api/pandas.melt.html)
-    * **Stack**: `df.stack(level='col')`
-      * [stack the prescribed level(s) from columns to index](https://www.w3resource.com/pandas/dataframe/dataframe-stack.php)
-    * **Unstacking**: `df.unstack(level='col'/num)`
-      * [form new level of column labels whose inner-most level consists of the pivoted index labels](https://www.w3resource.com/pandas/dataframe/dataframe-unstack.php)
-    * **Swap level**: `df.swaplevel(0,1)` 
-      * [swap ordering of stacked levels](https://www.geeksforgeeks.org/python-pandas-multiindex-swaplevel/)
-  * Operations involving two DataFrames:
-    * **Joining** (with properly set indices): df1 + df2
-  * Operations involving missing values and cleaning data:
-    * **Drop rows/cols with missing values**: `df.dropna(subset = ['col'])`
-      * See [documentation](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dropna.html)
-      * **Drop rows that have a NA value in any col**: `df.dropna(how='any')`
-      * **Drop rows that have all NA values** : `df.dropna(how='all')`
-      * **Drop cols that have less than 1000 non-missing values**: `df.dropna(thresh=1000, axis='columns')`
-    * **Impute missing vals**: `df.fillna({'col' : val_arr})`
-      * See [documentation](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html?highlight=fillna#pandas.DataFrame.fillna)
-    * **Count number of missing values by col**: `df.isna().sum()`
-  * Operations involving visualization
-    * DataFrame Info
-      * **Display head**: `df.head(<rows=5>)`
-      * **Display tail**: `df.tail(<rows=5>)`
-      * **Display schema**: `df.info()` (Shows col name, non-null entries & datatype)
-      * **Display summary stats**: `df.describe()` (also works on columns of the df)
-      * **Display datatype**: `df.dtype` or `df.dtypes` (works on columns of the df)
-      * **Size / Length / Shape**: `df.shape`
-    * Plotting data from DataFrame:
-      * `dataframe.plot(kind='scatter', x='col1', y='col2', [color='str', s=size_value,subplots=bool])`
-        * you can plot all data by omitting x and y
-        * subplots: plot in separate graphs
-      * `df.boxplot(column = [y_axis_col_values], by=[x_axis_col_values])`
-      * `ax = df[list_of_columns].plot() `
-        * You can customize the plot by calling the functions below on ax:
-          * `ax.set_ylabel("% Change of Host Country Medal Count")`
-          * `ax.set_title("Is there a Host Country Advantage?")`
-          * `ax.set_xticklabels(editions['City'])`
-        * plot all of the columns (their x and y) on the same graph with their own colours
-        * plt.title(str)
-        * plt.xlabel(str)
-        * plt.ylabel(str)
-        * plt.show()
-      * Subplots
-        * `fig, axes = plt.subplots(nrows=num_of_rows, ncols=num_of_columns)`
-        * `df.plot(ax=axes[0], kind='hist', normed=True, bins=30, range=(0,.3))`
-        * `df.fraction.plot(ax=axes[1], kind='hist', normed=True, cumulative=True, bins=30, range=(0,.3))`
-          * `kind='bar'`
+Data Addition
+* New Column:
+  * **Add new value**: `df.loc[lbl, col] = val` (do this for every row to add the column)
+  * **Set column to that value for every row**: `df['col'] = val`
+  * **Modify by transformation function**: `df["newCol"] = df["oldCol"].apply(transformFx)`
+    * e.g. `df.apply(lambda row: row.mean(), axis=1)`
+    * Regex can also be used etc
+  * **Modify by mapping values to a dictionary**: `df['col'].map(dict_map_vals)`
+* New Row:
+  * **Append dataframe**: 
+  ```
+  df1.append(df2,
+      ignore_index=False | True # False: Preserve index. True: Number everything from 0 to n
+  )
+  ```
+* **Concatenating / Joining list of series/dataframes**: 
+  * **Plus** (if indexes are properly set): `df1 + df2`
+  * **Concat**
+  ```
+  pd.concat(list_of_dataframes, # Concatenating a dictionary will result in the keys becoming the indexes
+      axis='index' | 'columns', # 'index': Stack below ("vertically"), 'columns': Stack to the right ("horizontally")
+      keys=['one','col','name','per','dataframe','in','list'],
+      join='inner',     # optional, keep only rows that share common index labels.
+      ignore_index=bool # If True, prevents repeated integer indices
+  )
+  ```
+  * Keys: 1 key per DataFrame in the list, forming the outer index in the MultiIndex. The resulting DataFrame will be something like df['one'][n] to access the first DataFrame, df['col'][n] to access the 2nd DataFrame etc.
+  * **Merge / Join**
+  ```
+  # Inner join, Equivalent to pd.concat([leftDF, rightDF], 'columns', join='inner')
+  pd.merge(leftDF, rightDF, 
+      on=column_label, # See exposition below
+      how='inner',     # Type of join. See below
+      suffixes=[sfx_forDF1, sfx_forDF2] # If both DFs have columns of same name, add suffix at the end if not merging on those columns
+  )
+  ```
+  * **on:** If multiple columns form the identifier: use `on=[col1,col2,...]`. Otherwise, the join will horizontally append copies of the columns even if they are the same.
+  * **on:** If df1 and df2 use different labels for the same identifier, use `left_on` and `right_on`.
+  * **how:** You can also define various types of joins as specified [here](https://mode.com/sql-tutorial/sql-outer-joins/) 
+  * See [documentation](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.merge.html) if need to be more specific
+  * **Ordered merge**
+  ```
+  # Same as pd.merge above, but designed for ordered data like time series and filling and interpolation.
+  pd.merge_ordered(leftDF, rightDF,
+      fill_method="ffill" # Forward-filling: Replace NaN entries with the most recent non-null entry,
+      # Other params same as above)
+  ```
+  * **Merge with value comparison**
+  ```
+  pd.merge_asof(...)
+  # pd.merge_asof() is like the pd.merge_ordered() function; it merges values in order using the on column
+  # but for each row in the left DataFrame, only rows from the right DataFrame whose 'on' column values are less than the left value will be kept.
+  ```
+Data Deletion
+* **Drop rows / columns**: 
+```
+df.drop(labels,               # Index or column labels to drop. 
+    axis= 'index' | 'columns'
+)
+```
+* **Drop rows / columns with missing values**: 
+```
+df.dropna(
+    subset = [column_labels]    # Labels along other axis to consider, e.g. if you are dropping rows these would be a list of columns to include.
+    how = 'any' | 'all'         # 'any' : If any NA values are present, drop that row or column. 
+                                # 'all' : If all values are NA, drop that row or column.
+
+    thresh = n                  # Drop unless there are at least n non-NA values along that axis
+    axis = 'index' | 'columns'  # 0/‘index’   : Drop rows    which contain missing values. 
+                                # 1/‘columns’ : Drop columns which contain missing values.
+)
+```
+  * See [documentation](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dropna.html)
+* **Drop duplicate rows**: 
+```
+df.drop_duplicates(
+    subset = arr_of_col_names, 
+    keep = 'first' | 'last' | False, 
+    inplace = bool
+)
+```
+
+Value Modification
+* **Dividing one DF by another**:
+  ```
+  DF1.divide(DF2, 
+      axis='rows'/'columns' # Divide the DF1 by DF2 along each row
+  )
+  ```
+
+Metadata modification
+* **Re-labelling columns**: `df.columns = arr_of_labels`
+
+Datatype modification
+* **Convert to datetime**: 
+```
+pd.to_datetime(df['col'],
+    format = date_str_format,
+    infer_datetime_format = True | False,  # Infer format based on first non-NaN element. Can increase parsing speed by 5-10x (disabled by default)
+    errors = 'raise' | 'coerce' | 'ignore' # raise = raise exception, coerce = set to NaT (not a time), ignore = ignore
+)
+```
+* A datetime column will allow you to manipulate the datetime directly & search for rows that match the date using df.loc
+  * You can also extract information from it using its attributes. See any attr under [pandas.Series.dt](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.dt.month.html).
+    * **Adding a new column for min/year etc**: `df["month"] = df["date"].apply(lambda row: row.month)`
+* Example of merging 2 string cols into 1 datetime: `times_tz_none = pd.to_datetime(la['Date (MM/DD/YYYY)'] + ' ' + la['Wheels-off Time'])`
+* **Convert to numeric**: `pd.to_numeric(df['col'], errors='coerce')`
+* **Convert to categorical**: 
+```
+df['col'] = pd.Categorical(values=df['col'], categories=arr_of_values, 
+    ordered=True # True: ordered categoricals
+)
+```
+* **Bin values into discrete intervals (Convert numbers to categories)**: 
+```
+df['col'] = pd.cut(df['col'], 
+    bins = arr_of_bin_edges,    # e.g. [0, 60, 180, np.inf]
+    labels = arr_of_categories  # e.g. ['short', 'medium', 'long']
+)
+# Alternatively, if you just want to cut them into equal sized bins
+df['col'] = pd.cut(df['col'], 
+    bins = bin_counts
+)
+```
+* **Convert to other types**: `df['newCol'] = df['dataCol'].astype('type')`
+
+Datetime timezone modification
+* **Localizing timezone**: `series.dt.tz_localize("US/Central")`
+* **Converting timezone**: `series.dt.tz_convert("US/Central")`
+
+Operations that involve boolean arrays:
+* Operations that convert DF into boolean DF:
+  * **Value meets condition**: `df_bool_arr = df['col'] > val`
+  * **Value membership**: `df['col'].isin(arr_of_acceptable_values)`
+  * **Value is null or NA**: `df.isnull()` or `df.isna()` (they are the same)
+  * **Value is not null**: `df.notnull()` or `df.notna()`
+  * **Row is duplicated**: `df.duplicated(subset = arr_of_col_names, keep = 'first' | 'last' | False)`
+* **Negate boolean array**: `~bool_arr`
+* **Subsetting with bool array**: `df[bool_df]`
+
+Unary Operations
+* **Compute % change from the immediate previous**: `series.pct_change(offset=1)`: 
+  * Row by default. Useful in comparing the percentage of change in a time series of elements. 
+  * Offset is in unit time specified in sample
+
+Grouping Data
+* **Downsample time series**: `df['col'].resample(time_str_format).agg_fx()`
+  * e.g. `df.Temperature.resample('6h').mean()` = group an hourly based time series into averaged quarterly data
+  * `df.resample('A').mean()`: resample w/ annual frequency, assumes index is a datetime
+  * `df.resample('A', on=column_label).mean()`: resample w.r.t a column label that isn't the index
+* `groupby` function:
+  * **Group-by (Single index)**: `df.groupby('idx')`
+  * **Group-by (Multi-Index)**: `df.groupby([indexes])`
+  * **Group-by (Rows)**: `df.groupby(pd.Series(['row_vals'])`
+  * Note that the groupby function should be followed up with a column + aggregate for it to be useful, unless you want to literally count the number of rows etc
+    * e.g. count_by_class = by_class['survived'].count()
+  * Group by Day example: `by_day = sales.groupby(sales.index.strftime('%a'))`
+  * **Multiple Aggregation (columns)**: `sales.groupby('city')[['bread','butter']].max()`
+    * ![](../../static/img/groupby-max.jpg)
+  * **Multiple aggregation (functions)**: `sales.groupby('city')[['bread','butter']].agg(['max','sum'])`
+    * ![](../../static/img/groupby-max-sum.jpg)
+    * **Custom aggregation (own function)**: You can define a function that accepts a Series and returns a single value.
+    * **Separate aggregation per column (dictionary)**: You can define a dictionary and put it into .agg; the key is the column, the value is the aggregation function (e.g. max, min)
+    * `df.groupby(...).transform(fx)`: Transform after aggregation (group by, then transform values based on their groups)
+      * Output is the same shape as before groupby.
+      * e.g. `def zscore(series): return (series - series.mean()) / series.std()
+      * Usage: `df.groupby('x')['y'].transform(zscore)`
+* **Filtering (after groupby)**:
+  * `by_company = sales.groupby("Company")`
+  * **Compute sum of 'Units'**: `by_com_sum = sales['Units'].sum()`
+  * **Filter 'Units' where sum > 35**: `by_com_filt = by_company.filter(lambda g:g['Units'].sum() > 35)`
+
+Aggregation Operations
+* **Get Uniques**: `df.unique()`
+* **Aggregate duplicates**: `df.groupby(by = arr_of_col_names).agg(col_to_fx_dict).reset_index()`
+  * *col_to_fx_dict*: e.g. {'height: 'max', 'weight': mean}
+* **sum**: `df['col'].sum(axis={index (0), columns (1)})`
+  * *You can also sum booleans to count number of True values*
+  * **Count number of missing values by col**: `df.isna().sum()`
+* **mean**: `df['col'].mean()`
+* **max**: `df['col'].max()`
+* **argmax** (idx of max val): `df['col'].argmax()`
+* **count**: `df['col'].count()`
+* **quantile**: `quantile([start, end (0-1)])`
+  * Get single value: `quantile(pct_from_0_to_1)`
+* **std.dev**: `std()`
+* **rolling mean**: `df['col'].rolling(window=numRows).mean()`
+* **# of uniques:** `nunique()`
+* **Count number of times value appeared**: `value_counts()` / `series.value_counts()`
+  * Returns dataframe (dictionary)
+Sorting Operations
+* **Sort by current index**: `df.sort_index(level=idx_lvl)`
+  * You may want to change the index by using `df.set_index()` first
+* **Sort values by column name**: `df.sort_values(by = arr_of_col_names)` or `df.sort_values('col')`
+  * **Sort df chosen by boolean array**: `df[bool_arr].sort_values(...)`
+
+Windowing Operations
+* [Documentation](https://pandas.pydata.org/pandas-docs/stable/user_guide/computation.html)
+* `df.expanding()`
+  * See [this](https://stackoverflow.com/questions/45370666/what-are-pandas-expanding-window-functions): "A common alternative to rolling statistics is to use an expanding window, which yields the value of the statistic with all the data available up to that point in time"
+
+Operations on Indexes:
+* **Interpolate**: `ts2_interp = ts2.reindex(ts1.index).interpolate(how='linear') `
+  * in the above example, the index is changed to datetime. ts1 contains all datetime, ts2 has some missing data
+* **Changing metadata / restructuring**
+  * **Reindex** (Change values of the 1st column): `df = df.reindex(col/df2.index,[method=pad/backfill/nearest])`
+    * *Conform DataFrame to new index with optional filling logic, placing NA/NaN in locations having no value in the previous index. A new object is produced unless the new index is equivalent to the current one and copy=False*
+  * **Change index entirely**: `df.set_index('colname',inplace=bool)`. 
+    * This is usually done as an interim operation to make naivgating the DF easier, or for using `sort_index()`
+    * [Reindex vs set_index](https://stackoverflow.com/questions/50741330/difference-between-df-reindex-and-df-set-index-methods-in-pandas)
+  * **Reset index**: `df.reset_index()`
+
+Operations on Restructuring Data (Pivoting)
+* **Pivot (reorder data by changing the index, columns & values. REQUIRES UNIQUE INDEX)**: 
+```
+df.pivot(
+    index=new_row_index,      # Each unique value in the column is now a primary key of the row. Aggfunc aggregates if there are duplicate PKs.
+    columns=new_columns,      # Each unique value in the column is now a column
+    values=old_cols_to_vals   # Each value in the column are now assigned to row-column where they occur. Aggregate if needed. 
+)
+```
+* **Pivot Table: Same as pivot, but deal with duplicate index values with a reduction using aggfunc**:
+```
+df.pivot_table(
+    index=new_row_index,        # Each unique value in the column is now a primary key of the row. Aggfunc aggregates if there are duplicate PKs.
+    columns=new_columns,        # Each unique value in the column is now a column
+    values=old_cols_to_vals     # Each value in the column are now assigned to row-column where they occur. Aggregate if needed. 
+    aggfunc=fx/'predefined_fx', # Aggregate duplicate index values using this function
+    margins=bool                # If True, add a "All" row at the bottom which aggregates all data
+)
+```
+* **Melt: undoing a pivot**: 
+```
+pd.melt(dataframe, 
+    id_vars=['cols'],               # column names to keep as columns
+    value_vars=['cols'],            # column names to convert into key-value pairs, under two columns: 
+                                    # 1st column specified as "variable" which uses the original column name
+    value_name=['value_col_names'], # 2nd column whose name is specified by value_name
+    col_level = 0                   # use col_level = 0 to convert it into purely variable-value pair, removing any id_vars / indexes currently in use
+)
+```
+  * [documentation](https://pandas.pydata.org/docs/reference/api/pandas.melt.html)
+* **Stack**: `df.stack(level='col')`
+  * [stack the prescribed level(s) by shifting columns to index](https://www.w3resource.com/pandas/dataframe/dataframe-stack.php)
+* **Unstacking**: `df.unstack(level='col'/num)`
+  * [form new level of columns whose inner-most level consists of the pivoted index labels](https://www.w3resource.com/pandas/dataframe/dataframe-unstack.php)
+* **Swap level**: [swap ordering of stacked levels](https://www.geeksforgeeks.org/python-pandas-multiindex-swaplevel/)
+```
+dataframe.swaplevel(
+    index1_level, # e.g. 0 for the outer-most level
+    index2_level, # e.g. 1 for the inner level
+    axis='index'|'columns')
+``` 
+*  Operations involving missing values and cleaning data:
+* **Impute/Replace missing vals**: `df.fillna({'col' : val_arr}, inplace=True)`
+  * See [documentation](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html?highlight=fillna#pandas.DataFrame.fillna)
+
+Operations involving visualization 
+* DataFrame Info
+  * **Correlation between columns**: `df.corr()`
+  * **Display head**: `df.head(<rows=5>)`
+  * **Display tail**: `df.tail(<rows=5>)`
+  * **Display schema**: `df.info()` (Shows col name, non-null entries & datatype)
+    * **Display columns**: `df.columns`
+  * **Display summary stats (e.g. std,min,max,quartiles)**: `df.describe()` (also works on columns of the df)
+  * **Display datatype**: `df.dtype` or `df.dtypes` (works on columns of the df)
+  * **Size / Length / Shape**: `df.shape`
+* Plotting data from DataFrame (See matplotlib.pyplot):
+  * `dataframe.plot(kind='scatter', x='col1', y='col2', [color='str', s=size_value,subplots=bool])`
+    * you can plot all data by omitting x and y
+    * subplots: plot in separate graphs
+  * `dataframe.boxplot(column = [y_axis_col_values], by=[x_axis_col_values])`
+  * `ax = df[list_of_columns].plot() `
+    * You can customize the plot by calling the functions below on ax:
+      * `ax.set_ylabel("% Change of Host Country Medal Count")`
+      * `ax.set_title("Is there a Host Country Advantage?")`
+      * `ax.set_xticklabels(editions['City'])`
+    * plot all of the columns (their x and y) on the same graph with their own colours
+    * plt.title(str)
+    * plt.xlabel(str)
+    * plt.ylabel(str)
+    * plt.show()
+  * Subplots
+    * `fig, axes = plt.subplots(nrows=num_of_rows, ncols=num_of_columns)`
+    * `df.plot(ax=axes[0], kind='hist', normed=True, bins=30, range=(0,.3))`
+    * `df.fraction.plot(ax=axes[1], kind='hist', normed=True, cumulative=True, bins=30, range=(0,.3))`
+      * `kind='bar'`
