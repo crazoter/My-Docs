@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[19],{76:function(t){t.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"AWSome Day notes","permalink":"/My-Docs/blog/awsome"},{"title":"Interesting RL stuff I want to look at","permalink":"/My-Docs/blog/interesting-stuff"},{"title":"Purpose of Matt\'s Docs","permalink":"/My-Docs/blog/welcome"}]}')}}]);
