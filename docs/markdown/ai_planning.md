@@ -51,7 +51,7 @@ $R'(s,a) = \sum_{s'\in S}T(s,a,s')R(s,a,s')$
 * The reward for taking an action is the sum of (all its possible transitions) x (related transition rewards)
 
 #### R(s,a) -> R(s):
-R'(post(s,a)) = \gamma^{-1/2}R(s,a)
+$R'(post(s,a)) = \gamma^{-1/2}R(s,a)$
 
 * s' is abstracted out to "post(s,a)", which refers to the "post-state" for every (s,a). In this R:
 ```

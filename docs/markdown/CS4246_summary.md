@@ -8,10 +8,9 @@ title: CS4246 Cheatsheet
 * Transition Model  Result(s,a)
 * Goal Test
 * Path Cost         c(s,a,s')
-
-**Admissible Heuristic**: Never overestimate cost to goal
-**Consistent / Monotonic**: Straight path (to goal) always shorter than a curved path. $h(n) \leq c(n,a,n')+h(n')$
-**Factored Representation**: State representeed as SAT
+* **Admissible Heuristic**: Never overestimate cost to goal
+* **Consistent / Monotonic**: Straight path (to goal) always shorter than a curved path. $h(n) \leq c(n,a,n')+h(n')$
+* **Factored Representation**: State representeed as SAT
 * **Fluents**: state variables in said representation
 
 ### **STRIPS**
@@ -140,17 +139,19 @@ title: CS4246 Cheatsheet
   * Concept: $V_k(s) +=$ [(New Info) - (Current Estimate)]
     * New Info = **Target**, Difference = **Error**
   * $V_k(s)$ equals $(\frac{1}{k}\sum_{i=1}^{k}G_i(s))$ equals $(V_{k-1}(s) + \frac{1}{k}(G_k(s) - V_{k-1}(s)))$
-  * **Monte Carlo Target**: G_k(s)
+  * **Monte Carlo Target**: $G_k(s)$
   * **Monte Carlo Error** (converges to 0 when k = $\infty$): $(G_k(s) - V_{k-1}(s))$
   * **Prediction**: Calculating V(s) is enough
   * **Control**: Calculate $V_k(s,a)=(\frac{1}{k}\sum_{i=1}^{k}G_i(s,a))$, then update $\pi$ by $\pi(s) = \max V(s,a)$
 * **Temporal Difference Learning (TD(0))**: Same as MC Learning but estimate $V(s)$ with every step in the episode instead.
-  * Change the target
-  * $V_{k[j+1]}(s) = V_{k[j]}(s) + \alpha(R_{k[j+1]}(s) + \gamma V_{k[j]}(s') - V_{k[j]}(s))$
+  * Change the target:
+  * $V_{k[j+1]}(s) = V_{k[j]}(s) + \alpha(target - V_{k[j]}(s))$
+  * $ = V_{k[j+1]}(s) = V_{k[j]}(s) + \alpha(R_{k[j+1]}(s) + \gamma V_{k[j]}(s') - V_{k[j]}(s))$
     * k episodes thus far, j-th step in the kth episode
   * **TD Target**: $R_{k[j+1]}(s) + \gamma V_{k[j]}(s')$
   * Converges faster but biased
   * **SARSA**: TD(0) using 1 $\pi$ for generating data and training(**on-policy**)
+    * State-action-reward-state-action: algo for learning MDP
     * Future value estimate by action taken by $\pi$
     * **Target**: $R(s,a) + \gamma V(s',\pi(s'))$
     * on-policy converges if $\epsilon$-greedy
@@ -212,6 +213,7 @@ title: CS4246 Cheatsheet
 
 ### **Deep Q-Learning**: Q-learning with non-linear function approximation
   * Use **experience replay with fixed Q-targets** to make inputs less correlated & reduce instability
+  * The procedure below uses double Q-learning
 * [Procedure](https://towardsdatascience.com/deep-q-network-dqn-ii-b6bf911b6b2c):
 1. Take [ϵ-greedy](#epsilon-greedy) action $a_t$ using approximated policy from main policy_NN
 2. Store observed transition $(s_t,a_t,r_{t+1},s_{t+1})$ in a round-robin buffer

@@ -20,10 +20,11 @@ He describes his experience with cadavers as he learns his practice, and how he 
 > There is also the question of "if the soul leaves the body when it is dead, then why do we treat the now empty vessel with such respect, when they have already left this world for the next?". The answer to this is dependent on the assumptions of the afterlife. 
   * If there is no afterlife, and souls do not exist, then the body is literally all that is left of the person. While loved ones would prefer it to be treated with sufficient respect, there is ultimately no negative outcome (aside from the wrath of loved ones) with using the dead body for fertilizer. After all, the desecration of the corpse does not affect its life in the next, since in this case it has effectively ceased to exist.
   * There is no point in having an afterlife if souls do not exist; the afterlife would be a very empty place if souls do not exist.
-  * Likewise, the soul must either: 
-    * 1. Retain some form of connection to the body even upon its death
-    * 2. Continue existing in the mortal world after its death, and is able to observe what happens to its body, is able to understand what is happening to its body and is also able to (or is somehow "programmed" to) react to such occurrences.
-  * Of course, desecrating a corpse is a social taboo (as is death), and woe betide the person who desecrates the body of one who is still loved. Still, if we are to consider only what the consequences of desecrating a body are to a person who is already dead, I think there are only a few possibilities in which that is the case.
+  * Hence, while it may be morally wrong to desecrate a dead body, there will only be consequences iff: 
+    * 1. The soul retains some form of connection to the body even upon its death
+    * 2. The soul continues to exist in the mortal world after its death, and is able to observe what happens to its body, is able to understand what is happening to its body and is also able to (or is somehow "programmed" to) react to such occurrences.
+    * 3. The soul is no longer aware of what happens to their body; however, there is an omnipotent being (i.e. God or god(s)) with the authority to judge and enforce justice on your actions, and they judge said action immoral
+  * Of course, desecrating a corpse is a social taboo (as is the topic of death), and woe betide the person who desecrates the body of one who is still loved. Still, if we are to consider only what the consequences of desecrating a body are to a person who is already dead, I think there are only a few possibilities in which that is the case; the lines grow even blurrer when motivations come into play.
 
 Paul then goes on to describe the start of his career (from an intern to a resident) in vivid detail, each page filled with his experience of others facing death; before they were born, right after they were born, after an accident. He describes how many have to consider trading their quality of life for their lives (e.g. losing their hand to remove a tumor), and he describes the many stressful moments in his career in a way so vivid, his emotions seep from the text. 
  * "One evening in my third year, I ran into Jeff, my friend in general surgery, a similarly intense and demanding profession. We each noted the other’s despondency. “You go first,” he said. And I described the death of a child, shot
@@ -48,4 +49,16 @@ treatment consists in speaking reassuringly, until your words connect and the pa
 
 The weight of his actions is apparent as he describes how a millimeter of damage can cause irreparable damage to the mind of a person.
 
-Paul eventually contracts cancer himself at an early age.
+Paul eventually contracts cancer himself at an early age. He recovers from his first bout with cancer and returns back to his work as a neurosurgeon. He eventually writes this book, and dies before he could finish it (although he covers most of his experience); the book is finished by his wife.
+
+> Paul reminds us of the curse of illness: it eats at your body, weakening you, and at its worst it renders you immobile and takes away your freedom to pursue what you want to achieve; a fate perhaps worse than death.
+
+Paul finds closure; he has a child with his wife and is surrounded by close ones during his death (albeit a painful one). 
+
+> The book highlights the ease of medical negligence; there was an instance early on in the book where a neurosurgeon colleague / intern under Paul simply refuses to admit his mistake and even during Paul's time as a patient there was medicine missing from his prescription and even then the doctor refused to admit his mistake. Paul was lucky as he (and his wife) had the medical background to spot mistakes and ensure the best for themselves; but what about others who don't have such a luxury? 
+
+The book doesn't have a moral, and definitely doesn't claim to even contain a lesson; it is simply an autobiography written by a neurosurgeon who sought the "Truth", in the hopes that the reader who experiences Paul's experiences through the book, may get a different perspective of life; it was his belief that each man can only see a part of the Truth, given their own perspectives, and yet so limited in time and resources to experience and understand the perspectives of others.
+
+Paul does discuss metaphysics on p168-171; more specifically, he talks about how science cannot be used to prove / disprove God's existence, and how it is unable to explain much of life's mysteries. He claims: "No system of thought can contain the fullness of human experience".
+
+> I would agree with that claim, but I am prone to believe that science is still the best way of ascertaining what reality is. Without being too philosophical, we can only know of this world from our observations, and attempt to confirm the likelihood of whether our theories explain reality through observations and the scientific method. 

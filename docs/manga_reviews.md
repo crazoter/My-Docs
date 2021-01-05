@@ -31,14 +31,14 @@ Manga on this page are scored by a base score plus a bonus score. As such, the t
 * **Base score**: 1-10 out of 10. This is a subjective value based on how much I like the manga. This is usually at least a 7, otherwise I wouldn't have even bothered to pick up the manga (unless I read a highly rated manga and believe it to be overrated)
 * **Bonus score:** wrapped in brackets, -2 to 5. Each score correlates to the level of "must-read" that I associate with it (elaborated upon below). I only add the manga which I believe can be considered readable on this page, so this bonus score is really meant to distinguish the "really good" and the "exceptionally good".
   * The possible scores are as follows:
-    * -2 - Only worth reading if you need something to nibble on
+    * -2 - Only worth reading if you need something to nibble on, although usually I'd recommend "don't read" for any manga with this score.
     * -1 - Umm... The kind of manga where I'm kind of on the fence, which means you can do without reading it
-    * 0 - Worth reading, but kind of forgettable... 
-    * 1 - Highly worth reading, but some parts are kind of unsatisfactory, or I just don't feel attached to it for some unexplained reason
-    * 2 - Definitely worth reading, I really liked it.
-    * 3 - Read it!!! The kind where you think back about when you read it and it still warms your heart / makes you want to re-read. Can be safely recommended to others.
-    * 4 - Must read, the kind where you draw inspiration from the manga or are reminded of the manga in your life every now and then
-    * 5 - Must read, if you're prepared to become addicted to it. The kind where you're so attached to the characters you start reading the original novel, or related fanfic/art/doujinshi.
+    * 0 - Manga that you can consider reading. Some are kind of forgettable and in my opinion skippable, while some are nice to read, but perhaps a little too shallow to be worth recommending to others.
+    * 1 - Manga that can be considered somewhat worth reading. Manga in this list usually contain parts that I find unsatisfactory, or I just don't feel attached to the manga for some unexplained reason
+    * 2 - Manga that I like and more importantly think others may like. Usually consists of manga that I currently follow (or had followed).
+    * 3 - Manga which I think can be safely recommended to others. Usually of substantial quality in some way or another.
+    * 4 - Manga which I think are worth reading.
+    * 5 - Manga which I got addicted to. The kind where you're so attached to the characters you start reading the original novel, or related fanfic/art/doujinshi.
 * **Loopholes**: There are some manga where the base score is exceptional, but the bonus score isn't very high (e.g. That Girl is not just cute). This is because even though I like the series, I recognize it's not really impactful.
 
 Manga are presented in ascending order of their quality score.
@@ -86,7 +86,7 @@ Template
   * Sweetness:    🙂
   * Comedy:       🙂😀😆😂🤣
   * Storytelling: ✋😑
-  * Verdict:      Quite funny
+  * Verdict:      Semi-trash plot, but quite funny. Plot may take a turn later in the manga.
 ```
 * Bokuben 
 ```
@@ -99,8 +99,9 @@ Template
   * Sweetness:    🙂😊
   * Comedy:       🙂😀
   * Action:       🤜🔪⚔️
-  * Storytelling: ✋😑
-  * Verdict:      Skippable
+  * Storytelling: ✋😑👌
+  * Intrigue:     🕯️ 💡🧠
+  * Verdict:      It's got some rough edges, but if you like a woman building her reverse harem country with gacha this is for you
 ```
 * Cultivation Chat Group
 ```
@@ -108,7 +109,7 @@ Template
   * Comedy:       🙂😀😆😂🤣
   * Action:       🤜🔪⚔️💣
   * Storytelling: ✋😑👌 👍💯
-  * Verdict:      This is really good
+  * Verdict:      This is really good, but manhwa's got some rough edges
 ```
 * Grand Blue
 ```
@@ -122,13 +123,19 @@ Template
   * Sweetness:    🙂😊❤️💘
   * Comedy:       🙂😀
   * Storytelling: ✋😑
-  * Verdict:      This is good
+  * Verdict:      This is good, but very slow paced slice-of-life
 ```
 * I'm a spider, so what?
 ```
   * Action:       🤜🔪⚔️💣💥
   * Storytelling: ✋
-  * Verdict:      Skippable
+  * Verdict:      Skip to avoid future disappointment
+```
+* I turned my childhood friend into a girl
+```
+  * Sweetness:    🙂😊❤️
+  * Comedy:       🙂😀
+  * Verdict:      Skip. Too few chapters, update rate is too slow, plot is just... wtf
 ```
 * Jitsu Wa Watashi Wa
 ```
@@ -152,7 +159,7 @@ Template
   * Comedy:       🙂😀
   * Action:       🤜🔪⚔️💣💥
   * Storytelling: ✋😑👌👍
-  * Verdict:      This is good
+  * Verdict:      This is good, but cop out ending
 ```
 * Kishuku Gakkou no Juliet
 ```
@@ -167,7 +174,7 @@ Template
   * Sweetness:    🙂😊❤️💘🚑
   * Comedy:       🙂😀😆😂
   * Storytelling: ✋😑👌
-  * Verdict:      This is really good
+  * Verdict:      This is really good, but very slow update rate and very short chapters
 ```
 * Leveling Up by only Eating
 ```
@@ -175,7 +182,7 @@ Template
   * Comedy:       🙂😀😆
   * Action:       🤜🔪⚔️💣
   * Storytelling: ✋😑👌
-  * Verdict:      This is good
+  * Verdict:      This is good, but irregular update rate
 ```
 * Love Advice from the Great Duke of Hell
 ```
@@ -183,7 +190,7 @@ Template
   * Comedy:       🙂😀😆😂🤣
   * Action:       🤜🔪⚔️💣
   * Storytelling: ✋😑👌 👍💯
-  * Verdict:      This is really good, but read review
+  * Verdict:      This is really good, but weird story structure (read review first)
 ```
 * Mission: Yozakura Family
 ```
@@ -207,6 +214,11 @@ Template
   * Intrigue:     🕯️ 
   * Storytelling: ✋😑👌 👍
   * Verdict:      This is pretty good (See review)
+```
+* Nan Hao & Shang Feng
+```
+  * Comedy:       🙂😀😆😂🤣
+  * Verdict:      This is a really funny slice-of-life
 ```
 * Oresama Teacher
 ```
@@ -232,7 +244,20 @@ Template
   * Action:       🤜🔪
   * Intrigue:     🕯️ 💡🧠🤯👽
   * Storytelling: ✋😑👌 👍
-  * Verdict:      This is good
+  * Verdict:      This is good if you love to watch MC pulling strings to get what she wants, with a side of romance
+```
+* Sincerely: I became the Duke's Maid
+```
+  * Sweetness:    🙂😊
+  * Comedy:       🙂😀
+  * Storytelling: ✋😑
+  * Verdict:      Pretty meh, a "I isekai'ed into the novel I was reading" story that isn't particularly outstanding
+```
+* Slime Life
+```
+  * Sweetness:    🙂😊
+  * Comedy:       🙂😀
+  * Verdict:      This is a mindless light-hearted read, read if you just wanna go "awww so cute"
 ```
 * That Girl is not just cute
 ```
@@ -252,7 +277,7 @@ Template
   * Sweetness:    🙂😊❤️
   * Comedy:       🙂😀
   * Storytelling: ✋😑
-  * Verdict:      Skippable
+  * Verdict:      Skippable (still too early to tell anyway)
 ```
 * The Undefeatable Swordsman
 ```
@@ -264,7 +289,7 @@ Template
 ```
   * Sweetness:    🙂
   * Storytelling: ✋
-  * Verdict:      Too early to tell
+  * Verdict:      Too early to tell, but pretty slow update rate
 ```
 * Tomo-chan wa Onnanoko
 ```
@@ -281,13 +306,25 @@ Template
   * Action:       🤜🔪⚔️💣💥
   * Intrigue:     🕯️ 💡🧠
   * Storytelling: ✋😑
-  * Verdict:      On the fence
+  * Verdict:      Skippable
 ```
 * We May Be An Inexperienced Couple But...
 ```
   * Sweetness:    🙂😊❤️💘🚑
   * Comedy:       🙂😀
   * Verdict:      This is quite good
+```
+* When the villainess loves
+```
+  * Sweetness:    I don't know how to rate this
+  * Comedy:       🙂😀
+  * Storytelling: ✋😑
+  * Verdict:      Read review. Too early to tell
+```
+* Why are you doing this, duke?
+```
+  * Sweetness:    🙂😊❤️
+  * Verdict:      Skip
 ```
 * Wotakoi
 ```
@@ -298,12 +335,13 @@ Template
   
 ## Series that I currently follow:
 
-While I am usually reading new manga, these are the series that I follow on a regular basis:
+While I am usually reading new manga, these are the series that I currently follow. 
 
 **Irregular**
 * Leveling Up by only Eating
 * Peerless Dad
 * Kitsune Spirit
+* Chitra
 
 **Monthlies**
 * Wotakoi
@@ -318,12 +356,14 @@ While I am usually reading new manga, these are the series that I follow on a re
 
 ## Reviews by score
 
-## Score negative: I don't know why I read and reviewed this
+## Score negative: Don't read
 
 <Tabs
   defaultValue="a"
   values={[
+    {label: "I'm a spider, so what? (Reincarnation action seinen) (6/10 (-1))", value: "h"},
     {label: "The Stereotypical Life of a Reincarnated Lady (Romcom) (7/10 (-2))", value: "a"},
+    {label: "Why are you doing this, duke? (shoujo) (8/10 (-2))", value: "b"},
   ]}>
 
 <TabItem value="a">
@@ -338,34 +378,109 @@ While I am usually reading new manga, these are the series that I follow on a re
 
 </TabItem>
 
+
+<TabItem value="a">
+
+#### Why are you doing this, duke? (shoujo) (8/10 (-2))
+* **Synopsis**: Duke magically falls in love with woman he was about to kill
+* **Genre**: shoujo, tragedy, comedy, manhwa
+* **Release rate:** Weekly
+* **Read until**: Ch 91 (main story finished)
+* **Points**:
+  * The story has some sweet shoujo moments and the expressions are well drawn.
+  * However, the story is abysmal and that makes it very disappointing; even if I were to give the plot suspension of belief, it is just too nonsensical to enjoy it. I don't expect much from a shoujo, but come on. At least make the plot coherent.
+  * **Major spoilers ahead, so don't read if you mind spoilers.** But in my opinion, if you're thinking about reading this, you should know what you're getting into. Don't go for a swim in the lake without knowing what kind of crocodile's swimming in it.
+    * [SPOILER]: Why do I say the plot is nonsensical? Because when we are introduced to magic, we learn from the one who cast the spell that magic cannot have any power over the dead, and that when the magic medium dies, the spell is broken (here, I'm ignoring the fact that the stupid woman used her *all* of her remaining magic force to grant a child a wish, even though she obviously has no intention to do so). This whole "What magic was cast on the MC and how do you complete it?" is a huge part of the story and is brought up time and again, so there is a lot of anticipation about it. Yet the purpose of the circle is not explained, its relation to the tarot cards are not explained, and there so many gaping plot points, like the fact that both characters die before it could be completed. By the story's own logic, the spell is broken when the spell's medium dies, and thus nothing good should happen; in fact, nothing at all should happen. Yet the spell is suddenly fully capable of sending the character back in time to he was a youth, this time equipped with the full knowledge of what transpired in his previous life. There is zero explanation, zero foreshadowing, zero anything; it just happens. How? Why? There is no explanation. For all I know, this could just be a dream that the protagonist is having while he is bleeding out in the real world. And that is why I find it all so nonsensical and stupid. Had the author given this more thought, this manhwa could've been so much better. Instead, what we have is an ending that invalidates *the entire manhwa*, because this whole story literally revolves around learning more about the spell, completing it and fulfilling the wishes of its caster; in doing so, the duo would perhaps get a good ending of some sort. Unfortunately, the way this was handled is just utterly disappointing.
+    * [SPOILER]: The bad ending leads me to think about the sequence of events that led to its occurrence, and that only magnified my dissatisfaction with the execution of the story. The level of security and protection accorded to the protagonists is unrealistically pathetic. Even though they are incredibly rich, rich enough to own their own castle and port, and also possesses sufficient political clout and military strength to make the crown prince perceive them as a threat to his right to the throne, the duchess' *entire* security detail can be killed by a single assassin, and their *entire* castle defences can be penetrated in less than an hour (as opposed to a siege which would last days or months). The level of political intrigue is likewise very lacking as well. The main character chooses to perform a rescue *on his lonesome*, without any strategizing, preparation or plans whatsoever. No money was invested on assassins, poisons, secret assassination techniques, political allies; nothing. He just charges in and dies with the main protagonist. I am aware that this is a shoujo manga so plot may not be its strong point, but the quality of storytelling is a little too lacking here. You could tell me that a magic circle suddenly appear on their dead bodies and the two are reborn as witch and warlock, and that story would still make as much sense as the current story.
+    * [SPOILER]: This story has a bad ending in both senses of the word; one is the incoherent "I am suddenly young again with all knowledge to make this new life awesome", and the second is that the protagonists die a miserable death with 0 ability to resist the bad guy (largely due to their own incompetence).
+
+</TabItem>
+
+
+<TabItem value="h">
+
+#### I'm a spider, so what? (Reincarnation action seinen) (6/10 (+0))
+* **Synopsis**: Reincarnates as spider
+* **Genre**: action, seinen
+* **Release rate**: Monthly
+* **Points**:
+  * MC undergoes tremendous suffering and has plot armor. 
+  * Similar to Slime Rimuru plot, but more gruesome and interaction with humans (and other intelligent beings) comes at a much later stage.
+  * However, unlike Slime Rimuru, there is significantly less planning and strategizing. The quality of novel TLs is also significantly weaker. Think of it as comparing a hack-and-slash game to a RPG game.
+  * Novel TL quality is, frankly speaking, pretty bad.
+  * An unpolished gemstone. There is a lot of potential in this story and you can tell there was a lot of effort. Unfortunately, the way it is told is very lacklustre; there is not enough explanation when it is needed. For example, you'll encounter stuff like "MA" energy or something early on, but it's not explained at all, even though it will turn out to be an important plot point later on. All these unexplained stuff add up and as a result, what could've been a very interesting story will turn into a very *unsatisfying* and *difficult* read. This is exacerbated by how the author loves to tell the story from different perspectives, to the point where each chapter is told from the perspective of a new character; it can get confusing, especially when the translator doesn't tell you whose perspective it is now.
+    * Sometimes only reveals the percept of a character after the character has reacted to it (e.g. author shows MC getting angry and then going to beat up someone, but doesn't tell u why she got angry, or even what she saw until after she beat up the person) 
+    * The TL quality for the novel is pretty bad. 
+    * I think the worst thing about this manga/novel is that after reading quite a bit and learning more about the world, the plot feels quite shallow and tbh I don't understand the motivation of some of the characters even after reading it (either due to bad TL quality or just plain poor storytelling by the author). 
+    * Hopefully the manga improves upon what is already there, or else it will remain a dirty piece of rock.
+    * It's hard to avoid drawing comparisons to Slime Rimuru. IMO, the plot progression is much faster than Rimuru, but the quality and depth of storytelling and the plot itself just far worse.
+* **Should you read it:** Art quality is exceptional and combat is interesting. Unfortunately, the release rate is slow as hell for the manga, even though the story progression is faster than Slime Rimuru. Also, expect the story to change midway through. At the first part, it is very lacking in proper social interaction at the start of the manga (the author literally creates a skill so that MC can split her consciousness to talk to multiple mental copies of herself); for the entire manga so far you can count with one hand the number of (proper) conversations the MC has had with other creatures. In the second part, the quality of interactions remains quite meh. Honestly, what makes this series bad is not really the quality itself, but how the story could've been so much better if the plot was better fleshed out and the storytelling done better. My disappointment with the plot and storytelling is immeasurable, and I don't really recommend this. The quality of the action scenes are quite well done, but beyond that, it's pretty trash.
+
+</TabItem>
+
 </Tabs>
 
-## Score +0: Worth reading but forgettable
+## Score +0: Can consider reading. Forgettable
 
 <Tabs
   defaultValue="h"
   values={[
-    {label: "I'm a spider, so what? (Reincarnation action seinen) (6/10 (+0))", value: "h"},
+    {label: "Sincerely: I became a duke's maid (Isekai josei) (7/10 (+0))", value: "j"},
+    {label: "Slime Life (Cute fantasy) (7/10 (+0))", value: "i"},
     {label: "Bakarina (Harem Comedy) (8/10 (+0))", value: "e"},
+    {label: "When the villainess loves (Isekai reverse harem) (8/10 (+0))", value: "k"},
     {label: "5-Toubun (8/10 (+0))", value: "f"},
-    {label: "Beware of the Villainess! (Shoujo isekai romcom) (9/10 (+0))", value: "g"},
     {label: "The Pharmarcy Where the Wolf Howls (Josei romcom) (9/10 (+0?))", value: "d"},
     {label: "That Girl is not just cute (romcom) (9.5/10 (+0))", value: "c"},
-    {label: "Tomo-chan wa Onnanoko (romcom) (10/10 (+0))", value: "a"},
   ]}>
 
-<TabItem value="g">
+<TabItem value="k">
 
-#### Beware of the Villainess! (Shoujo isekai romcom) (9/10 (+0))
+#### When the villainess loves (8/10 (+0))
 
-* **Synopsis**: Protagonist reincarnates as villainess in a shoujo novel and protects original MC from her love interests
-* **Genre**: webtoon, shoujo, isekai, romcom
-* **Release rate**: Irregular (3 times a month)
-* **Read until**: 55
-* **Should you read it**: The plot is honestly not very deep, but it is a somewhat entertaining read with some interesting personalities. 
-  * Expect shoujo level of romance.
-  * Expect the usual "ah, I have this special advantage because I read this part in the novel."
-  * SPOILER: Also expect abit of yuri.
+* **Synopsis**: Isekai into novel's villainess who is fatally ill 
+* **Genre**: reverse harem, shoujo, bishounen
+* **Release rate**: Weekly
+* **Read until**: ch34
+* **Points:**
+  * Story follows the cliche "I isekai'ed into this world based on a novel I read, I know their backstories, I want to stop them from loving the novel's protagonist to prevent their deaths, but through my intervention they ended up loving me instead"
+  * MC simps for all the male leads. The translators are on an even crazier level than the MC with their TL notes.
+    * The manga has such a dedicated fanbase. But it's still trashy as hell though.
+    * The commentary by the translators make this manga x100 funnier than it should be.
+  * The art style is exquisite and the introduction to the story is not half bad, but the story slowly devolves into reverse harem and non-stop simping. But the art is really good. 
+  * At the end of the day, it's trash written specifically for girls/women who like to simp for 2D men; which is kind of funny, because the art quality is exceptional, and the storytelling isn't uninteresting either (it's not easy to make such a cliche type of story entertaining).
+* **Should you read it**: I can't advise on that because this isn't my type of manga. It's still too early for any big plot reveals to be made.
+  
+</TabItem>
+
+<TabItem value="j">
+
+#### Sincerely: I became a duke's maid (Isekai josei) (7/10 (+0))
+
+* **Synopsis**: Woman pities MC, isekais into his world as a maid to save him, and unwittingly changes the story
+* **Genre**: romance, slice-of-life, shoujo/josei, isekai, harem(ish)
+* **Release rate**: Weekly
+* **Should you read**: I have mixed feelings about this one; it's both good and bad.
+  * The manga drops the ball when it comes to handling big, important plot points. Main lead makes an unexplained isekai arrival into the novel after falling asleep (which makes a cliche introduction even more lame), then rescues the prince from the curse with an unexplained prayer which scars her hand for some unexplained reason (which makes an important plot moment cringe, cheesy and lame all at the same time). While they can be salvaged in the future (e.g. by explaining that she died before isekai-ing, and that she resolved the curse due to her lineage or something), the way they were handled are very... cliche, anti-climatic, unsatisfying.
+  * Some may find the shota to bishounen transformation weird. I found it somewhat unsettling myself.
+  * Timeskips are not clearly highlighted with narration and it is only told through speech bubbles. It is easy for the reader to read portions of the story with the same frame of mind, despite the fact that a season has passed or 3 years have passed etc.
+  * I can't help but get the vibe that the main FL is meant to be a self-insert.
+  * Yet, the characters are relatively well fleshed out; their actions are consistent with their personalities & beliefs, which are in turn consistent with their backgrounds and initial perceptions. They give me the vibe that I wouldn't find it boring if I were to perform character analysis on them, yet to some extent I think I'm just overthinking it.
+    * The MC's mental age clearly affects the way he acts
+    * Main female lead can't stop thinking about what happens in the novel as opposed to what is actually happening
+
+</TabItem>
+
+<TabItem value="i">
+
+#### Slime Life (7/10 (+0))
+
+* **Synopsis**: Black mage gets slime assistant because he is cute
+* **Genre**: comedy, slice-of-life, shoujo?
+* **Release rate**: Weekly
+* **Read until**: 150
+* **Should you read it**: The story is not very deep and it has a very fairy tale, shoujo-ish kinda vibe. I just kept reading it because the slime is cute lol, and it does have its touching moments. This manga is an entertaining read. If they just want something cute to munch on, then this is right up their alley.
+
 
 </TabItem>
 
@@ -396,11 +511,11 @@ While I am usually reading new manga, these are the series that I follow on a re
 * **Points**: 
   * This is a trashy romcom:
     * I call this a "romcom", but in truth there isn't a lot of comedy
-    * Get ready for a lot of cliche plot devices utilized in Niseikoi, Bokuben etc. Author loves to play one cliche after another. He'll play the "MC will marry one of them" card by doing a flashforward of MC getting married to one of the five, he'll play the childhood friend card, he'll play the "they will stay together if they do this in the festival" with the "everyone participated so it doesn't matter", he'll play the "we originally didn't want him but now we do" card, he'll play the "MC is suddenly in his popular phase" card, the cliche too-shy-to-fess-up ML, cliche I-love-him-too-but-lemme-bottle-it-up-for-others ML, inevitable love struggles between MLs etc etc etc.
+    * Get ready for a lot of cliche plot devices utilized in Niseikoi, Bokuben etc. Author loves to play one cliche after another. He'll play the "MC will marry one of them" card by doing a flashforward of MC getting married to one of the five, he'll play the childhood friend card, he'll play the "they will stay together if they do this in the festival" with the "everyone participated so it doesn't matter", he'll play the "we originally didn't want him but now we do" card, he'll play the "MC is suddenly in his popular phase" card, the cliche too-shy-to-fess-up FL, cliche I-love-him-too-but-lemme-bottle-it-up-for-others FL, inevitable love struggles between FLs etc etc etc.
     * Get ready for MC-has-to-choose-one (as opposed to bokuben's solution to this problem).
-    * Get ready to be annoyed by everyone in the story in some way or another at the start
-  * The concept of quintuplets is one of the manga's strongest unique points which the mangaka will use again and again to play with some "whodunnit" and "who is that" situations.
-  * There isn't really a moment of peace in this manga (or at least, not that I can recall). The characters are almost always either under stress due to their studies, or stress from work, or stress from dramatic relationships. If that's not the case, then the chapter is busy dropping big plot bombs. Don't expect a chapter where the characters just sit down for a cup of tea and the chapter passes by peacefully. 
+    * Get ready to be annoyed by everyone in the story in some way or another at the start, because they were designed to be annoying
+  * The concept of quintuplets is one of the manga's most unique points which the mangaka will use again and again to play with some "whodunnit" and "who is that" situations.
+  * There isn't really a moment of peace in this manga (or at least, not that I can recall). The characters are almost always either under stress due to their studies, or stress from work, or stress from dramatic relationships. If that's not the case, then the chapter is busy dropping big plot bombs. Don't expect a chapter where the characters just sit down for a cup of tea and the chapter passes by peacefully. This is good when the series is still running and readers have to wait a week for the next chapter, but in terms of progression for people who are reading chapter after chapter, I feel it's a bit too tense and too rushed, especially for this type of genre.
   * All points said, there are still plot twists to keep things interesting (but they don't subvert the cliches I raised above)
     * This can make the manga worth reading a second time.
 * **Is it worth reading**: Uhhhhm. I found the manga a little too cliche for my tastes, but the manga did get better in the later half. 
@@ -418,7 +533,7 @@ While I am usually reading new manga, these are the series that I follow on a re
     * A lot of sweet and cute moments
     * For this type of genre, the consistent weekly update and quality is definitely a plus
     * The art is pretty high quality tbh, author loves to draw the female protag in various outfits. It's almost like a fashion show
-* **Should you read it**: I would recommend it to people who like sweet manga and that slice-of-life BGR.
+* **Should you read it**: I would recommend it to people who like sweet manga and that slice-of-life BGR. However, there's not much beyond that, so it stays in the +0 bonus score range. It's one of the few manga that I consistently follow though.
 * **Tidbit**: Hachimatsu (  ´‿`)
 
 </TabItem>
@@ -450,31 +565,9 @@ While I am usually reading new manga, these are the series that I follow on a re
 
 </TabItem>
 
-<TabItem value="h">
-
-#### I'm a spider, so what? (Reincarnation action seinen) (6/10 (+0))
-* **Synopsis**: Reincarnates as spider
-* **Genre**: action, seinen
-* **Release rate**: Monthly
-* **Points**:
-  * MC undergoes tremendous suffering and has plot armor. 
-  * Similar to Slime Rimuru plot, but more gruesome and interaction with humans (and other intelligent beings) comes at a much later stage.
-  * However, unlike Slime Rimuru, there is significantly less planning and strategizing. The quality of novel TLs is also significantly weaker. Think of it as comparing a hack-and-slash game to a RPG game.
-  * Novel TL quality is, frankly speaking, pretty bad.
-  * An unpolished gemstone. There is a lot of potential in this story and you can tell there was a lot of effort. Unfortunately, the way it is told is  very lacklustre; there is not enough explanation when it is needed (e.g. the definition of "MA" in the universe and its importance to the story, etc), which makes what could've been a very interesting story a very *unsatisfying* and *difficult* read (especially with its inconsistent perspective storytelling method; I'd rather the author stuck to the perspective of MC 1, then stuck to the perspective of MC 2 for example as opposed to jumping from MC1 to MC2 to MC3 and back to MC1 with every new chapter).
-    * The author in the novel loves to tell the story from different perspectives, but sometimes forgets to say *whose* perspective it is. 
-    * Sometimes only reveals the percept of a character after the character has reacted to it (e.g. author shows MC getting angry and then going to beat up someone, but doesn't tell u why she got angry, or even what she saw until after she beat up the person) 
-    * The TL quality for the novel is pretty bad. 
-    * After reading quite a bit and learning more about the world, the plot feels quite shallow and tbh I don't understand the motivation of some of the characters even after reading it (either due to bad TL quality or just plain poor storytelling by the author)
-    * Hopefully the manga improves upon what is already there, or else it will remain a dirty piece of rock.
-    * It's hard to avoid drawing comparisons to Slime Rimuru. IMO, the plot progression is much faster than Rimuru, but the quality and depth of storytelling and the plot itself just far worse.
-* **Should you read it:** Art quality is exceptional and combat is interesting. Unfortunately, the release rate is slow as hell for the manga, even though the story progression is faster than Slime Rimuru. Also, expect the story to change midway through. At the first part, it is very lacking in proper social interaction at the start of the manga (the author literally creates a skill so that MC can split her consciousness to talk to multiple mental copies of herself); for the entire manga so far you can count with one hand the number of (proper) conversations the MC has had with other creatures. In the second part, the quality of interactions remains quite meh. Honestly, what makes this series bad is not really the quality itself, but how the story could've been so much better if the plot was better fleshed out and the storytelling done better. It is the disappointment with the plot and storytelling that makes it a no for me.
-
-</TabItem>
-
 </Tabs>
 
-## Score +1: Worth reading but lacking in some way
+## Score +1: Can consider reading. Lacking in some way
 
 <Tabs
   defaultValue="g"
@@ -482,9 +575,28 @@ While I am usually reading new manga, these are the series that I follow on a re
     {label: "My Brother is From Deep Mountain (Slice-of-life) (9/10 +1)", value: "g"},
     {label: "Volcanic Age (Wuxia) (9/10 (+1))", value: "f"},
     {label: "Chitra (Isekai Reverse Harem) (9/10, (+1))", value: "c"},
+    {label: "Beware of the Villainess! (Shoujo isekai romcom) (9/10 (+1))", value: "h"},
     {label: "Horimiya (Slice-of-life romcom) (9/10 (+1))", value: "a"},
     {label: "Wotakoi (Josei slice-of-life romcom) (9/10 (+1))", value: "b"},
   ]}>
+
+
+<TabItem value="h">
+
+#### Beware of the Villainess! (Shoujo isekai romcom) (9/10 (+1))
+
+* **Synopsis**: Protagonist reincarnates as villainess in a shoujo novel and protects original MC from her love interests
+* **Genre**: webtoon, shoujo, isekai, romcom, reverse harem?, comedy
+* **Release rate**: Irregular (3 times a month)
+* **Read until**: 55
+* **Should you read it**: The plot is honestly not very deep, but it is a somewhat entertaining read with some interesting personalities. 
+  * The highlight of this manga is the facial expressions and the relationship between the MC and her maid.
+  * Expect shoujo level of romance; which is to say, not a lot of romance is involved; the focus is more on the comedic facial expressions in my opinion. 
+  * Expect the usual "ah, I have this special advantage because I read this part in the novel."
+  * Most of the story follows the MC's expectations of the novel for the time being. While there are some interesting plot points, the story hasn't developed them yet. As it stands, the manga is sufficiently promising to follow, and also has a sizeable fanbase.
+  * [SPOILER]: Also expect abit of yuri.
+
+</TabItem>
 
 <TabItem value='b'>
 
@@ -496,7 +608,7 @@ While I am usually reading new manga, these are the series that I follow on a re
 * **Release rate**: Monthly
 * **Read until**: Ch 63
 * **Points**: 
-    * Plot is all about the 6 main characters
+    * Plot is all about the 6 main characters (4 + 2 who will be introduced later)
     * Mostly on sweet / romance moments rather than "HAHAHA" funny (although there are some funny moments)
     * Some chapters (esp. the earlier ones) make a lot of references to popular otaku culture
       * These are usually explained in TL notes
@@ -506,8 +618,8 @@ While I am usually reading new manga, these are the series that I follow on a re
     * Author loves to interact with his readers, so there's even some chapters where he draws fan-submitted situations of the characters. Although, at that point, the manga gives off doujin vibes rather than an actual manga...
 * **-ve points**:
   * Sometimes uses lazy character development; telling instead of showing. e.g. manga becomes a slideshow of how each character would do something e.g. peel tangerines in Ch24 as opposed to *revealing* that fact through storytelling by putting them in a scenario that brings out how they would peel tangerines (e.g. characters come together for a party, and they react to Hirotaka peeling tangerines). 
-  * Sometimes splits the story into multiple unstated timelines (e.g. Ch 53 and 53.5) where the chronological order is uncertain. This is makes the manga's chronology very messy. The weaker timeline ends up feeling like a spin-off, and the sum of the two parts is weaker than what it would've been if it were presented in chronological order as a whole.
-  * The otaku aspect gets a little stale after awhile. I'd prefer to see more facets of the characters (e.g. reactions to unexplored content for example)
+  * Sometimes splits the story into multiple unstated timelines (e.g. Ch 53 and 53.5) where the chronological order is uncertain. This is makes the manga's chronology very messy. The weaker timeline ends up feeling like a spin-off, and the sum of the two parts is weaker than what it would've been if it were presented in chronological order as a whole. This is a design decision, and in my opinion a poor one. It makes sense if the events are happening concurrently (e.g. Yakuza 0), but in this case the second timeline can be written off as a timeless slice-of-life with a different vibe and pacing; jumping between these timelines just weakens the impact of the main timeline.
+  * The otaku aspect gets a little stale after awhile. I'd prefer to see more facets of the characters (e.g. reactions to unexplored content for example). 
   * Yeah as you might guess the plot isn't super deep but it does have some flitting food for thought moments
 * **Should you read it**: If you like stories that give you diabetes and you enjoy reading about otakus hanging out. For all its shortcomings, I personally found this a pretty good read, and the initial part of the manga is a pretty good hook.
 * **Tidbit**: Flat-chested Narumi
@@ -541,14 +653,15 @@ While I am usually reading new manga, these are the series that I follow on a re
 #### Chitra (Isekai Reverse Harem) (9/10, (+1))
 
 * **Synopsis**: Woman reborn in fantasy world and plays Civilization
-* **Genre**: manhwa, isekai, reverse harem
+* **Genre**: manhwa, isekai, reverse harem, josei
 * **Release rate**: Irregular
 * **Read until**: Ch63
 * **Points**:
   * Reverse harem is strong in this manhwa
   * Sometimes feels like The Gamer with all the game pop-ups and gachapon
   * Some parts of the manga feels kinda cringe, although I can't put my finger on the reason.
-* **Should you read it**: It's not bad, but the update rate is a bit iffy..
+  * There is a lot of world building, so if you're into the idea of a woman isekai-ing into a fantasy world and building her own nation/dynasty + harem, you'll really like this
+* **Should you read it**: Chitra's a weird bag of chocolates. It's got cringe moments, it's got reverse harem moments, it's got **a lot** of gachapon moments, it's got nation building moments, it's got some sweet moments, funny moments, action moments etc. It's honestly not bad if you're willing to look past some of the rough edges.
 * **Tidbit**: What does the rabbit eat?
 
 </TabItem>
@@ -566,7 +679,7 @@ While I am usually reading new manga, these are the series that I follow on a re
 
 #### Volcanic Age (Wuxia) (Score: 9/10, (+1))
 
-* **Warning**: This manga triggered some readers due to its portrayal of Tibetan Buddhism
+* **Warning**: This manga triggered some readers due to its portrayal of Tibetan Buddhism. Personally I don't really mind since it's supposed to be fictional.
 * **Synopsis**: MC experiences the same life again but with all of his knowledge
 * **Genre**: Wuxia, manhwa
 * **Release rate**: Weekly
@@ -574,17 +687,17 @@ While I am usually reading new manga, these are the series that I follow on a re
 * **Points**:
   * So far, this follows a classic "MC is so stupidly OP" plotline. Not surprising given the premise of MC being reborn with all his knowledge.
   * Some parts aren't very well translated (or the manhwa isn't very clear on what's actually happening / being conveyed, or the translators keep changing the names). This hinders the quality of the manhwa because you have to do guesswork on what is actually being said and what is actually happening.
-  * Reader should have some prior knowledge about cultivation concepts (otherwise you might get a little lost about how he's powering up).
+  * Reader should have some prior knowledge about cultivation concepts (otherwise you might get a little lost about how he's powering up; that point is hardly elaborated on).
   * Characters, sects and names in general are poorly introduced (or at least, not memorably so). Sometimes you don't know who/what they are referring to.
   * Sometimes characters just disappear altogether from the location without any explanation on where they went.
   * Art isn't too bad; fight scenes are pretty solid.
-* **Should you read it**: Hmm. It's a fun read if you don't mind the fact that the MC knows everything that happened in the future, and thus also knows all the secrets (and takes them for himself to become stupidly powerful). MC outclasses his enemies so much that you can count the number of times he gets injured with one hand and he's only lost once to a super OP elder.
+* **Should you read it**: Hmm. It's a fun read if you don't mind the fact that the MC knows everything that happened in the future, and thus also knows all the secrets (and takes them for himself to become stupidly powerful). MC outclasses his enemies so much that you can count the number of times he gets injured with one hand and he's only lost once to a super OP elder. It's for this reason I stopped following the manhwa even though it's barely near the end of the story, simply because I know how everything will pan out even without reading it; it just gets boring after a while.
 
 </TabItem>
 
 </Tabs>
 
-## Score +2: Definitely worth reading
+## Score +2: Stuff I liked, followed and don't mind sharing
 
 <Tabs
   defaultValue="b"
@@ -618,7 +731,7 @@ While I am usually reading new manga, these are the series that I follow on a re
 #### Jitsu Wa Watashi Wa (Romcom) (Score: 9/10 (+2))
 
 * **Synopsis**: A high-school love story between a human and a vampire; expect lots of other weird entities too.
-* **Genre**: romcom (funny & touching, focus on comedy, friendships, love, discrimination and long-term perserverance)
+* **Genre**: harem, romcom (funny & touching, focus on comedy, friendships, love, discrimination and long-term perserverance)
 * **Setting**: high school
 * **Release rate**: Completed
 * **Chapters**: 196
@@ -641,7 +754,7 @@ While I am usually reading new manga, these are the series that I follow on a re
     * The way tension is defused in the manga can get abit repetitive over time
     * Some side characters don't really get fleshed out, can feel a little shallow at times
     * [SPOILER] Shirou literally gets zero character development which is honestly such a waste of potential
-    * Has a tendency to flesh out a character in 1 arc, then just toss them aside for the rest of the story
+    * Has a tendency to flesh out a character in 1 arc, then just toss them aside for the rest of the story; kinda lazy for the author to do that if you ask me
 * **Should you read it:** Some parts feel a little draggy, but in general worth reading; truly a rollercoaster of emotions. I didn't really appreciate this manga while I was reading it, but thinking back, I think it was quite funny in general.
 * **Will I re-read it:** Probably not, there's too many fillers, but some parts are legit hilarous
 * **Tidbit**: ( ⚆ _ ⚆ ) ( ⚆ _ ⚆ ) when they find out what sucking blood really means to vampires
@@ -662,7 +775,7 @@ While I am usually reading new manga, these are the series that I follow on a re
 #### Leveling Up by only Eating (9/10 (+2))
 * **Synopsis**: MC who can't stop eating plays a realistic VR MMORPG so that he won't get fatter
 * **Genre**: manhwa, shounen, slice-of-life, VR, food
-* **Release rate**: Unknown (new manhwa)
+* **Release rate**: Unknown (new manhwa). So far quite inconsistent; may be monthly / dropped
 * **Read until**: 49
 * **Points**:
   * If you're someone who used to play MMORPGs you might find this manhwa rather nostalgic. I reminisced about my time playing Runescape while reading this manhwa.
@@ -696,7 +809,7 @@ While I am usually reading new manga, these are the series that I follow on a re
 * **Points**:
   * [BIG SPOILERS FROM FINISHED NOVEL]: 49f0bad299687c62334182178bfd75d8 7f021a1415b86f2d013b2618fb31ae53. Still, it's not too bad because the story is implied to 0663b8af9df17b966dc2116a2a4ce571 with less 21c3a46e069cdaac3ea89bd54449edaf.
     * Use MD5 decryptor to see the spoilers.
-* **Should you read it**: The story is less like manga / manhwa and more like chinese drama with all the tragedy, scheming and plotting. It's a read I found hard to put down.
+* **Should you read it**: The story is less like manga / manhwa and more like chinese drama with all the tragedy, scheming and plotting. It's a read I found hard to put down, and is quite entertaining. The big spoilers above is kinda a put off, but I still can't help but continue reading it.
 
 
 </TabItem>
@@ -708,7 +821,7 @@ While I am usually reading new manga, these are the series that I follow on a re
 * **Genre**: romcom, seinen, slice-of-life
 * **Release rate**: Weekly
 * **Read until**: 59
-* **Should you read it**: Some parts are borderline hentai (even when censored), so if you're not into that sort of thing I don't recommend this at all. If you're okay with that sort of thing, it's a pretty sweet romance manga with decent story progression and sometimes talks about adult life stuff (that isn't necessarily M18). Not a lot of drama, and it eventually wanes off a lot of that sexual tension and starts going into slice-of-life.
+* **Should you read it**: Some parts are borderline hentai (even when censored), so if you're not into that sort of thing I don't recommend this at all. If you're okay with that sort of thing, it's a pretty sweet romance manga with decent story progression and sometimes talks about adult life stuff (that isn't necessarily M18). Not a lot of drama, and a lot of that sexual tension eventually weans off and the story starts going into married slice-of-life.
 
 </TabItem>
 
@@ -773,10 +886,10 @@ While I am usually reading new manga, these are the series that I follow on a re
 * **Release rate**: Irregular, still ongoing. Split into seasons. Release rate when a season is active is once every Friday.
 * **Points**:
   * The facial expressions are on point.
-  * There's a few spoilers on the structure of the manga, so read at your own discretion. If you just want a yes/no recommendation, I'd say the comic is very well written, but if you're turned off by the slapstick comedy and *very* awkward moments at the first half of the comic, you may find it a long wait for you to really enjoy the full extent of the comic.
-  * This comic is very interestingly written, but the structure is pretty wack.
+  * There's a few spoilers on the structure of the manga after this point, so read at your own discretion. If you just want a yes/no recommendation, I'd say the comic is very well written, but if you're turned off by the slapstick comedy and *very* awkward moments at the first half of the comic (which will make you experience second-hand embarrassment), you may find it a long wait for you to really enjoy the full extent of the comic.
+  * This comic is very interestingly written (and arguably very well written), but the structure is pretty wack.
     * The first season of the comic deploys slapstick comedy that is absolutely hilarious, but makes you go "wtf" at the same time.
-    * The second season of the comic (which is maybe around chapter 70+) is when the author starts making huge plot advancements, revealing plot twists and where all the action comes in, the comedy tones down. This is also the part where you start to go "holy crap".
+    * The second season of the comic (which is maybe around chapter 70+) is when the author starts making huge plot advancements, revealing plot twists and where all the action comes in while the comedy tones down. This is also the part where you start to go "holy crap", because you expected it to be a silly comic with all that happened in the first season, but the author is dropping big brain plot twists all over the place and you start seeing how the characters are related in ways you didn't think of.
     * The third season hasn't started yet.
     * There isn't that much romance so far, and I've read like 100+ chapters already. There's obviously some love involved, but calling it a **romance** comic is a bit of a stretch.
 
@@ -796,7 +909,6 @@ While I am usually reading new manga, these are the series that I follow on a re
     * [SPOILER-ISH] I didn't expect her to slowly form a reverse harem lol.. Then again, this is a shoujo
     * Don't expect in-depth romance. Any romance is usually touch & go, unrequited or just really close friendships kinda thing.
 * **Should you read it:** I'd recommend it. It consistently delivers on the humor. The plot sometimes feels kinda shallow (e.g. everyone turns out to be a good guy in the end kinda vibes), and sometimes it's not too hard to guess the plot, but honestly it's pretty good.
-* **Other notes:** I give this a +2 even though I'm not in a discord server dedicated to this manga (this manga is simply not popular enough to have an active server)
 * **Tidbit**: Usa-chan Man!
 
 </TabItem>
@@ -806,10 +918,10 @@ While I am usually reading new manga, these are the series that I follow on a re
 #### Kimetsu No Yaiba (9.5/10 +3)
 * Completed
 * **Summary**: Humans using swords and mystical breathing techniques to kill demons. 
-* **Worth reading**: Nice series, but repetitive progression (fight big bad, defeat big bad, find out that big bad has tragic past that turned him into a demon, repeat). Death of main cast is a very common theme.
+* **Worth reading**: Nice series, but repetitive progression (fight big bad, defeat big bad, find out that big bad had tragic past that turned him into a demon, repeat. Maybe kill off a main character or two while you're at it).
   * Anime adaptation is really good. Like, **really** good.
   * Final fight scenes don't have enough people in the battle; feels like a 1v1 as opposed to army of demon slayers vs army of demons.
-  * Ending feels rushed and it is very disappointing; feels like a plot cop out.
+  * Ending feels rushed and it is very disappointing imo. Feels like a plot cop out. It doesn't make the *entire* manga bad, but it just gives it a bad aftertaste.
 
 </TabItem>
 <TabItem value="b">
@@ -825,6 +937,7 @@ While I am usually reading new manga, these are the series that I follow on a re
   * The chapters are a little short for a weekly
   * Starts off as romcom and then becomes shounen before going back to being a romcom again
 * **Should you read it:** Not gonna lie, the characters, setting and story is kinda refreshing.
+  * However, you'll be disappointed with its frequency of updates; which is to say, very slow update rate, and very short chapters... aaagh
 * **Tidbit**: No citeable tidbit... but this pair is so cute~~~! e.g. Ch 99
 
 </TabItem>
@@ -854,7 +967,20 @@ While I am usually reading new manga, these are the series that I follow on a re
     {label: "Peerless Dad (Action) (10/10 (+4))", value: "c"},
     {label: "Kishuku Gakkou no Juliet (Romcom) (10/10 (+4))", value: "a"},
     {label: "Grand Blue (Comedy) (10/10 (+4))", value: "b"},
+    {label: "Nan Hao & Shang Feng (Comedy) (10/10 (+4))", value: "d"},
   ]}>
+
+
+<TabItem value="d">
+
+#### Nan Hao & Shang Feng (Comedy) (10/10 (+4))
+* **Synopsis**: Slice-of-life high school manhwa that is stupidly hilarious
+* **Genre**: Comedy
+* **Release rate**: Inconsistent
+* **Read until**: Ch 57
+* **Should you read it:**: There is no plot; don't expect progression, or development etc. It's all slice-of-life. But what cements its spot as one of the top works of culture is how stupidly over-the-top funny it is. The art is exceptional, the facial expressions are all meme worthy and the comedy is consistently on point; the last time I laughed this hard at a comic was with Grand Blue. It makes a lot of references to other popular series, which is also pretty funny.
+
+</TabItem>
 
 <TabItem value="c">
 
@@ -862,7 +988,7 @@ While I am usually reading new manga, these are the series that I follow on a re
 * **Synopsis**: A father and his children
 * **Genre**: Action, martial arts (wuxia), slice-of-life, manhwa
 * **Release rate**: Irregular
-* **Chapters**: 151
+* **Read until**: 151
 * **Points**: 
   * Some of the characters (and the story in general) is really quite well-written.
   * It's a pretty fresh story with a family-oriented MC. This is a MC who prefers to do guard work because he wants to spend more time with his kids.
@@ -941,7 +1067,7 @@ While I am usually reading new manga, these are the series that I follow on a re
 * **Release rate:** Weekly? (or maybe even every 3 days for the manhwa???)
 * **Read until**: Ch 1432 (webnovel)
 * **Points**:
-  * The manhwa occasionally falls short in quality (hence the 9.5)
+  * The manhwa sometimes falls short in quality (hence the 9.5). I started reading the webnovel instead of the manhwa, so I don't really know how the quality of the manhwa turned out beyond chapter 250 or so.
   * Definitely a very entertaining read and the story is kinda well-thought out, even though MC will often pull out heaven-defying plot devices and get heaven-defying benefits because of his insanely powerful connections.
   * One of the interest aspects of this series is to bring a refreshing twist to xianxia by injecting modern elements into it. So you have these amazing battles with qi, blades and magical treasures, but these cultivators also use technology like handphones and such (hence the name). That being said, the use of handguns and rifles (in the conventional sense) is rather limited.
   * Being a Chinese story, there are some very Chinese concepts (e.g. the concept of "face") and a couple of terms directly translated from Chinese e.g. (seek death / 找死)

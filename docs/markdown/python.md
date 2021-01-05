@@ -35,6 +35,7 @@ Legend:
         * returns zipObject: [ (L1[0],L2[0]),  (L1[1],L2[1])... ]
         * Access zipObject contents: (*zipObj)
       * Unzip: `zip(*zipObj)`
+  * Count occurrences: `list.count(obj)`
 * Dictionaries
   * **Init with Dictionary Comprehension**
     * Format: `{ (key : value) for (var_name) in (iterable) if (predicate) }`
@@ -144,6 +145,107 @@ Legend:
 * `from scipy.stats import zscore`
 * calculate zscore values: `zscore(df['col'])`
   * z-score is the number of standard deviations by which an observation is above the mean - so if it is negative, it means the observation is below the mean.
+
+### Textatistic (Evaluate word readability)
+* `from textatistic import Textatistic`
+* Compute scores: `scores = Textatistic(article/string).scores`
+* Get Flesch score: `scores['flesch_score']`
+* Get gunningfog: `scores['gunningfog_score']`
+
+### spacy (tokenization and lemmatization)
+* `import spacy`
+* Tokenization
+```
+import spacy
+
+# Load the en_core_web_sm model which comes with the spaCy library (see https://spacy.io/models/en)
+nlp = spacy.load('en_core_web_sm')
+
+# Create a Doc object
+doc = nlp(gettysburg)
+
+# Generate the tokens
+tokens = [token.text for token in doc]
+```
+* Lemmatization (accuracy dependent on moduel)
+```
+import spacy
+
+# Load the en_core_web_sm model
+nlp = spacy.load('en_core_web_sm')
+
+# Create a Doc object
+doc = nlp(gettysburg)
+
+# Generate lemmas (accuracy dependent on model)
+lemmas = [token.lemma_ for token in doc]
+
+# Convert lemmas into a string
+print(' '.join(lemmas))
+```
+* Preprocess with lemmatization, removing non alphabeticals
+```
+# Function to preprocess text
+def preprocess(text):
+    # Create Doc object
+    doc = nlp(text, disable=['ner', 'parser'])
+    # Generate lemmas
+    lemmas = [token.lemma_ for token in doc]
+    # Remove stopwords and non-alphabetic characters
+    a_lemmas = [lemma for lemma in lemmas 
+            if lemma.isalpha() and lemma not in stopwords]
+    
+    return ' '.join(a_lemmas)
+  
+# Apply preprocess to ted['transcript']
+ted['transcript'] = ted['transcript'].apply(preprocess)
+print(ted['transcript'])
+```
+* POS (piece-of-speech) tagging 
+```
+# Load the en_core_web_sm model
+nlp = spacy.load('en_core_web_sm')
+
+# Create a Doc object
+doc = nlp(lotf)
+
+# Generate tokens and pos tags
+pos = [(token.text, token.pos_) for token in doc]
+print(pos) 
+# Output: [('He', 'PRON'), ('found', 'VERB'), ('himself', 'PRON'), ('understanding', 'VERB') ...
+```
+* Named Entities Recognition (NER)
+```
+# Load the required model
+nlp = spacy.load('en_core_web_sm')
+
+# Create a Doc instance 
+text = 'Sundar Pichai is the CEO of Google. Its headquarters is in Mountain View.'
+doc = nlp(text)
+
+# Print all named entities and their labels
+for ent in doc.ents:
+    print(ent.text, ent.label_)
+"""
+Output:
+    Sundar Pichai ORG
+    Google ORG
+    Mountain View GPE
+"""
+
+# Alternatively:
+def find_persons(text):
+  # Create Doc object
+  doc = nlp(text)
+  
+  # Identify the persons
+  persons = [ent.text for ent in doc.ents if ent.label_ == 'PERSON']
+  
+  # Return persons
+  return persons
+
+print(find_persons(tc))
+```
 
 ### matplotlib.pyplot (Graphs & Images)
 `import matplotlib.pyplot as plt`
@@ -374,6 +476,14 @@ Data Sanitization
     * Get mean and std dev
     * Calculate cutoff e.g. `3 * std`, and lower (`mean - cutoff`) + upper (`mean + cutoff`) bounds
     * Trim outliers `df[(df['col'] < upper) & (df['col'] > lower)]`
+* Text preprocessing tricks
+  * Trim whitespace
+  * Remove punctuation
+  * Remove commonly occurring words or stopwords
+  * Expanding contracted words (e.g. can't)
+  * Remove special characters such as numbers and emojis.
+  * Done using **tokenization** (split corpus by space)
+  * Done by **lemmatization** (convert word into base form e.g. "eating" "ate" into "eat")
 
 
 Feature Engineering
@@ -384,7 +494,7 @@ Feature Engineering
 * **One Hot Encoding**: Convert column of categories into 2D binary array
   * Do this instead of mapping categories to numbers, to avoid encoding ordering to the categories
 * **Dummy Encoding**: Same as one-hot encoding, but the first column dropped. Membership to the first column is indicated (implied) when all OHE are set to 0.
-  * Both OHE & Dummy use the same command:
+  * **Both OHE & Dummy use the same command:**
   ```
   pd.get_dummies(dataframe,
       columns = [column_labels], 
@@ -393,10 +503,13 @@ Feature Engineering
   )
   ```
 * **CountVectorizer**: Vectorize text with word count
+  * Bag of words (BoW): Given a vocabulary e.g. ['a','sock','dog'], convert corpus into a dictionary counting number of times the words occur e.g. [0, 2, 1]
   * **Import**: `from sklearn.feature_extraction.text import CountVectorizer`
   * **Creation**: 
   ```
   cv = CountVectorizer(
+      lowercase = bool,
+      stop_words = 'english' # optional for excluding stop words in the BoW vector
       min_df: 0-1,   # Use only words that occur in more than this percentage of documents. This can be used to remove outlier words that will not generalize across texts.
       max_df: 0-1,   # Use only words that occur in less than this percentage of documents. This is useful to eliminate very common words that occur in every corpus without adding value such as "and" or "the".
   )
@@ -418,7 +531,7 @@ Feature Engineering
   tfidf_vec = TfidfVectorizer(
     max_features=n, 
     stop_words='english',
-    ngram_range = (start, stop) # Adding some ordering. bi-gram ("not happy") tri-gram ("never not happy"). Try to fix bag of words problem
+    ngram_range = (start, stop) # Adding some ordering. bi-gram ("not happy") tri-gram ("never not happy"). Tries to fix bag of words problem
   )
   ```
     * stop_words will remove common words like 'the'
@@ -459,7 +572,7 @@ Feature Selection
   * e.g. features that generated an aggregate statistic
 
 Feature Extraction
-* Transform data into new featurees
+* Transform data into new features
 * **Dimensionality Reduction**: Reduce feature space
   * Turning numericals into binned vals / binary
   * **Principle Component Analysis (PCA)**: linear transformation to uncorrelated space
@@ -469,7 +582,8 @@ Feature Extraction
     * **Creation**: `pca = PCA()`
     * **Transform**: `transformed_X = pca.fit_transform(dataframe_X)`
       * **How much variance is explained by each component**: `pca.explained_variance_ratio_`
-
+* POS tagging (Parts of Speech) (e.g. Pronoun, verb, article, noun)
+* Named Entity Recognition (NER) (e.g. Person, Organization)
 
 Models
 
@@ -599,6 +713,7 @@ Accessing / Selection
     * formatstr: e.g. '%Y' to only get the year
 * **Get data as str**: `df['col'] = df['col'].str`
   * *This can be combined by concatenating string functions behind e.g. .lower(), .strip(), .upper(), .replace(dict), .replace("old","new"), .len()*
+  * Other fun obscure string functions include .startswith()
   * Chains must be prefixed with a `.str` in front e.g. `.str.replace('x','').str.replace(...)
   * *Note that these string functions return a df, which can be combined with other str or aggregation functions*
   * **Word count**: `df['col'].str.split().str.len()`
