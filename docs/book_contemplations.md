@@ -62,3 +62,35 @@ The book doesn't have a moral, and definitely doesn't claim to even contain a le
 Paul does discuss metaphysics on p168-171; more specifically, he talks about how science cannot be used to prove / disprove God's existence, and how it is unable to explain much of life's mysteries. He claims: "No system of thought can contain the fullness of human experience".
 
 > I would agree with that claim, but I am prone to believe that science is still the best way of ascertaining what reality is. Without being too philosophical, we can only know of this world from our observations, and attempt to confirm the likelihood of whether our theories explain reality through observations and the scientific method. 
+
+## 30-Second Philosophies
+* Language & Logic
+  * [Frege's puzzle](https://www.youtube.com/watch?v=T-7ZukUZiaw)
+    * Honestly I find this one lame lol
+  * [Russell's Paradox](https://www.youtube.com/watch?v=83X1YWDXdDA)
+    * Basically, if you're going to define an axiom for a set, define it more clearly
+  * Epimenides' Liar Paradox: "This sentence is false"
+  * Eubulides' Heap: When does a sand mound become a heap or a small pile
+  * [Godel's Incompleteness Theorem](https://blog.plover.com/math/Gdl-Smullyan.html)
+    * 1. If you have a set of axioms and they:
+      * don't contradict each other
+      * can be "listable" (i.e. they are finite, or is infinite but can be generated)
+      * then there are some statements that are true, but unproven by these axioms (without adding more axioms)
+    * 2. A system of axioms cannot demonstrate its own consistency
+      * i.e. A set of axioms cannot show that it itself is consistent
+      * i.e. A system cannot be used to prove everything about itself
+    * Relevancy to the halting problem
+      * Axioms reducable to "programming instructions" which can be arranged ("listable")
+* Science & Epistomology
+  * Renes Descartes' "I think therefore I am"
+  * Gettier's Counter Example
+    * How to tell, in any given case, that correlation = causation?
+  * Karl Popper: Falsification
+    * You can't prove something is true, only that it is false; scientific knowledge grows from "conjecture and refutation"
+  * Brain in a vat: how do we know if were are not in VR
+  * Hume's problem of induction: how do we know the future will be like the past
+    * Goodman's gruesome riddle: claim to change the rule of induction, s.t. it only applies to "projectible predicates"
+  * Kuhn's scientific revolutions: when paradigms (rules & standards for scientific practice in any discipline) get replaced with new ones
+    * implies relativism of the truth
+* Metaphysics
+  * 
