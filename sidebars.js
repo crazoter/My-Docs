@@ -2,6 +2,8 @@ module.exports = {
   someSidebar: {
     Docusaurus: ['docusaurus/usage', 'docusaurus/doc1', 'docusaurus/mdx'],
     AI: ["markdown/CS4246_summary", 'markdown/ai_planning', 'markdown/computer_vision', 'markdown/machine_learning'],
+    Cybersec: ['markdown/CS4238'],
+    Quantum: ['markdown/CS4268'],
     Languages: ["markdown/python"],
     Math: ['markdown/math'],
     Networks: ['markdown/network', 'markdown/CS4226_summary'],
