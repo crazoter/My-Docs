@@ -1224,6 +1224,10 @@ It's hard to order these series when they are all of high quality, so within thi
 * Read until: 1st 2 chapters
 * Relationship felt a little toxic
 
+#### Entangled with the duke
+* Read until: 100 chapters
+* boring and frustrating to read
+
 ## Classics
 
 There are some classic manga / series that I have read but don't list because I read it prior to creating the list. It is non-exhaustive.

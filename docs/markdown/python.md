@@ -377,6 +377,7 @@ print(find_persons(tc))
       * `256*(img-img.min())/(img.max()-img.min())`
 * Export:
   * **Show on GUI**: `plt.show()`
+  * **Prepare graph on another figure**: `plt.figure()`
   * **Save to file**: `plt.savefig(filepath)`
 
 ### Seaborn (Graphs)
@@ -454,6 +455,10 @@ print(find_persons(tc))
 * **Heatmap**: Good for visualizing 2D arrays (e.g. covariance matrices)
   ```
   sns.heatmap(df)
+  ```
+* **Countplot**: Good for binary features
+  ```
+  sns.countplot(x='education', hue='party', data=df, palette='RdBu')
   ```
 
 ### scikit-learn
@@ -676,6 +681,8 @@ Feature Extraction
     * Difficult to interpret components, should be left to the end-of-preprocessing journey
     * **Creation**: `pca = PCA(n_components=num_or_variance_ratio)`
     * **Transform**: `transformed_X = pca.fit_transform(dataframe_X)`
+    * **Revert transformation**: `reverted_data = pca.inverse_transform(transformed_X)`
+      * Good for compressing / decompressing information, but lossy
     * **Components** (vectors of weightage per feature): `pca.components_`
     * **How much variance is explained by each component**: `pca.explained_variance_ratio_`
     * **Tagging component to column**: 
