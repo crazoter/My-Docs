@@ -24,6 +24,7 @@ slug: /
 * [GDB](https://darkdust.net/files/GDB%20Cheat%20Sheet.pdf)
   * [GDB Peda](https://paper.seebug.org/papers/Archive/refs/Linux_Interactive_Exploit_Development_with_GDB_and_PEDA_Slides.pdf)
 * [Git](https://phoenixnap.com/kb/git-commands-cheat-sheet)
+* [Java](https://introcs.cs.princeton.edu/java/11cheatsheet/)
 * [LaTeX Math](http://tug.ctan.org/info/undergradmath/undergradmath.pdf)
   * Image to LaTeX Math
     * [Mathpix](https://mathpix.com/)

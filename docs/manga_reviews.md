@@ -161,7 +161,7 @@ Template
 * Kaguya-sama: Love is War
 ```
   * Sweetness:    🙂😊❤️💘🚑
-  * Comedy:       🙂😀😆😂
+  * Comedy:       🙂😀😆😂🤣
   * Intrigue:     🕯️ 💡🧠
   * Storytelling: ✋😑👌 👍💯
   * Verdict:      This is really good
