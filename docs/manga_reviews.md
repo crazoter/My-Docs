@@ -1039,7 +1039,6 @@ It's hard to order these series when they are all of high quality, so within thi
     {label: "Do Chokkyuu Kareshi x Kanojo (Mature romcom) (9.5/10 (+4))", value: "e"},
     {label: "Peerless Dad (Action) (10/10 (+4))", value: "c"},
     {label: "Kishuku Gakkou no Juliet (Romcom) (10/10 (+4))", value: "a"},
-    {label: "Grand Blue (Comedy) (10/10 (+4))", value: "b"},
   ]}>
 
 <TabItem value="e">
@@ -1115,9 +1114,23 @@ It's hard to order these series when they are all of high quality, so within thi
 
 </TabItem>
 
-<TabItem value="b">
+</Tabs>
 
-#### Grand Blue (Comedy) (Score: 10/10 (+4))
+## Score +5: Masterpieces
+
+<Tabs
+  defaultValue="a"
+  values={[
+    {label: "Cultivation Chat Group (Xianxia Comedy) (9.5/10 (+5))", value: "a"},
+    {label: "Cheating Men Must Die (Simulated vengeance) (10/10 (+5))", value: "d"},
+    {label: "Mage Demon Queen (Yuri romcom) (10/10 (+5))", value: "c"},
+    {label: "Grand Blue (Comedy) (10/10 (+4))", value: "e"},
+    {label: "Kaguya-sama: Love is War (Seinen romcom) (10/10 (+5))", value: "b"},
+  ]}>
+
+<TabItem value="e">
+
+#### Grand Blue (Comedy) (Score: 10/10 (+5))
 * **Synopsis**: A manga that is about diving but there is hardly any diving (and then proceeds to joke about that fact)
 * **Genre**: comedy (funny, focus on friendships, there's some romance but it's not the focus imo)
 * **Release rate**: Monthly (somewhat inconsistent)
@@ -1131,23 +1144,10 @@ It's hard to order these series when they are all of high quality, so within thi
     * Some parts feel abit too repetitive / dragged out / feels like the story is going nowhere
     * Some of the character faces look abit too similar
     * Unclear story direction after some point in the plot..?
-* **Should you read it:** Must read. This manga is easily one of the best, if not the best, at comedy.
+* **Should you read it:** Must read. This manga is easily one of the best, if not the best, at comedy. I laughed so hard at the anime and even harder at the manga. For all its shortcomings, it is still the king of comedy.
 * **Tidbit**: Oolong cha
 
 </TabItem>
-
-</Tabs>
-
-## Score +5: Masterpieces
-
-<Tabs
-  defaultValue="a"
-  values={[
-    {label: "Cultivation Chat Group (Xianxia Comedy) (9.5/10 (+5))", value: "a"},
-    {label: "Cheating Men Must Die (Simulated vengeance) (10/10 (+5))", value: "d"},
-    {label: "Mage Demon Queen (Yuri romcom) (10/10 (+5))", value: "c"},
-    {label: "Kaguya-sama: Love is War (Seinen romcom) (10/10 (+5))", value: "b"},
-  ]}>
 
 <TabItem value="d">
 

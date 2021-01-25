@@ -304,10 +304,12 @@ public static void quickSort(int arr[], int l, int r) {
 ## When to use Dynamic Programming
 * **Optimal substructure**: Problem can be solved recursively -> can be broken into smaller problems
 * **Overlapping subproblems**: Solutions to smaller problems can be cached to be re-used later
+* Think of it as search space for an agent's actions (take item / ignore etc)
 * Heuristics:
   * Can be drawn out into a tree
   * Is problem Maximization, Minimization or Counting?
   * If problem can be solved by enumerating through all possible solutions and finding best one
+  * problem can be solved by enumerating through all subproblems and getting best subproblem solution
 
 ## Greedy Algorithms
 * Always choose the best available option (e.g. Djkstra, Fractional Knapsack)

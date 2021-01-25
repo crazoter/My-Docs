@@ -49,3 +49,10 @@ Glossary
 
 ## Cute graphs
 * https://timqian.com/chart.xkcd/#introduction
+
+## Setting stuff up
+* I want to try using boilerplates to immediately set stuff up quickly.
+
+## You and your research
+* http://joschu.net/blog/opinionated-guide-ml-research.html
+* http://www.cs.virginia.edu/~robins/YouAndYourResearch.html

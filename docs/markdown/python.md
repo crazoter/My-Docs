@@ -454,7 +454,7 @@ print(find_persons(tc))
 
 * **Heatmap**: Good for visualizing 2D arrays (e.g. covariance matrices)
   ```
-  sns.heatmap(df)
+  sns.heatmap(df, linewidths=1, linecolor='black')
   ```
 * **Countplot**: Good for binary features
   ```
@@ -466,9 +466,13 @@ print(find_persons(tc))
 **train_test_split**
 * `from sklearn.model_selection import train_test_split`
 * Use stratified sampling to split up the dataset according to the categorical_y_data dataset
-  * `X_train, X_test, y_train, y_test = train_test_split(data_x, categorical_y_data, stratify=categorical_y_data, test_size=<0.0 - 1.0>)`
+  * `X_train, X_test, y_train, y_test = train_test_split(data_x, categorical_y_data, stratify=categorical_y_data, test_size=<0.0 - 1.0>, random_state=seed)`
   * Stratified: Make the distribution of each feature as close as possible to the original in the training and test sets
   * 75% into training set and 25% into test set
+
+**mean_squared_error**
+* `from sklearn.metrics import mean_squared_error`
+* `rmse = np.sqrt(mean_squared_error(y_test, y_pred))`
 
 **Pipelines**
 * `from sklearn.pipeline import Pipeline`
@@ -547,7 +551,7 @@ Feature Engineering
 * **Dummy Encoding**: Same as one-hot encoding, but the first column dropped. Membership to the first column is indicated (implied) when all OHE are set to 0.
   * **Both OHE & Dummy use the same command:**
   ```
-  pd.get_dummies(dataframe,
+  df_dummied = pd.get_dummies(dataframe,
       columns = [column_labels], 
       drop_first=True, 
       prefix='col_prefix'
@@ -700,6 +704,7 @@ Models
 * Return label of closest neighbour as prediction
 * **Import**: `from sklearn.neighbors import KNeighborsClassifier`
 * **Create**: `knn = KNeighborsClassifier(n_neighbors=3)`
+  * You can iterate through the # of neighbors to find the best fit
 * **Training**: `knn.fit(X_train (features), y_train (labels))`
 * **Scoring**: `knn.score(X_test, y_test)`
 * **Predict**: `predicted = knn.predict(input)`
@@ -734,6 +739,7 @@ prediction = clf.predict(vectorizer.transform([review]))[0]
 * Init: `lr = LogisticRegression()`
 * Fit: `lr.fit(X_train_std, y_train)`
 * Predict: `y_pred = lr.predict(X_test_std)`
+* Predict (probability of 1): `proba_1 = logreg.predict_proba(X_test_std)`
 * Weights: `print(dict(zip(X.columns, abs(lr.coef_[0]).round(2))))`
 
 **Random Forest Classifier**
@@ -760,12 +766,22 @@ prediction = clf.predict(vectorizer.transform([review]))[0]
     * **Lasso**: 1 linear regression model that uses regularization
     * `from sklearn.linear_model import Lasso`
     * Ensure X_data is standardized using StandardScaler
-    * Init: `la = Lasso(alpha={0.0-1.0}, random_state={0,1})`
+    * Init: `la = Lasso(alpha={0.0-1.0}, random_state={0,1}, normalize=bool)`
+      * Recall that in regression regularization, alpha here refers to the weight of the regularization term
     * Fit: `la.fit(X_train_std, y_train)`
     * coeffs: `la.coef_ `
     * score (R squared): `la.score(X_test_std, y_test)`
-    **LassoCV**: Cross Validation to find optimal alpha value (Same syntax as above)
+    * **LassoCV**: Cross Validation to find optimal alpha value (Same syntax as above)
+    * **Ridge**: Another regressor like Lasso, but supposedly better
+    * Init: Same syntax
+    * You can modify the alpha on the fly using `ridge.alpha = a`
+    * `from sklearn.linear_model import Ridge`
 
+**Confusion Matrix**
+* Generate table of [0,0]: True Positive, [0,1]: False Negative, [1,0]: True Negative, [1,1]: False Positive
+* Import: `from sklearn.metrics import confusion_matrix`
+* Import: `from sklearn.metrics import classification_report`
+* Init: 
 
 Comparing similarity between vectors
 
@@ -783,6 +799,70 @@ Bootstrap
   * **Bootstrap sample**: array of resampled data
   * **Bootstrap replicate**: summary statistics (e.g. mean) of this array of resampled data
   * You can resample using `np.random.choice(..)`
+
+## Verifying model accuracy
+
+n-fold Cross-validation
+* Concept:
+  * Split data into n chunks (referred to as "folds")
+  * Train on (n-1) chunks, test on the last chunk
+  * Repeat this procedure n times (refresh the model each time), each time testing with a different chunk
+  * Gather all the R^2 values from these tests to build mean, var and confidence interval of R^2
+* Import: `from sklearn.model_selection import cross_val_score`
+* Usage: `cv_scores_array = cross_val_score(LinearRegression(), X, y, cv=n)`
+  * you can replace `LinearRegression()` with other models such as `Ridge()`
+  * you can also get the mean cv_scores by `np.mean()`
+
+ROC curve
+* ROC: y: True Positive Rate / x: False Positive Rate
+* Precision: TP/(TP+FP)
+* Recall:    TP/(TP+FN)
+* Import: `from sklearn.metrics import roc_curve`, `from sklearn.metrics import roc_auc_score`
+* Plotting ROC curve:
+```
+# Compute predicted probabilities: y_pred_prob
+y_pred_prob = logreg.predict_proba(X_test)[:,1]
+
+# Generate ROC curve values: fpr, tpr, thresholds
+fpr, tpr, thresholds = roc_curve(y_test, y_pred_prob)
+
+# Plot ROC curve
+plt.plot([0, 1], [0, 1], 'k--')
+plt.plot(fpr, tpr)
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+plt.title('ROC Curve')
+plt.show()
+
+# AUC: Area Under Curve
+# Compute and print AUC score
+print("AUC: {}".format(roc_auc_score(y_test, y_pred_prob)))
+
+# Compute cross-validated AUC scores: cv_auc
+cv_auc = cross_val_score(logreg, X, y, cv=5, scoring='roc_auc')
+
+# Print list of AUC scores
+print("AUC scores computed using 5-fold cross-validation: {}".format(cv_auc))
+```
+
+## Hyperparam Tuning
+* **GridSearchCV**: iterate through all the possible hyperparams and then choosing the best
+* import: `from sklearn.model_selection import GridSearchCV`
+* Init: `logreg_cv = GridSearchCV(LogisticRegression(), param_grid, cv=5)`
+  * Hyperparam grid: `param_grid = {'C': np.logspace(-5, 8, 15)}`
+  * There are many classifiers such as ElasticNet.
+* Create hold-out set: `X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.4, random_state=42)`
+  * Hold-out set: split training/test set even before doing searchCV; makes sure that the model generalizes well to unknown data
+* Fit Searcher to data: `logreg_cv.fit(X_train,y_train)`
+* Get best params (classifier l1 ratio): `logreg_cv.best_params_`
+* Get score of best params: `logreg_cv.best_score_`
+* Get r2: `logreg_cv.score(X_test, y_test)`
+* Get MSE: `mse = mean_squared_error(y_test, logreg_cv.predict(X_test))`
+* **RandomSearchCV**: same concept and syntax as above (fit, then best_params_), for larger search spaces
+  * `from sklearn.model_selection import RandomizedSearchCV`
+  * Init: `tree_cv = RandomizedSearchCV(DecisionTreeClassifier(), param_dist, cv=5)`
+    * `param_dist = {"max_depth": [3, None],"max_features": randint(1, 9), "min_samples_leaf": randint(1, 9), "criterion": ["gini", "entropy"]}`
+  
 
 ## Numpy
 * **Import**: ```import numpy as np```
@@ -990,6 +1070,25 @@ Bootstrap
   ```
   * **Hypothesis Testing for correlation**:
     * Do a permutation test: Permute the x values but leave the y values fixed to generate a new set of (x,y) data. It is exact because it uses all data and eliminates any correlation because which x value pairs to which y value is shuffled.
+    ```
+    # Compute observed correlation: r_obs
+    r_obs = pearson_r(x, y)
+
+    # Initialize permutation replicates: perm_replicates
+    perm_replicates = np.empty(10000)
+
+    # Draw replicates
+    for i in range(10000):
+        # Permute illiteracy measurments: x_permuted
+        x_permuted = np.random.permutation(x)
+
+        # Compute Pearson correlation
+        perm_replicates[i] = pearson_r(x_permuted, y)
+
+    # Compute p-value: p
+    p = np.sum(perm_replicates >= r_obs) / len(perm_replicates)
+    print('p-val =', p)
+    ```
   * **Interpolation:** `np.interp(xcoords_to_interpolate, data_xcoords, data_ycoords, left=None, right=None, period=None)`
 * **Generate uniformly spaced list**: `np.linspace(lower_lim, upper_lim, number_of_items)`
 * **Meshgrid: create a grid by using coordinates of each dimension**: `np.meshgrid(columns, rows)`
@@ -1025,6 +1124,7 @@ Accessing / Selection
 * Slicing
   * **Get column as Series**: `dataframe["column"]`
     * **Convert series to numpy.ndarray**: `series.values`
+      * Useful for getting data into right format for sklearn
   * **Extract columns from DF**: `dataframe[["column",...]]`
     * **Dataframe as rows**: `dataframe[startIdxIncl: endIdxExcl]`
 * Array based selection
