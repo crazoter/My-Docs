@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[41],{99:function(n){n.exports=JSON.parse('{"allTagsPath":"/My-Docs/blog/tags","slug":"machine-learning","name":"machine-learning","count":1,"permalink":"/My-Docs/blog/tags/machine-learning"}')}}]);
