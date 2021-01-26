@@ -30,6 +30,7 @@ tags: [ideas]
     * Automate redrawing of said person
     * Prepare for ebsynth for optical flow
       * https://github.com/jamriska/ebsynth
+    * What about... the opposite? Make a person perform something else:,,,,,,,,,,121 deep fake?
 
 * Machine Learning
   * Find/Train a model that can identify speech bubbles (for manga translation)
