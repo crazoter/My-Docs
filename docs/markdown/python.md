@@ -862,8 +862,14 @@ print("AUC scores computed using 5-fold cross-validation: {}".format(cv_auc))
   * `from sklearn.model_selection import RandomizedSearchCV`
   * Init: `tree_cv = RandomizedSearchCV(DecisionTreeClassifier(), param_dist, cv=5)`
     * `param_dist = {"max_depth": [3, None],"max_features": randint(1, 9), "min_samples_leaf": randint(1, 9), "criterion": ["gini", "entropy"]}`
-  
 
+### Imputer (Impute missing info)
+* `from sklearn.preprocessing import Imputer`
+* Purpose: preprocessing data
+* Init: `Imputer(missing_values='NaN', strategy='most_frequent', axis=0|1`
+  * axis: is_row 
+* As part of pipeline: `steps = [('imputation', initialized_imputer),...]`
+  * `pipe = Pipeline(steps)`
 ## Numpy
 * **Import**: ```import numpy as np```
 * **Numpy Array**
