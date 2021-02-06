@@ -14,6 +14,8 @@ Legend:
 * idx: Index
 * int#: Integer variable
 
+## [Project setup](https://docs.python-guide.org/writing/structure/)
+
 ## Pure Python
 * Exponentiation: val ** power
 * Type conversion: *type*(val), where *type* in {int, float, str, bool}
@@ -481,7 +483,7 @@ print(find_persons(tc))
 pipe = Pipeline([
   ('scaler',StandardScaler()),              # 0
   ('reducer', PCA()),                       # 1
-  ('classifier', RandomForestClassifier())  # 2
+  ('classifier', RandomForestClassifier())  # 2 ('SVM', SVC()) | ('elasticnet', ElasticNet())
 ])
 # pipe.fit(Xtrain, ytrain)
 # pipe.fit_transform(...)
@@ -504,6 +506,10 @@ Data Standardization (normalization):
   * **Normalize scale**: `ss.transform(dataframe_subset (columns))`
     * transform training data
     * Use `.fit_transform(...)` to fit, then transform data
+* **scale**
+  * Same purpose as standardscalar
+  * **Import**: `from sklearn.preprocessing import scale`
+  * **Usage**: `scaled_data = scale(data)`
 * **MinMaxScaling**: For normalizing linear values to 0-1 by squashing min and max range to 0-1
   * Use only when you know your data has a strict lower and upper bound
   * **Import**: `from sklearn.preprocessing import MinMaxScaler`
@@ -531,6 +537,7 @@ Data Sanitization
     * Get mean and std dev
     * Calculate cutoff e.g. `3 * std`, and lower (`mean - cutoff`) + upper (`mean + cutoff`) bounds
     * Trim outliers `df[(df['col'] < upper) & (df['col'] > lower)]`
+      * [Detecting outliers](https://towardsdatascience.com/5-ways-to-detect-outliers-that-every-data-scientist-should-know-python-code-70a54335a623)
 * Text preprocessing tricks
   * Trim whitespace
   * Remove punctuation
@@ -697,10 +704,11 @@ Feature Extraction
     ``` 
 * POS tagging (Parts of Speech) (e.g. Pronoun, verb, article, noun)
 * Named Entity Recognition (NER) (e.g. Person, Organization)
-
+  
 Models
 
 **K-Nearest Neighbour (KNN)** Classifier. [See](https://www.datacamp.com/community/tutorials/k-nearest-neighbor-classification-scikit-learn)
+* See also [what](https://www.analyticsvidhya.com/blog/2018/08/k-nearest-neighbor-introduction-regression-python/) and [why](https://stats.stackexchange.com/questions/104255/why-would-anyone-use-knn-for-regression) and [pros/cons](https://www.fromthegenesis.com/pros-and-cons-of-k-nearest-neighbors/)
 * Return label of closest neighbour as prediction
 * **Import**: `from sklearn.neighbors import KNeighborsClassifier`
 * **Create**: `knn = KNeighborsClassifier(n_neighbors=3)`
@@ -848,8 +856,8 @@ print("AUC scores computed using 5-fold cross-validation: {}".format(cv_auc))
 ## Hyperparam Tuning
 * **GridSearchCV**: iterate through all the possible hyperparams and then choosing the best
 * import: `from sklearn.model_selection import GridSearchCV`
-* Init: `logreg_cv = GridSearchCV(LogisticRegression(), param_grid, cv=5)`
-  * Hyperparam grid: `param_grid = {'C': np.logspace(-5, 8, 15)}`
+* Init: `logreg_cv = GridSearchCV(LogisticRegression()/pipeline, param_grid, cv=5)`
+  * Hyperparam grid: `param_grid = {'stepName__param': np.logspace(-5, 8, 15)}`
   * There are many classifiers such as ElasticNet.
 * Create hold-out set: `X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.4, random_state=42)`
   * Hold-out set: split training/test set even before doing searchCV; makes sure that the model generalizes well to unknown data
@@ -866,7 +874,7 @@ print("AUC scores computed using 5-fold cross-validation: {}".format(cv_auc))
 ### Imputer (Impute missing info)
 * `from sklearn.preprocessing import Imputer`
 * Purpose: preprocessing data
-* Init: `Imputer(missing_values='NaN', strategy='most_frequent', axis=0|1`
+* Init: `Imputer(missing_values='NaN', strategy='most_frequent|mean', axis=0|1`
   * axis: is_row 
 * As part of pipeline: `steps = [('imputation', initialized_imputer),...]`
   * `pipe = Pipeline(steps)`
