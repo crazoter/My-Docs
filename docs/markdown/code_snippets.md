@@ -14,7 +14,7 @@ async function getTranscript() {
   document.querySelectorAll("#info.style-scope.ytd-video-primary-info-renderer")[0].children[2].children[0].children[0].children[1].click();
   await sleep(10);
   // Target the transcripts button
-  document.querySelectorAll('paper-item.style-scope.ytd-menu-service-item-renderer')[1].click();
+  document.querySelectorAll('tp-yt-paper-item.style-scope.ytd-menu-service-item-renderer')[1].click();
   // Wait until transcripts loaded, then scrape
   while (true) {
     await sleep(1000);
