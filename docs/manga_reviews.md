@@ -1125,7 +1125,7 @@ It's hard to order these series when they are all of high quality, so within thi
     {label: "Cheating Men Must Die (Simulated vengeance) (10/10 (+5))", value: "d"},
     {label: "Mage Demon Queen (Yuri romcom) (10/10 (+5))", value: "c"},
     {label: "Grand Blue (Comedy) (10/10 (+4))", value: "e"},
-    {label: "Kaguya-sama: Love is War (Seinen romcom) (10/10 (+5))", value: "b"},
+    {label: "Kaguya-sama: Love is War (Seinen romcom) (9.5/10 (+5))", value: "b"},
   ]}>
 
 <TabItem value="e">
@@ -1193,25 +1193,28 @@ It's hard to order these series when they are all of high quality, so within thi
 * **Synopsis**: Cultivation and martial arts in a modern world
 * **Genre**: Xianxia, shounen, comedy
 * **Release rate:** Weekly? (or maybe even every 3 days for the manhwa???)
-* **Read until**: Ch 1432 (webnovel)
+* **Read until**: Ch 1700 (webnovel)
 * **Points**:
-  * The manhwa sometimes falls short in quality (hence the 9.5 score), and some of the manhwa chapters are kinda meh compared to the novel. I started reading the webnovel instead of the manhwa, so I don't really know how the quality of the manhwa turned out beyond chapter 250 or so.
+  * The manhwa often falls short in quality (hence the 9.5 score), and some of the manhwa chapters are kinda meh compared to the novel. While it does make some scenes more funny, it understandably has to drop some of the finer details found in the webnovel, which kind of limits its potential as it doesn't bring out the full depth of the story.
   * Definitely a very entertaining read and the story is kinda well-thought out, even though MC will often pull out heaven-defying plot devices and get heaven-defying benefits because of his insanely powerful connections.
   * One of the interest aspects of this series is to bring a refreshing twist to xianxia by injecting modern elements into it. So you have these amazing battles with qi, blades and magical treasures, but these cultivators also use technology like handphones and such (hence the name). That being said, the use of handguns and rifles (in the conventional sense) is rather limited.
   * Being a Chinese story, there are some very Chinese concepts (e.g. the concept of "face") and a couple of terms directly translated from Chinese e.g. (seek death / 找死)
-  * MC has plot armor / plot everything (to the point where it almost becomes a joke) and he is stupidly lucky/unlucky. Sure, he goes through many life and death tribulations, but in this story, there are many occasions where MC suddenly has a plot device to rescue him from complete death; it's not a story that's meant to be taken too seriously.
+  * MC has plot armor / plot everything (to the point where it almost becomes a joke) and he is stupidly lucky/unlucky. Sure, he goes through many life and death tribulations, but in this story, there are occasions where MC suddenly has a plot device to rescue him from complete death; it's not a story that's meant to be taken too seriously.
 * **Why you should read it**: It is very funny and it brings a smile to my face when I think about all the silly things that happens in this series. The beginning's a little slow (yes, you spend the first 10 manga chapters reading text messages in the chat group) and the MC is just stupidly lucky (or unlucky?) but it's really good, addictive even.
 * **Tidbit**: There's way too many things that make this memorable.
 
 </TabItem>
 <TabItem value="b">
 
-#### Kaguya-sama: Love is War (Seinen romcom) (Score: 10/10 (+5))
+#### Kaguya-sama: Love is War (Seinen romcom) (Score: 9.5/10 (+5))
 * **Synopsis**: high school life where two try to make the other confess
 * **Genre**: romcom, seinen
 * **Release rate:** Weekly
-* **Read until**: 200+. Re-reading process suspended.
-* **Why you should read it:** This is a masterclass in romcoms. Each character, even the side-characters, are involved in the story, common romcom tropes are toyed with and there is consistent plot progression. The chapters are well planned, to the point where the author has even planned out distinctive milestones for each anime season before the possibility even existed. 10/10, 5/5.
+* **Read until**: N/A (Actively following manga)
+* **Why you should read it:** 
+  * This is a genuinely funny manga that has even been adapted into an anime (I can't believe it's getting a season 3). Arguably a masterclass in romcoms. Each character, even the side-characters, are involved in the story, common romcom tropes are toyed with and there is consistent plot progression. 
+  * In the later chapters of the story as it transitions from a less comedic manga and starts introducing more drama to wrap the story up, some parts of the plot feel forced; some characters are tied into the story in unnecessary ways. There are various plot points that are kind of weak, and it lessens the enjoyment somewhat. (minor spoilers) For example, in chapter 239, the story talks about how the principal tests shirogane in chapter 20. While the story matches up, the principal's motive does not; shirogane & kaguya were not together yet, on what basis did he even think it was a good idea to test shirogane? Furthermore, why did he not give further tests? 
+  * Overall still worth a read.
 * **Tidbit**: o kawaii koto~
 
 </TabItem>
