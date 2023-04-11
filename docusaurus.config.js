@@ -11,7 +11,7 @@ module.exports = {
   organizationName: 'crazoter', // Usually your GitHub org/user name.
   projectName: 'My-Docs', // Usually your repo name.
   themeConfig: {
-    hideableSidebar: true,
+    // hideableSidebar: true,
     navbar: {
       title: 'Matt\'s Docs',
       logo: {
@@ -57,7 +57,7 @@ module.exports = {
     [
       '@docusaurus/preset-classic',
       {
-        hideableSidebar: true,
+        // hideableSidebar: true,
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
@@ -73,7 +73,7 @@ module.exports = {
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
-          hideableSidebar: true,
+          // hideableSidebar: true,
         },
       },
     ],
