@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_docs=self.webpackChunkmy_docs||[]).push([[3266],{1433:function(s){s.exports=JSON.parse('{"label":"AWS","permalink":"/My-Docs/blog/tags/aws","allTagsPath":"/My-Docs/blog/tags","count":1}')}}]);
