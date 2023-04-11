@@ -268,6 +268,12 @@ Template
   * Storytelling: ✋😑👌 👍💯
   * Verdict:      This is really good
 ```
+* Shed! Ryugasaki-san
+```
+  * Sweetness:    🙂😊
+  * Comedy:       🙂😀
+  * Verdict:      I got recommended this by a friend... It's strangely enjoyable lol
+```
 * Sijin
 ```
   * Sweetness:    🙂😊
@@ -389,7 +395,6 @@ While I am usually reading new manga, these are the series that I currently foll
 **Weeklies**
 * Cultivation Chat Group
 * We May Be An Inexperienced Couple But...
-* Kaguya-sama: Love is War
 * My Wife Is A Demon Queen
 
 ## Reviews by score
@@ -471,7 +476,25 @@ While I am usually reading new manga, these are the series that I currently foll
     {label: "Meng Shi Zai Shang (Xianxia manhwa) (9/10 (+0))", value: "l"},
     {label: "The Pharmarcy Where the Wolf Howls (Josei romcom) (9/10 (+0?))", value: "d"},
     {label: "That Girl is not just cute (romcom) (9.5/10 (+0))", value: "c"},
+    {label: "Shed! Ryugasaki-san (slice-of-life romcom) (7/10 (+0))", value: "a"},
   ]}>
+
+<TabItem value="a">
+
+#### Shed! Ryugasaki-san (slice-of-life ecchi romcom) (7/10 (+0))
+
+* **Synopsis**: Romance between weird boy and lizard girl
+* **Genre**: slice-of-life, romcom, somewhat ecchi
+* **Release rate**: Monthly / Irregular
+* **Read until**: ch125
+* **Points:**
+  * I don't know why I read it. But once I started I just wanted to read it to the latest chapter lol.
+  * Don't expect anything deep or mind-blowing or amazing; it's a 4-koma manga that doesn't have amazing art, doesn't have strong story arcs of any sort (side-characters come and go and are not too impactful). But still a reasonably entertaining read if you want something light. Or perhaps my standards have dropped, lol.
+  * Much of the humor comes from the fact that the characters are (designed to be) weird. Much of the sweetness comes from the fact that despite their weirdness, both parties accept each other. 
+* **Should you read it**: Yeah why not bro
+* **Tidbit**: If you see any references to weird reptilian kinks, this manga was probably an inspiration
+  
+</TabItem>
 
 <TabItem value="l">
 
@@ -1209,11 +1232,11 @@ It's hard to order these series when they are all of high quality, so within thi
 #### Kaguya-sama: Love is War (Seinen romcom) (Score: 9.5/10 (+5))
 * **Synopsis**: high school life where two try to make the other confess
 * **Genre**: romcom, seinen
-* **Release rate:** Weekly
-* **Read until**: N/A (Actively following manga)
+* **Release rate:** Completed
 * **Why you should read it:** 
   * This is a genuinely funny manga that has even been adapted into an anime (I can't believe it's getting a season 3). Arguably a masterclass in romcoms. Each character, even the side-characters, are involved in the story, common romcom tropes are toyed with and there is consistent plot progression. 
   * In the later chapters of the story as it transitions from a less comedic manga and starts introducing more drama to wrap the story up, some parts of the plot feel forced; some characters are tied into the story in unnecessary ways. There are various plot points that are kind of weak, and it lessens the enjoyment somewhat. (minor spoilers) For example, in chapter 239, the story talks about how the principal tests shirogane in chapter 20. While the story matches up, the principal's motive does not; shirogane & kaguya were not together yet, on what basis did he even think it was a good idea to test shirogane? Furthermore, why did he not give further tests? 
+  * tbh I enjoyed the manga less after it transitioned to a more serious tone. But that's probably personal preference.
   * Overall still worth a read.
 * **Tidbit**: o kawaii koto~
 
