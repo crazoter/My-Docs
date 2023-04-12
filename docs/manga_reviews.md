@@ -470,16 +470,17 @@ While I am usually reading new manga, these are the series that I currently foll
   values={[
     {label: "Sincerely: I became a duke's maid (Isekai josei) (7/10 (+0))", value: "j"},
     {label: "Slime Life (Cute fantasy) (7/10 (+0))", value: "i"},
+    {label: "Meng Shi Zai Shang (Xianxia manhwa) (7/10 (+0))", value: "l"},
+    {label: "Shed! Ryugasaki-san (slice-of-life romcom) (7/10 (+0))", value: "b"},
     {label: "Bakarina (Harem Comedy) (8/10 (+0))", value: "e"},
     {label: "When the villainess loves (Isekai reverse harem) (8/10 (+0))", value: "k"},
     {label: "5-Toubun (8/10 (+0))", value: "f"},
-    {label: "Meng Shi Zai Shang (Xianxia manhwa) (9/10 (+0))", value: "l"},
     {label: "The Pharmarcy Where the Wolf Howls (Josei romcom) (9/10 (+0?))", value: "d"},
     {label: "That Girl is not just cute (romcom) (9.5/10 (+0))", value: "c"},
-    {label: "Shed! Ryugasaki-san (slice-of-life romcom) (7/10 (+0))", value: "a"},
+    {label: "Tomo-chan wa Onnanoko (romcom) (10/10 (+0))", value: "a"},
   ]}>
 
-<TabItem value="a">
+<TabItem value="b">
 
 #### Shed! Ryugasaki-san (slice-of-life ecchi romcom) (7/10 (+0))
 
@@ -489,16 +490,16 @@ While I am usually reading new manga, these are the series that I currently foll
 * **Read until**: ch125
 * **Points:**
   * I don't know why I read it. But once I started I just wanted to read it to the latest chapter lol.
-  * Don't expect anything deep or mind-blowing or amazing; it's a 4-koma manga that doesn't have amazing art, doesn't have strong story arcs of any sort (side-characters come and go and are not too impactful). But still a reasonably entertaining read if you want something light. Or perhaps my standards have dropped, lol.
-  * Much of the humor comes from the fact that the characters are (designed to be) weird. Much of the sweetness comes from the fact that despite their weirdness, both parties accept each other. 
-* **Should you read it**: Yeah why not bro
+  * Don't expect anything deep or mind-blowing or amazing; it's a 4-koma manga that doesn't have amazing art, doesn't have strong story arcs of any sort (side-characters come and go and are not too impactful). But still a reasonably entertaining read if you want something light. Or perhaps my standards have dropped, lol. 
+  * Much of the humor comes from the fact that the characters are (designed to be) weird. Much of the sweetness comes from the fact that despite their weirdness, both parties accept each other. It's a somewhat common trope, but it's taken to a next level of weird because of the MC's... exotic preference for reptilians.
+* **Should you read it**: Eh... Sure why not lmao. 
 * **Tidbit**: If you see any references to weird reptilian kinks, this manga was probably an inspiration
   
 </TabItem>
 
 <TabItem value="l">
 
-#### Meng Shi Zai Shang (Xianxia manhwa) (9/10 (+0))
+#### Meng Shi Zai Shang (Xianxia manhwa) (7/10 (+0))
 
 * **Synopsis**: female MC killed by "main character" ML and restarts her life as his master
 * **Genre**: cultivation, manhwa
