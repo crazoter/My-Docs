@@ -851,7 +851,7 @@ I don't have an active schedule for reading manga / manhwa nowadays and I have a
     {label: "We May Be An Inexperienced Couple But... (Seinen romcom) (9/10 (+2))", value: "c"},
   ]}>
 
-<TabItem value="wtdh">
+<TabItem value="wtdh+2">
 
 #### Welcome to Dungeon Hotel (slice-of-life action?) (9/10 (+2))
 * **Genre**: comedy, romance, action
