@@ -49,7 +49,9 @@ Some manga are kinda unforgettable, and then some have this recurring joke or ou
 
 ## Full list of reviews
 
-A summary of all manhwa/manga/novels reviewed here, highlighting the strong points of the series. Good if you're looking for a particular type of manga; just search using the emojis below. 
+A summary of all manhwa/manga/novels reviewed here, highlighting the strong points of the series. Good if you're looking for a particular type of manga; just search using the emojis below.
+
+Sometimes I am lazy to write a proper review for the manga / manhwa, so I just fill in the template and not write a review for it.
 
 Template
 
@@ -166,6 +168,13 @@ Template
   * Storytelling: ✋😑👌 👍💯
   * Verdict:      This is really good
 ```
+* Keep a low profile, sect leader
+```
+  * Comedy:       🙂
+  * Action:       🤜🔪
+  * Storytelling: ✋
+  * Verdict:      It's so-so
+```
 * Kimetsu No Yaiba
 ```
   * Sweetness:    🙂😊❤️💘
@@ -268,6 +277,13 @@ Template
   * Storytelling: ✋😑👌 👍💯
   * Verdict:      This is really good
 ```
+* Secretly Cultivate For A Thousand Years
+```
+  * Comedy:       🙂😀
+  * Action:       🤜🔪⚔️
+  * Storytelling: ✋
+  * Verdict:      Not particularly outstanding but I enjoyed it
+```
 * Shed! Ryugasaki-san
 ```
   * Sweetness:    🙂😊
@@ -358,6 +374,14 @@ Template
   * Comedy:       🙂😀
   * Verdict:      This is quite good
 ```
+* Welcome to Dungeon Hotel
+```
+  * Sweetness:    🙂😊
+  * Comedy:       🙂
+  * Action:       🤜🔪
+  * Storytelling: ✋😑👌
+  * Verdict:      I quite enjoyed it!
+```
 * When the villainess loves
 ```
   * Sweetness:    I don't know how to rate this
@@ -379,13 +403,14 @@ Template
   
 ## Series that I currently follow:
 
-While I am usually reading new manga, these are the series that I currently follow. 
+I don't have an active schedule for reading manga / manhwa nowadays and I have a preference to binge manga / manhwa, so this list may not be updated often (if at all!). Regardless, these are the series that I currently interested in.
 
 **Irregular**
 * Leveling Up by only Eating
 * Peerless Dad
-* Kitsune Spirit
 * Chitra
+* Secretly Cultivate For A Thousand Years
+* Welcome to Dungeon Hotel
 
 **Monthlies**
 * Wotakoi
@@ -398,6 +423,7 @@ While I am usually reading new manga, these are the series that I currently foll
 * My Wife Is A Demon Queen
 
 ## Reviews by score
+
 
 ## Score negative: Don't read
 
@@ -472,6 +498,7 @@ While I am usually reading new manga, these are the series that I currently foll
     {label: "Slime Life (Cute fantasy) (7/10 (+0))", value: "i"},
     {label: "Meng Shi Zai Shang (Xianxia manhwa) (7/10 (+0))", value: "l"},
     {label: "Shed! Ryugasaki-san (slice-of-life romcom) (7/10 (+0))", value: "b"},
+    {label: "Secretly Cultivate For A Thousand Years (Cultivation manhwa) (8/10 (+0))", value: "scfaty+0"},
     {label: "Bakarina (Harem Comedy) (8/10 (+0))", value: "e"},
     {label: "When the villainess loves (Isekai reverse harem) (8/10 (+0))", value: "k"},
     {label: "5-Toubun (8/10 (+0))", value: "f"},
@@ -479,6 +506,25 @@ While I am usually reading new manga, these are the series that I currently foll
     {label: "That Girl is not just cute (romcom) (9.5/10 (+0))", value: "c"},
     {label: "Tomo-chan wa Onnanoko (romcom) (10/10 (+0))", value: "a"},
   ]}>
+
+<TabItem value="scfaty+0">
+
+#### Secretly Cultivate For A Thousand Years (Cultivation manhwa) (8/10 (+0))
+
+* **Synopsis**: Guy cultivates but is supported by a "system" and is stupidly overpowered
+* **Genre**: cultivation, comedy, action
+* **Release rate**: Weekly
+* **Review written at**: chp175
+* **Points:**
+  * I read it when I was getting back into reading manhwa. It's not particularly amazing but it's a somewhat funny read.
+  * The biggest reason why I picked it up was the art. I was really impressed at the level of detail! Or maybe I was just easily impressed lol. The art is actually kind of cool.
+  * It makes some references to other cultivation manhwa like cultivation chat group.
+  * It's the kind of manhwa where you know what is going to happen because the same pattern happens every time; guy cultivates at home, one-shots everything, gets rewards from some sort of system, gets some sort of progression and the cycle repeats. It's pretty predictable, but still something I enjoyed when I wanted to just read something that didn't need much brainpower.
+  * Progression for some of the characters can feel a little neglected; expect some characters to drop out of the plot for large swaths of the story.
+  * **Should you read it**: Eh... Sure why not lmao.
+  * **Tidbit**: The facial expressions are hilarious... Why does the author like drawing the character with long nose lol
+
+</TabItem>
 
 <TabItem value="b">
 
@@ -798,11 +844,24 @@ While I am usually reading new manga, these are the series that I currently foll
     {label: "Bokuben (Trashy romcom) (9/10 (+2))", value: "f"},
     {label: "Survive as the hero's wife (novel isekai) (9/10 (+2))", value: "g"},
     {label: "The Undefeatable Swordsman (Action) (9/10 (+2?))", value: "b"},
+    {label: "Welcome to Dungeon Hotel (slice-of-life action romance?) (9/10 (+2))", value: "wtdh+2"},
     {label: "Leveling Up by only Eating (slice-of-life shounen?) (9/10 (+2))", value: "d"},
     {label: "Jitsu Wa Watashi Wa (Romcom) (9/10 (+2))", value: "a"},
     {label: "Sijin (Drama Tragedy) (9/10 (+2))", value: "e"},
     {label: "We May Be An Inexperienced Couple But... (Seinen romcom) (9/10 (+2))", value: "c"},
   ]}>
+
+<TabItem value="wtdh">
+
+#### Welcome to Dungeon Hotel (slice-of-life action?) (9/10 (+2))
+* **Genre**: comedy, romance, action
+* **Summary**: This has a really interesting premise. People in this world can awaken and fight monsters in dungeons. But the protagonist awakens as a hotelier LOL what??? So while "normal" heroes (called "hunters") have like the usual RPG-esque progression (warrior, mage, etc whatever), the protagonist upgrades her hotel as she levels up etc. which I found super interesting.
+* **Review written at**: ch38
+* **Points:**
+  * I really quite enjoyed reading it. It has a very chill vibe to it, despite being set in a rather perilous setting.
+* **Should you read it:** I was shocked at how hooked I got lol I'm only giving it a +2 because I don't know how well it will turn out down the road... Maybe I should've have reviewed it so soon!
+
+</TabItem>
 
 <TabItem value="g">
 
@@ -1022,7 +1081,7 @@ While I am usually reading new manga, these are the series that I currently foll
 #### Kitsune Spirit (Shounen romcom) (Score: 10/10, (+3))
 * **Synopsis**: A married couple in a world with supernatural creatures
 * **Genre**: romcom (equal parts sweet and funny), shounen (yes, shounen. You'll see why. This can get dark real quick)
-* **Release rate:** Irregular (and very short chapters)
+* **Release rate:** Irregular (and very short chapters). Updates might've stopped
 * **Read until:** 101
 * **Points**:
   * Some lewd moments
